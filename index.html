@@ -435,15 +435,15 @@ document.addEventListener('paste',e=>{if(view!=='biblioteca'||e.target.closest('
 /* ---------- sessao ---------- */
 function queue(){
   const q=[];CATS.filter(c=>sess.cat==='all'||sess.cat===c.k).forEach(c=>{
-    refs().filter(r=>r.cat===c.k).forEach(r=>q.push({k:'r',id:r.id,cat:c.k}));
+    if(!sess.duelos)refs().filter(r=>r.cat===c.k).forEach(r=>q.push({k:'r',id:r.id,cat:c.k}));
     duels().filter(d=>duelCat(d)===c.k).forEach(d=>q.push({k:'d',id:d.id,cat:c.k}))});
   return q}
 const qkey=i=>i.k+':'+i.id;
 function go(delta){const q=queue();if(!q.length)return;let i=q.findIndex(x=>qkey(x)===sess.key);i=Math.max(0,Math.min(q.length-1,(i<0?0:i)+delta));sess.key=qkey(q[i]);renderSess()}
 function renderSess(){
   const all=queue();
-  $('#pills').replaceChildren(h('button',{class:'kk-chip','aria-pressed':sess.cat==='all',onclick:()=>{sess.cat='all';sess.key=null;renderSess()}},'Tudo'),
-    ...CATS.map(c=>{const n=refs().filter(r=>r.cat===c.k).length+duels().filter(d=>duelCat(d)===c.k).length;return n?h('button',{class:'kk-chip','aria-pressed':sess.cat===c.k,onclick:()=>{sess.cat=c.k;sess.key=null;renderSess()}},c.t+' · '+n):null}).filter(Boolean));
+  $('#pills').replaceChildren(h('button',{class:'kk-chip','aria-pressed':sess.cat==='all'&&!sess.duelos,onclick:()=>{sess.cat='all';sess.duelos=false;sess.key=null;renderSess()}},'Tudo'),h('button',{class:'kk-chip','aria-pressed':!!sess.duelos,onclick:()=>{sess.cat='all';sess.duelos=true;sess.key=null;renderSess()}},'Só duelos · '+duels().length),
+    ...CATS.map(c=>{const n=refs().filter(r=>r.cat===c.k).length+duels().filter(d=>duelCat(d)===c.k).length;return n?h('button',{class:'kk-chip','aria-pressed':sess.cat===c.k,onclick:()=>{sess.cat=c.k;sess.duelos=false;sess.key=null;renderSess()}},c.t+' · '+n):null}).filter(Boolean));
   if(!all.length){$('#prog').replaceChildren();$('#cur').replaceChildren(h('div',{class:'empty'},'Ainda não há referências. Suba imagens na ',h('a',{href:'#biblioteca',style:'color:inherit'},'Biblioteca'),'.'));$('#strip').replaceChildren();return}
   let i=all.findIndex(x=>qkey(x)===sess.key);if(i<0){i=0;sess.key=qkey(all[0])}
   const it=all[i],rs=refs(),cnt=v=>rs.filter(r=>r.vote===v).length;
