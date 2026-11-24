@@ -523,8 +523,8 @@ function renderBoard(){
 
 /* ---------- fontes ---------- */
 const GF='https://fonts.google.com/specimen/',AF='https://fonts.adobe.com/fonts/';
-const FT={cond:'Condensada',grot:'Grotesca',geo:'Geométrica',wide:'Larga',ser:'Serifada ou humanista',hel:'Estilo Helvetica',sis:'Já vem no computador'};
-const FTF={cond:'Condensadas',grot:'Grotescas',geo:'Geométricas',wide:'Largas',ser:'Serifadas e humanistas',hel:'Parecidas com Helvetica',sis:'Já vem no computador'};
+const FT={cond:'Condensada',grot:'Grotesca',geo:'Geométrica',wide:'Larga',ser:'Serifada ou humanista',sis:'Já vem no computador'};
+const FTF={cond:'Condensadas',grot:'Grotescas',geo:'Geométricas',wide:'Largas',ser:'Serifadas e humanistas',sis:'Já vem no computador'};
 const gf=(id,n,f,w,st,slug,q,t,d,it)=>({id,n,f,w,st,slug,q,t,d,it,s:'g'});
 const af=(id,n,slug,t,d)=>({id,n,slug,t,d,s:'a'});
 const FONTS=[
@@ -554,14 +554,14 @@ const FONTS=[
  gf('syne','Syne',"'Syne'",800,'100%','Syne','Syne:wght@800',['wide'],'Larga e ousada, na linha de Arketype.'),
  gf('unbounded','Unbounded',"'Unbounded'",700,'100%','Unbounded','Unbounded:wght@700',['wide'],'Larga e arredondada, na linha de Arketype.'),
  gf('instrument-serif','Instrument Serif Italic',"'Instrument Serif'",400,'100%','Instrument+Serif','Instrument+Serif:ital@1',['ser'],'Serifada itálica, na linha do logo da unearth.',true),
- gf('arimo','Arimo',"'Arimo'",700,'100%','Arimo','Arimo:wght@700',['grot','hel'],'Mesmas medidas da Arial: o texto não muda de tamanho ao trocar uma pela outra. Precisa ser instalada.'),
- gf('inter','Inter',"'Inter'",700,'100%','Inter','Inter:wght@700',['grot','hel'],'Neutra, feita para telas e documentos.'),
- gf('public-sans','Public Sans',"'Public Sans'",700,'100%','Public+Sans','Public+Sans:wght@700',['grot','hel'],'Neutra e institucional, no espírito da Helvetica.'),
- gf('roboto','Roboto',"'Roboto'",700,'100%','Roboto','Roboto:wght@700',['grot','hel'],'Neutra e conhecida por todos.'),
- gf('albert-sans','Albert Sans',"'Albert Sans'",700,'100%','Albert+Sans','Albert+Sans:wght@700',['grot','hel'],'Grotesca limpa, com leve toque geométrico.'),
- gf('instrument-sans','Instrument Sans',"'Instrument Sans'",700,'100%','Instrument+Sans','Instrument+Sans:wght@700',['grot','hel'],'Grotesca limpa e contemporânea.'),
- {id:'arial',n:'Arial',t:['grot','hel','sis'],s:'s',f:"Arial,'Helvetica Neue',sans-serif",w:700,st:'100%',d:'Vem instalada em todo Windows e todo Mac, e é quase igual à Helvetica. É a escolha segura para Word e PowerPoint: abre igual em qualquer computador, sem instalar nada.'},
- {id:'helvetica',n:'Helvetica',t:['grot','hel','sis'],s:'s',f:"Helvetica,Arial,sans-serif",w:700,st:'100%',d:'Vem no Mac, mas não no Windows, onde o Word troca por Arial. Por isso não serve sozinha para arquivos que circulam entre os dois.'},
+ gf('arimo','Arimo',"'Arimo'",700,'100%','Arimo','Arimo:wght@700',['grot'],'Mesmas medidas da Arial: o texto não muda de tamanho ao trocar uma pela outra. Precisa ser instalada.'),
+ gf('inter','Inter',"'Inter'",700,'100%','Inter','Inter:wght@700',['grot'],'Neutra, feita para telas e documentos.'),
+ gf('public-sans','Public Sans',"'Public Sans'",700,'100%','Public+Sans','Public+Sans:wght@700',['grot'],'Neutra e institucional, no espírito da Helvetica.'),
+ gf('roboto','Roboto',"'Roboto'",700,'100%','Roboto','Roboto:wght@700',['grot'],'Neutra e conhecida por todos.'),
+ gf('albert-sans','Albert Sans',"'Albert Sans'",700,'100%','Albert+Sans','Albert+Sans:wght@700',['grot'],'Grotesca limpa, com leve toque geométrico.'),
+ gf('instrument-sans','Instrument Sans',"'Instrument Sans'",700,'100%','Instrument+Sans','Instrument+Sans:wght@700',['grot'],'Grotesca limpa e contemporânea.'),
+ {id:'arial',n:'Arial',t:['grot','sis'],s:'s',f:"Arial,'Helvetica Neue',sans-serif",w:700,st:'100%',d:'Vem instalada em todo Windows e todo Mac, e é quase igual à Helvetica. É a escolha segura para Word e PowerPoint: abre igual em qualquer computador, sem instalar nada.'},
+ {id:'helvetica',n:'Helvetica',t:['grot','sis'],s:'s',f:"Helvetica,Arial,sans-serif",w:700,st:'100%',d:'Vem no Mac, mas não no Windows, onde o Word troca por Arial. Por isso não serve sozinha para arquivos que circulam entre os dois.'},
  {id:'verdana',n:'Verdana',t:['grot','wide','sis'],s:'s',f:"Verdana,sans-serif",w:700,st:'100%',d:'Vem em todo Windows e todo Mac. Larga e aberta, feita para ler em tela.'},
  {id:'tahoma',n:'Tahoma',t:['grot','sis'],s:'s',f:"Tahoma,Verdana,sans-serif",w:700,st:'100%',d:'Vem em todo Windows e todo Mac. Mais fechada que a Verdana.'},
  {id:'trebuchet-ms',n:'Trebuchet MS',t:['grot','sis'],s:'s',f:"'Trebuchet MS',sans-serif",w:700,st:'100%',d:'Vem em todo Windows e todo Mac. Humanista, com um toque de personalidade.'},
@@ -580,7 +580,7 @@ let FV={},fst={text:'Mais prazer para todos.',size:72,upper:false,filter:'all'},
 const fvote=(id,v)=>w(()=>db.collection('fonts2').doc(id).set({vote:(FV[id]||{}).vote===v?'':v}));
 const fstyle=f=>'font-family:'+f.f+';font-weight:'+f.w+';font-stretch:'+(f.st||'100%')+';font-style:'+(f.it?'italic':'normal'); /* conferir: ignorar: amostra da fonte que está em teste */
 const FPRE=[['PRUDENCE','PRUDENCE'],['Slogan','Mais prazer para todos.'],['Texto corrido','Prazer é liberdade. Cuidar de si é parte da diversão, e a gente cuida de você em cada detalhe.'],['Letras e números','Aa Bb Cc Dd 0123456789']];
-const FFIL=[['all','Todas'],['cond','Condensadas'],['grot','Grotescas'],['geo','Geométricas'],['wide','Largas'],['ser','Serifadas e humanistas'],['hel','Parecidas com Helvetica'],['sis','Já vem no computador'],['g','Só Google Fonts'],['fav','Minhas favoritas']];
+const FFIL=[['all','Todas'],['cond','Condensadas'],['grot','Grotescas'],['geo','Geométricas'],['wide','Largas'],['ser','Serifadas e humanistas'],['sis','Já vem no computador'],['g','Só Google Fonts'],['fav','Minhas favoritas']];
 const live=f=>f.s==='g'||f.s==='s';
 const _cv=document.createElement('canvas').getContext('2d');
 function hasFont(n){const t='mmmmmmmmmmlli',w=f=>{_cv.font='72px '+f;return _cv.measureText(t).width};return w("'"+n+"',monospace")!==w('monospace')||w("'"+n+"',serif")!==w('serif')}
