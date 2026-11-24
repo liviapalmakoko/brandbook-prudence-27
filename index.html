@@ -192,6 +192,17 @@ textarea.note{border-radius:var(--r2);background:var(--opaca);border-color:var(-
 .kk-cabeca{margin-bottom:var(--esp-5)}
 .kk-barra .kk-botao{flex:none}
 .empty{border-color:var(--borda);border-radius:var(--r2)}
+/* marca */
+.axrow{display:grid;grid-template-columns:1fr auto 1fr;gap:var(--esp-2) var(--esp-4);align-items:center;padding:var(--esp-4) 0;border-top:1px solid var(--borda)}
+.axrow:first-child{border-top:0}
+.axl{text-align:right;font-weight:600}.axr{font-weight:600}
+.axw{grid-column:1/-1;display:flex;gap:var(--esp-3);align-items:center;justify-content:center;flex-wrap:wrap}
+.adots{display:flex;gap:var(--esp-2)}
+.adot{width:30px;height:30px;border-radius:var(--rf);border:1.5px solid var(--tinta-3);background:var(--opaca);cursor:pointer;padding:0}
+.adot[aria-pressed="true"]{background:var(--tinta);border-color:var(--tinta)}
+.adot.koko{outline:2px dashed var(--rosa-txt);outline-offset:2px}
+.adot:disabled{cursor:default}
+@media (max-width:700px){.axrow{grid-template-columns:1fr}.axl,.axr{text-align:center}.adots{justify-content:center}}
 /* duelo */
 .duel{display:grid;grid-template-columns:repeat(2,minmax(0,min(35vh,440px)));justify-content:center;gap:var(--esp-4)}
 .dcard{display:flex;flex-direction:column;border:1px solid var(--borda);border-radius:var(--r3);background:var(--opaca);overflow:hidden;transition:opacity .2s}
@@ -273,6 +284,7 @@ kbd{font-family:var(--f-b);font-size:11px;border:1px solid var(--line);border-ra
     </div>
   </div>
   <nav class="kk-nav" id="nav" aria-label="Telas">
+    <a class="kk-nav-item" href="#marca" data-k="marca"><svg class="kk-ic"><use href="#i-alvo"></use></svg>Marca</a>
     <a class="kk-nav-item" href="#biblioteca" data-k="biblioteca"><svg class="kk-ic"><use href="#i-biblioteca"></use></svg>Biblioteca</a>
     <a class="kk-nav-item" href="#sessao" data-k="sessao"><svg class="kk-ic"><use href="#i-play"></use></svg>Sessão</a>
     <a class="kk-nav-item" href="#fontes" data-k="fontes"><svg class="kk-ic"><use href="#i-texto"></use></svg>Fontes</a>
@@ -281,6 +293,10 @@ kbd{font-family:var(--f-b);font-size:11px;border:1px solid var(--line);border-ra
 </header>
 
 <main class="kk-pagina">
+<section class="view" id="v-marca">
+  <div id="marca-tela"></div>
+</section>
+
 <section class="view" id="v-biblioteca">
   <div class="kk-cabeca"><span class="kk-selo kk-selo--tinta kk-selo--g"><svg class="kk-ic"><use href="#i-biblioteca"></use></svg></span>
     <div class="kk-cabeca-textos"><h1 class="kk-h1">Biblioteca de <mark class="kk-marca-texto">referências</mark></h1>
@@ -525,6 +541,57 @@ document.addEventListener('keydown',e=>{
   else if(it&&it.k==='r'){const k=e.key.toLowerCase();if(k==='g')setVote(it.id,'yes');else if(k==='t')setVote(it.id,'maybe');else if(k==='n')setVote(it.id,'no')}
   else if(it&&it.k==='d'){const k=e.key.toLowerCase();if(k==='a')setPick(it.id,'a');else if(k==='b')setPick(it.id,'b');else if(k==='d')setPick(it.id,'both');else if(k==='n')setPick(it.id,'none')}});
 
+
+/* ---------- atributos da marca ---------- */
+let ATT={};
+const AXES=[
+ {k:'maturidade',l:'Brincalhona e boba',r:'Adulta e madura',pre:5,why:'Da conversa de 06/11: "não é uma marca de sexo bobo".'},
+ {k:'irrev',l:'Contida e séria',r:'Irreverente',pre:4,why:'Da conversa: manter a irreverência, só que madura.'},
+ {k:'sexo',l:'Sugere, é discreta',r:'Fala de sexo aberta e direta',pre:4,why:'Da conversa: é uma marca de sexo, sem esconder, mas sem exagerar.'},
+ {k:'publico',l:'Jovem, 18 a 24',r:'Adulta, 30+',pre:4,why:'Da conversa: quem compra é o público 30+.'},
+ {k:'posicao',l:'Desafiante, precisa provar',r:'Líder, já é a marca',pre:5,why:'Da conversa: maior participação do mercado.'},
+ {k:'tom',l:'Divertida, de cores e sabores',r:'Clássica, o vermelhinho',pre:4,why:'Da conversa: o clássico é o produto principal.'},
+ {k:'digital',l:'Tradicional',r:'Nativa digital',pre:5,why:'Da conversa: o público é nativo digital.'},
+ {k:'acolhe',l:'Acolhedora e carinhosa',r:'Provocadora',pre:0,why:'Ainda não foi definido: onde a marca fica?'},
+ {k:'popular',l:'Popular, para todo mundo',r:'Premium e sofisticada',pre:0,why:'Ainda não foi definido: onde a marca fica?'},
+ {k:'sensual',l:'Divertida e leve',r:'Sensual e intensa',pre:0,why:'Ainda não foi definido: onde a marca fica?'}
+];
+const WORDS=[['Irreverente',1],['Adulta',1],['Direta',1],['Confiante',1],['Infantil',-1],['Boba',-1],['Explícita demais',-1],['Sensual',0],['Divertida',0],['Ousada',0],['Acolhedora',0],['Inclusiva',0],['Provocadora',0],['Cuidadosa',0],['Popular',0],['Premium',0],['Descolada',0],['Séria',0]];
+const apos=a=>{const x=ATT['ax-'+a.k];return x&&x.pos?x.pos:a.pre};
+const astat=a=>{const x=ATT['ax-'+a.k];if(x&&x.pos)return a.pre&&x.pos===a.pre?'Confirmado':a.pre?'Ajustado':'Respondido';return a.pre?'Pré-marcado':'Sem resposta'};
+const astag=t=>({Confirmado:'kk-etiqueta--ok',Ajustado:'kk-etiqueta--atencao',Respondido:'kk-etiqueta--ok','Pré-marcado':'kk-etiqueta--info','Sem resposta':'kk-etiqueta--atencao'})[t];
+const wv=w=>{const x=ATT['w-'+w[0]];return x&&'v' in x?x.v:(w[1]>0?'pos':w[1]<0?'neg':'')};
+const setAx=(k,pos)=>w(()=>db.collection('attrs2').doc('ax-'+k).set({pos}));
+const setWd=(n,v)=>w(()=>db.collection('attrs2').doc('w-'+n).set({v}));
+const setAttNote=t=>w(()=>db.collection('attrs2').doc('note').set({t}));
+function dots(a,on){return h('div',{class:'adots',role:'group','aria-label':a.l+' ou '+a.r},[1,2,3,4,5].map(n=>h('button',{type:'button',class:'adot'+(a.pre===n?' koko':''),'aria-pressed':apos(a)===n,'aria-label':'Posição '+n+' de 5',disabled:on===false,onclick:()=>setAx(a.k,n)})))}
+function renderMarca(){
+  const nOk=AXES.filter(a=>a.pre&&ATT['ax-'+a.k]).length,nPre=AXES.filter(a=>a.pre).length;
+  const rows=AXES.map(a=>h('div',{class:'axrow'},
+    h('div',{class:'axl'},a.l),dots(a),h('div',{class:'axr'},a.r),
+    h('div',{class:'axw'},h('span',{class:'lbl'},a.why),h('span',{class:'kk-etiqueta '+astag(astat(a))},astat(a)),a.pre?h('button',{type:'button',class:'kk-botao kk-botao--texto',onclick:()=>setAx(a.k,a.pre)},'Está certo'):null)));
+  const note=h('textarea',{class:'note',placeholder:'Se a Prudence fosse uma pessoa, quem seria? O que ela nunca diria?','aria-label':'Persona da marca'});note.value=(ATT.note||{}).t||'';note.addEventListener('change',()=>setAttNote(note.value));
+  $('#marca-tela').replaceChildren(
+    h('div',{class:'kk-cabeca'},(()=>{const e=h('span',{class:'kk-selo kk-selo--tinta kk-selo--g'});e.append(ic('alvo'));return e})(),
+      h('div',{class:'kk-cabeca-textos'},h('h1',{class:'kk-h1'},'Atributos da ',h('mark',{class:'kk-marca-texto'},'marca')),
+        h('p',{class:'kk-apoio'},'Antes do moodboard: a Koko pré-marcou a personalidade da Prudence com base na conversa de 06/11. Confirme ou corrija o que não bate, porque as escolhas visuais partem daqui. Cada linha vai de 1 a 5, e o círculo tracejado mostra onde a Koko pré-marcou.'))),
+    h('div',{class:'kk-barra'},h('span',{class:'lbl',style:'align-self:center'},nOk+' de '+nPre+' linhas pré-marcadas já revisadas'),h('button',{type:'button',class:'kk-botao kk-botao--2',onclick:async()=>{for(const a of AXES.filter(x=>x.pre&&!ATT['ax-'+x.k]))await setAx(a.k,a.pre)}},'Confirmar tudo como está')),
+    h('div',{class:'kk-box'},...rows),
+    h('div',{class:'sec'},h('div',{class:'sh'},h('h3',{},'Palavras da marca')),
+      h('p',{class:'kk-texto'},'Clique para marcar: uma vez, tem a ver (verde); duas, não tem a ver (vermelho); três, tira a marca. As com o ponto são sugestões da Koko.'),
+      h('div',{class:'asp'},WORDS.map(w=>{const v=wv(w);return h('button',{type:'button',class:'ch'+(v==='pos'?' pos':v==='neg'?' neg':''),onclick:()=>setWd(w[0],v===''?'pos':v==='pos'?'neg':v==='neg'?'':'pos')},(w[1]&&!(ATT['w-'+w[0]])?'• ':'')+w[0])}))),
+    h('div',{class:'sec'},h('div',{class:'sh'},h('h3',{},'Em uma frase')),note),
+    h('div',{class:'dnav',style:'position:static;margin:var(--esp-5) auto 0'},h('a',{class:'kk-botao',href:'#sessao',style:'text-align:center;text-decoration:none'},'Seguir para a Sessão')))}
+function attrBoard(){
+  const ans=AXES.filter(a=>ATT['ax-'+a.k]||a.pre);if(!ans.length)return null;
+  const pw=WORDS.filter(w=>wv(w)==='pos').map(w=>w[0]),nw=WORDS.filter(w=>wv(w)==='neg').map(w=>w[0]);
+  return h('div',{class:'sec'},h('div',{class:'sh'},h('h3',{},'Personalidade da marca'),h('span',{class:'tag'},AXES.filter(a=>ATT['ax-'+a.k]).length+' de '+AXES.length+' revisadas')),
+    h('div',{class:'kk-box'},...ans.map(a=>h('div',{class:'axrow'},h('div',{class:'axl'},a.l),dots(a,false),h('div',{class:'axr'},a.r),h('div',{class:'axw'},h('span',{class:'kk-etiqueta '+astag(astat(a))},astat(a)+' · '+apos(a)+' de 5'))))),
+    h('div',{class:'row',style:'margin-top:var(--esp-4)'},h('div',{},h('div',{class:'tag'},'Tem a ver'),h('div',{class:'asp'},pw.length?pw.map(x=>h('span',{class:'ch pos'},x)):h('span',{class:'lbl'},'nenhuma'))),h('div',{},h('div',{class:'tag'},'Não tem a ver'),h('div',{class:'asp'},nw.length?nw.map(x=>h('span',{class:'ch neg'},x)):h('span',{class:'lbl'},'nenhuma')))),
+    (ATT.note||{}).t?h('p',{class:'kk-texto'},'Persona: '+ATT.note.t):null)}
+function attrText(){const L=['','Atributos da marca (1 = '+'esquerda, 5 = direita):'];AXES.forEach(a=>{if(ATT['ax-'+a.k]||a.pre)L.push('- '+a.l+' ↔ '+a.r+': '+apos(a)+' de 5 ('+astat(a).toLowerCase()+')')});
+  const pw=WORDS.filter(w=>wv(w)==='pos').map(w=>w[0]),nw=WORDS.filter(w=>wv(w)==='neg').map(w=>w[0]);L.push('- Tem a ver: '+(pw.join(', ')||'nenhuma'),'- Não tem a ver: '+(nw.join(', ')||'nenhuma'));if((ATT.note||{}).t)L.push('- Persona: '+ATT.note.t);return L}
+
 /* ---------- moodboard ---------- */
 const PAT='LTSWSSTS';
 function tally(){const p={},n={};ASP.forEach(a=>{p[a]=0;n[a]=0});refs().forEach(r=>Object.entries(r.asp||{}).forEach(([a,v])=>{if(v==='+')p[a]=(p[a]||0)+1;else if(v==='-')n[a]=(n[a]||0)+1}));return{p,n}}
@@ -541,6 +608,7 @@ function renderBoard(){
     h('div',{},h('div',{class:'tag'},'Brand identity · sessão de moodboard'),h('div',{class:'mb-title'},'PRUDENCE'),h('p',{class:'mb-sub'},yes.length+' aprovadas · '+maybe.length+' em dúvida · '+(no.length+left.length)+' não escolhidas')),
     h('div',{},h('div',{class:'tag'},'O que '+(mbWho==='cliente'?'o cliente':pname(mbWho).split(',')[0])+' prefere'),bars({...t.p,...dl2('w')},'p')),
     h('div',{},h('div',{class:'tag'},'O que ficou de fora'),bars({...t.n,...dl2('l')},'n')))];
+  {const ab=attrBoard();if(ab)out.push(ab)}
   const byCat=CATS.map(c=>({c,l:yes.filter(r=>r.cat===c.k)})).filter(x=>x.l.length);
   if(!byCat.length)out.push(h('div',{class:'empty'},'O moodboard se monta sozinho: a imagem escolhida em cada duelo da Sessão aparece aqui, agrupada por categoria.'));
   byCat.forEach(({c,l})=>out.push(h('div',{class:'sec'},h('div',{class:'sh'},h('h3',{},c.t),h('span',{class:'tag'},l.length)),
@@ -682,6 +750,7 @@ function summaryText(){
   L.push('O que o cliente prefere: '+fm(t.p),'O que ficou de fora: '+fm(t.n),'Motivos das preferências: '+fm(wt),'','Duelos:');
   duels().forEach(d=>{const a=d.la||(R[d.a]||{}).cap||'A',b=d.lb||(R[d.b]||{}).cap||'B';L.push('- '+(d.pick==='a'?a+' > '+b:d.pick==='b'?b+' > '+a:d.pick==='both'?a+' = '+b+' (as duas)':d.pick==='none'?a+' × '+b+' (nenhuma)':a+' vs '+b+' (sem escolha)')+((d.why||[]).length?' · por: '+d.why.join(', ').toLowerCase():'')+(d.note?' · '+d.note:''))});
   {const ds=duels().filter(d=>kokoOf(d)&&(d.pick==='a'||d.pick==='b')),ig=ds.filter(d=>kokoOf(d).pick===d.pick);if(ds.length)L.push('','Alinhamento com a escolha Koko: '+ig.length+' de '+ds.length+' duelos iguais.',...ds.filter(d=>kokoOf(d).pick!==d.pick).map(d=>'- Diferente: '+(d.q||'Duelo')+' (Koko: '+(kokoOf(d).pick==='a'?d.la:d.lb)+'; escolhido: '+(d.pick==='a'?d.la:d.lb)+')'))}
+  L.push(...attrText());
   L.push('','Respostas por pessoa:');Object.values(DU).length&&Object.entries(DU).sort((a,b)=>(a[1].ts||0)-(b[1].ts||0)).forEach(([id,d])=>{L.push('- '+(d.q||'Duelo')+': '+PEOPLE.map(([pid,n])=>{const x=proj({...d,id},pid);return n+' '+(x.pick==='a'?d.la:x.pick==='b'?d.lb:x.pick==='both'?'as duas':x.pick==='none'?'nenhuma':'sem resposta')}).join('; '))});
   {const fy=FONTS.filter(f=>fvv(f.id)==='yes'),fm2=FONTS.filter(f=>fvv(f.id)==='maybe'),fn=FONTS.filter(f=>fvv(f.id)==='no');
    if(fy.length||fm2.length||fn.length)L.push('','Fontes:','- Preferidas: '+(fy.map(f=>f.n).join(', ')||'nenhuma'),'- Em dúvida: '+(fm2.map(f=>f.n).join(', ')||'nenhuma'),'- Não gostou: '+(fn.map(f=>f.n).join(', ')||'nenhuma'))}
@@ -702,8 +771,8 @@ async function copy(){const tx=summaryText();try{await navigator.clipboard.write
 
 /* ---------- rotas e sync ---------- */
 function typing(){const a=document.activeElement;return a&&a.matches&&a.matches('main input,main textarea')}
-function render(){if(typing())return;({biblioteca:renderLib,sessao:renderSess,fontes:renderFontes,moodboard:renderBoard})[view]()}
-function route(){const k=['biblioteca','sessao','fontes','moodboard'].includes(location.hash.slice(1))?location.hash.slice(1):'sessao';view=k;
+function render(){if(typing())return;({marca:renderMarca,biblioteca:renderLib,sessao:renderSess,fontes:renderFontes,moodboard:renderBoard})[view]()}
+function route(){const k=['marca','biblioteca','sessao','fontes','moodboard'].includes(location.hash.slice(1))?location.hash.slice(1):'marca';view=k;
   document.querySelectorAll('section.view').forEach(s=>s.classList.toggle('on',s.id==='v-'+k));
   document.querySelectorAll('#nav a').forEach(a=>{if(a.dataset.k===k){a.setAttribute('aria-current','page');a.classList.add('ativo')}else{a.removeAttribute('aria-current');a.classList.remove('ativo')}});
   window.scrollTo(0,0);render()}
@@ -715,6 +784,7 @@ initFontes();window.addEventListener('hashchange',route);route();
   db.collection('duels2').onSnapshot(s=>{DU={};s.docs.forEach(d=>{DU[d.id]=d.data()});render()},()=>{});
   db.collection('fonts2').onSnapshot(s=>{FV={};s.docs.forEach(d=>{FV[d.id]=d.data()});render()},()=>{});
   db.collection('picks2').onSnapshot(s=>{PK={};s.docs.forEach(d=>{PK[d.id]=d.data()});render()},()=>{});
+  db.collection('attrs2').onSnapshot(s=>{ATT={};s.docs.forEach(d=>{ATT[d.id]=d.data()});render()},()=>{});
   db.collection('fvotes2').onSnapshot(s=>{FVT={};s.docs.forEach(d=>{FVT[d.id]=d.data()});render()},()=>{});
   detectMe();seedReal();
 })();
