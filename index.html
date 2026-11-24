@@ -194,14 +194,17 @@ textarea.note{border-radius:var(--r2);background:var(--opaca);border-color:var(-
 .empty{border-color:var(--borda);border-radius:var(--r2)}
 /* marca */
 .axrow{display:grid;grid-template-columns:1fr auto 1fr;gap:var(--esp-1) var(--esp-5);align-items:center;padding:var(--esp-4) 0;border-top:1px solid var(--borda-leve)}
-.axrow:first-child{border-top:0}
+.axg{font-family:var(--titulo);font-size:15px;letter-spacing:.06em;text-transform:uppercase;color:var(--tinta-3);padding:var(--esp-4) 0 0;border-top:1px solid var(--borda)}
+.axg:first-child{border-top:0;padding-top:0}
+.axg+.axrow{border-top:0}
 .axl{text-align:right;font-weight:500}.axr{font-weight:500}
 .axw{grid-column:1/-1;display:flex;gap:var(--esp-3);align-items:center;justify-content:center;flex-wrap:wrap}
 .adots{display:flex;gap:var(--esp-3)}
 .adot{width:24px;height:24px;border-radius:var(--rf);border:1px solid var(--borda);background:var(--opaca);cursor:pointer;padding:0;transition:background .15s,border-color .15s}
 .adot:hover:not(:disabled){border-color:var(--tinta-3)}
 .adot[aria-pressed="true"]{background:var(--tinta-2);border-color:var(--tinta-2)}
-.adot.koko{outline:2px dashed var(--rosa-txt);outline-offset:2px}
+.adot.koko{outline:2px dashed var(--amarelo);outline-offset:2px}
+.adot.koko.on{background:var(--amarelo);border-color:var(--amarelo)}
 .adot:disabled{cursor:default}
 @media (max-width:700px){.axrow{grid-template-columns:1fr}.axl,.axr{text-align:center}.adots{justify-content:center}}
 /* duelo */
@@ -553,20 +556,23 @@ document.addEventListener('keydown',e=>{
 /* ---------- atributos da marca ---------- */
 let ATT={};
 const AXES=[
- {k:'obvio',l:'Previsível',r:'Surpreendente',pre:5,why:'Do briefing: "nada óbvia".'},
- {k:'ousadia',l:'Delicada',r:'Ousada',pre:4,why:'Do briefing: "ousada".'},
- {k:'humor',l:'Séria',r:'Divertida',pre:4,why:'Do briefing: "divertida".'},
- {k:'publico',l:'Restrita',r:'Inclusiva',pre:5,why:'Do briefing: "fala com todos".'},
- {k:'estilo',l:'Clássica',r:'Cool',pre:4,why:'Do briefing: "cool".'},
- {k:'mente',l:'Espontânea',r:'Inteligente',pre:4,why:'Do briefing: "é inteligente".'},
- {k:'sensual',l:'Discreta',r:'Explícita',pre:2,why:'Do briefing: não ser "explícita demais".'},
- {k:'posicao',l:'Desafiante',r:'Líder',pre:5,why:'Da conversa de 06/11: maior do mercado.'},
- {k:'tempo',l:'Passageira',r:'Atemporal',pre:5,why:'Do kickoff: materiais que durem.'},
- {k:'digital',l:'Tradicional',r:'Digital',pre:5,why:'Da conversa de 06/11: público nativo digital.'},
- {k:'energia',l:'Calma',r:'Animada',pre:0,why:'Sem sugestão: onde a marca fica?'},
- {k:'tom',l:'Popular',r:'Premium',pre:0,why:'Sem sugestão: onde a marca fica?'},
- {k:'rua',l:'Polida',r:'De rua',pre:0,why:'Sem sugestão: onde a marca fica?'},
- {k:'prox',l:'Distante',r:'Próxima',pre:0,why:'Sem sugestão: onde a marca fica?'}
+ {g:'Emoção',k:'obvio',l:'Previsível',r:'Surpreendente',pre:5,why:'Do briefing: "nada óbvia".'},
+ {g:'Emoção',k:'ousadia',l:'Delicada',r:'Ousada',pre:4,why:'Do briefing: "ousada".'},
+ {g:'Emoção',k:'estilo',l:'Clássica',r:'Cool',pre:4,why:'Do briefing: "cool".'},
+ {g:'Emoção',k:'digital',l:'Tradicional',r:'Digital',pre:5,why:'Da conversa de 06/11: público nativo digital.'},
+ {g:'Emoção',k:'energia',l:'Calma',r:'Animada',pre:0,why:'Sem sugestão: onde a marca fica?'},
+ {g:'Competência',k:'mente',l:'Espontânea',r:'Inteligente',pre:4,why:'Do briefing: "é inteligente".'},
+ {g:'Competência',k:'posicao',l:'Desafiante',r:'Líder',pre:5,why:'Da conversa de 06/11: maior do mercado.'},
+ {g:'Competência',k:'tempo',l:'Passageira',r:'Atemporal',pre:5,why:'Do kickoff: materiais que durem.'},
+ {g:'Sinceridade',k:'publico',l:'Restrita',r:'Inclusiva',pre:5,why:'Do briefing: "fala com todos".'},
+ {g:'Sinceridade',k:'prox',l:'Distante',r:'Próxima',pre:0,why:'Sem sugestão: onde a marca fica?'},
+ {g:'Sofisticação',k:'tom',l:'Popular',r:'Premium',pre:0,why:'Sem sugestão: onde a marca fica?'},
+ {g:'Robustez',k:'rua',l:'Polida',r:'De rua',pre:0,why:'Sem sugestão: onde a marca fica?'},
+ {g:'Tom de voz',k:'humor',l:'Séria',r:'Divertida',pre:4,why:'Do briefing: "divertida".'},
+ {g:'Tom de voz',k:'sensual',l:'Discreta',r:'Explícita',pre:2,why:'Do briefing: não ser "explícita demais".'},
+ {g:'Tom de voz',k:'formal',l:'Formal',r:'Casual',pre:0,why:'Sem sugestão: onde a marca fica?'},
+ {g:'Tom de voz',k:'irrev',l:'Respeitosa',r:'Irreverente',pre:0,why:'Sem sugestão: onde a marca fica?'},
+ {g:'Tom de voz',k:'entus',l:'Objetiva',r:'Entusiasmada',pre:0,why:'Sem sugestão: onde a marca fica?'}
 ];
 const WORDS=[['Ousada',1],['Divertida',1],['Surpreendente',1],['Inclusiva',1],['Livre',1],['Cool',1],['Inteligente',1],['Atemporal',1],['Piadista',-1],['Política',-1],['Religiosa',-1],['Explícita',-1],['Clichê',-1],['Sensual',0],['Acolhedora',0],['Provocadora',0],['Elegante',0],['Leve',0],['Corajosa',0],['Próxima',0],['Confiante',0],['Direta',0],['Irreverente',0],['Misteriosa',0],['Popular',0],['Sofisticada',0],['Descolada',0],['Séria',0]];
 const apos=a=>{const x=ATT['ax-'+a.k];return x&&x.pos?x.pos:a.pre};
@@ -576,19 +582,20 @@ const wv=w=>{const x=ATT['w-'+w[0]];return x&&'v' in x?x.v:(w[1]>0?'pos':w[1]<0?
 const setAx=(k,pos)=>w(()=>db.collection('attrs2').doc('ax-'+k).set({pos}));
 const setWd=(n,v)=>w(()=>db.collection('attrs2').doc('w-'+n).set({v}));
 const setAttNote=t=>w(()=>db.collection('attrs2').doc('note').set({t}));
-function dots(a,on){return h('div',{class:'adots',role:'group','aria-label':a.l+' ou '+a.r},[1,2,3,4,5].map(n=>h('button',{type:'button',class:'adot'+(a.pre===n?' koko':''),'aria-pressed':apos(a)===n,'aria-label':'Posição '+n+' de 5',disabled:on===false,onclick:()=>setAx(a.k,n)})))}
+function dots(a,on){const t=!!(ATT['ax-'+a.k]&&ATT['ax-'+a.k].pos);return h('div',{class:'adots',role:'group','aria-label':a.l+' ou '+a.r},[1,2,3,4,5].map(n=>h('button',{type:'button',class:'adot'+(a.pre===n?' koko'+(t?'':' on'):''),'aria-pressed':t&&apos(a)===n,'aria-label':'Posição '+n+' de 5'+(a.pre===n?', sugestão da Koko':''),disabled:on===false,onclick:()=>setAx(a.k,n)})))}
 function renderMarca(){
   const nOk=AXES.filter(a=>a.pre&&ATT['ax-'+a.k]).length,nPre=AXES.filter(a=>a.pre).length;
-  const rows=AXES.map(a=>h('div',{class:'axrow'},
+  let lastG='';const rows=AXES.flatMap(a=>{const hd=a.g!==lastG?[h('div',{class:'axg'},a.g)]:[];lastG=a.g;return[...hd,h('div',{class:'axrow'},
     h('div',{class:'axl'},a.l),dots(a),h('div',{class:'axr'},a.r),
-    h('div',{class:'axw'},h('span',{class:'lbl'},a.why),h('span',{class:'kk-etiqueta '+astag(astat(a))},astat(a)),a.pre?h('button',{type:'button',class:'kk-botao kk-botao--texto',onclick:()=>setAx(a.k,a.pre)},'Faz sentido'):null)));
+    h('div',{class:'axw'},h('span',{class:'lbl'},a.why),a.pre&&!ATT['ax-'+a.k]?h('button',{type:'button',class:'kk-botao kk-botao--texto',onclick:()=>setAx(a.k,a.pre)},'Faz sentido'):null))]});
   const note=h('textarea',{class:'note',placeholder:'Se a Prudence fosse uma pessoa, quem seria? O que ela nunca diria?','aria-label':'Persona da marca'});note.value=(ATT.note||{}).t||'';note.addEventListener('change',()=>setAttNote(note.value));
   $('#marca-tela').replaceChildren(
     h('div',{class:'kk-cabeca'},(()=>{const e=h('span',{class:'kk-selo kk-selo--tinta kk-selo--g'});e.append(ic('alvo'));return e})(),
       h('div',{class:'kk-cabeca-textos'},h('h1',{class:'kk-h1'},'Atributos da ',h('mark',{class:'kk-marca-texto'},'marca')),
-        h('p',{class:'kk-apoio'},'Como a Prudence é? Em cada linha, escolha o ponto entre as duas palavras. O círculo tracejado é a sugestão da Koko, baseada no briefing: mexa onde quiser. Onde não há sugestão, a escolha é sua.'))),
+        h('p',{class:'kk-apoio'},'Como a Prudence é? Em cada linha, escolha o ponto entre as duas palavras. A bolinha amarela com pontilhado é a sugestão da Koko, baseada no briefing: mexa onde quiser. Onde não há sugestão, a escolha é sua.'))),
     h('div',{class:'kk-barra'},h('span',{class:'lbl',style:'align-self:center'},nOk+' de '+nPre+' sugestões já olhadas'),h('button',{type:'button',class:'kk-botao kk-botao--2',onclick:async()=>{for(const a of AXES.filter(x=>x.pre&&!ATT['ax-'+x.k]))await setAx(a.k,a.pre)}},'Faz sentido para todas as sugestões')),
     h('div',{class:'kk-box'},...rows),
+    h('p',{class:'lbl',style:'margin:var(--esp-3) 0 0'},'Grupos baseados em Aaker (1997), Dimensions of Brand Personality, e nas quatro dimensões de tom de voz do Nielsen Norman Group.'),
     h('div',{class:'sec'},h('div',{class:'sh'},h('h3',{},'Palavras que combinam')),
       h('p',{class:'kk-texto'},'Toque numa palavra: uma vez, combina (verde); duas, não combina (rosa); três, volta ao neutro. As com o ponto vêm do briefing.'),
       h('div',{class:'asp'},WORDS.map(w=>{const v=wv(w);return h('button',{type:'button',class:'ch'+(v==='pos'?' pos':v==='neg'?' neg':''),onclick:()=>setWd(w[0],v===''?'pos':v==='pos'?'neg':v==='neg'?'':'pos')},(w[1]&&!(ATT['w-'+w[0]])?'• ':'')+w[0])}))),
