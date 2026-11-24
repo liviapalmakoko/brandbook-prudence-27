@@ -50,6 +50,7 @@ section.view.on{display:block}
 .th.sel{border-color:var(--ink)}
 .th .im{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;cursor:pointer;background:var(--soft)}
 .th input{width:100%;border:0;border-top:1px solid var(--line);background:none;font:inherit;font-size:12px;padding:7px 8px;color:var(--ink)}
+.th .lk{display:block;padding:6px 8px;font-size:12px;font-weight:600;color:var(--ink);border-top:1px solid var(--line);text-decoration:none}.th .lk:hover{text-decoration:underline}
 .th .x{position:absolute;top:6px;right:6px;width:24px;height:24px;border-radius:50%;border:0;background:rgba(0,0,0,.65);color:#fff;font-size:11px}
 .th .pickd{position:absolute;top:6px;left:6px;border:0;border-radius:999px;background:rgba(0,0,0,.65);color:#fff;font-size:11px;font-weight:600;padding:4px 9px}
 .th.sel .pickd{background:#fff;color:#000}
@@ -231,6 +232,7 @@ kbd{font-family:var(--f-b);font-size:11px;border:1px solid var(--line);border-ra
 const CATS=[
  {k:'foto',t:'Fotografia',hint:'Pessoas e momentos sem estereótipo: casais diversos, amigos, sensualidade sugerida e nunca explícita. Longe da "cerveja dos anos 2000".'},
  {k:'tipo',t:'Tipografia e layout',hint:'Peças impressas e documentos limpos: grotesca, muito respiro, hierarquia clara. A fonte base precisa funcionar em Word e PPT.'},
+ {k:'sys',t:'Fonte para Word e PPT',hint:'Fonte de sistema, que abre igual em qualquer computador. A Helvetica é a mais indicada; no Windows o Office a troca pela Arial, que é quase igual.'},
  {k:'cor',t:'Cores e paleta',hint:'Preto, branco e cinza como base, com acento pontual. Tem que durar anos.'},
  {k:'uni',t:'Uniforme e merch',hint:'Camisetas e moletons: logo discreto na frente, estampa criativa nas costas. Refs da Koko e de estampas de outras marcas.'},
  {k:'pdv',t:'PDV e trade',hint:'Clip strip, testeira de estande, display. Uma receita simples que o trade consiga repetir.'},
@@ -283,7 +285,7 @@ function renderLib(){
           h('img',{class:'im',src:r.url,alt:r.cap||'',loading:'lazy',onclick:()=>zoom(r.url)}),
           h('button',{class:'pickd',onclick:()=>toggleSel(r)},lib.sel.includes(r.id)?'selecionada':'selecionar'),
           h('button',{class:'x','aria-label':'Remover',onclick:()=>delRef(r.id)},'✕'));
-        const i=h('input',{value:r.cap||'','aria-label':'Legenda',placeholder:'Legenda ou fonte'});i.addEventListener('change',()=>setCap(r.id,i.value));th.append(i);
+        const i=h('input',{value:r.cap||'','aria-label':'Legenda',placeholder:'Legenda ou fonte'});i.addEventListener('change',()=>setCap(r.id,i.value));th.append(i);if(r.link)th.append(h('a',{class:'lk',href:r.link,target:'_blank',rel:'noopener'},'Baixar a fonte ↗'));
         return th}),
         h('button',{class:'drop',onclick:()=>{pendingCat=c.k;$('#file').value='';$('#file').click()}},list.length?'+ mais imagens':'Arraste imagens aqui, cole com Cmd+V ou clique')));
     sec.addEventListener('dragover',e=>{if([...e.dataTransfer.types].includes('Files')){e.preventDefault();sec.classList.add('over')}});
@@ -329,7 +331,7 @@ function singleView(r,id,i,all){
   const note=h('textarea',{class:'note',placeholder:'Anotação da conversa (opcional)','aria-label':'Anotação'});note.value=r.note||'';note.addEventListener('change',()=>setNote(id,note.value));
   return h('div',{class:'single'},
     h('div',{class:'viewer'},h('img',{src:r.url,alt:r.cap||'',onclick:()=>zoom(r.url)})),
-    h('aside',{class:'side'},h('div',{class:'tag'},catT(r.cat)),h('h3',{},r.cap||'Sem legenda'),
+    h('aside',{class:'side'},h('div',{class:'tag'},catT(r.cat)),h('h3',{},r.cap||'Sem legenda'),r.link?h('a',{class:'b',href:r.link,target:'_blank',rel:'noopener',style:'align-self:flex-start;text-decoration:none;color:inherit'},'Onde baixar ↗'):null,
       h('div',{class:'votes'},...[['yes','✔','Gostei'],['maybe','?','Talvez'],['no','✕','Não gostei']].map(([v,g,l])=>h('button',{class:'vote'+(r.vote===v?' on':''),'data-v':v,onclick:()=>setVote(id,v)},h('span',{},g),l))),
       h('div',{class:'lbl'},'O que chama atenção? Clique uma vez se é bom (+), duas se é ruim (−).'),
       h('div',{class:'asp'},ASP.map(a=>{const v=(r.asp||{})[a]||'';return h('button',{class:'ch'+(v==='+'?' pos':v==='-'?' neg':''),onclick:()=>cycleAsp(id,a)},a,v?h('i',{},v==='+'?'+':'−'):null)})),

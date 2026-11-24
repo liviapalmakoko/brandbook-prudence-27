@@ -165,7 +165,7 @@
   "seed-fonte-haettenschweiler": {
    "url": "refs/novas/haettenschweiler.jpg",
    "cat": "tipo",
-   "cap": "Haettenschweiler (HATTEN.TTF) · opção do brandbook antigo, para confirmar",
+   "cap": "Haettenschweiler (arquivo HATTEN.TTF) · opção do brandbook antigo, para confirmar · vem com Windows e Office (Monotype)",
    "vote": "",
    "asp": {},
    "note": "",
@@ -174,7 +174,8 @@
   "seed-fonte-01": {
    "url": "refs/fontes/fonte-01.jpg",
    "cat": "tipo",
-   "cap": "Opção de fonte · League Gothic (condensada, Google Fonts)",
+   "cap": "League Gothic · condensada · gratuita (Google Fonts)",
+   "link": "https://fonts.google.com/specimen/League+Gothic",
    "vote": "",
    "asp": {},
    "note": "",
@@ -183,7 +184,8 @@
   "seed-fonte-02": {
    "url": "refs/fontes/fonte-02.jpg",
    "cat": "tipo",
-   "cap": "Opção de fonte · Barlow Condensed SemiBold (condensada, Google Fonts)",
+   "cap": "Barlow Condensed · condensada · gratuita (Google Fonts)",
+   "link": "https://fonts.google.com/specimen/Barlow+Condensed",
    "vote": "",
    "asp": {},
    "note": "",
@@ -192,7 +194,8 @@
   "seed-fonte-03": {
    "url": "refs/fontes/fonte-03.jpg",
    "cat": "tipo",
-   "cap": "Opção de fonte · Oswald Medium (condensada, Google Fonts)",
+   "cap": "Oswald · condensada · gratuita (Google Fonts)",
+   "link": "https://fonts.google.com/specimen/Oswald",
    "vote": "",
    "asp": {},
    "note": "",
@@ -201,7 +204,8 @@
   "seed-fonte-04": {
    "url": "refs/fontes/fonte-04.jpg",
    "cat": "tipo",
-   "cap": "Opção de fonte · Archivo Bold, largura 62% (condensada, Google Fonts)",
+   "cap": "Archivo (largura 62%) · grotesca condensada · gratuita (Google Fonts)",
+   "link": "https://fonts.google.com/specimen/Archivo",
    "vote": "",
    "asp": {},
    "note": "",
@@ -210,7 +214,8 @@
   "seed-fonte-05": {
    "url": "refs/fontes/fonte-05.jpg",
    "cat": "tipo",
-   "cap": "Opção de fonte · Sofia Sans Extra Condensed Bold (condensada, Google Fonts)",
+   "cap": "Sofia Sans Extra Condensed · condensada · gratuita (Google Fonts)",
+   "link": "https://fonts.google.com/specimen/Sofia+Sans+Extra+Condensed",
    "vote": "",
    "asp": {},
    "note": "",
@@ -219,7 +224,8 @@
   "seed-fonte-06": {
    "url": "refs/fontes/fonte-06.jpg",
    "cat": "tipo",
-   "cap": "Opção de fonte · Antonio Bold (condensada, Google Fonts)",
+   "cap": "Antonio · condensada · gratuita (Google Fonts)",
+   "link": "https://fonts.google.com/specimen/Antonio",
    "vote": "",
    "asp": {},
    "note": "",
@@ -228,7 +234,8 @@
   "seed-fonte-07": {
    "url": "refs/fontes/fonte-07.jpg",
    "cat": "tipo",
-   "cap": "Opção de fonte · Sora SemiBold (geométrica, Google Fonts)",
+   "cap": "Sora · geométrica · gratuita (Google Fonts)",
+   "link": "https://fonts.google.com/specimen/Sora",
    "vote": "",
    "asp": {},
    "note": "",
@@ -237,7 +244,8 @@
   "seed-fonte-08": {
    "url": "refs/fontes/fonte-08.jpg",
    "cat": "tipo",
-   "cap": "Opção de fonte · Urbanist Bold (geométrica, Google Fonts)",
+   "cap": "Urbanist · geométrica · gratuita (Google Fonts)",
+   "link": "https://fonts.google.com/specimen/Urbanist",
    "vote": "",
    "asp": {},
    "note": "",
@@ -246,7 +254,8 @@
   "seed-fonte-09": {
    "url": "refs/fontes/fonte-09.jpg",
    "cat": "tipo",
-   "cap": "Opção de fonte · League Spartan Bold (geométrica, Google Fonts)",
+   "cap": "League Spartan · geométrica · gratuita (Google Fonts)",
+   "link": "https://fonts.google.com/specimen/League+Spartan",
    "vote": "",
    "asp": {},
    "note": "",
@@ -255,7 +264,8 @@
   "seed-fonte-10": {
    "url": "refs/fontes/fonte-10.jpg",
    "cat": "tipo",
-   "cap": "Opção de fonte · Hanken Grotesk Bold (grotesca, Google Fonts)",
+   "cap": "Hanken Grotesk · grotesca · gratuita (Google Fonts)",
+   "link": "https://fonts.google.com/specimen/Hanken+Grotesk",
    "vote": "",
    "asp": {},
    "note": "",
@@ -264,7 +274,8 @@
   "seed-fonte-11": {
    "url": "refs/fontes/fonte-11.jpg",
    "cat": "tipo",
-   "cap": "Opção de fonte · Inter Tight Bold (grotesca, Google Fonts)",
+   "cap": "Inter Tight · grotesca · gratuita (Google Fonts)",
+   "link": "https://fonts.google.com/specimen/Inter+Tight",
    "vote": "",
    "asp": {},
    "note": "",
@@ -273,11 +284,244 @@
   "seed-fonte-12": {
    "url": "refs/fontes/fonte-12.jpg",
    "cat": "tipo",
-   "cap": "Opção de fonte · Bricolage Grotesque Bold, largura 75% (grotesca, Google Fonts)",
+   "cap": "Bricolage Grotesque (largura 75%) · grotesca · gratuita (Google Fonts)",
+   "link": "https://fonts.google.com/specimen/Bricolage+Grotesque",
    "vote": "",
    "asp": {},
    "note": "",
    "ts": 1700000080012
+  },
+  "seed-fonte-13": {
+   "url": "refs/fontes/fonte-13.jpg",
+   "cat": "tipo",
+   "cap": "Big Shoulders (antes Big Shoulders Display) · condensada de impacto · gratuita (Google Fonts)",
+   "link": "https://fonts.google.com/specimen/Big+Shoulders",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000080013
+  },
+  "seed-fonte-14": {
+   "url": "refs/fontes/fonte-14.jpg",
+   "cat": "tipo",
+   "cap": "Bebas Neue · condensada · gratuita (Google Fonts)",
+   "link": "https://fonts.google.com/specimen/Bebas+Neue",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000080014
+  },
+  "seed-fonte-15": {
+   "url": "refs/fontes/fonte-15.jpg",
+   "cat": "tipo",
+   "cap": "Anton · condensada pesada · gratuita (Google Fonts)",
+   "link": "https://fonts.google.com/specimen/Anton",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000080015
+  },
+  "seed-fonte-16": {
+   "url": "refs/fontes/fonte-16.jpg",
+   "cat": "tipo",
+   "cap": "Fjalla One · condensada · gratuita (Google Fonts)",
+   "link": "https://fonts.google.com/specimen/Fjalla+One",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000080016
+  },
+  "seed-fonte-17": {
+   "url": "refs/fontes/fonte-17.jpg",
+   "cat": "tipo",
+   "cap": "Archivo Black · grotesca pesada · gratuita (Google Fonts)",
+   "link": "https://fonts.google.com/specimen/Archivo+Black",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000080017
+  },
+  "seed-fonte-18": {
+   "url": "refs/fontes/fonte-18.jpg",
+   "cat": "tipo",
+   "cap": "Familjen Grotesk · grotesca · gratuita (Google Fonts)",
+   "link": "https://fonts.google.com/specimen/Familjen+Grotesk",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000080018
+  },
+  "seed-fonte-19": {
+   "url": "refs/fontes/fonte-19.jpg",
+   "cat": "tipo",
+   "cap": "Schibsted Grotesk · grotesca · gratuita (Google Fonts)",
+   "link": "https://fonts.google.com/specimen/Schibsted+Grotesk",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000080019
+  },
+  "seed-fonte-20": {
+   "url": "refs/fontes/fonte-20.jpg",
+   "cat": "tipo",
+   "cap": "Outfit · geométrica · gratuita (Google Fonts)",
+   "link": "https://fonts.google.com/specimen/Outfit",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000080020
+  },
+  "seed-fonte-21": {
+   "url": "refs/fontes/fonte-21.jpg",
+   "cat": "tipo",
+   "cap": "Plus Jakarta Sans · geométrica · gratuita (Google Fonts)",
+   "link": "https://fonts.google.com/specimen/Plus+Jakarta+Sans",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000080021
+  },
+  "seed-fonte-22": {
+   "url": "refs/fontes/fonte-22.jpg",
+   "cat": "tipo",
+   "cap": "Red Hat Display · geométrica · gratuita (Google Fonts)",
+   "link": "https://fonts.google.com/specimen/Red+Hat+Display",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000080022
+  },
+  "seed-fonte-23": {
+   "url": "refs/fontes/fonte-23.jpg",
+   "cat": "tipo",
+   "cap": "Syne · larga · gratuita (Google Fonts)",
+   "link": "https://fonts.google.com/specimen/Syne",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000080023
+  },
+  "seed-fonte-24": {
+   "url": "refs/fontes/fonte-24.jpg",
+   "cat": "tipo",
+   "cap": "Unbounded · larga · gratuita (Google Fonts)",
+   "link": "https://fonts.google.com/specimen/Unbounded",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000080024
+  },
+  "seed-fonte-25": {
+   "url": "refs/fontes/fonte-25.jpg",
+   "cat": "tipo",
+   "cap": "Archivo (largura 125%) · grotesca expandida · gratuita (Google Fonts)",
+   "link": "https://fonts.google.com/specimen/Archivo",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000080025
+  },
+  "seed-fonte-26": {
+   "url": "refs/fontes/fonte-26.jpg",
+   "cat": "tipo",
+   "cap": "Instrument Serif Italic · serifada itálica · gratuita (Google Fonts)",
+   "link": "https://fonts.google.com/specimen/Instrument+Serif",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000080026
+  },
+  "seed-sistema-01": {
+   "url": "refs/sistema/sistema-01.jpg",
+   "cat": "sys",
+   "cap": "Helvetica · Mac, já instalada. No Windows o Office usa Arial no lugar. Comprar para instalar no Windows: Monotype/Linotype.",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000090001,
+   "link": "https://www.myfonts.com/collections/helvetica-font-linotype"
+  },
+  "seed-sistema-02": {
+   "url": "refs/sistema/sistema-02.jpg",
+   "cat": "sys",
+   "cap": "Helvetica Neue · Mac, já instalada. Versão mais refinada. No Windows o Office usa Arial no lugar.",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000090002
+  },
+  "seed-sistema-03": {
+   "url": "refs/sistema/sistema-03.jpg",
+   "cat": "sys",
+   "cap": "Arial · Já vem no Windows, no macOS e no Office. É a substituta segura da Helvetica.",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000090003
+  },
+  "seed-sistema-04": {
+   "url": "refs/sistema/sistema-04.jpg",
+   "cat": "sys",
+   "cap": "Arial Narrow · Já vem com o Office (Windows e Mac). Versão condensada.",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000090004
+  },
+  "seed-sistema-05": {
+   "url": "refs/sistema/sistema-05.jpg",
+   "cat": "sys",
+   "cap": "Verdana · Já vem no Windows e no macOS. Larga e legível na tela.",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000090005
+  },
+  "seed-sistema-06": {
+   "url": "refs/sistema/sistema-06.jpg",
+   "cat": "sys",
+   "cap": "Trebuchet MS · Já vem no Windows e no macOS. Humanista.",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000090006
+  },
+  "seed-sistema-07": {
+   "url": "refs/sistema/sistema-07.jpg",
+   "cat": "sys",
+   "cap": "Georgia · Já vem no Windows e no macOS. Serifada, para textos longos.",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000090007
+  },
+  "seed-sistema-08": {
+   "url": "refs/sistema/sistema-08.jpg",
+   "cat": "sys",
+   "cap": "Futura · Já vem no macOS. No Windows precisa ser comprada (Monotype). Equivalente nativa do Office: Century Gothic.",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000090008,
+   "link": "https://www.myfonts.com/collections/futura-font-linotype"
+  },
+  "seed-sistema-09": {
+   "url": "refs/sistema/sistema-09.jpg",
+   "cat": "sys",
+   "cap": "Avenir Next · Já vem no macOS. No Windows precisa ser comprada (Monotype).",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000090009
+  },
+  "seed-sistema-10": {
+   "url": "refs/sistema/sistema-10.jpg",
+   "cat": "sys",
+   "cap": "Gill Sans · Já vem no macOS e no Office (Gill Sans MT). Humanista clássica.",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000090010
   }
  },
  "_remove": {
