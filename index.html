@@ -87,7 +87,7 @@ section.view.on{display:block}
 .cat .chd{display:flex;justify-content:space-between;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:6px}
 .cat h3{font-size:26px}
 .cat .hint{color:var(--mute);font-size:14px;margin:0 0 14px;max-width:70ch}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(168px,1fr));gap:12px}
+.cat:not(.det) .grid{grid-template-columns:repeat(auto-fill,minmax(112px,1fr));gap:8px}.cat:not(.det) .th .im,.cat:not(.det) .drop{aspect-ratio:1/1}.cat:not(.det) .th input,.cat:not(.det) .th .lk{display:none}.cat:not(.det) .th .pickd{font-size:10px;padding:3px 7px}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(168px,1fr));gap:12px}
 .th{position:relative;background:var(--card);border-radius:4px;overflow:hidden;border:2px solid transparent}
 .th.sel{border-color:var(--ink)}
 .th .im{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;cursor:pointer;background:var(--soft)}
@@ -336,12 +336,13 @@ function aaStrip(){
       h('span',{class:'aan'},f.n),h('span',{class:'aab'},f.s==='g'?'Google':'Adobe'))}));
   return h('div',{},t,h('div',{class:'hint',style:'margin:6px 0 14px'},'Clique em uma fonte para vê-la ao vivo na tela Fontes.'))}
 /* ---------- biblioteca ---------- */
+const libDet=new Set();
 function renderLib(){
   const inDuel=new Set(duels().flatMap(d=>[d.a,d.b]));
   $('#cats').replaceChildren(...CATS.map(c=>{
     const list=refs().filter(r=>r.cat===c.k);
-    const sec=h('div',{class:'cat','data-cat':c.k},
-      h('div',{class:'chd'},h('h3',{},c.t),h('div',{class:'row'},h('span',{class:'tag',style:'align-self:center'},list.length+(list.length===1?' imagem':' imagens')),h('button',{class:'b',onclick:()=>{pendingCat=c.k;$('#file').value='';$('#file').click()}},'Subir imagens'))),
+    const sec=h('div',{class:'cat'+(libDet.has(c.k)?' det':''),'data-cat':c.k},
+      h('div',{class:'chd'},h('h3',{},c.t),h('div',{class:'row'},h('span',{class:'tag',style:'align-self:center'},list.length+(list.length===1?' imagem':' imagens')),h('button',{class:'b',onclick:()=>{libDet.has(c.k)?libDet.delete(c.k):libDet.add(c.k);renderLib()}},libDet.has(c.k)?'Miniaturas':'Legendas e links'),h('button',{class:'b',onclick:()=>{pendingCat=c.k;$('#file').value='';$('#file').click()}},'Subir imagens'))),
       h('p',{class:'hint'},c.hint),
       c.k==='tipo'?aaStrip():null,
       h('div',{class:'grid'},list.map(r=>{
