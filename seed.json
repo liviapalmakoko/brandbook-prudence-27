@@ -1,0 +1,148 @@
+{
+ "refs2": {
+  "seed-camisa-01": {
+   "url": "refs/camisas/01-koko-foood-branca-costas.jpg",
+   "cat": "uni",
+   "cap": "Koko's Foood · branca · costas (bananas)",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000000001
+  },
+  "seed-camisa-02": {
+   "url": "refs/camisas/02-koko-foood-preta-costas.png",
+   "cat": "uni",
+   "cap": "Koko's Foood · preta · costas (bananas)",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000000002
+  },
+  "seed-camisa-03": {
+   "url": "refs/camisas/03-koko-foood-preta-frente.png",
+   "cat": "uni",
+   "cap": "Koko's Foood · preta · frente",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000000003
+  },
+  "seed-camisa-04": {
+   "url": "refs/camisas/04-koko-foood-preta-frente-e-verso.png",
+   "cat": "uni",
+   "cap": "Koko's Foood · preta · frente e verso (PDF)",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000000004
+  },
+  "seed-camisa-05": {
+   "url": "refs/camisas/05-koko-foood-branca-frente.jpg",
+   "cat": "uni",
+   "cap": "Koko's Foood · branca · frente (©Koko Conexão SM)",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000000005
+  },
+  "seed-camisa-06": {
+   "url": "refs/camisas/06-lambe-lambe-frente.jpg",
+   "cat": "uni",
+   "cap": "Lambe Lambe · frente",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000000006
+  },
+  "seed-camisa-07": {
+   "url": "refs/camisas/07-lambe-lambe-costas.jpg",
+   "cat": "uni",
+   "cap": "Lambe Lambe · costas",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000000007
+  },
+  "seed-camisa-09": {
+   "url": "refs/camisas/09-koko-camisa-de-reels-2022.png",
+   "cat": "uni",
+   "cap": "Koko · \"Essa é minha camisa de reels\" (2022)",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000000009
+  },
+  "seed-camisa-10": {
+   "url": "refs/camisas/10-koko-trabalhando-em-casa-costas.jpg",
+   "cat": "uni",
+   "cap": "Koko trabalhando em casa · branca · costas (gorila no notebook)",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000000010
+  },
+  "seed-camisa-11": {
+   "url": "refs/camisas/11-vintage-tee-1.jpg",
+   "cat": "uni",
+   "cap": "Vintage tee 1",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000000011
+  },
+  "seed-camisa-12": {
+   "url": "refs/camisas/12-vintage-tee-1-1.jpg",
+   "cat": "uni",
+   "cap": "Vintage tee 1.1",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000000012
+  },
+  "seed-camisa-13": {
+   "url": "refs/camisas/13-vintage-tee-2.jpg",
+   "cat": "uni",
+   "cap": "Vintage tee 2",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000000013
+  },
+  "seed-camisa-14": {
+   "url": "refs/camisas/14-vintage-tee-3.jpg",
+   "cat": "uni",
+   "cap": "Vintage tee 3",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000000014
+  },
+  "seed-camisa-15": {
+   "url": "refs/camisas/15-mockup-camiseta-2026.png",
+   "cat": "uni",
+   "cap": "Mockup camiseta (mar 2026)",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000000015
+  },
+  "seed-camisa-16": {
+   "url": "refs/camisas/16-camiseta-v3-2026.png",
+   "cat": "uni",
+   "cap": "Camiseta V3 (mar 2026)",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000000016
+  },
+  "seed-camisa-17": {
+   "url": "refs/camisas/17-camisetas-internas-2019.png",
+   "cat": "uni",
+   "cap": "Camisetas internas simples (2019)",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000000017
+  }
+ }
+}

@@ -19,6 +19,10 @@ Tudo fica **apenas no navegador de quem está usando** (IndexedDB). Nada é envi
 - Para levar o trabalho a outro computador ou navegador, use **Baixar backup** e depois **Carregar backup** lá.
 - Limpar os dados do site no navegador apaga a biblioteca. Baixe um backup antes da sessão.
 
+## Referências iniciais
+
+O arquivo `seed.json` lista as referências que já vêm na Biblioteca (hoje, as camisas da Koko, em `refs/camisas/`). Cada uma entra uma única vez por navegador: se a pessoa apagar, não volta. Para incluir novas, adicione a imagem em `refs/` e uma linha em `seed.json` com um `id` novo.
+
 ## Publicar (GitHub Pages)
 
 Em **Settings → Pages**, escolha **Deploy from a branch**, branch `main`, pasta `/ (root)`.
