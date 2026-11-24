@@ -452,108 +452,6 @@
    "note": "",
    "ts": 1700000400086,
    "cap": "Foto de banco de imagem"
-  },
-  "seed-tipo-01": {
-   "url": "refs/tipo/tipografia-01.jpg",
-   "cat": "tipo",
-   "cap": "Referência de tipografia 1",
-   "order": 1001
-  },
-  "seed-tipo-02": {
-   "url": "refs/tipo/tipografia-02.jpg",
-   "cat": "tipo",
-   "cap": "Referência de tipografia 2",
-   "order": 1002
-  },
-  "seed-tipo-03": {
-   "url": "refs/tipo/tipografia-03.jpg",
-   "cat": "tipo",
-   "cap": "Referência de tipografia 3",
-   "order": 1003
-  },
-  "seed-tipo-04": {
-   "url": "refs/tipo/tipografia-04.jpg",
-   "cat": "tipo",
-   "cap": "Referência de tipografia 4",
-   "order": 1004
-  },
-  "seed-tipo-05": {
-   "url": "refs/tipo/tipografia-05.jpg",
-   "cat": "tipo",
-   "cap": "Referência de tipografia 5",
-   "order": 1005
-  },
-  "seed-tipo-06": {
-   "url": "refs/tipo/tipografia-06.jpg",
-   "cat": "tipo",
-   "cap": "Referência de tipografia 6",
-   "order": 1006
-  },
-  "seed-tipo-07": {
-   "url": "refs/tipo/tipografia-07.jpg",
-   "cat": "tipo",
-   "cap": "Referência de tipografia 7",
-   "order": 1007
-  },
-  "seed-tipo-08": {
-   "url": "refs/tipo/tipografia-08.jpg",
-   "cat": "tipo",
-   "cap": "Referência de tipografia 8",
-   "order": 1008
-  },
-  "seed-tipo-09": {
-   "url": "refs/tipo/tipografia-09.jpg",
-   "cat": "tipo",
-   "cap": "Referência de tipografia 9",
-   "order": 1009
-  },
-  "seed-tipo-10": {
-   "url": "refs/tipo/tipografia-10.jpg",
-   "cat": "tipo",
-   "cap": "Referência de tipografia 10",
-   "order": 1010
-  },
-  "seed-tipo-11": {
-   "url": "refs/tipo/layout-11.jpg",
-   "cat": "tipo",
-   "cap": "Referência de layout 11",
-   "order": 1011
-  },
-  "seed-tipo-12": {
-   "url": "refs/tipo/layout-12.jpg",
-   "cat": "tipo",
-   "cap": "Referência de layout 12",
-   "order": 1012
-  },
-  "seed-tipo-13": {
-   "url": "refs/tipo/layout-13.jpg",
-   "cat": "tipo",
-   "cap": "Referência de layout 13",
-   "order": 1013
-  },
-  "seed-tipo-14": {
-   "url": "refs/tipo/layout-14.jpg",
-   "cat": "tipo",
-   "cap": "Referência de layout 14",
-   "order": 1014
-  },
-  "seed-tipo-15": {
-   "url": "refs/tipo/layout-15.jpg",
-   "cat": "tipo",
-   "cap": "Referência de layout 15",
-   "order": 1015
-  },
-  "seed-tipo-16": {
-   "url": "refs/tipo/layout-16.jpg",
-   "cat": "tipo",
-   "cap": "Referência de layout 16",
-   "order": 1016
-  },
-  "seed-tipo-17": {
-   "url": "refs/tipo/layout-17.jpg",
-   "cat": "tipo",
-   "cap": "Referência de layout 17",
-   "order": 1017
   }
  },
  "_remove": {
@@ -709,7 +607,24 @@
    "seed-up-81",
    "seed-up-82",
    "seed-up-84",
-   "seed-up-85"
+   "seed-up-85",
+   "seed-tipo-01",
+   "seed-tipo-02",
+   "seed-tipo-03",
+   "seed-tipo-04",
+   "seed-tipo-05",
+   "seed-tipo-06",
+   "seed-tipo-07",
+   "seed-tipo-08",
+   "seed-tipo-09",
+   "seed-tipo-10",
+   "seed-tipo-11",
+   "seed-tipo-12",
+   "seed-tipo-13",
+   "seed-tipo-14",
+   "seed-tipo-15",
+   "seed-tipo-16",
+   "seed-tipo-17"
   ]
  }
 }
