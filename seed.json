@@ -173,39 +173,6 @@
    "link": "https://unsplash.com/photos/2bGVK2GDRYM",
    "linkLabel": "Ver no Unsplash ↗"
   },
-  "seed-up-02": {
-   "url": "refs/fotos/foto-02.jpg",
-   "cat": "foto",
-   "vote": "",
-   "asp": {},
-   "note": "",
-   "ts": 1700000400002,
-   "cap": "Unsplash · Alexandra Leru",
-   "link": "https://unsplash.com/photos/8Ly_sYkOcOw",
-   "linkLabel": "Ver no Unsplash ↗"
-  },
-  "seed-up-03": {
-   "url": "refs/fotos/foto-03.jpg",
-   "cat": "foto",
-   "vote": "",
-   "asp": {},
-   "note": "",
-   "ts": 1700000400003,
-   "cap": "Unsplash · Alexandra Leru",
-   "link": "https://unsplash.com/photos/TQivHkg290M",
-   "linkLabel": "Ver no Unsplash ↗"
-  },
-  "seed-up-04": {
-   "url": "refs/fotos/foto-04.jpg",
-   "cat": "foto",
-   "vote": "",
-   "asp": {},
-   "note": "",
-   "ts": 1700000400004,
-   "cap": "Unsplash · Andrew Davie",
-   "link": "https://unsplash.com/photos/M_cK_lRVdsc",
-   "linkLabel": "Ver no Unsplash ↗"
-  },
   "seed-up-05": {
    "url": "refs/fotos/foto-05.jpg",
    "cat": "foto",
@@ -215,39 +182,6 @@
    "ts": 1700000400005,
    "cap": "Unsplash · Anna Deli",
    "link": "https://unsplash.com/photos/KDYdBHBKVEw",
-   "linkLabel": "Ver no Unsplash ↗"
-  },
-  "seed-up-06": {
-   "url": "refs/fotos/foto-06.jpg",
-   "cat": "foto",
-   "vote": "",
-   "asp": {},
-   "note": "",
-   "ts": 1700000400006,
-   "cap": "Unsplash · Anna Tarazevich",
-   "link": "https://unsplash.com/photos/HX3MOurRLPE",
-   "linkLabel": "Ver no Unsplash ↗"
-  },
-  "seed-up-07": {
-   "url": "refs/fotos/foto-07.jpg",
-   "cat": "foto",
-   "vote": "",
-   "asp": {},
-   "note": "",
-   "ts": 1700000400007,
-   "cap": "Unsplash · Caleb",
-   "link": "https://unsplash.com/photos/7Mai1mr_bmI",
-   "linkLabel": "Ver no Unsplash ↗"
-  },
-  "seed-up-08": {
-   "url": "refs/fotos/foto-08.jpg",
-   "cat": "foto",
-   "vote": "",
-   "asp": {},
-   "note": "",
-   "ts": 1700000400008,
-   "cap": "Unsplash · Cheyenne Doig",
-   "link": "https://unsplash.com/photos/djME6Gy-KEs",
    "linkLabel": "Ver no Unsplash ↗"
   },
   "seed-up-09": {
@@ -261,28 +195,6 @@
    "link": "https://unsplash.com/photos/Q8NYuzH8BN8",
    "linkLabel": "Ver no Unsplash ↗"
   },
-  "seed-up-10": {
-   "url": "refs/fotos/foto-10.jpg",
-   "cat": "foto",
-   "vote": "",
-   "asp": {},
-   "note": "",
-   "ts": 1700000400010,
-   "cap": "Unsplash · Dainis Graveris",
-   "link": "https://unsplash.com/photos/SPx5gUVMD6M",
-   "linkLabel": "Ver no Unsplash ↗"
-  },
-  "seed-up-11": {
-   "url": "refs/fotos/foto-11.jpg",
-   "cat": "foto",
-   "vote": "",
-   "asp": {},
-   "note": "",
-   "ts": 1700000400011,
-   "cap": "Unsplash · Dylann Hendricks",
-   "link": "https://unsplash.com/photos/xg-SqslXGIE",
-   "linkLabel": "Ver no Unsplash ↗"
-  },
   "seed-up-12": {
    "url": "refs/fotos/foto-12.jpg",
    "cat": "foto",
@@ -292,28 +204,6 @@
    "ts": 1700000400012,
    "cap": "Unsplash · Fernando Stahelin",
    "link": "https://unsplash.com/photos/Gq3wkXrphns",
-   "linkLabel": "Ver no Unsplash ↗"
-  },
-  "seed-up-13": {
-   "url": "refs/fotos/foto-13.jpg",
-   "cat": "foto",
-   "vote": "",
-   "asp": {},
-   "note": "",
-   "ts": 1700000400013,
-   "cap": "Unsplash · Gian Cescon",
-   "link": "https://unsplash.com/photos/HEtcYT3Ih9g",
-   "linkLabel": "Ver no Unsplash ↗"
-  },
-  "seed-up-14": {
-   "url": "refs/fotos/foto-14.jpg",
-   "cat": "foto",
-   "vote": "",
-   "asp": {},
-   "note": "",
-   "ts": 1700000400014,
-   "cap": "Unsplash · Hanna Postova",
-   "link": "https://unsplash.com/photos/oha7AANDiL8",
    "linkLabel": "Ver no Unsplash ↗"
   },
   "seed-up-15": {
@@ -327,28 +217,6 @@
    "link": "https://unsplash.com/photos/ZxP7B4CvuUc",
    "linkLabel": "Ver no Unsplash ↗"
   },
-  "seed-up-16": {
-   "url": "refs/fotos/foto-16.jpg",
-   "cat": "foto",
-   "vote": "",
-   "asp": {},
-   "note": "",
-   "ts": 1700000400016,
-   "cap": "Unsplash · Jan Zhukov",
-   "link": "https://unsplash.com/photos/Uk5cY7w2MgM",
-   "linkLabel": "Ver no Unsplash ↗"
-  },
-  "seed-up-17": {
-   "url": "refs/fotos/foto-17.jpg",
-   "cat": "foto",
-   "vote": "",
-   "asp": {},
-   "note": "",
-   "ts": 1700000400017,
-   "cap": "Unsplash · Jan Zhukov",
-   "link": "https://unsplash.com/photos/pQ4eMIHrlNQ",
-   "linkLabel": "Ver no Unsplash ↗"
-  },
   "seed-up-18": {
    "url": "refs/fotos/foto-18.jpg",
    "cat": "foto",
@@ -358,28 +226,6 @@
    "ts": 1700000400018,
    "cap": "Unsplash · Logan Weaver",
    "link": "https://unsplash.com/photos/YWndBOcN0pY",
-   "linkLabel": "Ver no Unsplash ↗"
-  },
-  "seed-up-19": {
-   "url": "refs/fotos/foto-19.jpg",
-   "cat": "foto",
-   "vote": "",
-   "asp": {},
-   "note": "",
-   "ts": 1700000400019,
-   "cap": "Unsplash · Luiz Rogerio Nunes",
-   "link": "https://unsplash.com/photos/HVqOijC9Ido",
-   "linkLabel": "Ver no Unsplash ↗"
-  },
-  "seed-up-20": {
-   "url": "refs/fotos/foto-20.jpg",
-   "cat": "foto",
-   "vote": "",
-   "asp": {},
-   "note": "",
-   "ts": 1700000400020,
-   "cap": "Unsplash · Luiz Rogerio Nunes",
-   "link": "https://unsplash.com/photos/M6eCn8C1uI4",
    "linkLabel": "Ver no Unsplash ↗"
   },
   "seed-up-21": {
@@ -393,39 +239,6 @@
    "link": "https://unsplash.com/photos/iTkTt_LFZj8",
    "linkLabel": "Ver no Unsplash ↗"
   },
-  "seed-up-22": {
-   "url": "refs/fotos/foto-22.jpg",
-   "cat": "foto",
-   "vote": "",
-   "asp": {},
-   "note": "",
-   "ts": 1700000400022,
-   "cap": "Unsplash · Malik Skydsgaard",
-   "link": "https://unsplash.com/photos/o4pprQgk2g0",
-   "linkLabel": "Ver no Unsplash ↗"
-  },
-  "seed-up-23": {
-   "url": "refs/fotos/foto-23.jpg",
-   "cat": "foto",
-   "vote": "",
-   "asp": {},
-   "note": "",
-   "ts": 1700000400023,
-   "cap": "Unsplash · Maria Talks",
-   "link": "https://unsplash.com/photos/Mr2o3HdM0Ic",
-   "linkLabel": "Ver no Unsplash ↗"
-  },
-  "seed-up-24": {
-   "url": "refs/fotos/foto-24.jpg",
-   "cat": "foto",
-   "vote": "",
-   "asp": {},
-   "note": "",
-   "ts": 1700000400024,
-   "cap": "Unsplash · Molnar Balint",
-   "link": "https://unsplash.com/photos/4sCi3DLWdzg",
-   "linkLabel": "Ver no Unsplash ↗"
-  },
   "seed-up-25": {
    "url": "refs/fotos/foto-25.jpg",
    "cat": "foto",
@@ -435,50 +248,6 @@
    "ts": 1700000400025,
    "cap": "Unsplash · Molnar Balint",
    "link": "https://unsplash.com/photos/Lf9JpqXS--0",
-   "linkLabel": "Ver no Unsplash ↗"
-  },
-  "seed-up-26": {
-   "url": "refs/fotos/foto-26.jpg",
-   "cat": "foto",
-   "vote": "",
-   "asp": {},
-   "note": "",
-   "ts": 1700000400026,
-   "cap": "Unsplash · Monika Kozub",
-   "link": "https://unsplash.com/photos/9Evqbiy9Lj8",
-   "linkLabel": "Ver no Unsplash ↗"
-  },
-  "seed-up-27": {
-   "url": "refs/fotos/foto-27.jpg",
-   "cat": "foto",
-   "vote": "",
-   "asp": {},
-   "note": "",
-   "ts": 1700000400027,
-   "cap": "Unsplash · Monika Kozub",
-   "link": "https://unsplash.com/photos/Cdv4Oe6O_3w",
-   "linkLabel": "Ver no Unsplash ↗"
-  },
-  "seed-up-28": {
-   "url": "refs/fotos/foto-28.jpg",
-   "cat": "foto",
-   "vote": "",
-   "asp": {},
-   "note": "",
-   "ts": 1700000400028,
-   "cap": "Unsplash · Monika Kozub",
-   "link": "https://unsplash.com/photos/QafmAPmmDfQ",
-   "linkLabel": "Ver no Unsplash ↗"
-  },
-  "seed-up-29": {
-   "url": "refs/fotos/foto-29.jpg",
-   "cat": "foto",
-   "vote": "",
-   "asp": {},
-   "note": "",
-   "ts": 1700000400029,
-   "cap": "Unsplash · Natali Zorina",
-   "link": "https://unsplash.com/photos/0VuJrRkxJKY",
    "linkLabel": "Ver no Unsplash ↗"
   },
   "seed-up-30": {
@@ -492,28 +261,6 @@
    "link": "https://unsplash.com/photos/AnggfxnyME0",
    "linkLabel": "Ver no Unsplash ↗"
   },
-  "seed-up-31": {
-   "url": "refs/fotos/foto-31.jpg",
-   "cat": "foto",
-   "vote": "",
-   "asp": {},
-   "note": "",
-   "ts": 1700000400031,
-   "cap": "Unsplash · Nsey Benajah",
-   "link": "https://unsplash.com/photos/O6ehuntyYq4",
-   "linkLabel": "Ver no Unsplash ↗"
-  },
-  "seed-up-32": {
-   "url": "refs/fotos/foto-32.jpg",
-   "cat": "foto",
-   "vote": "",
-   "asp": {},
-   "note": "",
-   "ts": 1700000400032,
-   "cap": "Pexels · autor não identificado",
-   "link": "https://www.pexels.com/photo/9056677/",
-   "linkLabel": "Ver no Pexels ↗"
-  },
   "seed-up-33": {
    "url": "refs/fotos/foto-33.jpg",
    "cat": "foto",
@@ -523,28 +270,6 @@
    "ts": 1700000400033,
    "cap": "Pexels · Alaxmatias",
    "link": "https://www.pexels.com/photo/17042087/",
-   "linkLabel": "Ver no Pexels ↗"
-  },
-  "seed-up-34": {
-   "url": "refs/fotos/foto-34.jpg",
-   "cat": "foto",
-   "vote": "",
-   "asp": {},
-   "note": "",
-   "ts": 1700000400034,
-   "cap": "Pexels · Alexander Grey",
-   "link": "https://www.pexels.com/photo/1548680/",
-   "linkLabel": "Ver no Pexels ↗"
-  },
-  "seed-up-35": {
-   "url": "refs/fotos/foto-35.jpg",
-   "cat": "foto",
-   "vote": "",
-   "asp": {},
-   "note": "",
-   "ts": 1700000400035,
-   "cap": "Pexels · Amaria",
-   "link": "https://www.pexels.com/photo/10782049/",
    "linkLabel": "Ver no Pexels ↗"
   },
   "seed-up-36": {
@@ -558,28 +283,6 @@
    "link": "https://www.pexels.com/photo/34712215/",
    "linkLabel": "Ver no Pexels ↗"
   },
-  "seed-up-37": {
-   "url": "refs/fotos/foto-37.jpg",
-   "cat": "foto",
-   "vote": "",
-   "asp": {},
-   "note": "",
-   "ts": 1700000400037,
-   "cap": "Pexels · Cottonbro",
-   "link": "https://www.pexels.com/photo/4761353/",
-   "linkLabel": "Ver no Pexels ↗"
-  },
-  "seed-up-38": {
-   "url": "refs/fotos/foto-38.jpg",
-   "cat": "foto",
-   "vote": "",
-   "asp": {},
-   "note": "",
-   "ts": 1700000400038,
-   "cap": "Pexels · Cottonbro",
-   "link": "https://www.pexels.com/photo/4761778/",
-   "linkLabel": "Ver no Pexels ↗"
-  },
   "seed-up-39": {
    "url": "refs/fotos/foto-39.jpg",
    "cat": "foto",
@@ -589,28 +292,6 @@
    "ts": 1700000400039,
    "cap": "Pexels · Cottonbro",
    "link": "https://www.pexels.com/photo/4761798/",
-   "linkLabel": "Ver no Pexels ↗"
-  },
-  "seed-up-40": {
-   "url": "refs/fotos/foto-40.jpg",
-   "cat": "foto",
-   "vote": "",
-   "asp": {},
-   "note": "",
-   "ts": 1700000400040,
-   "cap": "Pexels · Cottonbro",
-   "link": "https://www.pexels.com/photo/9376108/",
-   "linkLabel": "Ver no Pexels ↗"
-  },
-  "seed-up-41": {
-   "url": "refs/fotos/foto-41.jpg",
-   "cat": "foto",
-   "vote": "",
-   "asp": {},
-   "note": "",
-   "ts": 1700000400041,
-   "cap": "Pexels · Cottonbro Studio",
-   "link": "https://www.pexels.com/photo/5681339/",
    "linkLabel": "Ver no Pexels ↗"
   },
   "seed-up-42": {
@@ -624,28 +305,6 @@
    "link": "https://www.pexels.com/photo/5681346/",
    "linkLabel": "Ver no Pexels ↗"
   },
-  "seed-up-43": {
-   "url": "refs/fotos/foto-43.jpg",
-   "cat": "foto",
-   "vote": "",
-   "asp": {},
-   "note": "",
-   "ts": 1700000400043,
-   "cap": "Pexels · Cottonbro Studio",
-   "link": "https://www.pexels.com/photo/5681347/",
-   "linkLabel": "Ver no Pexels ↗"
-  },
-  "seed-up-44": {
-   "url": "refs/fotos/foto-44.jpg",
-   "cat": "foto",
-   "vote": "",
-   "asp": {},
-   "note": "",
-   "ts": 1700000400044,
-   "cap": "Pexels · Cottonbro Studio",
-   "link": "https://www.pexels.com/photo/9376115/",
-   "linkLabel": "Ver no Pexels ↗"
-  },
   "seed-up-45": {
    "url": "refs/fotos/foto-45.jpg",
    "cat": "foto",
@@ -655,28 +314,6 @@
    "ts": 1700000400045,
    "cap": "Pexels · Darya Greyowl",
    "link": "https://www.pexels.com/photo/13444964/",
-   "linkLabel": "Ver no Pexels ↗"
-  },
-  "seed-up-46": {
-   "url": "refs/fotos/foto-46.jpg",
-   "cat": "foto",
-   "vote": "",
-   "asp": {},
-   "note": "",
-   "ts": 1700000400046,
-   "cap": "Pexels · Duartefotografia",
-   "link": "https://www.pexels.com/photo/39327513/",
-   "linkLabel": "Ver no Pexels ↗"
-  },
-  "seed-up-47": {
-   "url": "refs/fotos/foto-47.jpg",
-   "cat": "foto",
-   "vote": "",
-   "asp": {},
-   "note": "",
-   "ts": 1700000400047,
-   "cap": "Pexels · Eko Agalarov",
-   "link": "https://www.pexels.com/photo/8879726/",
    "linkLabel": "Ver no Pexels ↗"
   },
   "seed-up-48": {
@@ -690,28 +327,6 @@
    "link": "https://www.pexels.com/photo/31982184/",
    "linkLabel": "Ver no Pexels ↗"
   },
-  "seed-up-49": {
-   "url": "refs/fotos/foto-49.jpg",
-   "cat": "foto",
-   "vote": "",
-   "asp": {},
-   "note": "",
-   "ts": 1700000400049,
-   "cap": "Pexels · Gabriel Montenegro",
-   "link": "https://www.pexels.com/photo/11369679/",
-   "linkLabel": "Ver no Pexels ↗"
-  },
-  "seed-up-50": {
-   "url": "refs/fotos/foto-50.jpg",
-   "cat": "foto",
-   "vote": "",
-   "asp": {},
-   "note": "",
-   "ts": 1700000400050,
-   "cap": "Pexels · Gustavo Fring",
-   "link": "https://www.pexels.com/photo/7156306/",
-   "linkLabel": "Ver no Pexels ↗"
-  },
   "seed-up-51": {
    "url": "refs/fotos/foto-51.jpg",
    "cat": "foto",
@@ -721,28 +336,6 @@
    "ts": 1700000400051,
    "cap": "Pexels · Henry Mejia",
    "link": "https://www.pexels.com/photo/14364892/",
-   "linkLabel": "Ver no Pexels ↗"
-  },
-  "seed-up-52": {
-   "url": "refs/fotos/foto-52.jpg",
-   "cat": "foto",
-   "vote": "",
-   "asp": {},
-   "note": "",
-   "ts": 1700000400052,
-   "cap": "Pexels · Iurii Laimin",
-   "link": "https://www.pexels.com/photo/14640921/",
-   "linkLabel": "Ver no Pexels ↗"
-  },
-  "seed-up-53": {
-   "url": "refs/fotos/foto-53.jpg",
-   "cat": "foto",
-   "vote": "",
-   "asp": {},
-   "note": "",
-   "ts": 1700000400053,
-   "cap": "Pexels · Ivan",
-   "link": "https://www.pexels.com/photo/6062106/",
    "linkLabel": "Ver no Pexels ↗"
   },
   "seed-up-54": {
@@ -756,39 +349,6 @@
    "link": "https://www.pexels.com/photo/8975683/",
    "linkLabel": "Ver no Pexels ↗"
   },
-  "seed-up-55": {
-   "url": "refs/fotos/foto-55.jpg",
-   "cat": "foto",
-   "vote": "",
-   "asp": {},
-   "note": "",
-   "ts": 1700000400055,
-   "cap": "Pexels · Julianemonarifotografia",
-   "link": "https://www.pexels.com/photo/20143888/",
-   "linkLabel": "Ver no Pexels ↗"
-  },
-  "seed-up-56": {
-   "url": "refs/fotos/foto-56.jpg",
-   "cat": "foto",
-   "vote": "",
-   "asp": {},
-   "note": "",
-   "ts": 1700000400056,
-   "cap": "Pexels · Karolina Grabowska",
-   "link": "https://www.pexels.com/photo/8363933/",
-   "linkLabel": "Ver no Pexels ↗"
-  },
-  "seed-up-57": {
-   "url": "refs/fotos/foto-57.jpg",
-   "cat": "foto",
-   "vote": "",
-   "asp": {},
-   "note": "",
-   "ts": 1700000400057,
-   "cap": "Pexels · Ketut Subiyanto",
-   "link": "https://www.pexels.com/photo/4669941/",
-   "linkLabel": "Ver no Pexels ↗"
-  },
   "seed-up-58": {
    "url": "refs/fotos/foto-58.jpg",
    "cat": "foto",
@@ -798,28 +358,6 @@
    "ts": 1700000400058,
    "cap": "Pexels · Ketut Subiyanto",
    "link": "https://www.pexels.com/photo/4827111/",
-   "linkLabel": "Ver no Pexels ↗"
-  },
-  "seed-up-59": {
-   "url": "refs/fotos/foto-59.jpg",
-   "cat": "foto",
-   "vote": "",
-   "asp": {},
-   "note": "",
-   "ts": 1700000400059,
-   "cap": "Pexels · Ketut Subiyanto",
-   "link": "https://www.pexels.com/photo/4833669/",
-   "linkLabel": "Ver no Pexels ↗"
-  },
-  "seed-up-60": {
-   "url": "refs/fotos/foto-60.jpg",
-   "cat": "foto",
-   "vote": "",
-   "asp": {},
-   "note": "",
-   "ts": 1700000400060,
-   "cap": "Pexels · Kristina Shcherbina",
-   "link": "https://www.pexels.com/photo/8677823/",
    "linkLabel": "Ver no Pexels ↗"
   },
   "seed-up-61": {
@@ -833,28 +371,6 @@
    "link": "https://www.pexels.com/photo/7304434/",
    "linkLabel": "Ver no Pexels ↗"
   },
-  "seed-up-62": {
-   "url": "refs/fotos/foto-62.jpg",
-   "cat": "foto",
-   "vote": "",
-   "asp": {},
-   "note": "",
-   "ts": 1700000400062,
-   "cap": "Pexels · Kureng Workx",
-   "link": "https://www.pexels.com/photo/4404568/",
-   "linkLabel": "Ver no Pexels ↗"
-  },
-  "seed-up-63": {
-   "url": "refs/fotos/foto-63.jpg",
-   "cat": "foto",
-   "vote": "",
-   "asp": {},
-   "note": "",
-   "ts": 1700000400063,
-   "cap": "Pexels · Luana Freitas",
-   "link": "https://www.pexels.com/photo/15509182/",
-   "linkLabel": "Ver no Pexels ↗"
-  },
   "seed-up-64": {
    "url": "refs/fotos/foto-64.jpg",
    "cat": "foto",
@@ -864,28 +380,6 @@
    "ts": 1700000400064,
    "cap": "Pexels · Maressa Andrioli",
    "link": "https://www.pexels.com/photo/12442426/",
-   "linkLabel": "Ver no Pexels ↗"
-  },
-  "seed-up-65": {
-   "url": "refs/fotos/foto-65.jpg",
-   "cat": "foto",
-   "vote": "",
-   "asp": {},
-   "note": "",
-   "ts": 1700000400065,
-   "cap": "Pexels · Mariela F F",
-   "link": "https://www.pexels.com/photo/27200452/",
-   "linkLabel": "Ver no Pexels ↗"
-  },
-  "seed-up-66": {
-   "url": "refs/fotos/foto-66.jpg",
-   "cat": "foto",
-   "vote": "",
-   "asp": {},
-   "note": "",
-   "ts": 1700000400066,
-   "cap": "Pexels · Mike Jones",
-   "link": "https://www.pexels.com/photo/8874390/",
    "linkLabel": "Ver no Pexels ↗"
   },
   "seed-up-67": {
@@ -899,28 +393,6 @@
    "link": "https://www.pexels.com/photo/8875074/",
    "linkLabel": "Ver no Pexels ↗"
   },
-  "seed-up-68": {
-   "url": "refs/fotos/foto-68.jpg",
-   "cat": "foto",
-   "vote": "",
-   "asp": {},
-   "note": "",
-   "ts": 1700000400068,
-   "cap": "Pexels · Mizuno K",
-   "link": "https://www.pexels.com/photo/13771305/",
-   "linkLabel": "Ver no Pexels ↗"
-  },
-  "seed-up-69": {
-   "url": "refs/fotos/foto-69.jpg",
-   "cat": "foto",
-   "vote": "",
-   "asp": {},
-   "note": "",
-   "ts": 1700000400069,
-   "cap": "Pexels · Nathan Martins",
-   "link": "https://www.pexels.com/photo/10986428/",
-   "linkLabel": "Ver no Pexels ↗"
-  },
   "seed-up-70": {
    "url": "refs/fotos/foto-70.jpg",
    "cat": "foto",
@@ -930,28 +402,6 @@
    "ts": 1700000400070,
    "cap": "Pexels · Soylulusacafotos",
    "link": "https://www.pexels.com/photo/15588261/",
-   "linkLabel": "Ver no Pexels ↗"
-  },
-  "seed-up-71": {
-   "url": "refs/fotos/foto-71.jpg",
-   "cat": "foto",
-   "vote": "",
-   "asp": {},
-   "note": "",
-   "ts": 1700000400071,
-   "cap": "Pexels · Tim Samuel",
-   "link": "https://www.pexels.com/photo/5838810/",
-   "linkLabel": "Ver no Pexels ↗"
-  },
-  "seed-up-72": {
-   "url": "refs/fotos/foto-72.jpg",
-   "cat": "foto",
-   "vote": "",
-   "asp": {},
-   "note": "",
-   "ts": 1700000400072,
-   "cap": "Pexels · Tim Samuel",
-   "link": "https://www.pexels.com/photo/5838841/",
    "linkLabel": "Ver no Pexels ↗"
   },
   "seed-up-73": {
@@ -965,39 +415,6 @@
    "link": "https://www.pexels.com/photo/5838844/",
    "linkLabel": "Ver no Pexels ↗"
   },
-  "seed-up-74": {
-   "url": "refs/fotos/foto-74.jpg",
-   "cat": "foto",
-   "vote": "",
-   "asp": {},
-   "note": "",
-   "ts": 1700000400074,
-   "cap": "Pexels · Tvoyasasha",
-   "link": "https://www.pexels.com/photo/11329648/",
-   "linkLabel": "Ver no Pexels ↗"
-  },
-  "seed-up-75": {
-   "url": "refs/fotos/foto-75.jpg",
-   "cat": "foto",
-   "vote": "",
-   "asp": {},
-   "note": "",
-   "ts": 1700000400075,
-   "cap": "Pexels · Victoria Rudik",
-   "link": "https://www.pexels.com/photo/8868174/",
-   "linkLabel": "Ver no Pexels ↗"
-  },
-  "seed-up-76": {
-   "url": "refs/fotos/foto-76.jpg",
-   "cat": "foto",
-   "vote": "",
-   "asp": {},
-   "note": "",
-   "ts": 1700000400076,
-   "cap": "Pexels · Вениамин Курочкин",
-   "link": "https://www.pexels.com/photo/11606832/",
-   "linkLabel": "Ver no Pexels ↗"
-  },
   "seed-up-77": {
    "url": "refs/fotos/foto-77.jpg",
    "cat": "foto",
@@ -1009,26 +426,6 @@
    "link": "https://www.pexels.com/photo/9619662/",
    "linkLabel": "Ver no Pexels ↗"
   },
-  "seed-up-78": {
-   "url": "refs/fotos/foto-78.jpg",
-   "cat": "foto",
-   "vote": "",
-   "asp": {},
-   "note": "",
-   "ts": 1700000400078,
-   "cap": "Unsplash · Rosa Rafael",
-   "link": "https://unsplash.com/photos/xFIuMTj8Tf8",
-   "linkLabel": "Ver no Unsplash ↗"
-  },
-  "seed-up-79": {
-   "url": "refs/fotos/foto-79.jpg",
-   "cat": "foto",
-   "vote": "",
-   "asp": {},
-   "note": "",
-   "ts": 1700000400079,
-   "cap": "Foto de banco de imagem"
-  },
   "seed-up-80": {
    "url": "refs/fotos/foto-80.jpg",
    "cat": "foto",
@@ -1036,24 +433,6 @@
    "asp": {},
    "note": "",
    "ts": 1700000400080,
-   "cap": "Foto de banco de imagem"
-  },
-  "seed-up-81": {
-   "url": "refs/fotos/foto-81.jpg",
-   "cat": "foto",
-   "vote": "",
-   "asp": {},
-   "note": "",
-   "ts": 1700000400081,
-   "cap": "Foto de banco de imagem"
-  },
-  "seed-up-82": {
-   "url": "refs/fotos/foto-82.jpg",
-   "cat": "foto",
-   "vote": "",
-   "asp": {},
-   "note": "",
-   "ts": 1700000400082,
    "cap": "Foto de banco de imagem"
   },
   "seed-up-83": {
@@ -1065,24 +444,6 @@
    "ts": 1700000400083,
    "cap": "Foto de banco de imagem"
   },
-  "seed-up-84": {
-   "url": "refs/fotos/foto-84.jpg",
-   "cat": "foto",
-   "vote": "",
-   "asp": {},
-   "note": "",
-   "ts": 1700000400084,
-   "cap": "Foto de banco de imagem"
-  },
-  "seed-up-85": {
-   "url": "refs/fotos/foto-85.jpg",
-   "cat": "foto",
-   "vote": "",
-   "asp": {},
-   "note": "",
-   "ts": 1700000400085,
-   "cap": "Foto de banco de imagem"
-  },
   "seed-up-86": {
    "url": "refs/fotos/foto-86.jpg",
    "cat": "foto",
@@ -1091,6 +452,108 @@
    "note": "",
    "ts": 1700000400086,
    "cap": "Foto de banco de imagem"
+  },
+  "seed-tipo-01": {
+   "url": "refs/tipo/tipografia-01.jpg",
+   "cat": "tipo",
+   "cap": "Referência de tipografia 1",
+   "order": 1001
+  },
+  "seed-tipo-02": {
+   "url": "refs/tipo/tipografia-02.jpg",
+   "cat": "tipo",
+   "cap": "Referência de tipografia 2",
+   "order": 1002
+  },
+  "seed-tipo-03": {
+   "url": "refs/tipo/tipografia-03.jpg",
+   "cat": "tipo",
+   "cap": "Referência de tipografia 3",
+   "order": 1003
+  },
+  "seed-tipo-04": {
+   "url": "refs/tipo/tipografia-04.jpg",
+   "cat": "tipo",
+   "cap": "Referência de tipografia 4",
+   "order": 1004
+  },
+  "seed-tipo-05": {
+   "url": "refs/tipo/tipografia-05.jpg",
+   "cat": "tipo",
+   "cap": "Referência de tipografia 5",
+   "order": 1005
+  },
+  "seed-tipo-06": {
+   "url": "refs/tipo/tipografia-06.jpg",
+   "cat": "tipo",
+   "cap": "Referência de tipografia 6",
+   "order": 1006
+  },
+  "seed-tipo-07": {
+   "url": "refs/tipo/tipografia-07.jpg",
+   "cat": "tipo",
+   "cap": "Referência de tipografia 7",
+   "order": 1007
+  },
+  "seed-tipo-08": {
+   "url": "refs/tipo/tipografia-08.jpg",
+   "cat": "tipo",
+   "cap": "Referência de tipografia 8",
+   "order": 1008
+  },
+  "seed-tipo-09": {
+   "url": "refs/tipo/tipografia-09.jpg",
+   "cat": "tipo",
+   "cap": "Referência de tipografia 9",
+   "order": 1009
+  },
+  "seed-tipo-10": {
+   "url": "refs/tipo/tipografia-10.jpg",
+   "cat": "tipo",
+   "cap": "Referência de tipografia 10",
+   "order": 1010
+  },
+  "seed-tipo-11": {
+   "url": "refs/tipo/layout-11.jpg",
+   "cat": "tipo",
+   "cap": "Referência de layout 11",
+   "order": 1011
+  },
+  "seed-tipo-12": {
+   "url": "refs/tipo/layout-12.jpg",
+   "cat": "tipo",
+   "cap": "Referência de layout 12",
+   "order": 1012
+  },
+  "seed-tipo-13": {
+   "url": "refs/tipo/layout-13.jpg",
+   "cat": "tipo",
+   "cap": "Referência de layout 13",
+   "order": 1013
+  },
+  "seed-tipo-14": {
+   "url": "refs/tipo/layout-14.jpg",
+   "cat": "tipo",
+   "cap": "Referência de layout 14",
+   "order": 1014
+  },
+  "seed-tipo-15": {
+   "url": "refs/tipo/layout-15.jpg",
+   "cat": "tipo",
+   "cap": "Referência de layout 15",
+   "order": 1015
+  },
+  "seed-tipo-16": {
+   "url": "refs/tipo/layout-16.jpg",
+   "cat": "tipo",
+   "cap": "Referência de layout 16",
+   "order": 1016
+  },
+  "seed-tipo-17": {
+   "url": "refs/tipo/layout-17.jpg",
+   "cat": "tipo",
+   "cap": "Referência de layout 17",
+   "order": 1017
   }
  },
  "_remove": {
@@ -1187,7 +650,66 @@
    "seed-adobe-02",
    "seed-adobe-03",
    "seed-adobe-04",
-   "seed-adobe-05"
+   "seed-adobe-05",
+   "seed-up-02",
+   "seed-up-03",
+   "seed-up-04",
+   "seed-up-06",
+   "seed-up-07",
+   "seed-up-08",
+   "seed-up-10",
+   "seed-up-11",
+   "seed-up-13",
+   "seed-up-14",
+   "seed-up-16",
+   "seed-up-17",
+   "seed-up-19",
+   "seed-up-20",
+   "seed-up-22",
+   "seed-up-23",
+   "seed-up-24",
+   "seed-up-26",
+   "seed-up-27",
+   "seed-up-28",
+   "seed-up-29",
+   "seed-up-31",
+   "seed-up-32",
+   "seed-up-34",
+   "seed-up-35",
+   "seed-up-37",
+   "seed-up-38",
+   "seed-up-40",
+   "seed-up-41",
+   "seed-up-43",
+   "seed-up-44",
+   "seed-up-46",
+   "seed-up-47",
+   "seed-up-49",
+   "seed-up-50",
+   "seed-up-52",
+   "seed-up-53",
+   "seed-up-55",
+   "seed-up-56",
+   "seed-up-57",
+   "seed-up-59",
+   "seed-up-60",
+   "seed-up-62",
+   "seed-up-63",
+   "seed-up-65",
+   "seed-up-66",
+   "seed-up-68",
+   "seed-up-69",
+   "seed-up-71",
+   "seed-up-72",
+   "seed-up-74",
+   "seed-up-75",
+   "seed-up-76",
+   "seed-up-78",
+   "seed-up-79",
+   "seed-up-81",
+   "seed-up-82",
+   "seed-up-84",
+   "seed-up-85"
   ]
  }
 }
