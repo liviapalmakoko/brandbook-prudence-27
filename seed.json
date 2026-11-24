@@ -980,7 +980,20 @@
   "duels2": [
    "seed-duelo-08",
    "seed-duelo-09",
-   "seed-duelo-10"
+   "seed-duelo-10",
+   "seed-duelo-03",
+   "seed-duelo-12",
+   "seed-duelo-14",
+   "seed-duelo-15",
+   "seed-duelo-16",
+   "seed-duelo-18",
+   "seed-duelo-20",
+   "seed-duelo-23",
+   "seed-duelo-24",
+   "seed-duelo-25",
+   "seed-duelo-27",
+   "seed-duelo-29",
+   "seed-duelo-30"
   ]
  },
  "duels2": {
@@ -1005,17 +1018,6 @@
    "why": [],
    "note": "",
    "ts": 1700000900002
-  },
-  "seed-duelo-03": {
-   "a": "seed-up-70",
-   "b": "seed-up-15",
-   "q": "Preto e branco ou cor?",
-   "la": "Preto e branco",
-   "lb": "Cor",
-   "pick": "",
-   "why": [],
-   "note": "",
-   "ts": 1700000900003
   },
   "seed-duelo-04": {
    "a": "seed-up-36",
@@ -1072,17 +1074,6 @@
    "note": "",
    "ts": 1700000900011
   },
-  "seed-duelo-12": {
-   "a": "seed-nova-cores-06",
-   "b": "seed-nova-cores-08",
-   "q": "Cor chapada e forte ou degradê com grão?",
-   "la": "Chapada e forte",
-   "lb": "Degradê com grão",
-   "pick": "",
-   "why": [],
-   "note": "",
-   "ts": 1700000900012
-  },
   "seed-duelo-13": {
    "a": "seed-nova-stickers-02",
    "b": "seed-nova-stickers-13",
@@ -1093,39 +1084,6 @@
    "why": [],
    "note": "",
    "ts": 1700000900013
-  },
-  "seed-duelo-14": {
-   "a": "seed-nova-texturas-06",
-   "b": "seed-nova-texturas-04",
-   "q": "Retícula de pontos ou grão suave?",
-   "la": "Retícula de pontos",
-   "lb": "Grão suave",
-   "pick": "",
-   "why": [],
-   "note": "",
-   "ts": 1700000900014
-  },
-  "seed-duelo-15": {
-   "a": "seed-nova-texturas-03",
-   "b": "seed-nova-texturas-08",
-   "q": "Textura em cor ou em preto e branco?",
-   "la": "Em cor, rosa",
-   "lb": "Preto e branco",
-   "pick": "",
-   "why": [],
-   "note": "",
-   "ts": 1700000900015
-  },
-  "seed-duelo-16": {
-   "a": "seed-nova-aplicacoes-01",
-   "b": "seed-nova-aplicacoes-06",
-   "q": "Foto natural ou com tratamento gráfico?",
-   "la": "Foto natural",
-   "lb": "Tratamento gráfico, retícula",
-   "pick": "",
-   "why": [],
-   "note": "",
-   "ts": 1700000900016
   },
   "seed-duelo-17": {
    "a": "seed-nova-aplicacoes-04",
@@ -1193,18 +1151,6 @@
    "note": "",
    "ts": 1700000900012
   },
-  "seed-duelo-18": {
-   "a": "seed-up-01",
-   "b": "seed-up-18",
-   "q": "A luz da foto é natural ou colorida?",
-   "la": "Natural, em preto e branco",
-   "lb": "Colorida, em tons de violeta",
-   "ctx": "Define se as fotos usam luz colorida que conversa com a paleta da marca.",
-   "pick": "",
-   "why": [],
-   "note": "",
-   "ts": 907.1
-  },
   "seed-duelo-19": {
    "a": "seed-up-73",
    "b": "seed-up-42",
@@ -1216,18 +1162,6 @@
    "why": [],
    "note": "",
    "ts": 907.2
-  },
-  "seed-duelo-20": {
-   "a": "seed-up-77",
-   "b": "seed-up-48",
-   "q": "Sofisticada ou sensual?",
-   "la": "Elegante e sofisticada",
-   "lb": "Sensual e dramática",
-   "ctx": "Define o nível de sofisticação do visual.",
-   "pick": "",
-   "why": [],
-   "note": "",
-   "ts": 907.3
   },
   "seed-duelo-21": {
    "a": "seed-up-45",
@@ -1253,42 +1187,6 @@
    "note": "",
    "ts": 907.5
   },
-  "seed-duelo-23": {
-   "a": "seed-up-12",
-   "b": "seed-up-21",
-   "q": "Cena de dia e cor ou de noite e contraste?",
-   "la": "Verão, cor e luz",
-   "lb": "Noite, preto e contraste",
-   "ctx": "Define se a marca vive de dia e cor ou de noite e contraste.",
-   "pick": "",
-   "why": [],
-   "note": "",
-   "ts": 907.6
-  },
-  "seed-duelo-24": {
-   "a": "seed-nova-cores-03",
-   "b": "seed-nova-cores-07",
-   "q": "Base neutra com preto ou explosão de cor?",
-   "la": "Base neutra, preto e bege",
-   "lb": "Cores primárias saturadas",
-   "ctx": "Define a ousadia da paleta.",
-   "pick": "",
-   "why": [],
-   "note": "",
-   "ts": 912.1
-  },
-  "seed-duelo-25": {
-   "a": "seed-nova-cores-01",
-   "b": "seed-nova-cores-09",
-   "q": "Cor com brilho e luz ou cor lisa?",
-   "la": "Brilho e luz",
-   "lb": "Cor lisa e chapada",
-   "ctx": "Define se a cor vem com efeito de luz ou limpa e plana.",
-   "pick": "",
-   "why": [],
-   "note": "",
-   "ts": 912.2
-  },
   "seed-duelo-26": {
    "a": "seed-nova-stickers-04",
    "b": "seed-nova-stickers-11",
@@ -1300,18 +1198,6 @@
    "why": [],
    "note": "",
    "ts": 913.1
-  },
-  "seed-duelo-27": {
-   "a": "seed-nova-stickers-09",
-   "b": "seed-nova-stickers-08",
-   "q": "Adesivos em tons suaves ou cromados e escuros?",
-   "la": "Tons suaves e pastel",
-   "lb": "Cromado e escuro",
-   "ctx": "Define o acabamento dos adesivos e símbolos.",
-   "pick": "",
-   "why": [],
-   "note": "",
-   "ts": 913.2
   },
   "seed-duelo-28": {
    "a": "seed-nova-stickers-05",
@@ -1325,29 +1211,29 @@
    "note": "",
    "ts": 913.3
   },
-  "seed-duelo-29": {
-   "a": "seed-nova-texturas-02",
-   "b": "seed-nova-texturas-01",
-   "q": "Forma geométrica ou orgânica?",
-   "la": "Geométrica, em círculos",
-   "lb": "Orgânica, em ondas",
-   "ctx": "Define o tipo de forma das texturas.",
+  "seed-duelo-31": {
+   "a": "seed-nova-cores-03",
+   "b": "seed-nova-cores-09",
+   "q": "No impresso, a base é bege ou branca?",
+   "la": "Bege com letras pretas",
+   "lb": "Branco, lilás e preto",
+   "ctx": "Define o fundo dos materiais impressos: tom quente ou neutro puro.",
    "pick": "",
    "why": [],
    "note": "",
-   "ts": 915.1
+   "ts": 918.1
   },
-  "seed-duelo-30": {
-   "a": "seed-nova-aplicacoes-03",
-   "b": "seed-nova-aplicacoes-05",
-   "q": "Rosto inteiro ou só os olhos?",
-   "la": "Rosto inteiro, expressão forte",
-   "lb": "Só os olhos, em detalhe",
-   "ctx": "Define o enquadramento dos rostos nos cartazes.",
+  "seed-duelo-32": {
+   "a": "seed-camisa-07",
+   "b": "seed-camisa-ref-3",
+   "q": "Nas costas, estampa em grade ou grafite?",
+   "la": "Painel em grade",
+   "lb": "Grafite com tipografia",
+   "ctx": "Define o estilo da estampa grande nas costas, na linha de camiseta de rua.",
    "pick": "",
    "why": [],
    "note": "",
-   "ts": 917.1
+   "ts": 918.2
   }
  }
 }
