@@ -695,7 +695,7 @@ initFontes();window.addEventListener('hashchange',route);route();
   detectMe();seedReal();
 })();
 /* na nuvem: quem abre é reconhecido pelo nome do perfil; a primeira pessoa com permissão de edição carrega as referências iniciais */
-async function detectMe(){try{if(me)return;const u=await claude.use('user');if(!u)return;const m=await u.me();const nm=(m.name||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().trim().split(/\s+/)[0];const hit=['livia','mari','isa'].find(k=>k===nm);if(hit)choose(hit)}catch(e){}}
+async function detectMe(){try{if(me)return;const u=await claude.use('user');if(!u)return;const m=await u.me();const nm=(m.name||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().trim().split(/\s+/)[0];const hit=['livia','mari','isa'].find(k=>nm.startsWith(k));if(hit)choose(hit)}catch(e){}}
 async function seedReal(){if(window.__shim)return;try{const u=await claude.use('user');if(!u||!(await u.canEdit()))return;
   const seed=await (await fetch('seed.json',{cache:'no-cache'})).json(),meta=db.doc('meta/seeded'),cur=await meta.get(),done=new Set(cur.exists?(cur.data().ids||[]):[]);let n=0,changed=false;
   for(const col in seed){if(col==='_remove')continue;for(const id in seed[col]){const key='seed:'+col+'/'+id;if(done.has(key))continue;
