@@ -976,6 +976,11 @@
    "seed-tipo-15",
    "seed-tipo-16",
    "seed-tipo-17"
+  ],
+  "duels2": [
+   "seed-duelo-08",
+   "seed-duelo-09",
+   "seed-duelo-10"
   ]
  },
  "duels2": {
@@ -1056,39 +1061,6 @@
    "note": "",
    "ts": 1700000900007
   },
-  "seed-duelo-08": {
-   "a": "seed-camisa-ref-7",
-   "b": "seed-camisa-ref-3",
-   "q": "Estampa discreta ou grande?",
-   "la": "Discreta, no peito",
-   "lb": "Grande, nas costas",
-   "pick": "",
-   "why": [],
-   "note": "",
-   "ts": 1700000900008
-  },
-  "seed-duelo-09": {
-   "a": "seed-camisa-ref-1",
-   "b": "seed-camisa-ref-2",
-   "q": "Peça clara ou escura?",
-   "la": "Clara",
-   "lb": "Escura",
-   "pick": "",
-   "why": [],
-   "note": "",
-   "ts": 1700000900009
-  },
-  "seed-duelo-10": {
-   "a": "seed-camisa-13",
-   "b": "seed-camisa-ref-6",
-   "q": "Arte gráfica rica ou só tipografia limpa?",
-   "la": "Arte gráfica rica",
-   "lb": "Só tipografia limpa",
-   "pick": "",
-   "why": [],
-   "note": "",
-   "ts": 1700000900010
-  },
   "seed-duelo-11": {
    "a": "seed-nova-cores-04",
    "b": "seed-nova-cores-05",
@@ -1165,6 +1137,61 @@
    "why": [],
    "note": "",
    "ts": 1700000900017
+  },
+  "seed-duelo-u1": {
+   "a": "seed-camisa-05",
+   "b": "seed-camisa-03",
+   "q": "Frente: peça clara ou escura?",
+   "la": "Clara",
+   "lb": "Escura",
+   "pick": "",
+   "why": [],
+   "note": "",
+   "ts": 1700000900008
+  },
+  "seed-duelo-u2": {
+   "a": "seed-camisa-03",
+   "b": "seed-camisa-12",
+   "q": "Frente: assinatura minúscula ou nome em destaque?",
+   "la": "Assinatura minúscula",
+   "lb": "Nome em destaque",
+   "pick": "",
+   "why": [],
+   "note": "",
+   "ts": 1700000900009
+  },
+  "seed-duelo-u3": {
+   "a": "seed-camisa-ref-6",
+   "b": "seed-camisa-ref-5",
+   "q": "Frente: texto discreto ou lettering grande?",
+   "la": "Texto discreto",
+   "lb": "Lettering grande",
+   "pick": "",
+   "why": [],
+   "note": "",
+   "ts": 1700000900010
+  },
+  "seed-duelo-u4": {
+   "a": "seed-camisa-13",
+   "b": "seed-camisa-02",
+   "q": "Costas: vários elementos em grade ou uma imagem só?",
+   "la": "Grade de elementos",
+   "lb": "Uma imagem só",
+   "pick": "",
+   "why": [],
+   "note": "",
+   "ts": 1700000900011
+  },
+  "seed-duelo-u5": {
+   "a": "seed-camisa-10",
+   "b": "seed-camisa-ref-4",
+   "q": "Costas: personagem ilustrado ou só tipografia?",
+   "la": "Personagem ilustrado",
+   "lb": "Só tipografia",
+   "pick": "",
+   "why": [],
+   "note": "",
+   "ts": 1700000900012
   }
  }
 }
