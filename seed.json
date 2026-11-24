@@ -452,6 +452,357 @@
    "note": "",
    "ts": 1700000400086,
    "cap": "Foto de banco de imagem"
+  },
+  "seed-nova-stickers-01": {
+   "url": "refs/novas2/stickers-01.jpg",
+   "cat": "graf",
+   "cap": "Adesivos em cores chapadas e frases",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000500001
+  },
+  "seed-nova-stickers-02": {
+   "url": "refs/novas2/stickers-02.jpg",
+   "cat": "graf",
+   "cap": "Ícones geométricos em círculos",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000500002
+  },
+  "seed-nova-stickers-03": {
+   "url": "refs/novas2/stickers-03.jpg",
+   "cat": "graf",
+   "cap": "Estrela de pontos",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000500003
+  },
+  "seed-nova-stickers-04": {
+   "url": "refs/novas2/stickers-04.jpg",
+   "cat": "graf",
+   "cap": "Formas e letra em blocos de cor",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000500004
+  },
+  "seed-nova-stickers-05": {
+   "url": "refs/novas2/stickers-05.jpg",
+   "cat": "graf",
+   "cap": "Ícones de interface em cores vivas",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000500005
+  },
+  "seed-nova-stickers-06": {
+   "url": "refs/novas2/stickers-06.jpg",
+   "cat": "graf",
+   "cap": "Adesivos de contorno em azul e preto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000500006
+  },
+  "seed-nova-stickers-07": {
+   "url": "refs/novas2/stickers-07.jpg",
+   "cat": "graf",
+   "cap": "Adesivos com frases e texturas",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000500007
+  },
+  "seed-nova-stickers-08": {
+   "url": "refs/novas2/stickers-08.jpg",
+   "cat": "graf",
+   "cap": "Adesivos cromados e laranja",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000500008
+  },
+  "seed-nova-stickers-09": {
+   "url": "refs/novas2/stickers-09.jpg",
+   "cat": "graf",
+   "cap": "Adesivos de brunch em cores suaves",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000500009
+  },
+  "seed-nova-stickers-10": {
+   "url": "refs/novas2/stickers-10.jpg",
+   "cat": "graf",
+   "cap": "Adesivos holográficos com letras onduladas",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000500010
+  },
+  "seed-nova-stickers-11": {
+   "url": "refs/novas2/stickers-11.jpg",
+   "cat": "graf",
+   "cap": "Formas soltas em lima e rosa",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000500011
+  },
+  "seed-nova-stickers-12": {
+   "url": "refs/novas2/stickers-12.jpg",
+   "cat": "graf",
+   "cap": "Lâmpada, cursor e lápis em linha grossa",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000500012
+  },
+  "seed-nova-stickers-13": {
+   "url": "refs/novas2/stickers-13.jpg",
+   "cat": "graf",
+   "cap": "Adesivos sobrepostos de clube",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000500013
+  },
+  "seed-nova-stickers-14": {
+   "url": "refs/novas2/stickers-14.jpg",
+   "cat": "graf",
+   "cap": "Frase em etiquetas coloridas",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000500014
+  },
+  "seed-nova-stickers-15": {
+   "url": "refs/novas2/stickers-15.jpg",
+   "cat": "graf",
+   "cap": "Folha de adesivos de escritório",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000500015
+  },
+  "seed-nova-texturas-01": {
+   "url": "refs/novas2/texturas-01.jpg",
+   "cat": "graf",
+   "cap": "Meio-tom fluido em preto e branco",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000500016
+  },
+  "seed-nova-texturas-02": {
+   "url": "refs/novas2/texturas-02.jpg",
+   "cat": "graf",
+   "cap": "Círculos pretos desfocados",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000500017
+  },
+  "seed-nova-texturas-03": {
+   "url": "refs/novas2/texturas-03.jpg",
+   "cat": "graf",
+   "cap": "Retícula rosa",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000500018
+  },
+  "seed-nova-texturas-04": {
+   "url": "refs/novas2/texturas-04.jpg",
+   "cat": "graf",
+   "cap": "Degradê granulado em preto e branco",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000500019
+  },
+  "seed-nova-texturas-05": {
+   "url": "refs/novas2/texturas-05.jpg",
+   "cat": "graf",
+   "cap": "Meio-tom rosa",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000500020
+  },
+  "seed-nova-texturas-06": {
+   "url": "refs/novas2/texturas-06.jpg",
+   "cat": "graf",
+   "cap": "Meio-tom em manchas",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000500021
+  },
+  "seed-nova-texturas-07": {
+   "url": "refs/novas2/texturas-07.jpg",
+   "cat": "graf",
+   "cap": "Listras e círculos desfocados",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000500022
+  },
+  "seed-nova-texturas-08": {
+   "url": "refs/novas2/texturas-08.jpg",
+   "cat": "graf",
+   "cap": "Explosão em preto e branco",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000500023
+  },
+  "seed-nova-cores-01": {
+   "url": "refs/novas2/cores-01.jpg",
+   "cat": "cor",
+   "cap": "Forma lima com brilho violeta",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000500024
+  },
+  "seed-nova-cores-02": {
+   "url": "refs/novas2/cores-02.jpg",
+   "cat": "cor",
+   "cap": "Número com brilho laranja e violeta",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000500025
+  },
+  "seed-nova-cores-03": {
+   "url": "refs/novas2/cores-03.jpg",
+   "cat": "cor",
+   "cap": "Cartaz bege com letras pretas",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000500026
+  },
+  "seed-nova-cores-04": {
+   "url": "refs/novas2/cores-04.jpg",
+   "cat": "cor",
+   "cap": "Paleta fúcsia, cítrico, branco e preto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000500027
+  },
+  "seed-nova-cores-05": {
+   "url": "refs/novas2/cores-05.jpg",
+   "cat": "cor",
+   "cap": "Paleta preto, violeta, lima e branco",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000500028
+  },
+  "seed-nova-cores-06": {
+   "url": "refs/novas2/cores-06.jpg",
+   "cat": "cor",
+   "cap": "Cartazes em cores fortes e letras altas",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000500029
+  },
+  "seed-nova-cores-07": {
+   "url": "refs/novas2/cores-07.jpg",
+   "cat": "cor",
+   "cap": "Fonte display em cores primárias",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000500030
+  },
+  "seed-nova-cores-08": {
+   "url": "refs/novas2/cores-08.jpg",
+   "cat": "cor",
+   "cap": "Degradê granulado lilás e azul",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000500031
+  },
+  "seed-nova-cores-09": {
+   "url": "refs/novas2/cores-09.jpg",
+   "cat": "cor",
+   "cap": "Cartazes em branco, lilás e preto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000500032
+  },
+  "seed-nova-cores-10": {
+   "url": "refs/novas2/cores-10.jpg",
+   "cat": "cor",
+   "cap": "Colagens em coral, lima e rosa",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000500033
+  },
+  "seed-nova-aplicacoes-01": {
+   "url": "refs/novas2/aplicacoes-01.jpg",
+   "cat": "clima",
+   "cap": "Rosto com letras grandes sobre a foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000500034
+  },
+  "seed-nova-aplicacoes-02": {
+   "url": "refs/novas2/aplicacoes-02.jpg",
+   "cat": "clima",
+   "cap": "Foto em preto e branco com forma amarela",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000500035
+  },
+  "seed-nova-aplicacoes-03": {
+   "url": "refs/novas2/aplicacoes-03.jpg",
+   "cat": "clima",
+   "cap": "Rosto com estrela rosa",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000500036
+  },
+  "seed-nova-aplicacoes-04": {
+   "url": "refs/novas2/aplicacoes-04.jpg",
+   "cat": "clima",
+   "cap": "Cartaz só de tipografia em amarelo",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000500037
+  },
+  "seed-nova-aplicacoes-05": {
+   "url": "refs/novas2/aplicacoes-05.jpg",
+   "cat": "clima",
+   "cap": "Olhos em retícula rosa e vermelha",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000500038
+  },
+  "seed-nova-aplicacoes-06": {
+   "url": "refs/novas2/aplicacoes-06.jpg",
+   "cat": "clima",
+   "cap": "Foto em retícula com estrela",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000500039
   }
  },
  "_remove": {
@@ -626,5 +977,194 @@
    "seed-tipo-16",
    "seed-tipo-17"
   ]
+ },
+ "duels2": {
+  "seed-duelo-01": {
+   "a": "seed-up-09",
+   "b": "seed-up-64",
+   "q": "Detalhe de pele ou pessoas em conexão?",
+   "la": "Detalhe de pele, sem rosto",
+   "lb": "Pessoas em conexão",
+   "pick": "",
+   "why": [],
+   "note": "",
+   "ts": 1700000900001
+  },
+  "seed-duelo-02": {
+   "a": "seed-up-51",
+   "b": "seed-up-05",
+   "q": "Luz escura e dramática ou clara e natural?",
+   "la": "Escura e dramática",
+   "lb": "Clara e natural",
+   "pick": "",
+   "why": [],
+   "note": "",
+   "ts": 1700000900002
+  },
+  "seed-duelo-03": {
+   "a": "seed-up-70",
+   "b": "seed-up-15",
+   "q": "Preto e branco ou cor?",
+   "la": "Preto e branco",
+   "lb": "Cor",
+   "pick": "",
+   "why": [],
+   "note": "",
+   "ts": 1700000900003
+  },
+  "seed-duelo-04": {
+   "a": "seed-up-36",
+   "b": "seed-up-61",
+   "q": "Uma pessoa sozinha ou um casal?",
+   "la": "Pessoa sozinha",
+   "lb": "Casal",
+   "pick": "",
+   "why": [],
+   "note": "",
+   "ts": 1700000900004
+  },
+  "seed-duelo-05": {
+   "a": "seed-up-86",
+   "b": "seed-up-33",
+   "q": "Afeto e cumplicidade ou provocação?",
+   "la": "Afeto e beijo",
+   "lb": "Provocação",
+   "pick": "",
+   "why": [],
+   "note": "",
+   "ts": 1700000900005
+  },
+  "seed-duelo-06": {
+   "a": "seed-up-80",
+   "b": "seed-up-54",
+   "q": "Cenário de água e vidro ou de cama?",
+   "la": "Chuveiro e água",
+   "lb": "Quarto e cama",
+   "pick": "",
+   "why": [],
+   "note": "",
+   "ts": 1700000900006
+  },
+  "seed-duelo-07": {
+   "a": "seed-up-30",
+   "b": "seed-up-25",
+   "q": "Ao ar livre e leve ou íntimo e fechado?",
+   "la": "Ao ar livre",
+   "lb": "Íntimo, em ambiente fechado",
+   "pick": "",
+   "why": [],
+   "note": "",
+   "ts": 1700000900007
+  },
+  "seed-duelo-08": {
+   "a": "seed-camisa-ref-7",
+   "b": "seed-camisa-ref-3",
+   "q": "Estampa discreta ou grande?",
+   "la": "Discreta, no peito",
+   "lb": "Grande, nas costas",
+   "pick": "",
+   "why": [],
+   "note": "",
+   "ts": 1700000900008
+  },
+  "seed-duelo-09": {
+   "a": "seed-camisa-ref-1",
+   "b": "seed-camisa-ref-2",
+   "q": "Peça clara ou escura?",
+   "la": "Clara",
+   "lb": "Escura",
+   "pick": "",
+   "why": [],
+   "note": "",
+   "ts": 1700000900009
+  },
+  "seed-duelo-10": {
+   "a": "seed-camisa-13",
+   "b": "seed-camisa-ref-6",
+   "q": "Arte gráfica rica ou só tipografia limpa?",
+   "la": "Arte gráfica rica",
+   "lb": "Só tipografia limpa",
+   "pick": "",
+   "why": [],
+   "note": "",
+   "ts": 1700000900010
+  },
+  "seed-duelo-11": {
+   "a": "seed-nova-cores-04",
+   "b": "seed-nova-cores-05",
+   "q": "Qual acento sobre preto e branco?",
+   "la": "Fúcsia e cítrico",
+   "lb": "Violeta e lima",
+   "pick": "",
+   "why": [],
+   "note": "",
+   "ts": 1700000900011
+  },
+  "seed-duelo-12": {
+   "a": "seed-nova-cores-06",
+   "b": "seed-nova-cores-08",
+   "q": "Cor chapada e forte ou degradê com grão?",
+   "la": "Chapada e forte",
+   "lb": "Degradê com grão",
+   "pick": "",
+   "why": [],
+   "note": "",
+   "ts": 1700000900012
+  },
+  "seed-duelo-13": {
+   "a": "seed-nova-stickers-02",
+   "b": "seed-nova-stickers-13",
+   "q": "Símbolos geométricos ou adesivos de texto e personagem?",
+   "la": "Símbolos geométricos",
+   "lb": "Texto e personagem",
+   "pick": "",
+   "why": [],
+   "note": "",
+   "ts": 1700000900013
+  },
+  "seed-duelo-14": {
+   "a": "seed-nova-texturas-06",
+   "b": "seed-nova-texturas-04",
+   "q": "Retícula de pontos ou grão suave?",
+   "la": "Retícula de pontos",
+   "lb": "Grão suave",
+   "pick": "",
+   "why": [],
+   "note": "",
+   "ts": 1700000900014
+  },
+  "seed-duelo-15": {
+   "a": "seed-nova-texturas-03",
+   "b": "seed-nova-texturas-08",
+   "q": "Textura em cor ou em preto e branco?",
+   "la": "Em cor, rosa",
+   "lb": "Preto e branco",
+   "pick": "",
+   "why": [],
+   "note": "",
+   "ts": 1700000900015
+  },
+  "seed-duelo-16": {
+   "a": "seed-nova-aplicacoes-01",
+   "b": "seed-nova-aplicacoes-06",
+   "q": "Foto natural ou com tratamento gráfico?",
+   "la": "Foto natural",
+   "lb": "Tratamento gráfico, retícula",
+   "pick": "",
+   "why": [],
+   "note": "",
+   "ts": 1700000900016
+  },
+  "seed-duelo-17": {
+   "a": "seed-nova-aplicacoes-04",
+   "b": "seed-nova-aplicacoes-02",
+   "q": "Cartaz só de letras ou foto com letras?",
+   "la": "Só letras",
+   "lb": "Foto com letras",
+   "pick": "",
+   "why": [],
+   "note": "",
+   "ts": 1700000900017
+  }
  }
 }

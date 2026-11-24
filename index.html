@@ -20,7 +20,7 @@
 .fm b{font-family:var(--f-d);font-size:21px;letter-spacing:-.02em;display:block;line-height:1.1}
 .ftags{display:flex;flex-wrap:wrap;gap:4px;margin:8px 0 6px}
 .ftag,.src{font-size:11px;font-weight:600;letter-spacing:.03em;border:1px solid var(--line);border-radius:999px;padding:2px 8px;color:var(--mute)}
-.src.s{color:var(--info-txt);border-color:currentColor}.src.g{color:var(--yes);border-color:currentColor}.src.a{color:var(--info-txt);border-color:currentColor}.src.m{color:var(--maybe);border-color:currentColor}
+.fwarn{color:var(--atencao-txt)}.src.s{color:var(--info-txt);border-color:currentColor}.src.g{color:var(--yes);border-color:currentColor}.src.a{color:var(--info-txt);border-color:currentColor}.src.m{color:var(--maybe);border-color:currentColor}
 .fm p{margin:4px 0 8px;font-size:13px;color:var(--mute);line-height:1.4}
 .fm a{font-size:13px;font-weight:600;color:var(--ink)}
 .fs{font-size:var(--fs,72px);line-height:1.08;overflow-wrap:anywhere;min-width:0;color:var(--ink)}
@@ -88,6 +88,7 @@ section.view.on{display:block}
 .duels{display:flex;flex-wrap:wrap;gap:12px}
 .dl{display:flex;align-items:center;gap:8px;background:var(--card);border-radius:8px;padding:8px}
 .dl img{width:64px;height:80px;object-fit:cover;border-radius:var(--r1)}
+.dl .dlq{max-width:220px;font-size:13px;line-height:1.3}
 .dl .vs{font-family:var(--f-d);font-weight:800;font-size:13px;color:var(--mute)}
 /* sessao */
 .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
@@ -199,7 +200,9 @@ textarea.note{border-radius:var(--r2);background:var(--opaca);border-color:var(-
 .dpic{border:0;padding:0;background:var(--inv-fundo);display:flex;align-items:center;justify-content:center;height:min(52vh,540px);flex:none;overflow:hidden;cursor:pointer}
 .dpic img{width:100%;height:100%;object-fit:contain;display:block}
 .dfoot{flex:none;background:var(--opaca);display:flex;align-items:center;gap:var(--esp-2);padding:var(--esp-3) var(--esp-4)}
-.dletter{font-family:var(--titulo);font-size:30px;font-weight:700;margin-right:auto;line-height:1}
+.dletter{font-family:var(--titulo);font-size:30px;font-weight:700;line-height:1}
+.dlabel{font-size:13px;color:var(--tinta-3);margin-right:auto;min-width:0}
+.dq{font-size:clamp(22px,3vw,34px);margin:0 0 var(--esp-3);text-wrap:balance}
 .dfoot .sel,.dmid .sel{border-color:var(--ok);color:var(--ok-txt);background:var(--ok-fundo)}
 .dmid{display:flex;justify-content:center;align-items:center;gap:var(--esp-2);margin:var(--esp-4) 0;flex-wrap:wrap}
 .dwhy{display:flex;flex-direction:column;gap:var(--esp-2);max-width:900px;margin:0 auto}
@@ -268,7 +271,7 @@ kbd{font-family:var(--f-b);font-size:11px;border:1px solid var(--line);border-ra
   <div class="kk-cabeca"><span class="kk-selo kk-selo--tinta kk-selo--g"><svg class="kk-ic"><use href="#i-biblioteca"></use></svg></span>
     <div class="kk-cabeca-textos"><h1 class="kk-h1">Biblioteca de <mark class="kk-marca-texto">referências</mark></h1>
     <p class="kk-apoio">Arraste imagens para uma categoria, cole com Cmd+V ou use o botão. Para um duelo, selecione duas da mesma categoria.</p></div></div>
-  <div class="kk-barra"><button class="kk-botao kk-botao--2" id="mkduel" disabled>Criar duelo com as 2 selecionadas</button><button class="kk-botao kk-botao--2" id="autoduel">Gerar duelos automáticos</button></div>
+  <div class="kk-barra"><button class="kk-botao kk-botao--2" id="mkduel" disabled>Criar duelo com as 2 selecionadas</button></div>
   <div id="cats"></div>
   <div class="cat"><div class="chd"><h3>Duelos</h3><span class="tag" id="duelcount"></span></div><p class="hint">Pares que o cliente vai comparar na sessão.</p><div class="duels" id="duels"></div></div>
 </section>
@@ -421,14 +424,11 @@ function renderLib(){
     sec.addEventListener('pointerenter',()=>lib.active=c.k);
     return sec}));
   const dl=duels();$('#duelcount').textContent=dl.length+(dl.length===1?' duelo':' duelos');
-  $('#duels').replaceChildren(...(dl.length?dl.map(d=>h('div',{class:'dl'},h('img',{src:(R[d.a]||{}).url||'',alt:''}),h('span',{class:'vs'},'vs'),h('img',{src:(R[d.b]||{}).url||'',alt:''}),h('button',{class:'kk-botao kk-botao--2',onclick:()=>delDuel(d.id),style:'padding:4px 10px'},'Remover'))):[h('div',{class:'empty',style:'flex:1'},'Nenhum duelo ainda.')]));
+  $('#duels').replaceChildren(...(dl.length?dl.map(d=>h('div',{class:'dl'},h('img',{src:(R[d.a]||{}).url||'',alt:''}),h('span',{class:'vs'},'vs'),h('img',{src:(R[d.b]||{}).url||'',alt:''}),h('span',{class:'dlq'},d.q||'Sem pergunta'),h('button',{class:'kk-botao kk-botao--2',onclick:()=>delDuel(d.id),style:'padding:4px 10px'},'Remover'))):[h('div',{class:'empty',style:'flex:1'},'Nenhum duelo ainda.')]));
   $('#mkduel').disabled=lib.sel.length!==2;
 }
 function toggleSel(r){const i=lib.sel.indexOf(r.id);if(i>=0)lib.sel.splice(i,1);else{if(lib.sel.length>=2)lib.sel.shift();lib.sel.push(r.id)}renderLib()}
 $('#mkduel').onclick=async()=>{if(lib.sel.length!==2)return;const[a,b]=lib.sel;lib.sel=[];await mkDuel(a,b);toast('Duelo criado')};
-$('#autoduel').onclick=async()=>{const used=new Set(duels().flatMap(d=>[d.a,d.b]));let n=0;
-  for(const c of CATS){const free=refs().filter(r=>r.cat===c.k&&!used.has(r.id));for(let i=0;i+1<free.length;i+=2){await mkDuel(free[i].id,free[i+1].id);n++}}
-  toast(n?n+(n>1?' duelos criados':' duelo criado'):'Nada para parear: precisa de 2 imagens livres na mesma categoria')};
 $('#file').addEventListener('change',e=>{if(pendingCat&&e.target.files.length)upload([...e.target.files],pendingCat)});
 document.addEventListener('paste',e=>{if(view!=='biblioteca'||e.target.closest('input,textarea'))return;const fs=[...(e.clipboardData||{}).files||[]].filter(f=>f.type.startsWith('image/'));if(fs.length){e.preventDefault();upload(fs,lib.active)}});
 
@@ -453,7 +453,7 @@ function renderSess(){
     const cls='sm'+(j===i?' cur':'');
     if(x.k==='r'){const r=R[x.id];return h('button',{class:cls+(r.vote?' v-'+r.vote:''),'aria-label':'Ir para '+(j+1),onclick:()=>{sess.key=qkey(x);renderSess()}},h('img',{src:r.url,alt:''}))}
     const d=DU[x.id];return h('button',{class:cls+' duelsm'+(d.pick?' v-pick':''),'aria-label':'Duelo '+(j+1),onclick:()=>{sess.key=qkey(x);renderSess()}},h('img',{src:(R[d.a]||{}).url,alt:''}),h('img',{src:(R[d.b]||{}).url,alt:''}))}));
-  const cur=$('#strip .cur');if(cur&&cur.scrollIntoView)cur.scrollIntoView({inline:'center',block:'nearest'})}
+  const st=$('#strip'),cur=$('#strip .cur');if(cur)st.scrollLeft=cur.offsetLeft-st.clientWidth/2+cur.offsetWidth/2}
 function singleView(r,id,i,all){
   const note=h('textarea',{class:'note',placeholder:'Anotação da conversa (opcional)','aria-label':'Anotação'});note.value=r.note||'';note.addEventListener('change',()=>setNote(id,note.value));
   return h('div',{class:'single'},
@@ -468,13 +468,13 @@ function duelView(d,id,i,all){
   const card=(side,r)=>{const win=pk===side||pk==='both',lose=(pk==='a'||pk==='b')&&pk!==side||pk==='none';
     return h('div',{class:'dcard'+(win?' win':'')+(lose?' lose':'')},
       h('button',{class:'dpic',onclick:()=>setPick(id,side),'aria-label':'Prefiro '+side.toUpperCase()},h('img',{src:(r||{}).url,alt:(r||{}).cap||''})),
-      h('div',{class:'dfoot'},h('span',{class:'dletter'},side.toUpperCase()),
+      h('div',{class:'dfoot'},h('span',{class:'dletter'},side.toUpperCase()),d[side==='a'?'la':'lb']?h('span',{class:'dlabel'},d[side==='a'?'la':'lb']):null,
         h('button',{class:'kk-botao kk-botao--2 kk-botao--p',onclick:()=>zoom((r||{}).url)},ic('expandir'),'Ampliar'),
         h('button',{class:'kk-botao kk-botao--2'+(pk===side?' sel':''),onclick:()=>setPick(id,side)},pk===side?[ic('check'),' Preferida']:'Prefiro esta')))};
   const note=h('textarea',{class:'note',placeholder:'Anotação da conversa (opcional)','aria-label':'Anotação'});note.value=d.note||'';note.addEventListener('change',()=>setDNote(id,note.value));
   const chosen=pk==='a'||pk==='b';
-  return h('div',{},h('div',{class:'tag',style:'margin-bottom:8px'},'Duelo · '+catT(duelCat(d))+' · qual você prefere?'),
-    h('div',{class:'duel'},card('a',R[d.a]),card('b',R[d.b])),
+  return h('div',{},h('div',{class:'tag',style:'margin-bottom:8px'},'Duelo · '+catT(duelCat(d))),
+    d.q?h('h2',{class:'dq'},d.q):null,h('div',{class:'duel'},card('a',R[d.a]),card('b',R[d.b])),
     h('div',{class:'dmid'},h('button',{class:'kk-chip','aria-pressed':pk==='both',onclick:()=>setPick(id,'both')},'As duas'),h('button',{class:'kk-chip','aria-pressed':pk==='none',onclick:()=>setPick(id,'none')},'Nenhuma das duas'),h('span',{class:'lbl'},'Teclas: A, B, D (as duas), N (nenhuma)')),
     h('div',{class:'dwhy'},
       chosen?[h('div',{class:'lbl'},'Por que a '+pk.toUpperCase()+'? Pode marcar mais de um.'),h('div',{class:'asp'},ASP.map(a=>h('button',{class:'ch'+((d.why||[]).includes(a)?' pos':''),onclick:()=>toggleWhy(id,a)},a)))]:h('div',{class:'lbl'},'Escolha A ou B para dizer por quê.'),
@@ -507,7 +507,7 @@ function renderBoard(){
   if(dl.length)out.push(h('div',{class:'sec'},h('div',{class:'sh'},h('h3',{},'Preferências'),h('span',{class:'tag'},dl.length+' duelos')),
     h('div',{class:'row'},dl.map(d=>{const win=d.pick==='a'?R[d.a]:d.pick==='b'?R[d.b]:null,lose=d.pick==='a'?R[d.b]:d.pick==='b'?R[d.a]:null;
       return h('div',{class:'pref'},win?h('img',{class:'w',src:win.url,alt:''}):h('div',{style:'width:86px'}),h('span',{class:'gt'},win?'>':d.pick==='both'?'=':'×'),lose?h('img',{class:'l',src:lose.url,alt:''}):null,
-        h('div',{},h('b',{},d.pick==='both'?'As duas':d.pick==='none'?'Nenhuma das duas':'Preferida: '+(win.cap||'sem legenda')),h('small',{},(d.why||[]).length?'por: '+d.why.join(', ').toLowerCase():'sem motivo marcado'),d.note?h('small',{},d.note):null))}))));
+        h('div',{},d.q?h('small',{},d.q):null,h('b',{},d.pick==='both'?'As duas':d.pick==='none'?'Nenhuma das duas':(d.pick==='a'?d.la:d.lb)||('Preferida: '+(win.cap||'sem legenda'))),h('small',{},(d.why||[]).length?'por: '+d.why.join(', ').toLowerCase():'sem motivo marcado'),d.note?h('small',{},d.note):null))}))));
   if(maybe.length)out.push(h('div',{class:'sec'},h('div',{class:'sh'},h('h3',{},'Em dúvida'),h('span',{class:'tag'},maybe.length)),h('div',{class:'row'},maybe.map(r=>h('img',{src:r.url,alt:r.cap||'',style:'width:96px;height:120px;object-fit:cover;border-radius:var(--r1);cursor:zoom-in',onclick:()=>zoom(r.url)})))));
   if(no.length)out.push(h('div',{class:'sec'},h('div',{class:'sh'},h('h3',{},'Lista de nunca'),h('span',{class:'tag'},no.length)),h('div',{class:'row never'},no.map(r=>h('img',{src:r.url,alt:r.cap||'',style:'cursor:zoom-in',onclick:()=>zoom(r.url)})))));
   fontsBoard(out);
@@ -556,6 +556,17 @@ const FONTS=[
  gf('instrument-sans','Instrument Sans',"'Instrument Sans'",700,'100%','Instrument+Sans','Instrument+Sans:wght@700',['grot','hel'],'Grotesca limpa e contemporânea.'),
  {id:'arial',n:'Arial',t:['grot','hel','sis'],s:'s',f:"Arial,'Helvetica Neue',sans-serif",w:700,st:'100%',d:'Vem instalada em todo Windows e todo Mac, e é quase igual à Helvetica. É a escolha segura para Word e PowerPoint: abre igual em qualquer computador, sem instalar nada.'},
  {id:'helvetica',n:'Helvetica',t:['grot','hel','sis'],s:'s',f:"Helvetica,Arial,sans-serif",w:700,st:'100%',d:'Vem no Mac, mas não no Windows, onde o Word troca por Arial. Por isso não serve sozinha para arquivos que circulam entre os dois.'},
+ {id:'verdana',n:'Verdana',t:['grot','wide','sis'],s:'s',f:"Verdana,sans-serif",w:700,st:'100%',d:'Vem em todo Windows e todo Mac. Larga e aberta, feita para ler em tela.'},
+ {id:'tahoma',n:'Tahoma',t:['grot','sis'],s:'s',f:"Tahoma,Verdana,sans-serif",w:700,st:'100%',d:'Vem em todo Windows e todo Mac. Mais fechada que a Verdana.'},
+ {id:'trebuchet-ms',n:'Trebuchet MS',t:['grot','sis'],s:'s',f:"'Trebuchet MS',sans-serif",w:700,st:'100%',d:'Vem em todo Windows e todo Mac. Humanista, com um toque de personalidade.'},
+ {id:'georgia',n:'Georgia',t:['ser','sis'],s:'s',f:"Georgia,serif",w:700,st:'100%',d:'Vem em todo Windows e todo Mac. Serifada, boa para texto longo na tela.'},
+ {id:'times-new-roman',n:'Times New Roman',t:['ser','sis'],s:'s',f:"'Times New Roman',serif",w:700,st:'100%',d:'Vem em todo Windows e todo Mac. A serifada padrão do Word.'},
+ {id:'impact',n:'Impact',t:['cond','sis'],s:'s',f:"Impact,'Arial Narrow',sans-serif",w:400,st:'100%',d:'Vem em todo Windows e todo Mac. Condensada e pesada, no mesmo espírito da Haettenschweiler que o cliente achou grossa.'},
+ {id:'calibri',n:'Calibri',t:['grot','sis'],s:'s',f:"Calibri,Carlito,sans-serif",w:700,st:'100%',d:'Vem com o Microsoft Office, no Windows e no Mac. A fonte padrão do Word e do PowerPoint por muitos anos.'},
+ {id:'cambria',n:'Cambria',t:['ser','sis'],s:'s',f:"Cambria,Caladea,serif",w:700,st:'100%',d:'Vem com o Microsoft Office, no Windows e no Mac. Serifada, par clássico da Calibri.'},
+ {id:'century-gothic',n:'Century Gothic',t:['geo','sis'],s:'s',f:"'Century Gothic',sans-serif",w:700,st:'100%',d:'Vem com o Microsoft Office. Geométrica, no estilo da Futura.'},
+ {id:'gill-sans-mt',n:'Gill Sans MT',t:['ser','sis'],s:'s',f:"'Gill Sans MT','Gill Sans',sans-serif",w:700,st:'100%',d:'Vem com o Microsoft Office e o Mac. Humanista e elegante.'},
+ {id:'franklin-gothic',n:'Franklin Gothic Medium',t:['grot','sis'],s:'s',f:"'Franklin Gothic Medium','Libre Franklin',sans-serif",w:400,st:'100%',d:'Vem com o Windows e com o Microsoft Office. Grotesca americana, de título.'},
  {id:'haettenschweiler',n:'Haettenschweiler',t:['cond'],s:'m',img:'refs/novas/haettenschweiler.jpg',d:'Arquivo HATTEN.TTF do brandbook antigo. Não está no Google Fonts nem no Adobe Fonts. Fica aqui só para confirmar que o cliente não quer, por achar muito grossa.'}
 ];
 (function(){const q=[...new Set(FONTS.filter(f=>f.s==='g').map(f=>'family='+f.q))].join('&');const l=document.createElement('link');l.rel='stylesheet';l.href='https://fonts.googleapis.com/css2?'+q+'&display=swap';document.head.append(l)})();
@@ -565,6 +576,8 @@ const fstyle=f=>'font-family:'+f.f+';font-weight:'+f.w+';font-stretch:'+(f.st||'
 const FPRE=[['PRUDENCE','PRUDENCE'],['Slogan','Mais prazer para todos.'],['Texto corrido','Prazer é liberdade. Cuidar de si é parte da diversão, e a gente cuida de você em cada detalhe.'],['Letras e números','Aa Bb Cc Dd 0123456789']];
 const FFIL=[['all','Todas'],['cond','Condensadas'],['grot','Grotescas'],['geo','Geométricas'],['wide','Largas'],['ser','Serifadas e humanistas'],['hel','Parecidas com Helvetica'],['sis','Já vem no computador'],['g','Só Google Fonts'],['fav','Minhas favoritas']];
 const live=f=>f.s==='g'||f.s==='s';
+const _cv=document.createElement('canvas').getContext('2d');
+function hasFont(n){const t='mmmmmmmmmmlli',w=f=>{_cv.font='72px '+f;return _cv.measureText(t).width};return w("'"+n+"',monospace")!==w('monospace')||w("'"+n+"',serif")!==w('serif')}
 function fontSample(f,txt){
   if(live(f))return h('div',{class:'fs',style:fstyle(f)},txt);
   if(f.s==='a')return h('div',{class:'fs adobe'},h('span',{},'A prévia desta fonte fica no Adobe Fonts.'),h('a',{class:'kk-botao kk-botao--2',href:AF+f.slug,target:'_blank',rel:'noopener'},'Abrir a prévia'));
@@ -574,7 +587,7 @@ function fontRow(f){
   const link=f.s==='g'?h('a',{href:GF+f.slug,target:'_blank',rel:'noopener'},'Baixar no Google Fonts'):f.s==='a'?h('a',{href:AF+f.slug,target:'_blank',rel:'noopener'},'Ver no Adobe Fonts'):null;
   const ck=h('input',{type:'checkbox','aria-label':'Comparar '+f.n});ck.checked=cmp.includes(f.id);ck.addEventListener('change',()=>{togCmp(f.id)});
   return h('article',{class:'fr'+(v?' v-'+v:''),'data-id':f.id},
-    h('div',{class:'fm'},h('b',{},f.n),h('div',{class:'ftags'},f.t.map(t=>h('span',{class:'ftag'},FT[t])),h('span',{class:'src '+f.s},f.s==='g'?'Google Fonts':f.s==='a'?'Adobe Fonts':f.s==='s'?'Já vem no computador':'Fora do Google e do Adobe')),h('p',{},f.d),link),
+    h('div',{class:'fm'},h('b',{},f.n),h('div',{class:'ftags'},f.t.filter(t=>t!=='sis').map(t=>h('span',{class:'ftag'},FT[t])),h('span',{class:'src '+f.s},f.s==='g'?'Google Fonts':f.s==='a'?'Adobe Fonts':f.s==='s'?'Já vem no computador':'Fora do Google e do Adobe')),h('p',{},f.d),f.s==='s'&&!hasFont(f.n)?h('p',{class:'fwarn'},'Não achei esta fonte neste computador. A prévia mostra outra no lugar.'):null,link),
     fontSample(f,txt),
     h('div',{class:'fv'},h('div',{class:'fvb'},...[['yes','check','Gostei'],['maybe','ajuda','Talvez'],['no','fechar','Não']].map(([k,g,t])=>h('button',{'data-v':k,class:v===k?'on':'','aria-label':t+': '+f.n,onclick:()=>fvote(f.id,k)},ic(g)))),
       h('label',{class:'fcmp'},ck,'Comparar')))}
@@ -620,7 +633,7 @@ function summaryText(){
   lst('yes','Aprovadas');lst('maybe','Em dúvida');lst('no','Lista de nunca');
   const fm=m=>Object.entries(m).filter(([,v])=>v>0).sort((a,b)=>b[1]-a[1]).map(([a,v])=>a+' ('+v+')').join(', ')||'nenhuma';
   L.push('O que o cliente gosta: '+fm(t.p),'O que o cliente não gosta: '+fm(t.n),'Motivos das preferências: '+fm(wt),'','Duelos:');
-  duels().forEach(d=>{const a=(R[d.a]||{}).cap||'A',b=(R[d.b]||{}).cap||'B';L.push('- '+(d.pick==='a'?a+' > '+b:d.pick==='b'?b+' > '+a:d.pick==='both'?a+' = '+b+' (as duas)':d.pick==='none'?a+' × '+b+' (nenhuma)':a+' vs '+b+' (sem escolha)')+((d.why||[]).length?' · por: '+d.why.join(', ').toLowerCase():'')+(d.note?' · '+d.note:''))});
+  duels().forEach(d=>{const a=d.la||(R[d.a]||{}).cap||'A',b=d.lb||(R[d.b]||{}).cap||'B';L.push('- '+(d.pick==='a'?a+' > '+b:d.pick==='b'?b+' > '+a:d.pick==='both'?a+' = '+b+' (as duas)':d.pick==='none'?a+' × '+b+' (nenhuma)':a+' vs '+b+' (sem escolha)')+((d.why||[]).length?' · por: '+d.why.join(', ').toLowerCase():'')+(d.note?' · '+d.note:''))});
   {const fy=FONTS.filter(f=>(FV[f.id]||{}).vote==='yes'),fm2=FONTS.filter(f=>(FV[f.id]||{}).vote==='maybe'),fn=FONTS.filter(f=>(FV[f.id]||{}).vote==='no');
    if(fy.length||fm2.length||fn.length)L.push('','Fontes:','- Preferidas: '+(fy.map(f=>f.n).join(', ')||'nenhuma'),'- Em dúvida: '+(fm2.map(f=>f.n).join(', ')||'nenhuma'),'- Não gostou: '+(fn.map(f=>f.n).join(', ')||'nenhuma'))}
   const notes=rs.filter(r=>r.note);if(notes.length)L.push('','Anotações:',...notes.map(r=>'- '+(r.cap||catT(r.cat))+': '+r.note));
