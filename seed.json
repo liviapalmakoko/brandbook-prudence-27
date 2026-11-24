@@ -1,13 +1,319 @@
 {
  "refs2": {
-  "seed-camisa-01": {
-   "url": "refs/camisas/01-koko-foood-branca-costas.jpg",
-   "cat": "uni",
-   "cap": "Koko's Foood · branca · costas (bananas)",
+  "seed-foto-01": {
+   "url": "refs/fotos/foto-01.jpg",
+   "cat": "foto",
+   "cap": "Lábios em close (banco de imagem)",
    "vote": "",
    "asp": {},
    "note": "",
-   "ts": 1700000000001
+   "ts": 1700000100001
+  },
+  "seed-foto-02": {
+   "url": "refs/fotos/foto-02.jpg",
+   "cat": "foto",
+   "cap": "Lábios em close, luz natural (banco de imagem)",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000100002
+  },
+  "seed-foto-03": {
+   "url": "refs/fotos/foto-03.jpg",
+   "cat": "foto",
+   "cap": "Lábios e piercing no nariz (banco de imagem)",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000100003
+  },
+  "seed-foto-04": {
+   "url": "refs/fotos/foto-04.jpg",
+   "cat": "foto",
+   "cap": "Lábios molhados, chuveiro (banco de imagem)",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000100004
+  },
+  "seed-foto-05": {
+   "url": "refs/fotos/foto-05.jpg",
+   "cat": "foto",
+   "cap": "Beijo em close (banco de imagem)",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000100005
+  },
+  "seed-foto-06": {
+   "url": "refs/fotos/foto-06.jpg",
+   "cat": "foto",
+   "cap": "Lábios em padrão amarelo (banco de imagem)",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000100006
+  },
+  "seed-foto-07": {
+   "url": "refs/fotos/foto-07.jpg",
+   "cat": "foto",
+   "cap": "Gotas de água na pele (banco de imagem)",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000100007
+  },
+  "seed-foto-08": {
+   "url": "refs/fotos/foto-08.jpg",
+   "cat": "foto",
+   "cap": "Pele com gotas (banco de imagem)",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000100008
+  },
+  "seed-foto-10": {
+   "url": "refs/fotos/foto-10.jpg",
+   "cat": "foto",
+   "cap": "Abacaxi e roupão (banco de imagem)",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000100010
+  },
+  "seed-foto-11": {
+   "url": "refs/fotos/foto-11.jpg",
+   "cat": "foto",
+   "cap": "Mirtilos (banco de imagem)",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000100011
+  },
+  "seed-foto-12": {
+   "url": "refs/fotos/foto-12.jpg",
+   "cat": "foto",
+   "cap": "Limão pingando (banco de imagem)",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000100012
+  },
+  "seed-foto-13": {
+   "url": "refs/fotos/foto-13.jpg",
+   "cat": "foto",
+   "cap": "Laranja espremida (banco de imagem)",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000100013
+  },
+  "seed-foto-14": {
+   "url": "refs/fotos/foto-14.jpg",
+   "cat": "foto",
+   "cap": "Chama (banco de imagem)",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000100014
+  },
+  "seed-foto-15": {
+   "url": "refs/fotos/foto-15.jpg",
+   "cat": "foto",
+   "cap": "Gel sobre fundo verde (banco de imagem)",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000100015
+  },
+  "seed-foto-16": {
+   "url": "refs/fotos/foto-16.jpg",
+   "cat": "foto",
+   "cap": "Líquido transparente (banco de imagem)",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000100016
+  },
+  "seed-foto-17": {
+   "url": "refs/fotos/foto-17.jpg",
+   "cat": "foto",
+   "cap": "Mão com líquido rosa (banco de imagem)",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000100017
+  },
+  "seed-foto-18": {
+   "url": "refs/fotos/foto-18.jpg",
+   "cat": "foto",
+   "cap": "Gota de água (banco de imagem)",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000100018
+  },
+  "seed-foto-19": {
+   "url": "refs/fotos/foto-19.jpg",
+   "cat": "foto",
+   "cap": "Onda (banco de imagem)",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000100019
+  },
+  "seed-foto-20": {
+   "url": "refs/fotos/foto-20.jpg",
+   "cat": "foto",
+   "cap": "Vidro de chuveiro embaçado (banco de imagem)",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000100020
+  },
+  "seed-foto-21": {
+   "url": "refs/fotos/foto-21.jpg",
+   "cat": "foto",
+   "cap": "Camisinha sobre fundo rosa (banco de imagem)",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000100021
+  },
+  "seed-foto-22": {
+   "url": "refs/fotos/foto-22.jpg",
+   "cat": "foto",
+   "cap": "Luz arco-íris, azul (banco de imagem)",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000100022
+  },
+  "seed-foto-23": {
+   "url": "refs/fotos/foto-23.jpg",
+   "cat": "foto",
+   "cap": "Reflexo arco-íris, beijo (banco de imagem)",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000100023
+  },
+  "seed-foto-24": {
+   "url": "refs/fotos/foto-24.jpg",
+   "cat": "foto",
+   "cap": "Magenta, close (banco de imagem)",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000100024
+  },
+  "seed-foto-25": {
+   "url": "refs/fotos/foto-25.jpg",
+   "cat": "foto",
+   "cap": "Luz roxa, movimento (banco de imagem)",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000100025
+  },
+  "seed-foto-26": {
+   "url": "refs/fotos/foto-26.jpg",
+   "cat": "foto",
+   "cap": "Folha cobrindo o rosto (banco de imagem)",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000100026
+  },
+  "seed-foto-27": {
+   "url": "refs/fotos/foto-27.jpg",
+   "cat": "foto",
+   "cap": "Travesseiro na cabeça (banco de imagem)",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000100027
+  },
+  "seed-foto-28": {
+   "url": "refs/fotos/foto-28.jpg",
+   "cat": "foto",
+   "cap": "Bebendo do jarro (banco de imagem)",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000100028
+  },
+  "seed-foto-29": {
+   "url": "refs/fotos/foto-29.jpg",
+   "cat": "foto",
+   "cap": "Beijo e riso (banco de imagem)",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000100029
+  },
+  "seed-foto-30": {
+   "url": "refs/fotos/foto-30.jpg",
+   "cat": "foto",
+   "cap": "Casal na cama, riso (banco de imagem)",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000100030
+  },
+  "seed-foto-31": {
+   "url": "refs/fotos/foto-31.jpg",
+   "cat": "foto",
+   "cap": "Beijo, casal (banco de imagem)",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000100031
+  },
+  "seed-foto-32": {
+   "url": "refs/fotos/foto-32.jpg",
+   "cat": "foto",
+   "cap": "Beijo de cabeça para baixo (banco de imagem)",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000100032
+  },
+  "seed-foto-33": {
+   "url": "refs/fotos/foto-33.jpg",
+   "cat": "foto",
+   "cap": "Luz vermelha, movimento (banco de imagem)",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000100033
+  },
+  "seed-foto-34": {
+   "url": "refs/fotos/foto-34.jpg",
+   "cat": "foto",
+   "cap": "Cabine telefônica vermelha (banco de imagem)",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000100034
+  },
+  "seed-foto-35": {
+   "url": "refs/fotos/foto-35.jpg",
+   "cat": "foto",
+   "cap": "Banho de flores (banco de imagem)",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000100035
+  },
+  "seed-foto-36": {
+   "url": "refs/fotos/foto-36.jpg",
+   "cat": "foto",
+   "cap": "Amigas, cores quentes (banco de imagem)",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000100036
   },
   "seed-camisa-02": {
    "url": "refs/camisas/02-koko-foood-preta-costas.png",
@@ -45,15 +351,6 @@
    "note": "",
    "ts": 1700000000005
   },
-  "seed-camisa-06": {
-   "url": "refs/camisas/06-lambe-lambe-frente.jpg",
-   "cat": "uni",
-   "cap": "Lambe Lambe · frente",
-   "vote": "",
-   "asp": {},
-   "note": "",
-   "ts": 1700000000006
-  },
   "seed-camisa-07": {
    "url": "refs/camisas/07-lambe-lambe-costas.jpg",
    "cat": "uni",
@@ -63,15 +360,6 @@
    "note": "",
    "ts": 1700000000007
   },
-  "seed-camisa-09": {
-   "url": "refs/camisas/09-koko-camisa-de-reels-2022.png",
-   "cat": "uni",
-   "cap": "Koko · \"Essa é minha camisa de reels\" (2022)",
-   "vote": "",
-   "asp": {},
-   "note": "",
-   "ts": 1700000000009
-  },
   "seed-camisa-10": {
    "url": "refs/camisas/10-koko-trabalhando-em-casa-costas.jpg",
    "cat": "uni",
@@ -80,15 +368,6 @@
    "asp": {},
    "note": "",
    "ts": 1700000000010
-  },
-  "seed-camisa-11": {
-   "url": "refs/camisas/11-vintage-tee-1.jpg",
-   "cat": "uni",
-   "cap": "Vintage tee 1",
-   "vote": "",
-   "asp": {},
-   "note": "",
-   "ts": 1700000000011
   },
   "seed-camisa-12": {
    "url": "refs/camisas/12-vintage-tee-1-1.jpg",
@@ -108,15 +387,6 @@
    "note": "",
    "ts": 1700000000013
   },
-  "seed-camisa-14": {
-   "url": "refs/camisas/14-vintage-tee-3.jpg",
-   "cat": "uni",
-   "cap": "Vintage tee 3",
-   "vote": "",
-   "asp": {},
-   "note": "",
-   "ts": 1700000000014
-  },
   "seed-camisa-15": {
    "url": "refs/camisas/15-mockup-camiseta-2026.png",
    "cat": "uni",
@@ -135,14 +405,96 @@
    "note": "",
    "ts": 1700000000016
   },
-  "seed-camisa-17": {
-   "url": "refs/camisas/17-camisetas-internas-2019.png",
+  "seed-camisa-ref-1": {
+   "url": "refs/novas/camisa-ref-1.jpg",
    "cat": "uni",
-   "cap": "Camisetas internas simples (2019)",
+   "cap": "Referência de camiseta · branca, texto pequeno no peito",
    "vote": "",
    "asp": {},
    "note": "",
-   "ts": 1700000000017
+   "ts": 1700000050001
+  },
+  "seed-camisa-ref-2": {
+   "url": "refs/novas/camisa-ref-2.jpg",
+   "cat": "uni",
+   "cap": "Referência de camiseta · preta, estampa vermelha nas costas",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000050002
+  },
+  "seed-camisa-ref-3": {
+   "url": "refs/novas/camisa-ref-3.jpg",
+   "cat": "uni",
+   "cap": "Referência de camiseta · coroa laranja nas costas",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000050003
+  },
+  "seed-camisa-ref-4": {
+   "url": "refs/novas/camisa-ref-4.jpg",
+   "cat": "uni",
+   "cap": "Referência de camiseta · tipografia manuscrita nas costas",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000050004
+  },
+  "seed-camisa-ref-5": {
+   "url": "refs/novas/camisa-ref-5.jpg",
+   "cat": "uni",
+   "cap": "Referência de camiseta · azul, letra bolha",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000050005
+  },
+  "seed-camisa-ref-6": {
+   "url": "refs/novas/camisa-ref-6.jpg",
+   "cat": "uni",
+   "cap": "Referência de camiseta · bege, texto bordado discreto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000050006
+  },
+  "seed-camisa-ref-7": {
+   "url": "refs/novas/camisa-ref-7.jpg",
+   "cat": "uni",
+   "cap": "Referência de camiseta · bege, estampa discreta",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000050007
+  },
+  "seed-adesivo-1": {
+   "url": "refs/novas/adesivos.png",
+   "cat": "graf",
+   "cap": "Referência de adesivos",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000060001
+  },
+  "seed-fonte-haettenschweiler": {
+   "url": "refs/novas/haettenschweiler.jpg",
+   "cat": "tipo",
+   "cap": "Haettenschweiler (HATTEN.TTF) · opção do brandbook antigo, para confirmar",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000070001
   }
+ },
+ "_remove": {
+  "refs2": [
+   "seed-camisa-01",
+   "seed-camisa-06",
+   "seed-camisa-09",
+   "seed-camisa-11",
+   "seed-camisa-14",
+   "seed-camisa-17"
+  ]
  }
 }

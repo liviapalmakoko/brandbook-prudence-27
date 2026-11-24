@@ -195,10 +195,13 @@ kbd{font-family:var(--f-b);font-size:11px;border:1px solid var(--line);border-ra
   const cache={},listeners={};let ready=null;
   const idb=()=>new Promise((res,rej)=>{const r=indexedDB.open(DBN,1);r.onupgradeneeded=()=>r.result.createObjectStore(ST);r.onsuccess=()=>res(r.result);r.onerror=()=>rej(r.error)});
   const load=()=>ready||(ready=idb().then(db=>new Promise((res,rej)=>{const tx=db.transaction(ST).objectStore(ST),keys=tx.getAllKeys(),vals=tx.getAll();tx.transaction.oncomplete=()=>{keys.result.forEach((k,i)=>cache[k]=vals.result[i]);res(db)};tx.transaction.onerror=()=>rej(tx.transaction.error)})).then(async db=>{await applySeed(db);return db}));
-  /* referências iniciais (seed.json): entram uma única vez por id, então o que a pessoa apagar não volta */
-  async function applySeed(db){try{const r=await fetch('seed.json',{cache:'no-cache'});if(!r.ok)return;const seed=await r.json(),done=new Set((cache['meta/seeded']||{}).ids||[]),add=[];
-    for(const col in seed)for(const id in seed[col]){const key='seed:'+col+'/'+id;if(done.has(key))continue;if(!cache[col+'/'+id]){cache[col+'/'+id]=seed[col][id];add.push([col+'/'+id,seed[col][id]])}done.add(key)}
-    if(add.length||done.size!==((cache['meta/seeded']||{}).ids||[]).length){cache['meta/seeded']={ids:[...done]};const t=db.transaction(ST,'readwrite'),st=t.objectStore(ST);add.forEach(([k,v])=>st.put(v,k));st.put(cache['meta/seeded'],'meta/seeded');await new Promise(r=>t.oncomplete=r)}}catch(e){}}
+  /* referências iniciais (seed.json): cada id entra uma única vez por navegador, então o que a pessoa apagar não volta.
+     "_remove" tira uma única vez referências que foram retiradas da lista. */
+  async function applySeed(db){try{const r=await fetch('seed.json',{cache:'no-cache'});if(!r.ok)return;const seed=await r.json(),done=new Set((cache['meta/seeded']||{}).ids||[]),put=[],del=[];
+    for(const col in seed){if(col==='_remove')continue;for(const id in seed[col]){const key='seed:'+col+'/'+id;if(done.has(key))continue;if(!cache[col+'/'+id]){cache[col+'/'+id]=seed[col][id];put.push([col+'/'+id,seed[col][id]])}done.add(key)}}
+    for(const col in (seed._remove||{}))for(const id of seed._remove[col]){const key='rm:'+col+'/'+id;if(done.has(key))continue;if(cache[col+'/'+id]){delete cache[col+'/'+id];del.push(col+'/'+id)}done.add(key)}
+    const prev=((cache['meta/seeded']||{}).ids||[]).length;
+    if(put.length||del.length||done.size!==prev){cache['meta/seeded']={ids:[...done]};const t=db.transaction(ST,'readwrite'),st=t.objectStore(ST);put.forEach(([k,v])=>st.put(v,k));del.forEach(k=>st.delete(k));st.put(cache['meta/seeded'],'meta/seeded');await new Promise(r=>t.oncomplete=r)}}catch(e){}}
   const put=(k,v)=>load().then(db=>{const t=db.transaction(ST,'readwrite');v===null?t.objectStore(ST).delete(k):t.objectStore(ST).put(v,k)});
   const snap=c=>({docs:Object.keys(cache).filter(k=>k.startsWith(c+'/')).map(k=>({id:k.slice(c.length+1),data:()=>cache[k]}))});
   const notify=c=>(listeners[c]||[]).forEach(f=>f(snap(c)));
