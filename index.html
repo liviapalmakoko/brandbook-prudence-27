@@ -269,7 +269,6 @@ kbd{font-family:var(--f-b);font-size:11px;border:1px solid var(--line);border-ra
 <body>
 <div class="kk-fundo" aria-hidden="true"></div>
 <dialog class="kk-janela" id="reset" aria-labelledby="reset-t"><div class="kk-janela-caixa"><div class="kk-janela-cab"><h3 class="kk-h3" id="reset-t">Zerar todas as respostas?</h3></div><p class="kk-texto">Apaga as respostas de Marca, duelos, cores, fontes e referências votadas. As referências, os duelos e as escolhas da Koko continuam. Não dá para desfazer; se quiser guardar, baixe um backup antes.</p><div class="kk-pilha"><button class="kk-botao kk-botao--2" type="button" id="reset-no">Cancelar</button><button class="kk-botao kk-botao--perigo" type="button" id="reset-yes">Zerar respostas</button></div></div></dialog>
-<dialog class="kk-janela" id="login" aria-labelledby="login-t"><div class="kk-janela-caixa"><div class="kk-janela-cab"><h3 class="kk-h3" id="login-t">Quem está respondendo?</h3></div><p class="kk-texto">Cada resposta fica marcada com o nome de quem votou.</p><div class="kk-pilha" id="login-op"></div></div></dialog>
 <svg class="kk-icones" aria-hidden="true">
   <symbol id="i-busca" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></symbol>
   <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
@@ -302,7 +301,6 @@ kbd{font-family:var(--f-b);font-size:11px;border:1px solid var(--line);border-ra
       <span class="kk-marca-nome">Moodboard Prudence</span>
     </a>
     <div class="kk-topo-acoes">
-      <button class="kk-botao kk-botao--2 kk-botao--p" id="who" type="button" aria-label="Trocar quem está respondendo"></button>
       <button class="kk-botao kk-botao--p" id="sum" type="button">Resumo</button>
       <button type="button" class="kk-botao-icone" data-kk-tema aria-label="Alternar tema claro e escuro">
         <svg class="kk-ic kk-so-claro"><use href="#i-lua"></use></svg>
@@ -451,7 +449,7 @@ Object.assign(COPY,{
 const CP=id=>COPY[id]||{};
 const dv=d=>({...d,...CP(d.id),...proj(d,who())});
 const duels=()=>Object.entries(DU).map(([id,d])=>({id,...d,...CP(id),...proj({...d,id},who())})).sort((a,b)=>(a.ts||0)-(b.ts||0));
-function needMe(){if(me)return true;$('#login').showModal();return false}
+function needMe(){return true}
 const duelCat=d=>(R[d.a]||R[d.b]||{}).cat;
 
 /* ---------- gravacao ---------- */
@@ -606,6 +604,7 @@ const WORDS=[['Ousada',1],['Divertida',1],['Surpreendente',1],['Inclusiva',1],['
 const apos=a=>{const x=ATT['ax-'+a.k];return x&&x.pos?x.pos:a.pre};
 const astat=a=>{const x=ATT['ax-'+a.k];if(x&&x.pos)return a.pre&&x.pos===a.pre?'Combinado':a.pre?'Seu ajuste':'Sua resposta';return a.pre?'Sugestão Koko':'Para você escolher'};
 const astag=t=>({Combinado:'kk-etiqueta--ok','Seu ajuste':'kk-etiqueta--novo','Sua resposta':'kk-etiqueta--ok','Sugestão Koko':'kk-etiqueta--info','Para você escolher':'kk-etiqueta--ponto'})[t];
+const wvS=w=>{const x=ATT['w-'+w[0]];return x&&x.v?x.v:''};
 const wv=w=>{const x=ATT['w-'+w[0]];return x&&'v' in x?x.v:(w[1]>0?'pos':w[1]<0?'neg':'')};
 const setAx=(k,pos)=>w(()=>db.collection('attrs2').doc('ax-'+k).set({pos}));
 const setWd=(n,v)=>w(()=>db.collection('attrs2').doc('w-'+n).set({v}));
@@ -634,15 +633,15 @@ function renderMarca(){
       h('div',{class:'kk-box'},h('div',{class:'axh'},h('h3',{class:'kk-h3'},'Em uma frase'),h('span',{class:'lbl'},'Opcional')),note)),
     h('div',{class:'dnav',style:'position:static;margin:var(--esp-5) auto 0'},h('a',{class:'kk-botao',href:'#sessao',style:'text-align:center;text-decoration:none'},'Seguir para a Sessão')))}
 function attrBoard(){
-  const ans=AXES.filter(a=>ATT['ax-'+a.k]||a.pre);if(!ans.length)return null;
-  const pw=WORDS.filter(w=>wv(w)==='pos').map(w=>w[0]),nw=WORDS.filter(w=>wv(w)==='neg').map(w=>w[0]);
+  const ans=AXES.filter(a=>ATT['ax-'+a.k]);const pw=WORDS.filter(w=>wvS(w)==='pos').map(w=>w[0]),nw=WORDS.filter(w=>wvS(w)==='neg').map(w=>w[0]);
+  if(!ans.length&&!pw.length&&!nw.length&&!(ATT.note||{}).t)return null;
   return h('div',{class:'sec'},h('div',{class:'sh'},h('h3',{},'Personalidade da marca'),h('span',{class:'tag'},'Base: Aaker (1997) e Nielsen Norman Group · '+AXES.filter(a=>ATT['ax-'+a.k]).length+' de '+AXES.length+' respondidas')),
-    h('div',{class:'kk-box'},...ans.map(a=>axRow(a,true))),
+    ans.length?h('div',{class:'kk-box'},...ans.map(a=>axRow(a,true))):null,
     h('div',{class:'row',style:'margin-top:var(--esp-4)'},h('div',{},h('div',{class:'tag'},'Combina'),h('div',{class:'asp'},pw.length?pw.map(x=>h('span',{class:'ch pos'},x)):h('span',{class:'lbl'},'nenhuma'))),h('div',{},h('div',{class:'tag'},'Não combina'),h('div',{class:'asp'},nw.length?nw.map(x=>h('span',{class:'ch neg'},x)):h('span',{class:'lbl'},'nenhuma')))),
     (ATT.note||{}).t?h('p',{class:'kk-texto'},'Persona: '+ATT.note.t):null)}
-function attrText(){const L=['','Atributos da marca (1 = '+'esquerda, 5 = direita):'];AXES.forEach(a=>{if(ATT['ax-'+a.k]||a.pre)L.push('- '+a.l+' ↔ '+a.r+': '+apos(a)+' de 5 ('+astat(a).toLowerCase()+')')});
-  const pw=WORDS.filter(w=>wv(w)==='pos').map(w=>w[0]),nw=WORDS.filter(w=>wv(w)==='neg').map(w=>w[0]);L.push('- Combina: '+(pw.join(', ')||'nenhuma'),'- Não combina: '+(nw.join(', ')||'nenhuma'));if((ATT.note||{}).t)L.push('- Persona: '+ATT.note.t);return L}
-
+function attrText(){const ax=AXES.filter(a=>ATT['ax-'+a.k]),pw=WORDS.filter(w=>wvS(w)==='pos').map(w=>w[0]),nw=WORDS.filter(w=>wvS(w)==='neg').map(w=>w[0]);if(!ax.length&&!pw.length&&!nw.length&&!(ATT.note||{}).t)return[];
+  const L=['','Atributos da marca (1 = esquerda, 5 = direita):'];ax.forEach(a=>L.push('- '+a.l+' ↔ '+a.r+': '+apos(a)+' de 5 ('+astat(a).toLowerCase()+')'));
+  if(pw.length||nw.length)L.push('- Combina: '+(pw.join(', ')||'nenhuma'),'- Não combina: '+(nw.join(', ')||'nenhuma'));if((ATT.note||{}).t)L.push('- Persona: '+ATT.note.t);return L}
 /* ---------- cores ---------- */
 let PAL={},pi=0;
 /* conferir: ignorar-inicio (amostras de paleta são conteúdo, não estilo da página) */
@@ -679,7 +678,7 @@ function palBuilt(){const r=palResult();
   const parts=[sw(PRETO,'38%'),sw(BRANCO,'30%'),sw(CINZA,'14%')];if(r.bege)parts.splice(2,0,sw(BEGE,'8%'));
   if(r.main)parts.push(sw(r.main,'12%'));if(r.sup)parts.push(sw(r.sup,'6%'));
   return{r,el:h('div',{class:'pbar'},parts)}}
-function palSummary(){const r=palResult(),L=['','Paleta (a partir das cores curtidas):'];
+function palSummary(){if(!PALS.some(P=>pv(P.id)))return[];const r=palResult(),L=['','Paleta (a partir das cores curtidas):'];
   const liked=PALS.filter(P=>pv(P.id)==='yes').map(P=>P.t),dis=PALS.filter(P=>pv(P.id)==='no').map(P=>P.t);
   L.push('- Base: preto, branco e cinza'+(r.bege?', com bege':''));
   L.push('- Cor de destaque: '+(r.main?r.main[0]:(r.neutra?'nenhuma, a base neutra bastou':'ainda não definida')));if(r.sup)L.push('- Cor de apoio: '+r.sup[0]);
@@ -728,6 +727,7 @@ function renderBoard(){
     h('div',{},h('div',{class:'tag'},'Brand identity · sessão de moodboard'),h('div',{class:'mb-title'},'PRUDENCE'),h('p',{class:'mb-sub'},yes.length+' aprovadas · '+maybe.length+' em dúvida · '+(no.length+left.length)+' não escolhidas')),
     h('div',{},h('div',{class:'tag'},'O que '+(mbWho==='cliente'?'o cliente':pname(mbWho).split(',')[0])+' prefere'),bars({...t.p,...dl2('w')},'p')),
     h('div',{},h('div',{class:'tag'},'O que ficou de fora'),bars({...t.n,...dl2('l')},'n')))];
+  if(ACT.length<=1)out.shift();
   {const ab=attrBoard();if(ab)out.push(ab);const pb=palBoard();if(pb)out.push(pb)}
   const byCat=CATS.map(c=>({c,l:yes.filter(r=>r.cat===c.k)})).filter(x=>x.l.length);
   if(!byCat.length)out.push(h('div',{class:'empty'},'O moodboard se monta sozinho: a imagem escolhida em cada duelo da Sessão aparece aqui, agrupada por categoria.'));
@@ -741,8 +741,8 @@ function renderBoard(){
   if(maybe.length)out.push(h('div',{class:'sec'},h('div',{class:'sh'},h('h3',{},'Em dúvida'),h('span',{class:'tag'},maybe.length)),h('div',{class:'row'},maybe.map(r=>h('img',{src:r.url,alt:r.cap||'',style:'width:96px;height:120px;object-fit:cover;border-radius:var(--r1);cursor:zoom-in',onclick:()=>zoom(r.url)})))));
   if(left.length)out.push(h('div',{class:'sec'},h('div',{class:'sh'},h('h3',{},'Não escolhidas nos duelos'),h('span',{class:'tag'},left.length)),h('div',{class:'row never'},left.map(r=>h('img',{src:r.url,alt:r.cap||'',style:'cursor:zoom-in',onclick:()=>zoom(r.url)})))));
   if(no.length)out.push(h('div',{class:'sec'},h('div',{class:'sh'},h('h3',{},'Lista de nunca'),h('span',{class:'tag'},no.length)),h('div',{class:'row never'},no.map(r=>h('img',{src:r.url,alt:r.cap||'',style:'cursor:zoom-in',onclick:()=>zoom(r.url)})))));
-  {const rows=duels(),pk=(d,p)=>{const x=proj({...DU[d.id],id:d.id},p);return x.pick==='a'?d.la:x.pick==='b'?d.lb:x.pick==='both'?'As duas':x.pick==='none'?'Nenhuma':null};
-   if(rows.length)out.push(h('div',{class:'sec'},h('div',{class:'sh'},h('h3',{},'Comparativo por pessoa')),h('div',{class:'kk-box kk-box--tabela'},h('table',{class:'kk-tabela kk-tabela--larga'},h('thead',{},h('tr',{},h('th',{},'Duelo'),h('th',{},'Escolha Koko'),...ACT.map(p=>h('th',{},p[1])))),h('tbody',{},rows.map(d=>h('tr',{},h('td',{'data-rotulo':'Duelo'},h('strong',{},d.q||'Duelo')),h('td',{'data-rotulo':'Escolha Koko'},(k=>k?h('span',{class:'kk-etiqueta kk-etiqueta--novo'},k.pick==='a'?d.la:d.lb):'-')(kokoOf(d))),...ACT.map(p=>{const v=pk(d,p[0]);return h('td',{'data-rotulo':p[1]},v||h('span',{class:'kk-etiqueta kk-etiqueta--atencao'},'Sem resposta'))}))))))))}
+  {const rows=duels().filter(d=>PEOPLE.some(p=>proj({...DU[d.id],id:d.id},p[0]).pick)),pk=(d,p)=>{const x=proj({...DU[d.id],id:d.id},p);return x.pick==='a'?d.la:x.pick==='b'?d.lb:x.pick==='both'?'As duas':x.pick==='none'?'Nenhuma':null};
+   if(rows.length&&(ACT.length>1||rows.some(d=>kokoOf(d))))out.push(h('div',{class:'sec'},h('div',{class:'sh'},h('h3',{},'Comparativo por pessoa')),h('div',{class:'kk-box kk-box--tabela'},h('table',{class:'kk-tabela kk-tabela--larga'},h('thead',{},h('tr',{},h('th',{},'Duelo'),h('th',{},'Escolha Koko'),...ACT.map(p=>h('th',{},p[1])))),h('tbody',{},rows.map(d=>h('tr',{},h('td',{'data-rotulo':'Duelo'},h('strong',{},d.q||'Duelo')),h('td',{'data-rotulo':'Escolha Koko'},(k=>k?h('span',{class:'kk-etiqueta kk-etiqueta--novo'},k.pick==='a'?d.la:d.lb):'-')(kokoOf(d))),...ACT.map(p=>{const v=pk(d,p[0]);return h('td',{'data-rotulo':p[1]},v||h('span',{class:'kk-etiqueta kk-etiqueta--atencao'},'Sem resposta'))}))))))))}
   fontsBoard(out);
   const notes=[...rs.filter(r=>r.note).map(r=>(r.cap||catT(r.cat))+': '+r.note),...duels().filter(d=>d.note).map(d=>'Duelo: '+d.note)];
   if(notes.length)out.push(h('div',{class:'sec'},h('div',{class:'sh'},h('h3',{},'Anotações da conversa')),h('ul',{style:'margin:0;padding-left:18px'},notes.map(n=>h('li',{},n)))));
@@ -864,17 +864,20 @@ function fontsBoard(out){
 /* ---------- resumo ---------- */
 function summaryText(){
   const rs=refs(),L=['MOODBOARD PRUDENCE · sessão de 26/11','Respostas de: '+pname(who()),''],t=tally(),wt=whyTally();
-  const ds=duelSets();const lst=(v,title)=>{const l=rs.filter(r=>v==='yes'?(r.vote==='yes'||ds.win.has(r.id)):v==='left'?(ds.lose.has(r.id)&&!ds.win.has(r.id)&&r.vote!=='yes'):r.vote===v);L.push(title+' ('+l.length+'):');CATS.forEach(c=>{const x=l.filter(r=>r.cat===c.k);if(x.length)L.push('- '+c.t+': '+x.map(r=>r.cap||'sem legenda').join('; '))});L.push('')};
+  const ds=duelSets();const lst=(v,title)=>{const l=rs.filter(r=>v==='yes'?(r.vote==='yes'||ds.win.has(r.id)):v==='left'?(ds.lose.has(r.id)&&!ds.win.has(r.id)&&r.vote!=='yes'):r.vote===v);if(!l.length)return;L.push(title+' ('+l.length+'):');CATS.forEach(c=>{const x=l.filter(r=>r.cat===c.k);if(x.length)L.push('- '+c.t+': '+x.map(r=>r.cap||'sem legenda').join('; '))});L.push('')};
   lst('yes','Aprovadas');lst('left','Não escolhidas nos duelos');lst('maybe','Em dúvida');lst('no','Lista de nunca');
   const fm=m=>Object.entries(m).filter(([,v])=>v>0).sort((a,b)=>b[1]-a[1]).map(([a,v])=>a+' ('+v+')').join(', ')||'nenhuma';
-  L.push('O que o cliente prefere: '+fm(t.p),'O que ficou de fora: '+fm(t.n),'Motivos das preferências: '+fm(wt),'','Duelos:');
-  duels().forEach(d=>{const a=d.la||(R[d.a]||{}).cap||'A',b=d.lb||(R[d.b]||{}).cap||'B';L.push('- '+(d.pick==='a'?a+' > '+b:d.pick==='b'?b+' > '+a:d.pick==='both'?a+' = '+b+' (as duas)':d.pick==='none'?a+' × '+b+' (nenhuma)':a+' vs '+b+' (sem escolha)')+((d.why||[]).length?' · por: '+d.why.join(', ').toLowerCase():'')+(d.note?' · '+d.note:''))});
+  {const x=[['O que o cliente prefere',fm(t.p)],['O que ficou de fora',fm(t.n)],['Motivos das preferências',fm(wt)]].filter(y=>y[1]!=='nenhuma');if(x.length)L.push(...x.map(y=>y[0]+': '+y[1]),'')}
+  const dr=duels().filter(d=>d.pick);if(dr.length)L.push('Duelos:');
+  dr.forEach(d=>{const a=d.la||(R[d.a]||{}).cap||'A',b=d.lb||(R[d.b]||{}).cap||'B';L.push('- '+(d.pick==='a'?a+' > '+b:d.pick==='b'?b+' > '+a:d.pick==='both'?a+' = '+b+' (as duas)':d.pick==='none'?a+' × '+b+' (nenhuma)':a+' vs '+b+' (sem escolha)')+((d.why||[]).length?' · por: '+d.why.join(', ').toLowerCase():'')+(d.note?' · '+d.note:''))});
   {const ds=duels().filter(d=>kokoOf(d)&&(d.pick==='a'||d.pick==='b')),ig=ds.filter(d=>kokoOf(d).pick===d.pick);if(ds.length)L.push('','Alinhamento com a escolha Koko: '+ig.length+' de '+ds.length+' duelos iguais.',...ds.filter(d=>kokoOf(d).pick!==d.pick).map(d=>'- Diferente: '+(d.q||'Duelo')+' (Koko: '+(kokoOf(d).pick==='a'?d.la:d.lb)+'; escolhido: '+(d.pick==='a'?d.la:d.lb)+')'))}
   L.push(...attrText());L.push(...palSummary());
-  L.push('','Respostas por pessoa:');Object.values(DU).length&&Object.entries(DU).sort((a,b)=>(a[1].ts||0)-(b[1].ts||0)).forEach(([id,d])=>{L.push('- '+(d.q||'Duelo')+': '+PEOPLE.map(([pid,n])=>{const x=proj({...d,id},pid);return n+' '+(x.pick==='a'?d.la:x.pick==='b'?d.lb:x.pick==='both'?'as duas':x.pick==='none'?'nenhuma':'sem resposta')}).join('; '))});
+  {const quem=PEOPLE.filter(([pid])=>Object.entries(DU).some(([id,d])=>proj({...d,id},pid).pick));
+   if(quem.length>1){L.push('','Respostas por pessoa:');Object.entries(DU).sort((a,b)=>(a[1].ts||0)-(b[1].ts||0)).forEach(([id,d])=>{if(!quem.some(([pid])=>proj({...d,id},pid).pick))return;L.push('- '+(d.q||'Duelo')+': '+quem.map(([pid,n])=>{const x=proj({...d,id},pid);return n+' '+(x.pick==='a'?d.la:x.pick==='b'?d.lb:x.pick==='both'?'as duas':x.pick==='none'?'nenhuma':'sem resposta')}).join('; '))})}}
   {const fy=FONTS.filter(f=>fvv(f.id)==='yes'),fm2=FONTS.filter(f=>fvv(f.id)==='maybe'),fn=FONTS.filter(f=>fvv(f.id)==='no');
    if(fy.length||fm2.length||fn.length)L.push('','Fontes:','- Preferidas: '+(fy.map(f=>f.n).join(', ')||'nenhuma'),'- Em dúvida: '+(fm2.map(f=>f.n).join(', ')||'nenhuma'),'- Não gostou: '+(fn.map(f=>f.n).join(', ')||'nenhuma'))}
   const notes=rs.filter(r=>r.note);if(notes.length)L.push('','Anotações:',...notes.map(r=>'- '+(r.cap||catT(r.cat))+': '+r.note));
+  if(L.length<=3)L.push('Nada respondido ainda.');
   return L.join('\n')}
 $('#sum').onclick=()=>{$('#panel').classList.remove('wide');
   const rs=refs(),t=tally(),wt=whyTally(),ul=a=>a.length?h('ul',{},a.map(x=>h('li',{},x))):h('p',{style:'color:var(--mute);margin:0'},'Nada ainda.');
@@ -932,10 +935,7 @@ $('#reset-no').onclick=()=>$('#reset').close();
 $('#reset-yes').onclick=async()=>{$('#reset').close();await resetAll()};
 
 /* ---------- quem está respondendo ---------- */
-function paintWho(){const b=$('#who');b.textContent=me?'Respondendo: '+pname(me):'Escolher quem responde'}
-function choose(id){me=id;try{localStorage.setItem('mb-me',id)}catch(e){}paintWho();$('#login').close();render()}
-(function(){const op=$('#login-op');PEOPLE.forEach(([id,n])=>op.append(h('button',{class:'kk-botao kk-botao--2',type:'button',onclick:()=>choose(id)},n)));
-  $('#who').onclick=()=>$('#login').showModal();paintWho();})();
+
 </script>
 
 </body>
