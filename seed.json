@@ -170,6 +170,114 @@
    "asp": {},
    "note": "",
    "ts": 1700000070001
+  },
+  "seed-fonte-01": {
+   "url": "refs/fontes/fonte-01.jpg",
+   "cat": "tipo",
+   "cap": "Opção de fonte · League Gothic (condensada, Google Fonts)",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000080001
+  },
+  "seed-fonte-02": {
+   "url": "refs/fontes/fonte-02.jpg",
+   "cat": "tipo",
+   "cap": "Opção de fonte · Barlow Condensed SemiBold (condensada, Google Fonts)",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000080002
+  },
+  "seed-fonte-03": {
+   "url": "refs/fontes/fonte-03.jpg",
+   "cat": "tipo",
+   "cap": "Opção de fonte · Oswald Medium (condensada, Google Fonts)",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000080003
+  },
+  "seed-fonte-04": {
+   "url": "refs/fontes/fonte-04.jpg",
+   "cat": "tipo",
+   "cap": "Opção de fonte · Archivo Bold, largura 62% (condensada, Google Fonts)",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000080004
+  },
+  "seed-fonte-05": {
+   "url": "refs/fontes/fonte-05.jpg",
+   "cat": "tipo",
+   "cap": "Opção de fonte · Sofia Sans Extra Condensed Bold (condensada, Google Fonts)",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000080005
+  },
+  "seed-fonte-06": {
+   "url": "refs/fontes/fonte-06.jpg",
+   "cat": "tipo",
+   "cap": "Opção de fonte · Antonio Bold (condensada, Google Fonts)",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000080006
+  },
+  "seed-fonte-07": {
+   "url": "refs/fontes/fonte-07.jpg",
+   "cat": "tipo",
+   "cap": "Opção de fonte · Sora SemiBold (geométrica, Google Fonts)",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000080007
+  },
+  "seed-fonte-08": {
+   "url": "refs/fontes/fonte-08.jpg",
+   "cat": "tipo",
+   "cap": "Opção de fonte · Urbanist Bold (geométrica, Google Fonts)",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000080008
+  },
+  "seed-fonte-09": {
+   "url": "refs/fontes/fonte-09.jpg",
+   "cat": "tipo",
+   "cap": "Opção de fonte · League Spartan Bold (geométrica, Google Fonts)",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000080009
+  },
+  "seed-fonte-10": {
+   "url": "refs/fontes/fonte-10.jpg",
+   "cat": "tipo",
+   "cap": "Opção de fonte · Hanken Grotesk Bold (grotesca, Google Fonts)",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000080010
+  },
+  "seed-fonte-11": {
+   "url": "refs/fontes/fonte-11.jpg",
+   "cat": "tipo",
+   "cap": "Opção de fonte · Inter Tight Bold (grotesca, Google Fonts)",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000080011
+  },
+  "seed-fonte-12": {
+   "url": "refs/fontes/fonte-12.jpg",
+   "cat": "tipo",
+   "cap": "Opção de fonte · Bricolage Grotesque Bold, largura 75% (grotesca, Google Fonts)",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000080012
   }
  },
  "_remove": {
