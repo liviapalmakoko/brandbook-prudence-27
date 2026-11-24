@@ -1,0 +1,941 @@
+/* Koko Design System · ferramentas e páginas internas · v1 (14/10/2026)
+
+   One stylesheet for every internal tool and page of the Koko that is not built by the design team.
+   The tokens are the ones the Central, the SAK, the Kuadro and the brand system already share
+   (koko-branding/brand-system/site/estilo.css): they were copied by hand from tool to tool, and this
+   file is where they live from now on. A page links this file and uses the kk- classes; it does not
+   declare colours, fonts, radii or shadows of its own.
+
+   Order: tokens, base, type, brand and top bar, layout, side menu, section, boxes, small parts. */
+
+/* ============ TOKENS ============ */
+:root {
+  /* paper and ink */
+  --papel: #efeae0;
+  --papel-a: #f2ede3;
+  --papel-b: #e6dfd0;
+  --tinta: #0a0907;
+  --tinta-2: rgba(10, 9, 7, 0.86);
+  --tinta-3: rgba(10, 9, 7, 0.68);
+  --tinta-4: rgba(10, 9, 7, 0.5);
+  --opaca: #fffdf8;
+  --rebaixo: rgba(16, 15, 12, 0.04);
+
+  /* glass: only for what floats over the page (top bar, side menu, popup) */
+  --vidro-barra: rgba(255, 253, 248, 0.74);
+  --vidro-pilula: rgba(255, 252, 246, 0.58);
+  --vidro-menu: linear-gradient(160deg, rgba(255, 255, 255, 0.46) 0%, rgba(255, 253, 248, 0.2) 55%, rgba(255, 253, 248, 0.32) 100%);
+  --vidro-menu-borda: rgba(255, 255, 255, 0.6);
+  --desfoque: blur(50px) saturate(180%);
+
+  /* lines and shadows */
+  --borda: rgba(16, 15, 12, 0.16);
+  --borda-leve: rgba(16, 15, 12, 0.09);
+  --borda-forte: rgba(16, 15, 12, 0.3);
+  --brilho: inset 0 1px 0 rgba(255, 255, 255, 0.65);
+  --sombra-card: 0 6px 18px -10px rgba(60, 50, 20, 0.2);
+  --sombra-moldura: 0 14px 40px -8px rgba(60, 50, 20, 0.22);
+  --sombra-popup: 0 20px 50px -12px rgba(60, 50, 20, 0.34);
+
+  /* brand */
+  --amarelo: #f2c541;
+  --amarelo-halo: rgba(242, 197, 65, 0.22);
+  --amarelo-halo-forte: rgba(242, 197, 65, 0.28);
+  --marca-texto: #f2c541; /* the marker under a word of a title */
+  --dourado-txt: #7f5c00; /* gold for small text on paper: 4.5:1 or more */
+  /* the pink of the brand has one role here: it marks what is new */
+  --rosa: #ff0084;
+  --rosa-txt: #b0005c;
+  --rosa-fundo: rgba(255, 0, 132, 0.1);
+
+  /* states: dot, tag or number, never the background of a box */
+  --ok: #0d8b6e;
+  --ok-txt: #0a6b55;
+  --ok-fundo: rgba(13, 139, 110, 0.1);
+  --atencao: #c98a00;
+  --atencao-txt: #7a5b00;
+  --atencao-fundo: rgba(242, 197, 65, 0.2);
+  --erro: #c43d2e;
+  --erro-txt: #a03023;
+  --erro-fundo: rgba(196, 61, 46, 0.1);
+  --info: #1e6fb8;
+  --info-txt: #17588f;
+  --info-fundo: rgba(30, 111, 184, 0.1);
+
+  /* teams */
+  --kongo: #0d8b6e;
+  --kala: #f6bf26;
+  --kora: #6e45c4;
+
+  /* inverted block and active item */
+  --inv-fundo: #0a0907;
+  --inv-tinta: #ffffff;
+  --inv-tinta-2: rgba(255, 255, 255, 0.72);
+  --inv-acento: #f2c541;
+  --ativo-fundo: rgba(255, 252, 246, 0.9);
+  --fundo-pontos: rgba(16, 15, 12, 0.13);
+
+  /* radius: 16 on a box, 12 on a box inside a box and on compact parts (field, notice), 8 on small parts,
+     24 on the window, pill on buttons, filters and tags */
+  --r1: 8px;
+  --r2: 12px;
+  --r3: 16px;
+  --r4: 24px;
+  --rf: 999px;
+
+  /* spacing: multiples of 4 */
+  --esp-1: 4px;
+  --esp-2: 8px;
+  --esp-3: 12px;
+  --esp-4: 16px;
+  --esp-5: 20px;
+  --esp-6: 24px;
+  --esp-7: 32px;
+  --esp-8: 48px;
+  --esp-9: 72px;
+
+  /* type */
+  --ui: 'Inter', system-ui, -apple-system, sans-serif;
+  --titulo: 'Oswald', 'Arial Narrow', sans-serif;
+  --mono: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+  --serif: 'Playfair Display', 'Times New Roman', serif;
+
+  /* page */
+  --largura: 1200px;
+  --coluna: 940px;
+  --topo-altura: 60px;
+  --topo-total: var(--topo-altura); /* how tall the top bar is, with its row of tabs when it has one */
+  --t-hover: 90ms;
+  color-scheme: light;
+}
+
+:root[data-tema="escuro"] {
+  --papel: #050507;
+  --papel-a: #060608;
+  --papel-b: #0d0d10;
+  --tinta: #ffffff;
+  --tinta-2: rgba(255, 255, 255, 0.8);
+  --tinta-3: rgba(255, 255, 255, 0.58);
+  --tinta-4: rgba(255, 255, 255, 0.4);
+  --opaca: #16161a;
+  --rebaixo: rgba(255, 255, 255, 0.05);
+  --vidro-barra: rgba(22, 22, 24, 0.55);
+  --vidro-pilula: rgba(255, 255, 255, 0.1);
+  --vidro-menu: rgba(22, 22, 24, 0.55);
+  --vidro-menu-borda: rgba(255, 255, 255, 0.12);
+  --desfoque: blur(40px) saturate(180%);
+  --borda: rgba(255, 255, 255, 0.12);
+  --borda-leve: rgba(255, 255, 255, 0.07);
+  --borda-forte: rgba(255, 255, 255, 0.22);
+  --brilho: inset 0 1px 0 rgba(255, 255, 255, 0.14);
+  --sombra-card: 0 14px 40px -18px rgba(0, 0, 0, 0.6);
+  --sombra-moldura: 0 30px 80px -20px rgba(0, 0, 0, 0.6);
+  --sombra-popup: 0 40px 120px -20px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.04);
+  --dourado-txt: #f2c541;
+  --marca-texto: rgba(242, 197, 65, 0.42);
+  --rosa-txt: #ff5aad;
+  --rosa-fundo: rgba(255, 0, 132, 0.16);
+  --ok: #4fd18b;
+  --ok-txt: #4fd18b;
+  --ok-fundo: rgba(13, 139, 110, 0.24);
+  --atencao: #f2c541;
+  --atencao-txt: #f2c541;
+  --atencao-fundo: rgba(242, 197, 65, 0.16);
+  --erro: #f0786a;
+  --erro-txt: #f59a8e;
+  --erro-fundo: rgba(196, 61, 46, 0.22);
+  --info: #5aa2e6;
+  --info-txt: #8cc0f2;
+  --info-fundo: rgba(30, 111, 184, 0.22);
+  --inv-fundo: #f2c541;
+  --inv-tinta: #0a0907;
+  --inv-tinta-2: rgba(10, 9, 7, 0.72);
+  --inv-acento: #0a0907;
+  --ativo-fundo: rgba(255, 255, 255, 0.14);
+  --fundo-pontos: rgba(255, 255, 255, 0.05);
+  color-scheme: dark;
+}
+
+/* a top bar with a row of tabs is taller: what sticks or scrolls under it follows */
+:root:has(.kk-topo--nav) { --topo-total: calc(var(--topo-altura) + 48px); }
+
+@media (prefers-reduced-motion: reduce) { :root { --t-hover: 0ms; } }
+
+/* ============ BASE ============ */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+html, body { margin: 0; padding: 0; }
+/* flow-root keeps the margin of the top bar inside the body: a page shorter than the screen does not scroll.
+   Nothing hides what is wider than the screen: a part that does not fit has to show, to be fixed. */
+body {
+  display: flow-root;
+  min-height: 100vh;
+  background: var(--papel);
+  font: 400 15px/1.6 var(--ui);
+  color: var(--tinta);
+  -webkit-font-smoothing: antialiased;
+  overflow-wrap: break-word;
+}
+a { color: inherit; }
+/* a link in the middle of a text or of a table */
+.kk-link { color: var(--tinta); text-decoration: underline; text-decoration-color: var(--borda-forte); text-underline-offset: 3px; }
+.kk-link:hover { text-decoration-color: currentColor; }
+img, svg { max-width: 100%; }
+button, input, select, textarea { font: inherit; color: inherit; }
+[hidden] { display: none !important; }
+/* no title ends with a word alone on the last line; paragraphs avoid it too */
+h1, h2, h3, h4 { text-wrap: balance; }
+p, li { text-wrap: pretty; }
+:focus-visible { outline: none; box-shadow: 0 0 0 3px var(--amarelo-halo-forte), 0 0 0 1.5px var(--amarelo); }
+.kk-so-escuro { display: none !important; }
+:root[data-tema="escuro"] .kk-so-escuro { display: block !important; }
+:root[data-tema="escuro"] .kk-so-claro { display: none !important; }
+
+/* The paper of every page: warm gradient, four faint halos and a dot grid. One per page, first in <body>. */
+.kk-fundo {
+  position: fixed; inset: 0; z-index: -1;
+  background:
+    radial-gradient(60% 55% at 4% 2%, rgba(242, 197, 65, 0.16), transparent 70%),
+    radial-gradient(55% 50% at 97% 3%, rgba(255, 0, 132, 0.08), transparent 70%),
+    radial-gradient(55% 50% at 97% 97%, rgba(40, 140, 220, 0.06), transparent 70%),
+    radial-gradient(55% 50% at 3% 98%, rgba(242, 197, 65, 0.07), transparent 70%),
+    linear-gradient(135deg, var(--papel-a), var(--papel-b));
+}
+.kk-fundo::after {
+  content: ''; position: absolute; inset: 0;
+  background-image: radial-gradient(var(--fundo-pontos) 1px, transparent 1px);
+  background-size: 22px 22px;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2));
+}
+:root[data-tema="escuro"] .kk-fundo {
+  background:
+    radial-gradient(circle at 15% 12%, rgba(242, 197, 65, 0.18), transparent 45%),
+    radial-gradient(circle at 88% 90%, rgba(255, 0, 132, 0.18), transparent 42%),
+    linear-gradient(180deg, var(--papel-a) 0%, var(--papel-b) 50%, var(--papel-a) 100%),
+    var(--papel);
+}
+
+/* ============ TYPE ============ */
+/* the page title shrinks on a phone, so that two long words still share a line */
+.kk-h1 { margin: 0; font: 700 clamp(28px, 8.6vw, 52px)/1 var(--titulo); letter-spacing: 0.01em; text-transform: uppercase; }
+.kk-h2 { margin: 0; font: 600 24px/1.1 var(--titulo); letter-spacing: 0.02em; text-transform: uppercase; }
+.kk-h3 { margin: 0; font: 600 17px/1.3 var(--ui); }
+.kk-texto { margin: 0; font: 400 15px/1.6 var(--ui); color: var(--tinta-2); }
+.kk-apoio { margin: 0; font: 400 13px/1.5 var(--ui); color: var(--tinta-3); }
+.kk-rotulo { font: 600 11px/1.2 var(--mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--dourado-txt); }
+.kk-dado { font: 500 13px/1.3 var(--mono); color: var(--tinta-3); }
+/* the serif of the brand has two places: the sentence under the page title and the phrase of a highlight block */
+.kk-abertura { margin: 0; max-width: 62ch; font: 400 18px/1.5 var(--serif); color: var(--tinta-2); }
+.kk-frase { margin: 0; font: 500 clamp(21px, 2.6vw, 28px)/1.26 var(--serif); letter-spacing: -0.01em; }
+/* the yellow marker under one word of a title (the brand system recipe: from 56% to 94% of the line) */
+.kk-marca-texto { color: inherit; padding: 0 0.05em; background: linear-gradient(transparent 56%, var(--marca-texto) 56%, var(--marca-texto) 94%, transparent 94%) no-repeat 0 0 / 100% 100%; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+/* a code in the middle of a text: a protocol, a version */
+.kk-codigo { padding: 1px 6px; border-radius: 6px; background: var(--amarelo-halo-forte); font: 600 11px/1.5 var(--mono); letter-spacing: 0.02em; color: var(--tinta); }
+/* the number in front of a section title */
+.kk-secao-n { margin-right: 10px; font: 500 12px/1 var(--mono); letter-spacing: 0; color: var(--tinta-4); vertical-align: 0.2em; }
+.kk-lista { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: var(--esp-2); }
+.kk-lista li { position: relative; padding-left: 18px; font: 400 15px/1.5 var(--ui); color: var(--tinta-2); }
+.kk-lista li::before { content: ''; position: absolute; left: 2px; top: 0.62em; width: 6px; height: 6px; border-radius: 50%; background: var(--amarelo); box-shadow: 0 0 0 1px var(--borda); }
+
+/* ============ BRAND AND TOP BAR ============ */
+.kk-topo {
+  position: sticky; top: 12px; z-index: 30;
+  max-width: var(--largura); width: calc(100% - 32px); margin: 12px auto 0;
+  min-height: var(--topo-altura); display: flex; align-items: center; gap: var(--esp-3); padding: 0 10px 0 16px;
+  border-radius: var(--r3);
+  background: var(--vidro-barra);
+  backdrop-filter: var(--desfoque); -webkit-backdrop-filter: var(--desfoque);
+  box-shadow: var(--brilho), var(--sombra-moldura);
+}
+/* The signature of an internal tool: the official logo file (always with the registered mark), a hairline and the
+   name of the tool. The logo is an image, never typed text. At 40px of height the word KOKO is 65px wide, above the
+   62px that the brand identity tested as the smallest size on screen; the logo does not shrink on a phone. */
+.kk-marca { display: inline-flex; align-items: center; gap: var(--esp-3); min-width: 0; flex: 1 1 auto; text-decoration: none; }
+.kk-marca-logo { height: 26px; width: auto; flex: none; display: block; }
+.kk-marca-fio { width: 1px; height: 24px; flex: none; background: var(--borda-forte); }
+.kk-marca-nome { min-width: 0; font: 600 16px/1 var(--titulo); letter-spacing: 0.03em; text-transform: uppercase; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.kk-topo-acoes { display: flex; align-items: center; gap: var(--esp-2); flex: none; }
+/* Top bar with a row of tabs under the signature (.kk-topo--nav): the signature goes in .kk-topo-linha, the tabs in
+   .kk-nav. The tab of the section on the screen is marked by koko.js. On a narrow screen the row scrolls sideways. */
+.kk-topo--nav { flex-direction: column; align-items: stretch; gap: 0; padding: 0; }
+.kk-topo-linha { min-height: var(--topo-altura); display: flex; align-items: center; gap: var(--esp-3); padding: 0 10px 0 16px; }
+.kk-nav { display: flex; align-items: center; gap: 2px; height: 48px; padding: 0 10px; border-top: 1px solid var(--borda-leve); overflow-x: auto; scrollbar-width: none; }
+.kk-nav::-webkit-scrollbar { display: none; }
+.kk-nav-item {
+  flex: none; height: 32px; display: inline-flex; align-items: center; gap: 6px; padding: 0 11px;
+  border-radius: var(--rf); border: 1px solid transparent; text-decoration: none; white-space: nowrap;
+  font: 500 12.5px/1 var(--ui); color: var(--tinta-3);
+  transition: background var(--t-hover), color var(--t-hover);
+}
+.kk-nav-item .kk-ic { width: 16px; height: 16px; }
+.kk-nav-item:hover { background: var(--vidro-pilula); color: var(--tinta); }
+.kk-nav-item.ativo { background: var(--ativo-fundo); color: var(--tinta); border-color: var(--borda); box-shadow: var(--brilho), 0 4px 12px -6px rgba(60, 50, 20, 0.25); }
+
+/* ============ LAYOUT ============ */
+.kk-pagina { max-width: var(--largura); width: calc(100% - 32px); margin: 0 auto; padding: var(--esp-7) 0 var(--esp-9); }
+/* a narrow page, for a form or a short text */
+.kk-pagina--estreita { --largura: 760px; }
+.kk-pagina--menu { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 36px; align-items: start; }
+.kk-conteudo { min-width: 0; }
+.kk-conteudo > * { max-width: var(--coluna); }
+.kk-pilha { display: flex; flex-direction: column; gap: var(--esp-3); }
+.kk-grade { display: grid; gap: var(--esp-3); grid-template-columns: repeat(var(--colunas, 2), minmax(0, 1fr)); }
+.kk-grade--3 { --colunas: 3; }
+.kk-grade--4 { --colunas: 4; }
+
+/* ============ SIDE MENU ============ */
+.kk-menu {
+  position: sticky; top: calc(var(--topo-total) + 28px); max-height: calc(100vh - var(--topo-total) - 48px); overflow-y: auto; scrollbar-width: thin;
+  display: flex; flex-direction: column; gap: 3px; padding: 10px;
+  border-radius: var(--r3);
+  background: var(--vidro-menu);
+  backdrop-filter: blur(22px) saturate(190%); -webkit-backdrop-filter: blur(22px) saturate(190%);
+  border: 1px solid var(--vidro-menu-borda);
+  box-shadow: var(--brilho), var(--sombra-moldura);
+}
+/* the head of the menu: a small black seal and the name of the page */
+.kk-menu-cab { display: flex; align-items: center; gap: 10px; padding: 4px 6px 10px; margin-bottom: 4px; border-bottom: 1px solid var(--borda-leve); font: 600 15px/1.1 var(--titulo); text-transform: uppercase; color: var(--tinta); }
+.kk-menu-grupo { margin: var(--esp-3) 8px var(--esp-1); font: 600 10px/1 var(--mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--tinta-4); }
+.kk-menu-item {
+  display: grid; grid-template-columns: 30px minmax(0, 1fr) auto; gap: 10px; align-items: center;
+  padding: 7px 9px 7px 7px; border-radius: var(--r2); border: 1px solid transparent; text-decoration: none;
+  font: 500 13px/1.3 var(--ui); color: var(--tinta-3);
+  transition: background var(--t-hover), color var(--t-hover), border-color var(--t-hover);
+}
+.kk-menu-item:hover { background: var(--vidro-pilula); color: var(--tinta); border-color: var(--borda-leve); }
+.kk-menu-item.ativo { background: var(--ativo-fundo); color: var(--tinta); border-color: var(--borda); box-shadow: var(--brilho), 0 4px 12px -6px rgba(60, 50, 20, 0.25); }
+.kk-menu-icone { width: 30px; height: 30px; border-radius: var(--r1); display: grid; place-items: center; background: var(--vidro-pilula); box-shadow: inset 0 0 0 1px var(--borda-leve); color: var(--tinta-2); }
+.kk-menu-item.ativo .kk-menu-icone { background: var(--inv-fundo); color: var(--inv-tinta); box-shadow: none; }
+.kk-menu-icone svg { width: 16px; height: 16px; }
+.kk-menu-item--off { color: var(--tinta-4); pointer-events: none; }
+.kk-menu-item--off .kk-menu-icone { background: transparent; color: var(--tinta-4); }
+
+/* ============ SECTION ============ */
+.kk-secao { scroll-margin-top: calc(var(--topo-total) + 36px); }
+.kk-secao + .kk-secao { margin-top: var(--esp-9); }
+.kk-secao-cab { display: flex; align-items: center; gap: var(--esp-3); margin-bottom: var(--esp-5); padding-bottom: var(--esp-4); border-bottom: 1px solid var(--borda-leve); }
+.kk-secao-cab .kk-apoio { margin-top: var(--esp-1); }
+
+/* ============ ICONS ============
+   Line icons, 24 by 24, one stroke width. */
+.kk-ic { width: 20px; height: 20px; flex: none; fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }
+/* the sprite that holds the <symbol> of each icon, first thing in <body> */
+.kk-icones { position: absolute; width: 0; height: 0; overflow: hidden; }
+/* a dot of colour for a team or a state: the only way a colour of team enters a page */
+.kk-ponto { display: inline-block; width: 8px; height: 8px; flex: none; border-radius: 50%; background: var(--tinta-4); }
+.kk-ponto--kongo { background: var(--kongo); }
+.kk-ponto--kala { background: var(--kala); }
+.kk-ponto--kora { background: var(--kora); }
+.kk-ponto--ok { background: var(--ok); }
+.kk-ponto--atencao { background: var(--atencao); }
+.kk-ponto--erro { background: var(--erro); }
+.kk-ponto--info { background: var(--info); }
+/* icon seal: the yellow one marks an item, the black one marks a section or the page */
+.kk-selo { width: 40px; height: 40px; flex: none; display: grid; place-items: center; border-radius: var(--r2); background: var(--amarelo); color: #0a0907; }
+.kk-selo--tinta { background: var(--inv-fundo); color: var(--inv-tinta); }
+.kk-selo--p { width: 32px; height: 32px; border-radius: var(--r1); }
+.kk-selo--p .kk-ic { width: 16px; height: 16px; }
+
+/* ============ BOXES ============
+   Four boxes cover every content. A box at rest has a hairline and no shadow; shadow belongs to what floats
+   and to the clickable box under the pointer. */
+.kk-box {
+  display: flex; flex-direction: column; gap: var(--esp-3); min-width: 0;
+  padding: var(--esp-5);
+  border-radius: var(--r3);
+  background: var(--opaca);
+  border: 1px solid var(--borda);
+  box-shadow: var(--brilho);
+}
+.kk-box--amplo { padding: var(--esp-6); }
+.kk-box--compacto { padding: var(--esp-4); }
+.kk-box-cab { display: flex; align-items: center; gap: var(--esp-3); min-width: 0; }
+/* the title of a box that opens with a seal, and the short line under it */
+.kk-box-titulo { margin: 0; font: 700 20px/1.05 var(--titulo); letter-spacing: 0.02em; text-transform: uppercase; }
+.kk-box-sub { display: block; margin-top: 4px; font: 500 12.5px/1.3 var(--ui); color: var(--dourado-txt); }
+.kk-box-pe { margin-top: auto; padding-top: var(--esp-1); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--esp-2); }
+
+/* highlight: the one thing a section cannot let pass. One per section. */
+.kk-box--destaque { --kk-ponto: color-mix(in srgb, var(--amarelo) 72%, transparent); position: relative; isolation: isolate; overflow: hidden; background: var(--inv-fundo); color: var(--inv-tinta); border-color: transparent; box-shadow: none; }
+:root[data-tema="escuro"] .kk-box--destaque { --kk-ponto: color-mix(in srgb, var(--inv-tinta) 28%, transparent); }
+/* the dot texture of the dark blocks, on the right side, as in the brand system */
+.kk-box--destaque::before {
+  content: ''; position: absolute; inset: -36px; z-index: -1; pointer-events: none;
+  background-image: radial-gradient(var(--kk-ponto) 1.2px, transparent 1.7px); background-size: 18px 18px;
+  -webkit-mask-image: radial-gradient(75% 95% at 88% 50%, #000 0%, transparent 72%); mask-image: radial-gradient(75% 95% at 88% 50%, #000 0%, transparent 72%);
+  opacity: 0.6;
+}
+.kk-box--destaque .kk-texto, .kk-box--destaque .kk-apoio, .kk-box--destaque .kk-lista li { color: var(--inv-tinta-2); }
+.kk-box--destaque .kk-rotulo, .kk-box--destaque .kk-box-sub { color: var(--inv-acento); }
+.kk-box--destaque .kk-selo { background: var(--amarelo); color: #0a0907; }
+:root[data-tema="escuro"] .kk-box--destaque .kk-selo { background: #0a0907; color: var(--amarelo); }
+
+/* recessed: the detail inside another box, or a supporting note. The only box allowed inside a box. */
+.kk-box--rebaixado { padding: var(--esp-4); border-radius: var(--r2); background: var(--rebaixo); border-color: var(--borda-leve); box-shadow: none; }
+
+/* note: what is still to be defined, or a remark beside the content */
+.kk-box--nota { background: transparent; border: 1px dashed var(--borda-forte); box-shadow: none; }
+
+/* band: a box that opens with a band in a colour of the brand (yellow, pink or ink), for a group of content */
+.kk-box--faixa { padding: 0; gap: 0; overflow: hidden; }
+.kk-faixa {
+  --faixa: var(--amarelo); --faixa-sobre: #0a0907; --kk-ponto: rgba(10, 9, 7, 0.24);
+  position: relative; isolation: isolate; overflow: hidden;
+  display: flex; align-items: center; gap: var(--esp-3); padding: 14px var(--esp-5);
+  background: var(--faixa); color: var(--faixa-sobre);
+}
+.kk-faixa::before {
+  content: ''; position: absolute; inset: -36px; z-index: -1; pointer-events: none;
+  background-image: radial-gradient(var(--kk-ponto) 1.2px, transparent 1.7px); background-size: 18px 18px;
+  -webkit-mask-image: radial-gradient(60% 120% at 92% 50%, #000 0%, transparent 72%); mask-image: radial-gradient(60% 120% at 92% 50%, #000 0%, transparent 72%);
+}
+.kk-faixa--rosa { --faixa: var(--rosa); --faixa-sobre: #ffffff; --kk-ponto: rgba(255, 255, 255, 0.45); }
+.kk-faixa--tinta { --faixa: #0a0907; --faixa-sobre: #ffffff; --kk-ponto: color-mix(in srgb, var(--amarelo) 72%, transparent); }
+:root[data-tema="escuro"] .kk-faixa--tinta { --faixa: #f2ede3; --faixa-sobre: #0a0907; --kk-ponto: rgba(10, 9, 7, 0.24); }
+.kk-faixa .kk-selo { background: var(--faixa-sobre); color: var(--faixa); }
+.kk-faixa--tinta .kk-selo { background: var(--amarelo); color: #0a0907; }
+.kk-faixa-titulo { margin: 0; font: 600 22px/1 var(--titulo); letter-spacing: 0.01em; text-transform: uppercase; }
+
+/* ============ BLOCKS OF INFORMATION ============
+   Laid-out blocks copied from the brand system (koko-branding/brand-system/site, componentes-7.css and
+   componentes-9.css), with the radii of this kit. */
+
+/* opening phrase: the strongest sentence of a page, in two lines on the dark block, over a field of dots (k9-fecho).
+   The second line is the accent. One per page. */
+.kk-manifesto {
+  --kk-ponto: color-mix(in srgb, var(--amarelo) 72%, transparent);
+  position: relative; overflow: hidden; isolation: isolate;
+  display: flex; flex-direction: column; gap: var(--esp-4);
+  padding: 34px 36px 32px; border-radius: var(--r3);
+  background: var(--inv-fundo); color: var(--inv-tinta);
+}
+:root[data-tema="escuro"] .kk-manifesto { --kk-ponto: color-mix(in srgb, var(--inv-tinta) 28%, transparent); }
+.kk-manifesto::before {
+  content: ''; position: absolute; inset: -36px; z-index: -1; pointer-events: none;
+  background-image: radial-gradient(var(--kk-ponto) 1.2px, transparent 1.7px); background-size: 18px 18px;
+  -webkit-mask-image: radial-gradient(75% 95% at 88% 50%, #000 0%, transparent 72%); mask-image: radial-gradient(75% 95% at 88% 50%, #000 0%, transparent 72%);
+  opacity: 0.6;
+}
+.kk-manifesto-frase { margin: 0; display: flex; flex-direction: column; font: 500 clamp(28px, 4.2vw, 42px)/1.1 var(--serif); text-wrap: balance; }
+.kk-manifesto-frase > span { display: block; }
+.kk-manifesto-frase > span:last-child { color: var(--inv-acento); font-style: italic; }
+.kk-manifesto-txt { margin: 0; max-width: 62ch; font: 400 17px/1.6 var(--serif); color: var(--inv-tinta-2); text-wrap: pretty; }
+
+/* numbered cards: a short list of big ideas (three or four), each with its seal and a big number in the
+   background (k9-icone-card) */
+.kk-cartoes-n { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(var(--colunas, 3), minmax(0, 1fr)); gap: var(--esp-3); }
+.kk-cartao-n {
+  position: relative; overflow: hidden; isolation: isolate;
+  display: flex; flex-direction: column; align-items: flex-start; gap: var(--esp-4); min-width: 0;
+  padding: 22px 20px 18px; border-radius: var(--r3);
+  background: var(--inv-fundo); color: var(--inv-tinta);
+}
+.kk-cartao-n::after {
+  content: attr(data-n); position: absolute; right: 12px; bottom: -26px; z-index: -1; pointer-events: none;
+  font: 600 130px/1 var(--titulo); color: color-mix(in srgb, currentColor 8%, transparent);
+}
+.kk-cartao-n-ic { width: 64px; height: 64px; flex: none; display: grid; place-items: center; border-radius: var(--r3); background: var(--amarelo); color: #0a0907; }
+:root[data-tema="escuro"] .kk-cartao-n-ic { background: #0a0907; color: var(--amarelo); }
+.kk-cartao-n-ic .kk-ic { width: 32px; height: 32px; }
+.kk-cartao-n-txt { display: flex; flex-direction: column; gap: 6px; }
+.kk-cartao-n-txt .kk-rotulo { color: var(--inv-acento); }
+.kk-cartao-n-titulo { margin: 0; font: 600 21px/1.12 var(--titulo); text-transform: uppercase; text-wrap: balance; }
+.kk-cartao-n-txt p { margin: 0; font: 400 14px/1.5 var(--ui); color: var(--inv-tinta-2); text-wrap: pretty; }
+/* a card that leads somewhere is a link: a.kk-cartao-n.kk-cartao-n--link */
+.kk-cartao-n--link { text-decoration: none; cursor: pointer; }
+.kk-cartao-n--link:focus-visible { box-shadow: 0 0 0 3px var(--amarelo-halo-forte), 0 0 0 1.5px var(--amarelo); }
+.kk-cartao-n-pe { margin-top: auto; font: 600 11px/1.2 var(--mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--inv-tinta-2); }
+
+/* items: the parts of a group (values, principles), three in a row, each with its icon or its number (k7-lista).
+   The items of the last row grow to fill it. kk-itens--4 puts four in a row. */
+.kk-itens { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+.kk-item {
+  flex: 1 1 calc(33.333% - 10px); display: flex; align-items: center; gap: var(--esp-3); min-width: 0;
+  padding: 12px 14px; border-radius: var(--r2);
+  background: var(--papel-a); border: 1px solid var(--borda-leve);
+  font: 600 15px/1.25 var(--ui);
+}
+.kk-itens--4 .kk-item { flex-basis: calc(25% - 10px); }
+.kk-item small { display: block; margin-top: 2px; font: 500 12.5px/1.25 var(--ui); color: var(--tinta-3); }
+.kk-item-n { flex: none; font: 700 11px/1 var(--mono); color: var(--dourado-txt); }
+.kk-item-ic { flex: none; display: grid; place-items: center; width: 34px; height: 34px; border-radius: var(--r1); background: var(--opaca); border: 1px solid var(--borda); box-shadow: var(--brilho); }
+.kk-item-ic .kk-ic { width: 20px; height: 20px; }
+
+/* headline: one strong sentence in big type, with the marker on the words that matter and a line of support under it
+   (k9-manchete) */
+.kk-manchete { display: flex; flex-direction: column; gap: 14px; }
+.kk-manchete-frase { margin: 0; font: 600 clamp(33px, 5vw, 54px)/1.02 var(--titulo); letter-spacing: 0.005em; text-transform: uppercase; text-wrap: balance; }
+.kk-manchete-apoio { margin: 0; font: 400 clamp(19px, 2.2vw, 25px)/1.35 var(--serif); color: var(--tinta-2); text-wrap: balance; }
+
+/* synthesis: the closing of a group of items, on a black band with the symbol, the title with the marker and the
+   names of the items in a line at the foot (k12-vk-sintese). Black in both themes. */
+.kk-sintese {
+  position: relative; isolation: isolate; overflow: hidden;
+  display: flex; flex-direction: column; gap: 30px; padding: 44px 42px 30px; border-radius: var(--r3);
+  background: #0a0907; color: #f4efe3; box-shadow: 0 22px 34px -22px rgba(30, 20, 0, 0.75);
+}
+:root[data-tema="escuro"] .kk-sintese { box-shadow: inset 0 0 0 1px rgba(242, 197, 65, 0.4); }
+.kk-sintese::before { content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none; background: radial-gradient(farthest-corner at 100% 0%, rgba(242, 197, 65, 0.22) 0%, rgba(242, 197, 65, 0.11) 14%, transparent 40%); }
+.kk-sintese-topo { display: grid; grid-template-columns: 150px minmax(0, 1fr); align-items: center; gap: 34px; }
+.kk-sintese-simbolo { display: block; justify-self: center; width: 116px; height: auto; }
+.kk-sintese-texto { display: flex; flex-direction: column; gap: 13px; min-width: 0; }
+.kk-sintese .kk-rotulo { color: #f2c541; }
+.kk-sintese .kk-sintese-titulo { margin: 0; font: 600 clamp(38px, 6.4vw, 76px)/0.94 var(--titulo); text-transform: uppercase; color: #fffaf0; text-wrap: balance; }
+.kk-sintese .kk-marca-texto { background-image: linear-gradient(transparent 72%, #f2c541 72%, #f2c541 96%, transparent 96%); }
+.kk-sintese-texto p { margin: 0; max-width: 42ch; font: 400 20px/1.42 var(--serif); color: rgba(244, 239, 227, 0.86); text-wrap: pretty; }
+.kk-sintese-nomes {
+  margin: 0; padding: 22px 0 0; list-style: none; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px 12px;
+  border-top: 2px dotted rgba(242, 197, 65, 0.5); font: 700 10.5px/1 var(--mono); letter-spacing: 0.14em; text-transform: uppercase; color: #f2c541;
+}
+.kk-sintese-nomes li { display: inline-flex; align-items: center; gap: 12px; }
+.kk-sintese-nomes li + li::before { content: ''; width: 9px; height: 9px; flex: none; background: #f4efe3; clip-path: polygon(50% 0, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0 50%, 38% 38%); }
+
+/* ============ BLOCKS WITH A SUBMENU ============
+   A row of options that works as a menu: the chosen one opens its panel and the others close. Every option is a
+   button with role="tab" and aria-controls, every panel has role="tabpanel"; koko.js does the rest (click and the
+   arrow keys). Wrap the menu and its panels in kk-submenu. */
+.kk-submenu { display: flex; flex-direction: column; gap: 22px; min-width: 0; }
+
+/* cards as a menu: one card per item, with its icon in a medallion; the chosen one turns dark and points down at its
+   panel (the values of the Cultura, componentes-12.css) */
+.kk-fichas { display: grid; grid-template-columns: repeat(var(--n, 6), minmax(0, 1fr)); gap: 10px; }
+.kk-ficha {
+  position: relative; isolation: isolate; display: flex; flex-direction: column; align-items: center; gap: 10px; min-width: 0;
+  padding: 16px 6px 14px; border-radius: var(--r3); border: 1px solid var(--borda);
+  background: var(--opaca); color: var(--tinta); box-shadow: var(--brilho), var(--sombra-card);
+  font: inherit; text-align: center; cursor: pointer; transition: transform var(--t-hover);
+}
+.kk-ficha:hover { transform: translateY(-3px); }
+.kk-ficha-ic { width: 56px; height: 56px; flex: none; display: grid; place-items: center; border-radius: 50%; background: var(--amarelo-halo); color: var(--tinta); box-shadow: 0 0 0 2px var(--opaca), 0 0 0 3.5px color-mix(in srgb, var(--tinta) 70%, transparent); }
+.kk-ficha-ic .kk-ic { width: 24px; height: 24px; }
+.kk-ficha-nome { max-width: 100%; font: 600 13.5px/1.1 var(--titulo); letter-spacing: 0.02em; text-transform: uppercase; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.kk-ficha small { max-width: 100%; margin-top: -4px; font: 500 11.5px/1.2 var(--ui); color: var(--tinta-3); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.kk-ficha[aria-selected="true"] { background: var(--inv-fundo); color: var(--inv-tinta); border-color: var(--inv-fundo); box-shadow: 0 18px 26px -16px rgba(30, 20, 0, 0.8); }
+.kk-ficha[aria-selected="true"]::before { content: ''; position: absolute; inset: 0; z-index: -1; border-radius: inherit; background: linear-gradient(180deg, rgba(242, 197, 65, 0.2) 0%, transparent 60%); }
+.kk-ficha[aria-selected="true"] .kk-ficha-ic { background: var(--amarelo); color: #0a0907; box-shadow: 0 0 0 2px var(--inv-fundo), 0 0 0 4.5px var(--amarelo); }
+:root[data-tema="escuro"] .kk-ficha[aria-selected="true"] .kk-ficha-ic { background: #0a0907; color: var(--amarelo); box-shadow: 0 0 0 2px var(--inv-fundo), 0 0 0 4.5px #0a0907; }
+.kk-ficha[aria-selected="true"] small { color: var(--inv-acento); }
+.kk-ficha[aria-selected="true"]::after { content: ''; position: absolute; left: calc(50% - 9px); top: 100%; border: 9px solid transparent; border-top-color: var(--inv-fundo); }
+
+/* the panel of a card: the title and a big seal on top, a dotted line, then the text on the left and two lists on the
+   right, stretched to the height of the text */
+.kk-painel { display: flex; flex-direction: column; gap: 28px; padding: 36px 36px 32px; border-radius: var(--r3); background: var(--opaca); border: 1px solid var(--borda); box-shadow: var(--brilho), var(--sombra-card); }
+.kk-painel[hidden] { display: none; }
+.kk-painel-cab { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 30px; align-items: center; padding-bottom: 26px; border-bottom: 2px dotted color-mix(in srgb, var(--dourado-txt) 50%, transparent); }
+.kk-painel-titulo { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.kk-painel-nome { margin: 0; font: 600 clamp(30px, 4.4vw, 47px)/0.96 var(--titulo); letter-spacing: 0.005em; text-transform: uppercase; }
+.kk-painel-apoio { font: 600 15.5px/1.2 var(--ui); color: var(--dourado-txt); }
+.kk-painel-selo {
+  position: relative; isolation: isolate; overflow: hidden; width: 112px; height: 112px; flex: none;
+  display: grid; place-items: center; border-radius: var(--r3); background: #0a0907; color: #f2c541;
+  box-shadow: 0 18px 30px -18px rgba(30, 20, 0, 0.7);
+}
+.kk-painel-selo::before {
+  content: ''; position: absolute; inset: 0; z-index: -1;
+  background-image: radial-gradient(rgba(242, 197, 65, 0.55) 1.1px, transparent 1.6px); background-size: 12px 12px;
+  -webkit-mask-image: radial-gradient(90% 90% at 100% 100%, #000 0%, transparent 70%); mask-image: radial-gradient(90% 90% at 100% 100%, #000 0%, transparent 70%);
+}
+.kk-painel-selo .kk-ic { width: 50px; height: 50px; stroke-width: 1.5; }
+.kk-painel-corpo { display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr); gap: 36px; align-items: stretch; }
+.kk-painel-texto { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+.kk-painel-frase { margin: 0; font: 400 24px/1.32 var(--serif); text-wrap: balance; }
+.kk-painel-lema { margin: 0; font: italic 500 20px/1.42 var(--serif); text-wrap: balance; }
+.kk-painel-mais { display: flex; flex-direction: column; gap: 12px; margin-top: 4px; }
+.kk-painel-mais p { margin: 0; font: 400 15.5px/1.68 var(--ui); color: var(--tinta-2); text-wrap: pretty; }
+.kk-painel-listas { display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+
+/* two lists side by side in meaning: what comes in (light, gold border, star) and what stays out (black, cross) */
+.kk-lista-sim, .kk-lista-nao { position: relative; isolation: isolate; overflow: hidden; flex: 1 1 auto; display: flex; flex-direction: column; gap: 13px; padding: 22px 24px; border-radius: var(--r3); }
+.kk-lista-sim .kk-rotulo, .kk-lista-nao .kk-rotulo { display: flex; align-items: center; gap: 8px; }
+.kk-lista-sim ul, .kk-lista-nao ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 9px; }
+.kk-lista-sim li, .kk-lista-nao li { position: relative; padding-left: 18px; font: 400 15px/1.48 var(--ui); text-wrap: pretty; }
+.kk-lista-sim li::before, .kk-lista-nao li::before { content: ''; position: absolute; left: 0; top: 0.45em; width: 10px; height: 10px; }
+.kk-lista-ic { width: 22px; height: 22px; flex: none; display: grid; place-items: center; border-radius: 50%; }
+.kk-lista-ic .kk-ic { width: 13px; height: 13px; stroke-width: 2.6; }
+.kk-lista-sim { --kk-ouro: color-mix(in srgb, var(--amarelo) 62%, var(--dourado-txt)); background: color-mix(in srgb, var(--amarelo) 8%, var(--opaca)); border: 1.5px solid var(--kk-ouro); color: var(--tinta); }
+.kk-lista-sim .kk-rotulo { color: var(--tinta); }
+.kk-lista-sim .kk-lista-ic { background: var(--amarelo); color: #0a0907; }
+.kk-lista-sim li::before { background: var(--kk-ouro); clip-path: polygon(50% 0, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0 50%, 38% 38%); }
+.kk-lista-nao { background: #0a0907; color: rgba(244, 239, 227, 0.92); }
+:root[data-tema="escuro"] .kk-lista-nao { box-shadow: inset 0 0 0 1px rgba(242, 197, 65, 0.4); }
+.kk-lista-nao::after { content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none; background: radial-gradient(farthest-corner at 100% 100%, rgba(242, 197, 65, 0.2) 0%, rgba(242, 197, 65, 0.11) 16%, transparent 46%); }
+.kk-lista-nao .kk-rotulo { color: #f2c541; }
+.kk-lista-nao .kk-lista-ic { border: 1.5px solid #f2c541; color: #f2c541; }
+.kk-lista-nao li::before { background: #f2c541; clip-path: polygon(20% 0, 50% 30%, 80% 0, 100% 20%, 70% 50%, 100% 80%, 80% 100%, 50% 70%, 20% 100%, 0 80%, 30% 50%, 0 20%); }
+
+/* switch: two or three views of the same content, in a pill (k14-abas) */
+.kk-alternador { align-self: center; display: inline-flex; gap: 4px; max-width: 100%; padding: 5px; border-radius: var(--rf); background: var(--papel-a); box-shadow: inset 0 0 0 1px var(--borda); }
+.kk-alternador-opcao { display: inline-flex; align-items: center; justify-content: center; gap: 9px; height: 44px; padding: 0 22px 0 16px; border: 0; border-radius: var(--rf); background: transparent; font: 600 15px/1 var(--ui); color: var(--tinta-2); white-space: nowrap; cursor: pointer; transition: background var(--t-hover), color var(--t-hover); }
+.kk-alternador-opcao .kk-ic { width: 18px; height: 18px; }
+.kk-alternador-opcao:hover { color: var(--tinta); }
+.kk-alternador-opcao[aria-selected="true"] { background: var(--inv-fundo); color: var(--inv-tinta); }
+.kk-alternador-opcao[aria-selected="true"] .kk-ic { color: var(--inv-acento); }
+
+/* questions that open: each item shows the question and opens the answer under it (<details>). koko.js makes the
+   opening and the closing slide; without it, or with reduced motion, they just open. */
+.kk-acordeao { padding: 0; gap: 0; overflow: hidden; }
+.kk-acordeao-item { transition: background var(--t-hover); }
+.kk-acordeao-item + .kk-acordeao-item { border-top: 1px solid var(--borda-leve); }
+.kk-acordeao-item[open] { background: color-mix(in srgb, var(--amarelo) 7%, var(--opaca)); }
+.kk-acordeao-item summary { display: flex; align-items: center; justify-content: space-between; gap: var(--esp-5); padding: 20px 24px; list-style: none; cursor: pointer; font: 600 15.5px/1.4 var(--ui); }
+.kk-acordeao-item summary::-webkit-details-marker { display: none; }
+.kk-acordeao-item summary::after {
+  content: ''; width: 28px; height: 28px; flex: none; border-radius: 50%;
+  background: linear-gradient(currentColor, currentColor) center / 11px 1.75px no-repeat, linear-gradient(currentColor, currentColor) center / 1.75px 11px no-repeat, var(--amarelo-halo);
+  transition: transform 0.3s cubic-bezier(0.2, 0.7, 0.2, 1), background-color 0.3s ease;
+}
+.kk-acordeao-item[open] summary::after { transform: rotate(135deg); background-color: var(--amarelo); color: #0a0907; }
+.kk-acordeao-item summary:hover { background: var(--rebaixo); }
+.kk-acordeao-item[open] summary:hover { background: transparent; }
+/* the answer: below the question with its own space, aligned with it and a little narrower than the box */
+.kk-acordeao-corpo { padding: 0 72px 24px 24px; }
+.kk-acordeao-corpo p { margin: 0; max-width: 68ch; font: 400 15px/1.7 var(--ui); color: var(--tinta-2); text-wrap: pretty; }
+.kk-acordeao-corpo p + p { margin-top: 10px; }
+
+/* ============ POINTS (pointillism) ============
+   The motions in points of the brand system, in kit/pontos.js: a canvas with data-kk-pontos="simbolo" (three points
+   that multiply and draw the face of the gorilla) or data-kk-pontos="seta" (a sphere of points that turns into the
+   arrow of growth and back, in a loop). The canvas fills its stage. Few blocks of a page carry points, never two in a
+   row. */
+.kk-pontos-palco { position: relative; width: 100%; aspect-ratio: 1 / 0.94; }
+/* the dark opening phrase with the symbol in points beside it (the opening of the Cultura) */
+.kk-manifesto--pontos { display: grid; grid-template-columns: minmax(0, 1fr) clamp(200px, 30%, 340px); align-items: center; column-gap: 28px; }
+.kk-manifesto--pontos > :not(.kk-pontos-palco) { grid-column: 1; }
+.kk-manifesto--pontos > .kk-pontos-palco { grid-column: 2; grid-row: 1 / span 3; aspect-ratio: 1; }
+/* banner: a yellow block with one line and its support, and room for the arrow in points (the mantra of the Cultura) */
+.kk-banner {
+  position: relative; isolation: isolate; overflow: hidden;
+  display: grid; grid-template-columns: minmax(0, 1fr) clamp(120px, 20vw, 216px); align-items: center; column-gap: 24px;
+  padding: clamp(28px, 4vw, 44px) clamp(24px, 4vw, 48px); border-radius: var(--r3); background: #f2c541; color: #0a0907;
+}
+.kk-banner-titulo { margin: 0; font: 600 clamp(28px, 4vw, 46px)/1.02 var(--titulo); text-transform: uppercase; text-wrap: balance; }
+.kk-banner-apoio { margin: 10px 0 0; font: 400 clamp(17px, 1.8vw, 21px)/1.4 var(--serif); color: rgba(10, 9, 7, 0.78); text-wrap: balance; }
+.kk-banner > .kk-pontos-palco { aspect-ratio: 1; }
+.kk-pontos-palco canvas { position: absolute; inset: -14%; width: 128%; height: 128%; display: block; pointer-events: none; }
+/* points that run along the line of the steps: the canvas lies over the steps */
+.kk-fluxo { position: relative; }
+.kk-fluxo > canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; pointer-events: none; z-index: 1; }
+
+/* clickable: the whole box is a link */
+.kk-box--link { text-decoration: none; cursor: pointer; transition: transform var(--t-hover), box-shadow var(--t-hover); }
+.kk-box--link:hover { transform: translateY(-2px); box-shadow: var(--brilho), var(--sombra-moldura); }
+.kk-box--link:focus-visible { border-radius: var(--r3); box-shadow: 0 0 0 4px var(--amarelo-halo), inset 0 0 0 1.5px var(--amarelo); }
+.kk-box--link .kk-seta { color: var(--tinta-4); transition: color var(--t-hover), transform var(--t-hover); }
+.kk-box--link:hover .kk-seta { color: var(--tinta); transform: translate(1px, -1px); }
+
+/* empty: what is still to come */
+.kk-box--vazio { align-items: center; justify-content: center; text-align: center; background: transparent; border: 1.5px dashed var(--borda-forte); box-shadow: none; color: var(--tinta-3); }
+
+/* ============ SMALL PARTS ============ */
+.kk-botao {
+  height: 40px; display: inline-flex; align-items: center; justify-content: center; gap: var(--esp-2); padding: 0 18px;
+  border-radius: var(--rf); border: 1px solid transparent; text-decoration: none; cursor: pointer; white-space: nowrap;
+  background: var(--inv-fundo); color: var(--inv-tinta); font: 600 13.5px/1 var(--ui);
+  transition: opacity var(--t-hover), background var(--t-hover), border-color var(--t-hover);
+}
+.kk-botao:hover { opacity: 0.86; }
+.kk-botao .kk-ic { width: 16px; height: 16px; }
+.kk-botao--2 { background: var(--opaca); color: var(--tinta); border-color: var(--borda); box-shadow: var(--brilho); }
+.kk-botao--2:hover { opacity: 1; border-color: var(--borda-forte); }
+.kk-botao--p { height: 32px; padding: 0 12px; font-size: 12.5px; }
+.kk-botao-icone { width: 36px; height: 36px; flex: none; display: inline-grid; place-items: center; border-radius: var(--rf); border: 0; background: var(--vidro-pilula); color: var(--tinta-2); box-shadow: inset 0 0 0 1px var(--borda-leve); cursor: pointer; transition: background var(--t-hover); }
+.kk-botao-icone:hover { background: var(--opaca); color: var(--tinta); }
+.kk-botao-icone .kk-ic { width: 17px; height: 17px; }
+
+/* one or two words. It never gets wider than what holds it: a text too long ends in an ellipsis. */
+.kk-etiqueta { display: inline-block; max-width: 100%; height: 24px; padding: 0 10px; border-radius: var(--rf); background: var(--rebaixo); color: var(--tinta-3); font: 600 11.5px/24px var(--ui); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; vertical-align: middle; }
+.kk-etiqueta--ponto::before { content: ''; display: inline-block; width: 7px; height: 7px; margin-right: 6px; border-radius: 50%; background: currentColor; vertical-align: 1px; }
+.kk-etiqueta .kk-ic { width: 13px; height: 13px; margin-right: 5px; vertical-align: -2px; stroke-width: 2.2; }
+.kk-etiqueta .kk-ponto { margin-right: 6px; vertical-align: 0; }
+.kk-etiqueta--ok { background: var(--ok-fundo); color: var(--ok-txt); }
+.kk-etiqueta--atencao { background: var(--atencao-fundo); color: var(--atencao-txt); }
+.kk-etiqueta--erro { background: var(--erro-fundo); color: var(--erro-txt); }
+.kk-etiqueta--info { background: var(--info-fundo); color: var(--info-txt); }
+.kk-etiqueta--novo { background: var(--rosa-fundo); color: var(--rosa-txt); }
+
+.kk-rodape { max-width: var(--largura); width: calc(100% - 32px); margin: 0 auto; padding: 0 0 var(--esp-8); font: 400 12.5px/1.5 var(--ui); color: var(--tinta-3); }
+
+/* ============ COMPONENTS ============
+   The ready parts of a tool. Each one has one recipe. */
+
+/* ---------- buttons ---------- */
+.kk-botao:disabled, .kk-botao[aria-disabled="true"], .kk-botao-icone:disabled { opacity: 0.4; cursor: not-allowed; }
+/* text button: a secondary path, never the main action */
+.kk-botao--texto { height: auto; padding: 2px 0; border-radius: 4px; /* only shapes the focus ring */ background: transparent; color: var(--dourado-txt); }
+.kk-botao--texto:hover { opacity: 1; text-decoration: underline; text-underline-offset: 3px; }
+/* red is for deleting, and deleting always asks first */
+.kk-botao--perigo { background: var(--erro); color: #fff; }
+:root[data-tema="escuro"] .kk-botao--perigo { color: #0a0907; }
+
+/* ---------- field ---------- */
+.kk-campo { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.kk-campo-rotulo { font: 600 13px/1.3 var(--ui); color: var(--tinta); }
+.kk-campo-ajuda { font: 400 12.5px/1.4 var(--ui); color: var(--tinta-3); }
+.kk-entrada {
+  width: 100%; height: 44px; padding: 0 14px;
+  border-radius: var(--r2); border: 1px solid var(--borda); background: var(--opaca);
+  font: 400 14.5px/1.3 var(--ui); color: var(--tinta); outline: none;
+  transition: border-color var(--t-hover), box-shadow var(--t-hover);
+}
+.kk-entrada::placeholder { color: var(--tinta-4); }
+.kk-entrada:focus, .kk-entrada:focus-visible { border-color: var(--amarelo); box-shadow: 0 0 0 3px var(--amarelo-halo); }
+textarea.kk-entrada { height: auto; min-height: 96px; padding: 12px 14px; line-height: 1.5; resize: vertical; }
+select.kk-entrada {
+  appearance: none; -webkit-appearance: none; padding-right: 40px; cursor: pointer;
+  background-image: linear-gradient(45deg, transparent 50%, currentColor 50%), linear-gradient(135deg, currentColor 50%, transparent 50%);
+  background-position: calc(100% - 20px) 19px, calc(100% - 15px) 19px; background-size: 5px 5px, 5px 5px; background-repeat: no-repeat;
+}
+.kk-campo--erro .kk-entrada { border-color: var(--erro); }
+.kk-campo--erro .kk-campo-ajuda { color: var(--erro-txt); }
+.kk-marcar { display: inline-flex; align-items: center; gap: 10px; font: 400 14.5px/1.3 var(--ui); color: var(--tinta-2); cursor: pointer; }
+.kk-marcar input {
+  appearance: none; -webkit-appearance: none; width: 20px; height: 20px; flex: none; margin: 0;
+  display: grid; place-content: center; border-radius: 6px; border: 1.5px solid var(--borda-forte); background: var(--opaca); cursor: pointer;
+}
+.kk-marcar input:checked { background: var(--inv-fundo); border-color: var(--inv-fundo); }
+.kk-marcar input:checked::after { content: ''; width: 10px; height: 5px; border-left: 2px solid var(--inv-tinta); border-bottom: 2px solid var(--inv-tinta); transform: rotate(-45deg) translate(1px, -1px); }
+
+/* ---------- search ---------- */
+.kk-busca {
+  height: 44px; max-width: 420px; display: flex; align-items: center; gap: 10px; padding: 0 16px;
+  border-radius: var(--rf); border: 1px solid var(--borda); background: var(--opaca); box-shadow: var(--brilho);
+  transition: border-color var(--t-hover), box-shadow var(--t-hover);
+}
+.kk-busca:focus-within { border-color: var(--amarelo); box-shadow: 0 0 0 3px var(--amarelo-halo); }
+.kk-busca .kk-ic { width: 17px; height: 17px; color: var(--tinta-4); }
+.kk-busca input { flex: 1; min-width: 0; border: 0; background: transparent; outline: none; box-shadow: none; font: 400 14.5px/1.3 var(--ui); color: var(--tinta); }
+.kk-busca input::placeholder { color: var(--tinta-4); }
+.kk-busca input::-webkit-search-cancel-button { display: none; }
+
+/* ---------- filters ---------- */
+.kk-filtros { display: flex; flex-wrap: wrap; gap: var(--esp-2); }
+.kk-chip {
+  height: 34px; display: inline-flex; align-items: center; gap: 8px; padding: 0 14px;
+  border-radius: var(--rf); border: 1px solid var(--borda); background: var(--opaca);
+  font: 500 13px/1 var(--ui); color: var(--tinta-2); white-space: nowrap; cursor: pointer;
+  transition: background var(--t-hover), border-color var(--t-hover), color var(--t-hover);
+}
+.kk-chip:hover { border-color: var(--borda-forte); }
+.kk-chip[aria-pressed="true"] { background: var(--inv-fundo); border-color: var(--inv-fundo); color: var(--inv-tinta); }
+.kk-chip-n { font: 600 11px/1 var(--mono); color: var(--dourado-txt); }
+.kk-chip[aria-pressed="true"] .kk-chip-n { color: var(--inv-acento); }
+
+/* ---------- pill with icon: an item of a group, with its icon in a circle ---------- */
+.kk-pilulas { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 7px; }
+.kk-pilula {
+  --pilula: var(--amarelo); --pilula-sobre: #0a0907;
+  display: inline-flex; align-items: center; gap: 8px; max-width: 100%; padding: 4px 13px 4px 4px;
+  border-radius: var(--rf); background: color-mix(in srgb, var(--pilula) 9%, var(--opaca));
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--pilula) 34%, var(--opaca));
+  font: 500 12.5px/1.35 var(--ui); color: var(--tinta);
+}
+.kk-pilula-ic { width: 26px; height: 26px; flex: none; display: grid; place-items: center; border-radius: 50%; background: var(--pilula); color: var(--pilula-sobre); }
+.kk-pilula-ic .kk-ic { width: 14px; height: 14px; }
+.kk-pilula--rosa { --pilula: var(--rosa); --pilula-sobre: #ffffff; }
+.kk-pilula--tinta { --pilula: var(--inv-fundo); --pilula-sobre: var(--inv-tinta); }
+
+/* ---------- steps: a sequence joined by a dotted line; the last step is the yellow one ---------- */
+.kk-passos { --n: 4; position: relative; list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(var(--n), minmax(0, 1fr)); gap: var(--esp-4); }
+.kk-passos::before { content: ''; position: absolute; top: 21px; left: calc(100% / var(--n) / 2); right: calc(100% / var(--n) / 2); border-top: 2px dotted color-mix(in srgb, var(--dourado-txt) 55%, transparent); }
+.kk-passo { position: relative; min-width: 0; display: flex; flex-direction: column; align-items: center; gap: var(--esp-3); text-align: center; }
+.kk-passo-ic { width: 44px; height: 44px; flex: none; display: grid; place-items: center; border-radius: 50%; background: var(--opaca); color: var(--dourado-txt); border: 1px solid var(--borda-forte); }
+.kk-passo:last-child .kk-passo-ic { background: var(--amarelo); color: #0a0907; border-color: var(--amarelo); }
+.kk-passo-txt { min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.kk-passo strong { font: 600 15px/1.3 var(--ui); }
+.kk-passo small { font: 400 12.5px/1.4 var(--ui); color: var(--tinta-3); }
+
+/* ---------- divider: the pause between two sections, a hairline with a yellow dot in the middle ---------- */
+.kk-divisor { position: relative; height: 12px; margin: var(--esp-9) 6%; }
+.kk-divisor::before { content: ''; position: absolute; left: 0; right: 0; top: 5px; height: 2px; background: linear-gradient(90deg, transparent, var(--borda-forte) 16%, var(--borda-forte) calc(50% - 20px), transparent calc(50% - 20px), transparent calc(50% + 20px), var(--borda-forte) calc(50% + 20px), var(--borda-forte) 84%, transparent); }
+.kk-divisor::after { content: ''; position: absolute; left: 50%; top: 0; width: 12px; height: 12px; margin-left: -6px; border-radius: 50%; background: var(--amarelo); box-shadow: 0 0 0 1.5px var(--tinta); }
+
+/* ---------- tabs ---------- */
+.kk-abas { display: inline-flex; gap: 2px; max-width: 100%; padding: 4px; overflow-x: auto; scrollbar-width: none; border-radius: var(--rf); background: var(--rebaixo); box-shadow: inset 0 0 0 1px var(--borda-leve); }
+.kk-abas::-webkit-scrollbar { display: none; }
+.kk-aba {
+  flex: none; height: 32px; padding: 0 14px; border-radius: var(--rf); border: 1px solid transparent; background: transparent;
+  font: 500 13px/1 var(--ui); color: var(--tinta-3); white-space: nowrap; cursor: pointer;
+  transition: background var(--t-hover), color var(--t-hover);
+}
+.kk-aba:hover { color: var(--tinta); }
+.kk-aba[aria-selected="true"] { background: var(--opaca); color: var(--tinta); border-color: var(--borda); box-shadow: var(--brilho), 0 4px 12px -6px rgba(60, 50, 20, 0.25); }
+
+/* ---------- indicator ---------- */
+.kk-indicador { gap: var(--esp-2); }
+.kk-indicador-valor { min-height: 40px; display: flex; align-items: center; font: 700 40px/1 var(--titulo); letter-spacing: 0.01em; }
+
+/* ---------- table: lives inside .kk-box--tabela ---------- */
+.kk-box--linhas { padding: 0; gap: 0; overflow: hidden; }
+/* a table wider than the box scrolls inside the box, it never pushes the page */
+.kk-box--tabela { padding: 0; gap: 0; overflow-x: auto; }
+/* Each column is as wide as its content asks. As the page opens, koko.js fixes those widths, so the columns do not
+   jump when a filter hides rows. A table with many columns takes .kk-tabela--larga: it is never narrower than its
+   content, and scrolls inside the box. */
+.kk-tabela { width: 100%; border-collapse: collapse; text-align: left; }
+.kk-tabela--larga { min-width: max-content; }
+.kk-tabela th { padding: 14px 20px 10px; border-bottom: 1px solid var(--borda-leve); font: 600 11px/1.2 var(--mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--tinta-4); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.kk-tabela td { padding: 13px 20px; vertical-align: top; font: 400 14px/1.45 var(--ui); color: var(--tinta-2); }
+/* the hairline goes between two rows that are showing: the first row left by a filter gets none */
+.kk-tabela tbody tr:not([hidden]) ~ tr:not([hidden]) td { border-top: 1px solid var(--borda-leve); }
+.kk-tabela tbody tr { transition: background var(--t-hover); }
+.kk-tabela tbody tr:hover { background: var(--rebaixo); }
+.kk-tabela strong { display: block; font-weight: 600; color: var(--tinta); }
+.kk-tabela .kk-num { font: 600 18px/1.1 var(--titulo); letter-spacing: 0.01em; color: var(--tinta); white-space: nowrap; }
+.kk-tabela .kk-dado { white-space: nowrap; }
+/* a tag inside a row is lower, so that a row with a tag is as tall as a row of text */
+.kk-tabela .kk-etiqueta { height: 20px; padding: 0 8px; font-size: 11px; line-height: 20px; vertical-align: top; }
+
+/* ---------- list of rows: lives inside .kk-box--linhas ---------- */
+.kk-linha { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 14px; align-items: center; padding: 12px 20px; text-decoration: none; transition: background var(--t-hover); }
+.kk-linha + .kk-linha { border-top: 1px solid var(--borda-leve); }
+a.kk-linha:hover { background: var(--rebaixo); }
+.kk-linha strong { display: block; font: 600 14px/1.3 var(--ui); }
+.kk-linha small { display: block; margin-top: 2px; font: 400 12.5px/1.45 var(--ui); color: var(--tinta-3); }
+.kk-linha .kk-seta { color: var(--tinta-4); }
+a.kk-linha:hover .kk-seta { color: var(--tinta); }
+
+/* ---------- notice: the box stays white, the state is in the icon ---------- */
+.kk-aviso { display: flex; align-items: center; gap: 12px; padding: 12px 16px 12px 12px; border-radius: var(--r2); background: var(--opaca); border: 1px solid var(--borda); box-shadow: var(--brilho); font: 400 14px/1.45 var(--ui); color: var(--tinta-2); }
+.kk-aviso strong { font-weight: 600; color: var(--tinta); }
+.kk-aviso-ic { width: 28px; height: 28px; flex: none; display: grid; place-items: center; border-radius: 50%; background: var(--info-fundo); color: var(--info-txt); }
+.kk-aviso-ic .kk-ic { width: 15px; height: 15px; stroke-width: 2.2; }
+.kk-aviso--ok .kk-aviso-ic { background: var(--ok-fundo); color: var(--ok-txt); }
+.kk-aviso--atencao .kk-aviso-ic { background: var(--atencao-fundo); color: var(--atencao-txt); }
+.kk-aviso--erro .kk-aviso-ic { background: var(--erro-fundo); color: var(--erro-txt); }
+
+/* ---------- window ---------- */
+.kk-janela { width: min(480px, calc(100vw - 32px)); padding: 0; border: 0; background: transparent; color: var(--tinta); overflow: visible; }
+.kk-janela::backdrop { background: rgba(10, 9, 7, 0.55); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+.kk-janela-caixa { display: flex; flex-direction: column; gap: var(--esp-4); padding: var(--esp-6); border-radius: var(--r4); background: var(--opaca); border: 1px solid var(--borda); box-shadow: var(--sombra-popup); }
+.kk-janela-cab { display: flex; align-items: flex-start; justify-content: space-between; gap: var(--esp-3); }
+.kk-janela-pe { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: var(--esp-2); }
+
+/* ---------- box with image: the picture goes edge to edge on top, the text below ---------- */
+.kk-box--midia { padding: 0; gap: 0; overflow: hidden; }
+.kk-box-midia { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; border-bottom: 1px solid var(--borda-leve); background: var(--papel-a); }
+.kk-box-corpo { flex: 1; display: flex; flex-direction: column; gap: var(--esp-3); padding: var(--esp-5); }
+
+/* ---------- page head: seal, title and one line under it, with the actions on the right ---------- */
+/* it wraps: on a narrow screen the actions go under the title instead of squeezing it */
+.kk-cabeca { display: flex; flex-wrap: wrap; align-items: center; gap: var(--esp-4); margin-bottom: var(--esp-6); }
+.kk-cabeca-textos { flex: 1 1 260px; min-width: 0; display: flex; flex-direction: column; gap: var(--esp-2); }
+.kk-selo--g { width: 52px; height: 52px; border-radius: var(--r3); }
+.kk-selo--g .kk-ic { width: 24px; height: 24px; }
+/* the row of search and filters above a list or a table */
+.kk-barra { display: flex; flex-wrap: wrap; align-items: center; gap: var(--esp-3); margin-bottom: var(--esp-6); }
+.kk-barra .kk-busca { flex: 1 1 280px; }
+
+/* ---------- entry screen: one box in the middle of the page ---------- */
+.kk-entrar { min-height: 100vh; display: grid; place-items: center; padding: var(--esp-4); }
+.kk-entrar-caixa { width: min(400px, 100%); gap: var(--esp-5); padding: var(--esp-7); }
+.kk-entrar-caixa .kk-marca-logo { height: 31px; }
+.kk-entrar-caixa .kk-botao { width: 100%; }
+
+/* ---------- the verdict of the page opened with ?conferir at the end of its address (koko.js) ---------- */
+.kk-conferencia {
+  position: fixed; left: 12px; right: 12px; bottom: 12px; z-index: 90; max-width: 560px; max-height: 60vh; overflow-y: auto; margin: 0 auto;
+  display: flex; flex-direction: column; gap: var(--esp-2); padding: var(--esp-4);
+  border-radius: var(--r3); background: var(--opaca); border: 1px solid var(--borda-forte); box-shadow: var(--sombra-popup);
+  font: 400 13px/1.45 var(--ui); color: var(--tinta-2);
+}
+.kk-conferencia strong { font: 600 14px/1.3 var(--ui); color: var(--tinta); }
+.kk-conferencia ul { margin: 0; padding-left: 18px; }
+
+/* ---------- empty ---------- */
+.kk-box--vazio { gap: var(--esp-3); padding: var(--esp-7) var(--esp-5); }
+
+/* ============ MOTION ============
+   A block with kk-anima comes into view in steps: koko.js puts kk--pronto (the start) and, when the block shows on
+   the screen, kk--visto (the end). Without the script, or with reduced motion in the system, everything is born whole
+   and still: the class that hides is only put by the script. Recipes of the brand system (componentes-9.css). */
+@media (prefers-reduced-motion: no-preference) {
+  /* The start snaps in at once; the way to the end is what moves. That is why the transitions sit on kk--visto. */
+  /* the marker runs over the word */
+  .kk-anima.kk--pronto .kk-marca-texto { background-size: 0% 100%; }
+  .kk-anima.kk--visto .kk-marca-texto { background-size: 100% 100%; transition: background-size 1.1s cubic-bezier(0.6, 0, 0.2, 1) 0.35s; }
+  /* the items come in one after the other */
+  .kk-sequencia.kk--pronto > * { opacity: 0; transform: translateY(14px); }
+  .kk-sequencia.kk--visto > * { opacity: 1; transform: none; transition: opacity 0.5s ease, transform 0.5s ease; transition-delay: calc(var(--i, 0) * 0.15s + 0.1s); }
+  /* the opening phrase comes in line by line, then the text; the dots drift slowly */
+  .kk-manifesto.kk--pronto .kk-manifesto-frase > span, .kk-manifesto.kk--pronto .kk-manifesto-txt { opacity: 0; transform: translateY(16px); }
+  .kk-manifesto.kk--visto .kk-manifesto-frase > span, .kk-manifesto.kk--visto .kk-manifesto-txt { opacity: 1; transform: none; transition: opacity 0.7s ease, transform 0.7s ease; }
+  .kk-manifesto.kk--visto .kk-manifesto-frase > span { transition-delay: calc(var(--i, 0) * 0.45s + 0.15s); }
+  .kk-manifesto.kk--visto .kk-manifesto-txt { transition-delay: 1.1s; }
+  .kk-manifesto::before { animation: kk-deriva 24s linear infinite; }
+  /* the panel that opens comes up a little */
+  .kk-painel:not([hidden]) > *, .kk-submenu > [role="tabpanel"]:not([hidden]):not(.kk-painel) { animation: kk-entra 0.42s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+  .kk-painel:not([hidden]) > :nth-child(2) { animation-delay: 0.06s; }
+  /* the card that leads somewhere rises under the pointer */
+  .kk-cartao-n--link { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+  .kk-cartao-n--link:hover { transform: translateY(-3px); box-shadow: 0 24px 40px -22px rgba(60, 50, 20, 0.8); }
+  .kk-cartao-n--link:hover .kk-cartao-n-ic { transform: rotate(-6deg) scale(1.05); }
+  .kk-cartao-n-ic { transition: transform 0.25s ease; }
+}
+@keyframes kk-entra { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+@keyframes kk-deriva { to { transform: translate(18px, -18px); } }
+
+/* ============ SMALL SCREENS ============ */
+@media (max-width: 960px) {
+  /* four in a row becomes two by two before it becomes one column */
+  .kk-grade--4, .kk-cartoes-n { --colunas: 2; }
+  .kk-itens--4 .kk-item { flex-basis: calc(50% - 10px); }
+  .kk-pagina--menu { grid-template-columns: minmax(0, 1fr); gap: var(--esp-6); }
+  .kk-menu { position: static; max-height: none; flex-direction: row; overflow-x: auto; scrollbar-width: none; border-radius: var(--r3); padding: 6px; }
+  .kk-menu::-webkit-scrollbar { display: none; }
+  .kk-menu-grupo, .kk-menu-item--off, .kk-menu-cab { display: none; }
+  .kk-menu-item { flex: none; grid-template-columns: 26px auto; padding: 5px 12px 5px 5px; white-space: nowrap; }
+  .kk-menu-icone { width: 26px; height: 26px; }
+}
+@media (max-width: 720px) {
+  .kk-grade, .kk-grade--3, .kk-grade--4 { --colunas: 1; }
+  /* the table becomes a list: each row is a block and each cell shows the name of its column (data-rotulo) */
+  .kk-tabela thead { display: none; }
+  .kk-tabela, .kk-tabela--larga { min-width: 0; }
+  .kk-tabela, .kk-tabela tbody, .kk-tabela tr:not([hidden]), .kk-tabela td { display: block; width: 100%; }
+  .kk-tabela tr { padding: 14px 16px; }
+  .kk-tabela tbody tr:not([hidden]) ~ tr:not([hidden]) { border-top: 1px solid var(--borda-leve); }
+  .kk-tabela tbody tr:not([hidden]) ~ tr:not([hidden]) td, .kk-tabela td { padding: 0; border: 0; }
+  .kk-tabela td + td { margin-top: 8px; }
+  .kk-tabela td[data-rotulo]::before { content: attr(data-rotulo); display: block; margin-bottom: 2px; font: 600 10px/1.2 var(--mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--tinta-4); }
+  .kk-busca { max-width: none; }
+  .kk-linha { padding: 12px 16px; }
+  /* the steps go one under the other, with the dotted line at the left */
+  .kk-passos { grid-template-columns: minmax(0, 1fr); gap: var(--esp-3); }
+  .kk-passos::before { top: 22px; bottom: 22px; left: 21px; right: auto; border-top: 0; border-left: 2px dotted color-mix(in srgb, var(--dourado-txt) 55%, transparent); }
+  .kk-passo { flex-direction: row; text-align: left; }
+  .kk-divisor { margin: var(--esp-8) 6%; }
+  .kk-faixa { padding: 12px var(--esp-4); }
+  .kk-manifesto { padding: 26px 22px 24px; }
+  .kk-manifesto-txt { font-size: 16px; }
+  .kk-cartoes-n { --colunas: 1; }
+  .kk-fichas { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+  .kk-ficha { padding: 12px 4px 11px; gap: 8px; }
+  .kk-ficha-ic { width: 46px; height: 46px; }
+  .kk-ficha[aria-selected="true"]::after { display: none; }
+  .kk-painel { padding: 24px 18px 20px; gap: 22px; }
+  .kk-painel-cab { grid-template-columns: minmax(0, 1fr) 80px; gap: 14px; padding-bottom: 20px; }
+  .kk-painel-selo { width: 80px; height: 80px; }
+  .kk-painel-selo .kk-ic { width: 36px; height: 36px; }
+  .kk-painel-corpo { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .kk-painel-frase { font-size: 21px; }
+  .kk-alternador { align-self: stretch; }
+  .kk-alternador-opcao { flex: 1; padding: 0 12px; }
+  .kk-sintese { padding: 30px 20px 24px; gap: 22px; }
+  .kk-sintese-topo { grid-template-columns: minmax(0, 1fr); gap: 16px; text-align: center; }
+  .kk-sintese-simbolo { width: 84px; }
+  .kk-sintese-texto p { margin: 0 auto; }
+  .kk-manifesto--pontos { grid-template-columns: minmax(0, 1fr); }
+  .kk-manifesto--pontos > .kk-pontos-palco { grid-column: 1; grid-row: auto; order: -1; width: 74%; margin: -8px auto 6px; }
+  .kk-banner { grid-template-columns: minmax(0, 1fr); row-gap: 18px; }
+  .kk-banner > .kk-pontos-palco { order: -1; width: 150px; }
+  .kk-acordeao-item summary { padding: 18px 18px; }
+  .kk-acordeao-corpo { padding: 0 18px 22px; }
+  .kk-item, .kk-itens--4 .kk-item { flex-basis: 100%; padding: 10px 12px; }
+  .kk-cabeca { align-items: flex-start; }
+  .kk-entrar-caixa { padding: var(--esp-6); }
+  .kk-topo { top: 8px; margin-top: 8px; padding-left: 12px; }
+  .kk-marca-nome { font-size: 14px; }
+  .kk-pagina { padding-top: var(--esp-6); }
+  .kk-secao + .kk-secao { margin-top: var(--esp-8); }
+}

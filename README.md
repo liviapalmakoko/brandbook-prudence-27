@@ -29,3 +29,7 @@ Em **Settings → Pages**, escolha **Deploy from a branch**, branch `main`, past
 O endereço fica `https://liviapalmakoko.github.io/brandbook-prudence-27/`.
 
 É um único arquivo, `index.html`, sem build.
+
+## Visual
+
+O visual segue o Design System interno da Koko (https://design-system-interno.sites.koko.ag/). A pasta `kit/` vem do kit oficial (koko.css, koko.js e a marca) e não se edita aqui. O app só usa as variáveis do kit.

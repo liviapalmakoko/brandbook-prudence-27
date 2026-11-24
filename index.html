@@ -1,8 +1,10 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-tema="claro">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="kit/marca/simbolo-preto.png">
 <style>html,body{margin:0}img{max-width:100%}[hidden]{display:none!important}
 /* fontes */
 .fctl{position:sticky;top:57px;z-index:20;background:var(--bg);padding:10px 0 12px;border-bottom:1px solid var(--line);display:grid;gap:10px;margin-top:-6px}
@@ -10,7 +12,7 @@
 .fctl .frow{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
 .fctl label{font-size:13px;color:var(--mute);display:flex;gap:8px;align-items:center}
 .fctl input[type=range]{width:160px;accent-color:var(--ink)}
-.aas{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px;margin:10px 0 4px}.aa{display:flex;flex-direction:column;align-items:center;gap:2px;padding:14px 6px 10px;border:1px solid var(--line);border-radius:12px;background:#faf9f6;color:var(--ink);text-decoration:none}.aa:hover{border-color:var(--ink)}.aag{font-size:44px;line-height:1.1}.aan{font-size:12px;font-weight:600;text-align:center}.aab{font-size:10px;color:#777}.aa.v-yes{border-color:#1f8a5b;box-shadow:inset 0 0 0 1px #1f8a5b}.aa.v-no{opacity:.45}
+.aas{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px;margin:10px 0 4px}.aa{display:flex;flex-direction:column;align-items:center;gap:2px;padding:14px 6px 10px;border:1px solid var(--line);border-radius:12px;background:var(--opaca);color:var(--ink);text-decoration:none}.aa:hover{border-color:var(--ink)}.aag{font-size:44px;line-height:1.1}.aan{font-size:12px;font-weight:600;text-align:center}.aab{font-size:10px;color:var(--tinta-4)}.aa.v-yes{border-color:var(--ok);box-shadow:inset 0 0 0 1px var(--ok)}.aa.v-no{opacity:.45}
 .fr{display:grid;grid-template-columns:230px minmax(0,1fr) 150px;gap:26px;align-items:center;padding:24px 0;border-bottom:1px solid var(--line)}
 .fr.v-no{opacity:.4}
 .fr.v-yes{box-shadow:inset 4px 0 0 var(--yes);padding-left:18px}
@@ -18,7 +20,7 @@
 .fm b{font-family:var(--f-d);font-size:21px;letter-spacing:-.02em;display:block;line-height:1.1}
 .ftags{display:flex;flex-wrap:wrap;gap:4px;margin:8px 0 6px}
 .ftag,.src{font-size:11px;font-weight:600;letter-spacing:.03em;border:1px solid var(--line);border-radius:999px;padding:2px 8px;color:var(--mute)}
-.src.g{color:var(--yes);border-color:currentColor}.src.a{color:#3B6BF0;border-color:currentColor}.src.m{color:var(--maybe);border-color:currentColor}
+.src.g{color:var(--yes);border-color:currentColor}.src.a{color:var(--info-txt);border-color:currentColor}.src.m{color:var(--maybe);border-color:currentColor}
 .fm p{margin:4px 0 8px;font-size:13px;color:var(--mute);line-height:1.4}
 .fm a{font-size:13px;font-weight:600;color:var(--ink)}
 .fs{font-size:var(--fs,72px);line-height:1.08;overflow-wrap:anywhere;min-width:0;color:var(--ink)}
@@ -35,46 +37,32 @@
 .fcmp{font-size:13px;display:flex;gap:6px;align-items:center;cursor:pointer;color:var(--mute)}
 .cbar{position:fixed;left:50%;bottom:max(18px,env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:80;background:var(--ink);color:var(--bg);border-radius:999px;padding:8px 10px 8px 20px;display:none;gap:12px;align-items:center;box-shadow:0 8px 24px rgba(0,0,0,.3);font-size:14px;white-space:nowrap}
 .cbar.on{display:flex}
-.cbar .b{background:var(--bg);color:var(--ink);border-color:var(--bg)}
+.cbar .kk-botao{background:var(--papel);color:var(--tinta);border-color:var(--papel)}
 .panel.wide{max-width:1240px}
 .cmpgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px;margin-top:20px}
 .cc{border-top:2px solid var(--ink);padding-top:14px;min-width:0;overflow-wrap:anywhere}
-.cc h3{margin:0}.cc a.b{display:inline-block;margin-top:14px;text-decoration:none;color:var(--ink)}
+.cc h3{margin:0}.cc a.kk-botao{margin-top:14px}
 .fb{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:22px}
 .fbi{border-top:1px solid var(--line);padding-top:12px;min-width:0}
 .fbi .big{font-size:56px;line-height:1.05;overflow-wrap:anywhere}
 .fbi small{display:block;color:var(--mute);font-size:12px;margin-top:6px}
 @media (max-width:860px){.fr{grid-template-columns:1fr;gap:12px}.fv{flex-direction:row;align-items:center;justify-content:space-between}.fctl{top:90px}}
 </style>
-<title>Moodboard Prudence</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,500..800&family=Inter:wght@400;500;600&display=swap">
+<title>Moodboard da marca · Prudence</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:wght@400;500&display=swap">
+<link rel="stylesheet" href="kit/koko.css">
+<script src="kit/koko.js"></script>
 <style>
 /* Layout: prancha editorial em papel claro, filetes finos, tipografia grotesca. Três telas: Biblioteca (preparo), Sessão (avaliação ao vivo), Moodboard (resultado montado pelas reações). */
 :root{
-  --bg:#EDEBE6; --card:#F8F7F3; --ink:#15141A; --mute:#6D6B72; --line:#D5D2CB; --soft:#E2DFD8;
-  --yes:#1E8A5A; --maybe:#B3820A; --no:#C13B3B; --view:#16151A;
-  --f-d:'Bricolage Grotesque','Helvetica Neue',Arial,sans-serif; --f-b:'Inter','Helvetica Neue',Arial,sans-serif;
+  --bg:var(--papel); --card:var(--opaca); --ink:var(--tinta); --mute:var(--tinta-3); --line:var(--borda); --soft:var(--rebaixo);
+  --yes:var(--ok); --maybe:var(--atencao-txt); --no:var(--erro); --view:var(--inv-fundo);
+  --f-d:var(--titulo); --f-b:var(--ui);
 }
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#111013;--card:#1B1A1F;--ink:#F1EFEA;--mute:#A09DA6;--line:#2E2C33;--soft:#26242A;--yes:#42C88F;--maybe:#E2B53B;--no:#FF7B7B;--view:#0A0A0C;color-scheme:dark}}
-:root[data-theme="dark"]{--bg:#111013;--card:#1B1A1F;--ink:#F1EFEA;--mute:#A09DA6;--line:#2E2C33;--soft:#26242A;--yes:#42C88F;--maybe:#E2B53B;--no:#FF7B7B;--view:#0A0A0C;color-scheme:dark}
 *{box-sizing:border-box}
-body{background:var(--bg);color:var(--ink);font-family:var(--f-b);font-size:15px;line-height:1.45;
-  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 60px}
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:100;background:var(--bg)}
-h1,h2,h3{font-family:var(--f-d);margin:0;letter-spacing:-.025em;font-weight:800;text-wrap:balance}
 button{font:inherit;color:inherit;cursor:pointer}
-:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
-.wrap{max-width:1400px;margin:0 auto}
-header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:90;background:var(--bg);margin:0 calc(-1*max(16px,env(safe-area-inset-left,0px)));border-bottom:1px solid var(--line)}
-.bar{max-width:1400px;margin:0 auto;display:flex;align-items:center;gap:14px;padding:10px max(16px,env(safe-area-inset-left,0px));flex-wrap:wrap}
-.brand{font-family:var(--f-d);font-weight:800;font-size:20px;letter-spacing:-.03em;white-space:nowrap}
-nav{display:flex;gap:2px;flex:1}
-nav a{padding:7px 14px;border-radius:999px;color:var(--mute);text-decoration:none;font-weight:500;font-size:14px;white-space:nowrap}
-nav a[aria-current="page"]{background:var(--ink);color:var(--bg)}
-.b{border:1px solid var(--line);background:var(--card);padding:8px 14px;border-radius:999px;font-weight:500;font-size:14px;white-space:nowrap}
-.b:hover:not(:disabled){border-color:var(--ink)}
-.b:disabled{opacity:.4;cursor:default}
-.b.dark{background:var(--ink);color:var(--bg);border-color:var(--ink)}
 .tag{font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--mute)}
 section.view{display:none;padding-top:26px}
 section.view.on{display:block}
@@ -105,8 +93,6 @@ section.view.on{display:block}
 .dl .vs{font-family:var(--f-d);font-weight:800;font-size:13px;color:var(--mute)}
 /* sessao */
 .pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
-.pill{border:1px solid var(--line);background:none;padding:5px 12px;border-radius:999px;font-size:13px;font-weight:500;color:var(--mute)}
-.pill[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
 .prog{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:13px;color:var(--mute);margin-bottom:10px;font-variant-numeric:tabular-nums}
 .prog b{color:var(--ink)}
 .t-yes{color:var(--yes)}.t-maybe{color:var(--maybe)}.t-no{color:var(--no)}
@@ -131,7 +117,7 @@ section.view.on{display:block}
 .ch.pos i{color:var(--yes)}.ch.neg i{color:var(--no)}
 textarea.note{width:100%;min-height:74px;resize:vertical;border:1px solid var(--line);background:var(--card);border-radius:10px;padding:10px 12px;font:inherit;color:var(--ink)}
 .navrow{display:flex;gap:8px;margin-top:auto}
-.navrow .b{flex:1}
+.navrow .kk-botao{flex:1}
 .duel{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .opt{border:3px solid transparent;border-radius:12px;background:var(--card);padding:0;overflow:hidden;display:flex;flex-direction:column;text-align:left}
 .opt .pic{background:var(--view);display:grid;place-items:center;min-height:min(56vh,560px)}
@@ -183,6 +169,42 @@ textarea.note{width:100%;min-height:74px;resize:vertical;border:1px solid var(--
 .panel ul{margin:0;padding-left:18px}
 .lb{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:300;display:none;place-items:center;padding:24px;cursor:zoom-out}.lb.on{display:grid}.lb img{max-width:100%;max-height:100%;border-radius:4px}
 .toast{position:fixed;left:50%;bottom:max(20px,env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:9px 16px;border-radius:999px;font-size:14px;z-index:400;display:none}.toast.on{display:block}
+
+/* Visual do Design System interno da Koko: só variáveis do kit. */
+h1,h2,h3{font-family:var(--titulo);text-transform:uppercase;font-weight:600;letter-spacing:.01em;margin:0}
+.fm b,.vote span,.opt .cp span:first-child,.dl .vs,.pref .gt,.ch i,.mb-title{font-family:var(--titulo)}
+.tag{font-family:var(--mono);color:var(--dourado-txt)}
+section.view{padding-top:0}
+.fctl{top:var(--topo-total);background:var(--vidro-barra);backdrop-filter:var(--desfoque);-webkit-backdrop-filter:var(--desfoque);padding:var(--esp-3) var(--esp-4);border:1px solid var(--borda-leve);border-radius:var(--r3);margin-top:0}
+.fctl .ft{background:var(--opaca);border-color:var(--borda)}
+.cat{border-top:1px solid var(--borda)}
+.cat h3{font-size:24px}
+.th{border-radius:var(--r2);border:1px solid var(--borda);background:var(--opaca)}
+.th.sel{border-color:var(--tinta);box-shadow:0 0 0 1px var(--tinta)}
+.dl,.pref,.opt{border-radius:var(--r2);background:var(--opaca);border:1px solid var(--borda)}
+.opt{border-width:2px}
+.opt.win{border-color:var(--ok)}
+.viewer{border-radius:var(--r3)}
+.vote{border-radius:var(--r2);border:1px solid var(--borda);background:var(--opaca)}
+.vote[data-v="yes"].on,.vote[data-v="maybe"].on,.vote[data-v="no"].on{color:#fff}
+.vote .kk-ic{width:26px;height:26px}
+.ic{display:inline-flex;vertical-align:middle}
+.fvb .kk-ic{width:20px;height:20px}
+.fvb button{border-width:1px}
+.th .x .kk-ic{width:12px;height:12px}
+.th .x,.th .pickd{display:inline-flex;align-items:center;justify-content:center}
+.prog .kk-ic{width:14px;height:14px}
+.ch{border-width:1px;border-color:var(--borda)}
+.ch.pos{background:var(--ok-fundo);border-color:var(--ok)}
+.ch.neg{background:var(--erro-fundo);border-color:var(--erro)}
+textarea.note{border-radius:var(--r2);background:var(--opaca);border-color:var(--borda)}
+.panel{background:var(--opaca);border-radius:var(--r4);box-shadow:var(--sombra-popup);border:1px solid var(--borda-leve)}
+.mb-title{font-stretch:normal;text-transform:uppercase;font-weight:700;letter-spacing:0;line-height:.95;font-size:clamp(40px,6.2vw,84px);overflow-wrap:normal}
+.mb-top{border:1px solid var(--borda);border-radius:var(--r3);background:var(--opaca);overflow:hidden}.mb-top>div{padding:20px 22px 24px}.mb-top>div+div{padding-left:22px}
+.sec{border-top-color:var(--borda)}
+.kk-cabeca{margin-bottom:var(--esp-5)}
+.kk-barra .kk-botao{flex:none}
+.empty{border-color:var(--borda);border-radius:var(--r2)}
 kbd{font-family:var(--f-b);font-size:11px;border:1px solid var(--line);border-radius:4px;padding:1px 5px;color:var(--mute)}
 @media (max-width:860px){
   .single{grid-template-columns:1fr}.viewer{min-height:50vh}
@@ -194,22 +216,59 @@ kbd{font-family:var(--f-b);font-size:11px;border:1px solid var(--line);border-ra
 
 </head>
 <body>
-<header class="top"><div class="bar">
-  <div class="brand">Moodboard Prudence</div>
-  <nav id="nav" aria-label="Telas">
-    <a href="#biblioteca" data-k="biblioteca">Biblioteca</a>
-    <a href="#sessao" data-k="sessao">Sessão</a>
-    <a href="#fontes" data-k="fontes">Fontes</a>
-    <a href="#moodboard" data-k="moodboard">Moodboard</a>
-  </nav>
-  <button class="b dark" id="sum">Resumo</button>
-</div></header>
+<div class="kk-fundo" aria-hidden="true"></div>
+<svg class="kk-icones" aria-hidden="true">
+  <symbol id="i-busca" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-fechar" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="i-ajuda" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.4 9.3a2.7 2.7 0 0 1 5.2.9c0 1.9-2.6 2.3-2.6 4.1"/><path d="M12 17.3h.01"/></symbol>
+  <symbol id="i-lua" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></symbol>
+  <symbol id="i-sol" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+  <symbol id="i-seta" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-fora" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></symbol>
+  <symbol id="i-baixar" viewBox="0 0 24 24"><path d="M12 4v11"/><path d="m7.5 10.5 4.5 4.5 4.5-4.5"/><path d="M5 19.5h14"/></symbol>
+  <symbol id="i-subir" viewBox="0 0 24 24"><path d="M12 15.5V4.5M7.5 9 12 4.5 16.5 9M5 19.5h14"/></symbol>
+  <symbol id="i-biblioteca" viewBox="0 0 24 24"><rect x="3.5" y="4" width="4" height="16" rx="1"/><rect x="9" y="6.5" width="4" height="13.5" rx="1"/><path d="m14.8 7.6 3.5-.9 3.2 12.6-3.5.9Z"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m10 8.5 5.5 3.5-5.5 3.5Z"/></symbol>
+  <symbol id="i-texto" viewBox="0 0 24 24"><path d="M4.5 7.5v-3h15v3M12 4.5v15M9 19.5h6"/></symbol>
+  <symbol id="i-grade" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="2"/><path d="M3.5 9.5h17M3.5 14.5h17M9.5 3.5v17M14.5 3.5v17"/></symbol>
+  <symbol id="i-copiar" viewBox="0 0 24 24"><rect x="8.5" y="8.5" width="11" height="11" rx="2"/><path d="M15.5 8.5v-2a2 2 0 0 0-2-2h-7a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h2"/></symbol>
+  <symbol id="i-lixo" viewBox="0 0 24 24"><path d="M4.5 7h15M9.5 7V4.5h5V7M6.5 7l1 12.5h9l1-12.5M10 11v5M14 11v5"/></symbol>
+  <symbol id="i-olho" viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-alvo" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2" fill="currentColor"/></symbol>
+  <symbol id="i-mais" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+</svg>
 
-<div class="wrap"><main>
+<header class="kk-topo kk-topo--nav">
+  <div class="kk-topo-linha">
+    <a class="kk-marca" href="#biblioteca" aria-label="Moodboard da Prudence: voltar ao início">
+      <img class="kk-marca-logo kk-so-claro" src="kit/marca/koko-com-registro-preto-justa.svg" alt="Koko">
+      <img class="kk-marca-logo kk-so-escuro" src="kit/marca/koko-com-registro-branco-justa.svg" alt="Koko">
+      <span class="kk-marca-fio" aria-hidden="true"></span>
+      <span class="kk-marca-nome">Moodboard Prudence</span>
+    </a>
+    <div class="kk-topo-acoes">
+      <button class="kk-botao kk-botao--p" id="sum" type="button">Resumo</button>
+      <button type="button" class="kk-botao-icone" data-kk-tema aria-label="Alternar tema claro e escuro">
+        <svg class="kk-ic kk-so-claro"><use href="#i-lua"></use></svg>
+        <svg class="kk-ic kk-so-escuro"><use href="#i-sol"></use></svg>
+      </button>
+    </div>
+  </div>
+  <nav class="kk-nav" id="nav" aria-label="Telas">
+    <a class="kk-nav-item" href="#biblioteca" data-k="biblioteca"><svg class="kk-ic"><use href="#i-biblioteca"></use></svg>Biblioteca</a>
+    <a class="kk-nav-item" href="#sessao" data-k="sessao"><svg class="kk-ic"><use href="#i-play"></use></svg>Sessão</a>
+    <a class="kk-nav-item" href="#fontes" data-k="fontes"><svg class="kk-ic"><use href="#i-texto"></use></svg>Fontes</a>
+    <a class="kk-nav-item" href="#moodboard" data-k="moodboard"><svg class="kk-ic"><use href="#i-grade"></use></svg>Moodboard</a>
+  </nav>
+</header>
+
+<main class="kk-pagina">
 <section class="view" id="v-biblioteca">
-  <div class="head"><div><div class="tag">Preparo · antes da quinta</div><h2>Biblioteca de referências</h2>
-    <p>Reúna aqui o que vamos mostrar ao cliente. Arraste imagens para uma categoria, cole com Cmd+V ou use o botão. Para criar um duelo ("prefiro esta a esta"), selecione duas imagens da mesma categoria.</p></div>
-    <div class="row"><button class="b" id="mkduel" disabled>Criar duelo com as 2 selecionadas</button><button class="b" id="autoduel">Gerar duelos automáticos</button></div></div>
+  <div class="kk-cabeca"><span class="kk-selo kk-selo--tinta kk-selo--g"><svg class="kk-ic"><use href="#i-biblioteca"></use></svg></span>
+    <div class="kk-cabeca-textos"><h1 class="kk-h1">Biblioteca de <mark class="kk-marca-texto">referências</mark></h1>
+    <p class="kk-apoio">Arraste imagens para uma categoria, cole com Cmd+V ou use o botão. Para um duelo, selecione duas da mesma categoria.</p></div></div>
+  <div class="kk-barra"><button class="kk-botao kk-botao--2" id="mkduel" disabled>Criar duelo com as 2 selecionadas</button><button class="kk-botao kk-botao--2" id="autoduel">Gerar duelos automáticos</button></div>
   <div id="cats"></div>
   <div class="cat"><div class="chd"><h3>Duelos</h3><span class="tag" id="duelcount"></span></div><p class="hint">Pares que o cliente vai comparar na sessão.</p><div class="duels" id="duels"></div></div>
 </section>
@@ -222,8 +281,9 @@ kbd{font-family:var(--f-b);font-size:11px;border:1px solid var(--line);border-ra
 </section>
 
 <section class="view" id="v-fontes">
-  <div class="head"><div><div class="tag">Tipografia · ao vivo</div><h2>Fontes</h2>
-    <p>Escreva um texto e veja todas as fontes ao mesmo tempo. Marque ✔ as que gostou, ✕ as que não, e use "Comparar" para ver até três lado a lado. Todas estão no Google Fonts ou no Adobe Fonts.</p></div></div>
+  <div class="kk-cabeca"><span class="kk-selo kk-selo--tinta kk-selo--g"><svg class="kk-ic"><use href="#i-texto"></use></svg></span>
+    <div class="kk-cabeca-textos"><h1 class="kk-h1">Fontes <mark class="kk-marca-texto">ao vivo</mark></h1>
+    <p class="kk-apoio">Escreva um texto e veja todas as fontes juntas. Marque as que gostou e as que não, e compare até três lado a lado.</p></div></div>
   <div class="fctl">
     <input class="ft" id="f-text" type="text" aria-label="Texto de teste" placeholder="Escreva aqui para testar">
     <div class="frow"><div class="row" id="f-presets"></div>
@@ -238,7 +298,8 @@ kbd{font-family:var(--f-b);font-size:11px;border:1px solid var(--line);border-ra
 <section class="view" id="v-moodboard">
   <div id="board"></div>
 </section>
-</main></div>
+</main>
+<footer class="kk-rodape"><p>Agência Koko · uso interno</p></footer>
 
 <div class="ov" id="ov"><div class="panel" id="panel"></div></div>
 <div class="lb" id="lb"><img alt=""></div>
@@ -277,8 +338,8 @@ kbd{font-family:var(--f-b);font-size:11px;border:1px solid var(--line);border-ra
   window.claude={use:async n=>{if(n==='db'){await load();return db}if(n==='assets')return assets;return null}};
   /* backup: baixar e carregar um .json com tudo */
   window.addEventListener('DOMContentLoaded',()=>{
-    const bar=document.querySelector('.bar');if(!bar)return;
-    const mk=(t,fn)=>{const b=document.createElement('button');b.className='b';b.textContent=t;b.onclick=fn;return b};
+    const bar=document.querySelector('.kk-topo-acoes');if(!bar)return;
+    const mk=(t,fn)=>{const b=document.createElement('button');b.className='kk-botao kk-botao--2 kk-botao--p';b.textContent=t;b.onclick=fn;return b};
     const inp=document.createElement('input');inp.type='file';inp.accept='application/json';inp.hidden=true;
     inp.onchange=async()=>{const f=inp.files[0];if(!f)return;try{const o=JSON.parse(await f.text());await load();for(const k in o){cache[k]=o[k];await put(k,o[k])}new Set(Object.keys(o).map(k=>k.split('/')[0])).forEach(notify);alert('Backup carregado.')}catch(e){alert('Arquivo inválido.')}inp.value=''};
     const dl=mk('Baixar backup',async()=>{await load();const b=new Blob([JSON.stringify(cache)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='moodboard-prudence-backup.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),2000)});
@@ -300,6 +361,7 @@ const ASP=['Cor','Tipografia','Fotografia','Composição','Clima','Humor','Textu
 const catT=k=>(CATS.find(c=>c.k===k)||{t:k}).t,catI=k=>Math.max(0,CATS.findIndex(c=>c.k===k));
 const $=s=>document.querySelector(s);
 function h(tag,props,...kids){const e=document.createElement(tag);for(const k in props||{}){const v=props[k];if(k==='class')e.className=v;else if(k==='style')e.style.cssText=v;else if(k.startsWith('on'))e.addEventListener(k.slice(2),v);else if(v===true)e.setAttribute(k,'');else if(v!==false&&v!=null)e.setAttribute(k,v)}for(const c of kids.flat())if(c!=null&&c!==false)e.append(c.nodeType?c:document.createTextNode(c));return e}
+const ic=n=>{const e=document.createElement('span');e.className='ic';e.innerHTML='<svg class="kk-ic"><use href="#i-'+n+'"></use></svg>';return e};
 function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('on');clearTimeout(toast.t);toast.t=setTimeout(()=>t.classList.remove('on'),2400)}
 function zoom(u){$('#lb img').src=u;$('#lb').classList.add('on')}
 $('#lb').onclick=()=>$('#lb').classList.remove('on');
@@ -342,15 +404,15 @@ function renderLib(){
   $('#cats').replaceChildren(...CATS.map(c=>{
     const list=refs().filter(r=>r.cat===c.k);
     const sec=h('div',{class:'cat'+(libDet.has(c.k)?' det':''),'data-cat':c.k},
-      h('div',{class:'chd'},h('h3',{},c.t),h('div',{class:'row'},h('span',{class:'tag',style:'align-self:center'},list.length+(list.length===1?' imagem':' imagens')),h('button',{class:'b',onclick:()=>{libDet.has(c.k)?libDet.delete(c.k):libDet.add(c.k);renderLib()}},libDet.has(c.k)?'Miniaturas':'Legendas e links'),h('button',{class:'b',onclick:()=>{pendingCat=c.k;$('#file').value='';$('#file').click()}},'Subir imagens'))),
+      h('div',{class:'chd'},h('h3',{},c.t),h('div',{class:'row'},h('span',{class:'tag',style:'align-self:center'},c.k==='tipo'?FONTS.length+' fontes':list.length+(list.length===1?' imagem':' imagens')),h('button',{class:'kk-botao kk-botao--2',onclick:()=>{libDet.has(c.k)?libDet.delete(c.k):libDet.add(c.k);renderLib()}},libDet.has(c.k)?'Miniaturas':'Legendas e links'),h('button',{class:'kk-botao kk-botao--2',onclick:()=>{pendingCat=c.k;$('#file').value='';$('#file').click()}},'Subir imagens'))),
       h('p',{class:'hint'},c.hint),
       c.k==='tipo'?aaStrip():null,
       h('div',{class:'grid'},list.map(r=>{
         const th=h('div',{class:'th'+(lib.sel.includes(r.id)?' sel':'')},
           h('img',{class:'im',src:r.url,alt:r.cap||'',loading:'lazy',onclick:()=>zoom(r.url)}),
           h('button',{class:'pickd',onclick:()=>toggleSel(r)},lib.sel.includes(r.id)?'selecionada':'selecionar'),
-          h('button',{class:'x','aria-label':'Remover',onclick:()=>delRef(r.id)},'✕'));
-        const i=h('input',{value:r.cap||'','aria-label':'Legenda',placeholder:'Legenda ou fonte'});i.addEventListener('change',()=>setCap(r.id,i.value));th.append(i);if(r.link)th.append(h('a',{class:'lk',href:r.link,target:'_blank',rel:'noopener'},(r.linkLabel||(r.linkLabel||'Baixar a fonte ↗'))));
+          h('button',{class:'x','aria-label':'Remover',onclick:()=>delRef(r.id)},ic('fechar')));
+        const i=h('input',{value:r.cap||'','aria-label':'Legenda',placeholder:'Legenda ou fonte'});i.addEventListener('change',()=>setCap(r.id,i.value));th.append(i);if(r.link)th.append(h('a',{class:'lk',href:r.link,target:'_blank',rel:'noopener'},(r.linkLabel||(r.linkLabel||'Baixar a fonte'))));
         return th}),
         h('button',{class:'drop',onclick:()=>{pendingCat=c.k;$('#file').value='';$('#file').click()}},list.length?'+ mais imagens':'Arraste imagens aqui, cole com Cmd+V ou clique')));
     sec.addEventListener('dragover',e=>{if([...e.dataTransfer.types].includes('Files')){e.preventDefault();sec.classList.add('over')}});
@@ -359,7 +421,7 @@ function renderLib(){
     sec.addEventListener('pointerenter',()=>lib.active=c.k);
     return sec}));
   const dl=duels();$('#duelcount').textContent=dl.length+(dl.length===1?' duelo':' duelos');
-  $('#duels').replaceChildren(...(dl.length?dl.map(d=>h('div',{class:'dl'},h('img',{src:(R[d.a]||{}).url||'',alt:''}),h('span',{class:'vs'},'vs'),h('img',{src:(R[d.b]||{}).url||'',alt:''}),h('button',{class:'b',onclick:()=>delDuel(d.id),style:'padding:4px 10px'},'Remover'))):[h('div',{class:'empty',style:'flex:1'},'Nenhum duelo ainda.')]));
+  $('#duels').replaceChildren(...(dl.length?dl.map(d=>h('div',{class:'dl'},h('img',{src:(R[d.a]||{}).url||'',alt:''}),h('span',{class:'vs'},'vs'),h('img',{src:(R[d.b]||{}).url||'',alt:''}),h('button',{class:'kk-botao kk-botao--2',onclick:()=>delDuel(d.id),style:'padding:4px 10px'},'Remover'))):[h('div',{class:'empty',style:'flex:1'},'Nenhum duelo ainda.')]));
   $('#mkduel').disabled=lib.sel.length!==2;
 }
 function toggleSel(r){const i=lib.sel.indexOf(r.id);if(i>=0)lib.sel.splice(i,1);else{if(lib.sel.length>=2)lib.sel.shift();lib.sel.push(r.id)}renderLib()}
@@ -380,12 +442,12 @@ const qkey=i=>i.k+':'+i.id;
 function go(delta){const q=queue();if(!q.length)return;let i=q.findIndex(x=>qkey(x)===sess.key);i=Math.max(0,Math.min(q.length-1,(i<0?0:i)+delta));sess.key=qkey(q[i]);renderSess()}
 function renderSess(){
   const all=queue();
-  $('#pills').replaceChildren(h('button',{class:'pill','aria-pressed':sess.cat==='all',onclick:()=>{sess.cat='all';sess.key=null;renderSess()}},'Tudo'),
-    ...CATS.map(c=>{const n=refs().filter(r=>r.cat===c.k).length+duels().filter(d=>duelCat(d)===c.k).length;return n?h('button',{class:'pill','aria-pressed':sess.cat===c.k,onclick:()=>{sess.cat=c.k;sess.key=null;renderSess()}},c.t+' · '+n):null}).filter(Boolean));
+  $('#pills').replaceChildren(h('button',{class:'kk-chip','aria-pressed':sess.cat==='all',onclick:()=>{sess.cat='all';sess.key=null;renderSess()}},'Tudo'),
+    ...CATS.map(c=>{const n=refs().filter(r=>r.cat===c.k).length+duels().filter(d=>duelCat(d)===c.k).length;return n?h('button',{class:'kk-chip','aria-pressed':sess.cat===c.k,onclick:()=>{sess.cat=c.k;sess.key=null;renderSess()}},c.t+' · '+n):null}).filter(Boolean));
   if(!all.length){$('#prog').replaceChildren();$('#cur').replaceChildren(h('div',{class:'empty'},'Ainda não há referências. Suba imagens na ',h('a',{href:'#biblioteca',style:'color:inherit'},'Biblioteca'),'.'));$('#strip').replaceChildren();return}
   let i=all.findIndex(x=>qkey(x)===sess.key);if(i<0){i=0;sess.key=qkey(all[0])}
   const it=all[i],rs=refs(),cnt=v=>rs.filter(r=>r.vote===v).length;
-  $('#prog').replaceChildren(h('span',{},h('b',{},i+1),' de ',all.length,' · ',catT(it.cat)),h('span',{},h('span',{class:'t-yes'},'✔ '+cnt('yes')),'   ',h('span',{class:'t-maybe'},'? '+cnt('maybe')),'   ',h('span',{class:'t-no'},'✕ '+cnt('no')),'   ',h('kbd',{},'←'),' ',h('kbd',{},'→'),' navegar  ',h('kbd',{},'G'),' ',h('kbd',{},'T'),' ',h('kbd',{},'N'),' votar'));
+  $('#prog').replaceChildren(h('span',{},h('b',{},i+1),' de ',all.length,' · ',catT(it.cat)),h('span',{},h('span',{class:'t-yes'},ic('check'),' '+cnt('yes')),'   ',h('span',{class:'t-maybe'},ic('ajuda'),' '+cnt('maybe')),'   ',h('span',{class:'t-no'},ic('fechar'),' '+cnt('no')),'   ',h('kbd',{},'←'),' ',h('kbd',{},'→'),' navegar  ',h('kbd',{},'G'),' ',h('kbd',{},'T'),' ',h('kbd',{},'N'),' votar'));
   $('#cur').replaceChildren(it.k==='r'?singleView(R[it.id],it.id,i,all):duelView(DU[it.id],it.id,i,all));
   $('#strip').replaceChildren(...all.map((x,j)=>{
     const cls='sm'+(j===i?' cur':'');
@@ -396,22 +458,22 @@ function singleView(r,id,i,all){
   const note=h('textarea',{class:'note',placeholder:'Anotação da conversa (opcional)','aria-label':'Anotação'});note.value=r.note||'';note.addEventListener('change',()=>setNote(id,note.value));
   return h('div',{class:'single'},
     h('div',{class:'viewer'},h('img',{src:r.url,alt:r.cap||'',onclick:()=>zoom(r.url)})),
-    h('aside',{class:'side'},h('div',{class:'tag'},catT(r.cat)),h('h3',{},r.cap||'Sem legenda'),r.link?h('a',{class:'b',href:r.link,target:'_blank',rel:'noopener',style:'align-self:flex-start;text-decoration:none;color:inherit'},(r.linkLabel||(r.linkLabel||'Onde baixar ↗'))):null,
-      h('div',{class:'votes'},...[['yes','✔','Gostei'],['maybe','?','Talvez'],['no','✕','Não gostei']].map(([v,g,l])=>h('button',{class:'vote'+(r.vote===v?' on':''),'data-v':v,onclick:()=>setVote(id,v)},h('span',{},g),l))),
+    h('aside',{class:'side'},h('div',{class:'tag'},catT(r.cat)),h('h3',{},r.cap||'Sem legenda'),r.link?h('a',{class:'kk-botao kk-botao--2',href:r.link,target:'_blank',rel:'noopener',style:'align-self:flex-start;text-decoration:none;color:inherit'},(r.linkLabel||(r.linkLabel||'Onde baixar'))):null,
+      h('div',{class:'votes'},...[['yes','check','Gostei'],['maybe','ajuda','Talvez'],['no','fechar','Não gostei']].map(([v,g,l])=>h('button',{class:'vote'+(r.vote===v?' on':''),'data-v':v,onclick:()=>setVote(id,v)},ic(g),h('span',{},l)))),
       h('div',{class:'lbl'},'O que chama atenção? Clique uma vez se é bom (+), duas se é ruim (−).'),
       h('div',{class:'asp'},ASP.map(a=>{const v=(r.asp||{})[a]||'';return h('button',{class:'ch'+(v==='+'?' pos':v==='-'?' neg':''),onclick:()=>cycleAsp(id,a)},a,v?h('i',{},v==='+'?'+':'−'):null)})),
-      note,h('div',{class:'navrow'},h('button',{class:'b',disabled:i===0,onclick:()=>go(-1)},'← Anterior'),h('button',{class:'b dark',disabled:i===all.length-1,onclick:()=>go(1)},'Próxima →'))))}
+      note,h('div',{class:'navrow'},h('button',{class:'kk-botao kk-botao--2',disabled:i===0,onclick:()=>go(-1)},'Anterior'),h('button',{class:'kk-botao',disabled:i===all.length-1,onclick:()=>go(1)},'Próxima'))))}
 function duelView(d,id,i,all){
   const opt=(side,r)=>h('button',{class:'opt'+(d.pick===side?' win':''),onclick:()=>setPick(id,side),'aria-label':'Prefiro '+side.toUpperCase()},
-    h('div',{class:'pic'},h('img',{src:(r||{}).url,alt:(r||{}).cap||''})),h('div',{class:'cp'},h('span',{},side.toUpperCase()),h('span',{},d.pick===side?'✔ preferida':'Prefiro esta')));
+    h('div',{class:'pic'},h('img',{src:(r||{}).url,alt:(r||{}).cap||''})),h('div',{class:'cp'},h('span',{},side.toUpperCase()),h('span',{},d.pick===side?[ic('check'),' Preferida']:'Prefiro esta')));
   const note=h('textarea',{class:'note',placeholder:'Anotação da conversa (opcional)','aria-label':'Anotação'});note.value=d.note||'';note.addEventListener('change',()=>setDNote(id,note.value));
   return h('div',{},h('div',{class:'tag',style:'margin-bottom:8px'},'Duelo · '+catT(duelCat(d))+' · qual você prefere?'),
     h('div',{class:'duel'},opt('a',R[d.a]),opt('b',R[d.b])),
     h('div',{class:'dctl'},
-      h('div',{class:'row'},h('button',{class:'b'+(d.pick==='both'?' dark':''),onclick:()=>setPick(id,'both')},'As duas'),h('button',{class:'b'+(d.pick==='none'?' dark':''),onclick:()=>setPick(id,'none')},'Nenhuma das duas')),
+      h('div',{class:'row'},h('button',{class:'kk-botao'+(d.pick==='both'?'':' kk-botao--2'),onclick:()=>setPick(id,'both')},'As duas'),h('button',{class:'kk-botao'+(d.pick==='none'?'':' kk-botao--2'),onclick:()=>setPick(id,'none')},'Nenhuma das duas')),
       h('div',{class:'lbl'},'Por quê? (pode marcar mais de um)'),
       h('div',{class:'asp'},ASP.map(a=>h('button',{class:'ch'+((d.why||[]).includes(a)?' pos':''),onclick:()=>toggleWhy(id,a)},a))),note,
-      h('div',{class:'navrow'},h('button',{class:'b',disabled:i===0,onclick:()=>go(-1)},'← Anterior'),h('button',{class:'b dark',disabled:i===all.length-1,onclick:()=>go(1)},'Próxima →'))))}
+      h('div',{class:'navrow'},h('button',{class:'kk-botao kk-botao--2',disabled:i===0,onclick:()=>go(-1)},'Anterior'),h('button',{class:'kk-botao',disabled:i===all.length-1,onclick:()=>go(1)},'Próxima'))))}
 document.addEventListener('keydown',e=>{
   if(view!=='sessao'||e.target.closest('input,textarea')||e.metaKey||e.ctrlKey)return;
   const q=queue(),it=q.find(x=>qkey(x)===sess.key);
@@ -432,7 +494,7 @@ function renderBoard(){
     h('div',{},h('div',{class:'tag'},'O que o cliente gosta'),bars(t.p,'p')),
     h('div',{},h('div',{class:'tag'},'O que o cliente não gosta'),bars(t.n,'n')))];
   const byCat=CATS.map(c=>({c,l:yes.filter(r=>r.cat===c.k)})).filter(x=>x.l.length);
-  if(!byCat.length)out.push(h('div',{class:'empty'},'O moodboard se monta sozinho: cada referência marcada com ✔ na Sessão aparece aqui, agrupada por categoria.'));
+  if(!byCat.length)out.push(h('div',{class:'empty'},'O moodboard se monta sozinho: cada referência marcada como Gostei na Sessão aparece aqui, agrupada por categoria.'));
   byCat.forEach(({c,l})=>out.push(h('div',{class:'sec'},h('div',{class:'sh'},h('h3',{},c.t),h('span',{class:'tag'},l.length)),
     h('div',{class:'mos'},l.map((r,i)=>h('button',{class:'mt '+(l.length>=4?PAT[i%PAT.length].replace('S',''):''),onclick:()=>zoom(r.url),'aria-label':r.cap||'referência'},h('img',{src:r.url,alt:r.cap||''}),h('span',{class:'c'},r.cap||'')))))));
   const dl=duels().filter(d=>d.pick==='a'||d.pick==='b'||d.pick==='both'||d.pick==='none');
@@ -505,69 +567,69 @@ const FPRE=[['PRUDENCE','PRUDENCE'],['Slogan','Mais prazer para todos.'],['Texto
 const FFIL=[['all','Todas'],['cond','Condensadas'],['grot','Grotescas'],['geo','Geométricas'],['wide','Largas'],['ser','Serifadas e humanistas'],['base','Para Word e PPT'],['g','Só Google Fonts'],['a','Só Adobe Fonts'],['fav','Minhas favoritas']];
 function fontSample(f,txt){
   if(f.s==='g')return h('div',{class:'fs',style:fstyle(f)},txt);
-  if(f.s==='a')return h('div',{class:'fs adobe'},h('span',{},'A prévia desta fonte fica no Adobe Fonts.'),h('a',{class:'b',href:AF+f.slug,target:'_blank',rel:'noopener'},'Abrir a prévia ↗'));
+  if(f.s==='a')return h('div',{class:'fs adobe'},h('span',{},'A prévia desta fonte fica no Adobe Fonts.'),h('a',{class:'kk-botao kk-botao--2',href:AF+f.slug,target:'_blank',rel:'noopener'},'Abrir a prévia'));
   return h('img',{class:'fimg',src:f.img,alt:f.n})}
 function fontRow(f){
   const v=(FV[f.id]||{}).vote||'',txt=fst.upper?fst.text.toUpperCase():fst.text;
-  const link=f.s==='g'?h('a',{href:GF+f.slug,target:'_blank',rel:'noopener'},'Baixar no Google Fonts ↗'):f.s==='a'?h('a',{href:AF+f.slug,target:'_blank',rel:'noopener'},'Ver no Adobe Fonts ↗'):null;
+  const link=f.s==='g'?h('a',{href:GF+f.slug,target:'_blank',rel:'noopener'},'Baixar no Google Fonts'):f.s==='a'?h('a',{href:AF+f.slug,target:'_blank',rel:'noopener'},'Ver no Adobe Fonts'):null;
   const ck=h('input',{type:'checkbox','aria-label':'Comparar '+f.n});ck.checked=cmp.includes(f.id);ck.addEventListener('change',()=>{togCmp(f.id)});
   return h('article',{class:'fr'+(v?' v-'+v:''),'data-id':f.id},
     h('div',{class:'fm'},h('b',{},f.n),h('div',{class:'ftags'},f.t.map(t=>h('span',{class:'ftag'},FT[t])),h('span',{class:'src '+f.s},f.s==='g'?'Google Fonts':f.s==='a'?'Adobe Fonts':'Fora do Google e do Adobe')),h('p',{},f.d),link),
     fontSample(f,txt),
-    h('div',{class:'fv'},h('div',{class:'fvb'},...[['yes','✔','Gostei'],['maybe','?','Talvez'],['no','✕','Não']].map(([k,g,t])=>h('button',{'data-v':k,class:v===k?'on':'','aria-label':t+': '+f.n,onclick:()=>fvote(f.id,k)},g))),
+    h('div',{class:'fv'},h('div',{class:'fvb'},...[['yes','check','Gostei'],['maybe','ajuda','Talvez'],['no','fechar','Não']].map(([k,g,t])=>h('button',{'data-v':k,class:v===k?'on':'','aria-label':t+': '+f.n,onclick:()=>fvote(f.id,k)},ic(g)))),
       h('label',{class:'fcmp'},ck,'Comparar')))}
 function renderFontes(){
   const l=FONTS.filter(f=>{const k=fst.filter;if(k==='all')return true;if(k==='g'||k==='a')return f.s===k;if(k==='fav')return (FV[f.id]||{}).vote==='yes';return f.t.includes(k)});
   $('#fcount').textContent=l.length+(l.length===1?' fonte':' fontes');
   $('#flist').style.setProperty('--fs',fst.size+'px');
-  $('#flist').replaceChildren(...(l.length?l.map(fontRow):[h('div',{class:'empty',style:'margin-top:20px'},fst.filter==='fav'?'Marque ✔ nas fontes que você gostar e elas aparecem aqui.':'Nenhuma fonte neste filtro.')]));
+  $('#flist').replaceChildren(...(l.length?l.map(fontRow):[h('div',{class:'empty',style:'margin-top:20px'},fst.filter==='fav'?'Marque Gostei nas fontes que você gostar e elas aparecem aqui.':'Nenhuma fonte neste filtro.')]));
   renderCbar()}
 function togCmp(id){const i=cmp.indexOf(id);if(i>=0)cmp.splice(i,1);else{cmp.push(id);if(cmp.length>3)cmp.shift()}renderFontes()}
 function renderCbar(){const b=$('#cbar');b.classList.toggle('on',view==='fontes'&&cmp.length>0);
-  b.replaceChildren(h('span',{},'Comparar ('+cmp.length+' de 3)'),h('button',{class:'b',disabled:cmp.length<2,onclick:openCmp},'Ver lado a lado'),h('button',{class:'b',onclick:()=>{cmp=[];renderFontes()}},'Limpar'))}
+  b.replaceChildren(h('span',{},'Comparar ('+cmp.length+' de 3)'),h('button',{class:'kk-botao kk-botao--2',disabled:cmp.length<2,onclick:openCmp},'Ver lado a lado'),h('button',{class:'kk-botao kk-botao--2',onclick:()=>{cmp=[];renderFontes()}},'Limpar'))}
 function openCmp(){
   const col=id=>{const f=FONTS.find(x=>x.id===id);
-    if(f.s!=='g')return h('div',{class:'cc'},h('h3',{},f.n),h('p',{class:'mb-sub'},f.d),f.s==='a'?h('a',{class:'b',href:AF+f.slug,target:'_blank',rel:'noopener'},'Abrir a prévia no Adobe Fonts ↗'):null);
+    if(f.s!=='g')return h('div',{class:'cc'},h('h3',{},f.n),h('p',{class:'mb-sub'},f.d),f.s==='a'?h('a',{class:'kk-botao kk-botao--2',href:AF+f.slug,target:'_blank',rel:'noopener'},'Abrir a prévia no Adobe Fonts'):null);
     const st=fstyle(f);
     return h('div',{class:'cc'},h('h3',{},f.n),h('div',{class:'cprud',style:st+';font-size:96px;line-height:1;margin:16px 0 10px;white-space:nowrap'},'PRUDENCE'),h('div',{style:st+';font-size:34px;line-height:1.12'},'Mais prazer para todos.'),
       h('p',{style:st+';font-size:18px;line-height:1.5;margin:14px 0'},'Prazer é liberdade. Cuidar de si é parte da diversão, e a gente cuida de você em cada detalhe.'),h('div',{style:st+';font-size:28px'},'Aa Bb Cc 0123456789'),
-      h('p',{class:'mb-sub',style:'margin-top:14px'},f.d),h('a',{href:GF+f.slug,target:'_blank',rel:'noopener',style:'font-size:13px;font-weight:600;color:inherit'},'Baixar no Google Fonts ↗'))};
+      h('p',{class:'mb-sub',style:'margin-top:14px'},f.d),h('a',{href:GF+f.slug,target:'_blank',rel:'noopener',style:'font-size:13px;font-weight:600;color:inherit'},'Baixar no Google Fonts'))};
   $('#panel').classList.add('wide');
-  $('#panel').replaceChildren(h('h2',{},'Comparar fontes'),h('div',{class:'row',style:'margin-top:8px'},h('button',{class:'b dark',onclick:()=>$('#ov').classList.remove('on')},'Fechar')),h('div',{class:'cmpgrid'},cmp.map(col)));
+  $('#panel').replaceChildren(h('h2',{},'Comparar fontes'),h('div',{class:'row',style:'margin-top:8px'},h('button',{class:'kk-botao',onclick:()=>$('#ov').classList.remove('on')},'Fechar')),h('div',{class:'cmpgrid'},cmp.map(col)));
   $('#ov').classList.add('on');
   document.querySelectorAll('#panel .cprud').forEach(e=>{let fs=96;while(e.scrollWidth>e.clientWidth&&fs>28){fs-=3;e.style.fontSize=fs+'px'}})}
 function initFontes(){
   const ti=$('#f-text');ti.value=fst.text;ti.addEventListener('input',()=>{fst.text=ti.value||' ';renderFontes()});
-  $('#f-presets').replaceChildren(...FPRE.map(([l,t])=>h('button',{class:'pill',onclick:()=>{fst.text=t;ti.value=t;renderFontes()}},l)));
+  $('#f-presets').replaceChildren(...FPRE.map(([l,t])=>h('button',{class:'kk-chip',onclick:()=>{fst.text=t;ti.value=t;renderFontes()}},l)));
   const sz=$('#f-size');sz.addEventListener('input',()=>{fst.size=+sz.value;$('#f-sizev').textContent=sz.value;$('#flist').style.setProperty('--fs',sz.value+'px')});
   $('#f-up').addEventListener('change',e=>{fst.upper=e.target.checked;renderFontes()});
-  const fl=()=>{$('#f-filters').replaceChildren(...FFIL.map(([k,l])=>h('button',{class:'pill','aria-pressed':fst.filter===k,onclick:()=>{fst.filter=k;fl();renderFontes()}},l)))};fl()}
+  const fl=()=>{$('#f-filters').replaceChildren(...FFIL.map(([k,l])=>h('button',{class:'kk-chip','aria-pressed':fst.filter===k,onclick:()=>{fst.filter=k;fl();renderFontes()}},l)))};fl()}
 function fontsBoard(out){
   const by=v=>FONTS.filter(f=>(FV[f.id]||{}).vote===v),y=by('yes'),m=by('maybe'),n=by('no');
   if(!y.length&&!m.length&&!n.length)return;
   const nm=l=>l.map(f=>f.n).join(', ');
   out.push(h('div',{class:'sec'},h('div',{class:'sh'},h('h3',{},'Fontes'),h('span',{class:'tag'},y.length+' preferidas')),
     y.length?h('div',{class:'fb'},y.map(f=>h('div',{class:'fbi'},f.s==='g'?h('div',{class:'big',style:fstyle(f)},'PRUDENCE'):h('div',{class:'big',style:'font-family:var(--f-d)'},f.n),
-      h('b',{},f.n),h('small',{},f.s==='g'?'Google Fonts':f.s==='a'?'Adobe Fonts':'Fora do Google e do Adobe'),f.s!=='m'?h('a',{href:(f.s==='g'?GF:AF)+f.slug,target:'_blank',rel:'noopener',style:'font-size:13px;font-weight:600;color:inherit'},f.s==='g'?'Baixar no Google Fonts ↗':'Ver no Adobe Fonts ↗'):null))):h('p',{class:'mb-sub'},'Nenhuma fonte com ✔ ainda.'),
+      h('b',{},f.n),h('small',{},f.s==='g'?'Google Fonts':f.s==='a'?'Adobe Fonts':'Fora do Google e do Adobe'),f.s!=='m'?h('a',{href:(f.s==='g'?GF:AF)+f.slug,target:'_blank',rel:'noopener',style:'font-size:13px;font-weight:600;color:inherit'},f.s==='g'?'Baixar no Google Fonts':'Ver no Adobe Fonts'):null))):h('p',{class:'mb-sub'},'Nenhuma fonte com ✔ ainda.'),
     m.length?h('p',{class:'mb-sub',style:'margin-top:14px'},'Em dúvida: '+nm(m)):null,n.length?h('p',{class:'mb-sub'},'Não gostou: '+nm(n)):null))}
 
 /* ---------- resumo ---------- */
 function summaryText(){
   const rs=refs(),L=['MOODBOARD PRUDENCE · sessão de 26/11',''],t=tally(),wt=whyTally();
   const lst=(v,title)=>{const l=rs.filter(r=>r.vote===v);L.push(title+' ('+l.length+'):');CATS.forEach(c=>{const x=l.filter(r=>r.cat===c.k);if(x.length)L.push('- '+c.t+': '+x.map(r=>r.cap||'sem legenda').join('; '))});L.push('')};
-  lst('yes','Aprovadas (✔)');lst('maybe','Em dúvida (?)');lst('no','Lista de nunca (✕)');
-  const fm=m=>Object.entries(m).filter(([,v])=>v>0).sort((a,b)=>b[1]-a[1]).map(([a,v])=>a+' ('+v+')').join(', ')||'—';
+  lst('yes','Aprovadas');lst('maybe','Em dúvida');lst('no','Lista de nunca');
+  const fm=m=>Object.entries(m).filter(([,v])=>v>0).sort((a,b)=>b[1]-a[1]).map(([a,v])=>a+' ('+v+')').join(', ')||'nenhuma';
   L.push('O que o cliente gosta: '+fm(t.p),'O que o cliente não gosta: '+fm(t.n),'Motivos das preferências: '+fm(wt),'','Duelos:');
   duels().forEach(d=>{const a=(R[d.a]||{}).cap||'A',b=(R[d.b]||{}).cap||'B';L.push('- '+(d.pick==='a'?a+' > '+b:d.pick==='b'?b+' > '+a:d.pick==='both'?a+' = '+b+' (as duas)':d.pick==='none'?a+' × '+b+' (nenhuma)':a+' vs '+b+' (sem escolha)')+((d.why||[]).length?' · por: '+d.why.join(', ').toLowerCase():'')+(d.note?' · '+d.note:''))});
   {const fy=FONTS.filter(f=>(FV[f.id]||{}).vote==='yes'),fm2=FONTS.filter(f=>(FV[f.id]||{}).vote==='maybe'),fn=FONTS.filter(f=>(FV[f.id]||{}).vote==='no');
-   if(fy.length||fm2.length||fn.length)L.push('','Fontes:','- Preferidas (✔): '+(fy.map(f=>f.n).join(', ')||'—'),'- Em dúvida (?): '+(fm2.map(f=>f.n).join(', ')||'—'),'- Não gostou (✕): '+(fn.map(f=>f.n).join(', ')||'—'))}
+   if(fy.length||fm2.length||fn.length)L.push('','Fontes:','- Preferidas: '+(fy.map(f=>f.n).join(', ')||'nenhuma'),'- Em dúvida: '+(fm2.map(f=>f.n).join(', ')||'nenhuma'),'- Não gostou: '+(fn.map(f=>f.n).join(', ')||'nenhuma'))}
   const notes=rs.filter(r=>r.note);if(notes.length)L.push('','Anotações:',...notes.map(r=>'- '+(r.cap||catT(r.cat))+': '+r.note));
   return L.join('\n')}
 $('#sum').onclick=()=>{$('#panel').classList.remove('wide');
   const rs=refs(),t=tally(),wt=whyTally(),ul=a=>a.length?h('ul',{},a.map(x=>h('li',{},x))):h('p',{style:'color:var(--mute);margin:0'},'Nada ainda.');
   const fm=m=>Object.entries(m).filter(([,v])=>v>0).sort((a,b)=>b[1]-a[1]).map(([a,v])=>a+' ('+v+')');
   $('#panel').replaceChildren(h('h2',{},'Resumo da sessão'),h('p',{style:'color:var(--mute);margin:0 0 12px'},'O que o cliente decidiu até agora. Copie para o doc do brandbook.'),
-    h('div',{class:'row'},h('button',{class:'b dark',onclick:copy},'Copiar resumo'),h('button',{class:'b',onclick:()=>$('#ov').classList.remove('on')},'Fechar')),
+    h('div',{class:'row'},h('button',{class:'kk-botao',onclick:copy},'Copiar resumo'),h('button',{class:'kk-botao kk-botao--2',onclick:()=>$('#ov').classList.remove('on')},'Fechar')),
     h('h3',{},'Aprovadas'),ul(rs.filter(r=>r.vote==='yes').map(r=>catT(r.cat)+': '+(r.cap||'sem legenda'))),
     h('h3',{},'Lista de nunca'),ul(rs.filter(r=>r.vote==='no').map(r=>catT(r.cat)+': '+(r.cap||'sem legenda'))),
     h('h3',{},'Gosta'),ul(fm(t.p)),h('h3',{},'Não gosta'),ul(fm(t.n)),h('h3',{},'Motivos das preferências'),ul(fm(wt)),
@@ -581,7 +643,7 @@ function typing(){const a=document.activeElement;return a&&a.matches&&a.matches(
 function render(){if(typing())return;({biblioteca:renderLib,sessao:renderSess,fontes:renderFontes,moodboard:renderBoard})[view]()}
 function route(){const k=['biblioteca','sessao','fontes','moodboard'].includes(location.hash.slice(1))?location.hash.slice(1):'sessao';view=k;
   document.querySelectorAll('section.view').forEach(s=>s.classList.toggle('on',s.id==='v-'+k));
-  document.querySelectorAll('#nav a').forEach(a=>{if(a.dataset.k===k)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
+  document.querySelectorAll('#nav a').forEach(a=>{if(a.dataset.k===k){a.setAttribute('aria-current','page');a.classList.add('ativo')}else{a.removeAttribute('aria-current');a.classList.remove('ativo')}});
   window.scrollTo(0,0);render()}
 initFontes();window.addEventListener('hashchange',route);route();
 (async()=>{
