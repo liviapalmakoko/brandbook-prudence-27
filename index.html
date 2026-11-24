@@ -197,6 +197,8 @@ textarea.note{border-radius:var(--r2);background:var(--opaca);border-color:var(-
 .dcard{display:flex;flex-direction:column;border:1px solid var(--borda);border-radius:var(--r3);background:var(--opaca);overflow:hidden;transition:opacity .2s}
 .dcard{position:relative}
 .kseal{background:var(--opaca);color:var(--rosa-txt);border:1px solid var(--rosa-txt);padding:var(--esp-2) var(--esp-3);position:absolute;top:var(--esp-3);left:var(--esp-3);z-index:2;display:inline-flex;align-items:center;gap:var(--esp-1)}
+.kdes{margin-top:var(--esp-4);padding:var(--esp-3);border:1px dashed var(--rosa-txt);border-radius:var(--r3)}
+.kdes input{width:100%;box-sizing:border-box}
 .krec{margin:var(--esp-3) 0 0;text-align:center;color:var(--tinta-2)}
 .dcard.win{border-color:var(--ok);outline:2px solid var(--ok);outline-offset:-1px}
 .dcard.lose{opacity:.5}
@@ -482,8 +484,11 @@ function singleView(r,id,i,all){
       h('div',{class:'lbl'},'O que chama atenção? Clique uma vez se é bom (+), duas se é ruim (−).'),
       h('div',{class:'asp'},ASP.map(a=>{const v=(r.asp||{})[a]||'';return h('button',{class:'ch'+(v==='+'?' pos':v==='-'?' neg':''),onclick:()=>cycleAsp(id,a)},a,v?h('i',{},v==='+'?'+':'−'):null)})),
       note,h('div',{class:'navrow'},h('button',{class:'kk-botao kk-botao--2',disabled:i===0,onclick:()=>go(-1)},'Anterior'),h('button',{class:'kk-botao',disabled:i===all.length-1,onclick:()=>go(1)},'Próxima'))))}
-const KOKO={'seed-duelo-01':{pick:'b',why:"Conexão entre pessoas conta a história da marca melhor do que um detalhe isolado."},'seed-duelo-02':{pick:'a',why:"O escuro dá contraste para as cores vivas da marca e deixa o clima mais sensual."},'seed-duelo-03':{pick:'b',why:"A cor traz calor e pele de verdade, combina com a paleta viva."},'seed-duelo-04':{pick:'b',why:"O casal mostra o produto no contexto certo: o prazer a dois."},'seed-duelo-05':{pick:'a',why:"Afeto é sensual sem ser explícito, fica fácil de usar em mídia aberta."},'seed-duelo-06':{pick:'a',why:"Água e vidro dão sensualidade sem mostrar demais."},'seed-duelo-07':{pick:'a',why:"O ar livre deixa a marca leve e acessível, não só de quarto."},'seed-duelo-11':{pick:'a',why:"Fúcsia e cítrico são mais quentes e ousados, com cara de prazer."},'seed-duelo-12':{pick:'a',why:"Cor chapada funciona melhor em escala pequena e em embalagem."},'seed-duelo-13':{pick:'a',why:"Símbolos geométricos viram um sistema fácil de repetir."},'seed-duelo-14':{pick:'a',why:"A retícula já é uma textura de marca e imprime bem."},'seed-duelo-15':{pick:'a',why:"Textura em cor segura melhor a identidade do que o preto e branco."},'seed-duelo-16':{pick:'b',why:"O tratamento gráfico dá personalidade e diferencia de banco de imagem."},'seed-duelo-17':{pick:'b',why:"Foto com letra une pele e tipografia, a mistura que a marca precisa."},'seed-duelo-u1':{pick:'b',why:"Preto faz as cores da estampa saltarem."},'seed-duelo-u2':{pick:'b',why:"Nome em destaque dá presença e funciona como brinde de marca."},'seed-duelo-u3':{pick:'b',why:"Lettering grande tem mais personalidade e mais cara de produto."},'seed-duelo-u4':{pick:'b',why:"Uma imagem só tem impacto e é simples de produzir."},'seed-duelo-u5':{pick:'a',why:"Personagem ilustrado traz humor e abre caminho para um mascote."}};
-const kokoOf=d=>KOKO[d.id]||(d.rec?{pick:d.rec,why:d.recWhy||''}:null);
+const KOKO={};
+let DSG=false;
+try{const q=new URLSearchParams(location.search).get('designer');if(q==='1')localStorage.setItem('mb-dsg','1');else if(q==='0')localStorage.removeItem('mb-dsg');DSG=localStorage.getItem('mb-dsg')==='1'}catch(e){}
+const setRec=(id,v,why)=>{const cur=DU[id]||{};return w(()=>dD(id).update({rec:v,recWhy:why===undefined?(cur.recWhy||''):why}))};
+const kokoOf=d=>KOKO[d.id]||((d.rec==='a'||d.rec==='b')?{pick:d.rec,why:d.recWhy||''}:null);
 function duelView(d,id,i,all){
   const kr=kokoOf({...d,id});
   const pk=d.pick;
@@ -498,7 +503,9 @@ function duelView(d,id,i,all){
   const chosen=pk==='a'||pk==='b';
   return h('div',{},h('div',{class:'tag',style:'margin-bottom:8px'},'Duelo · '+catT(duelCat(d))),
     d.q?h('h2',{class:'dq'},d.q):null,h('div',{class:'duel'},card('a',R[d.a]),card('b',R[d.b])),
-    kr&&kr.why?h('p',{class:'krec'},h('strong',{},'Escolha Koko: '+(kr.pick==='a'?d.la:d.lb)+'. '),kr.why):null,
+    kr?h('p',{class:'krec'},h('strong',{},'Escolha Koko: '+(kr.pick==='a'?d.la:d.lb)+(kr.why?'. ':'')),kr.why):null,
+    DSG?(()=>{const t=h('input',{class:'note',type:'text',placeholder:'Por que a Koko escolhe este lado? (aparece para o cliente)','aria-label':'Motivo da escolha Koko'});t.value=d.recWhy||'';t.addEventListener('change',()=>setRec(id,d.rec||'',t.value));
+      return h('div',{class:'kdes'},h('div',{class:'lbl'},'Modo designer · sua escolha Koko'),h('div',{class:'dmid'},['a','b'].map(x=>h('button',{class:'kk-chip','aria-pressed':d.rec===x,onclick:()=>setRec(id,d.rec===x?'':x)},'Koko escolhe '+x.toUpperCase())),h('button',{class:'kk-chip','aria-pressed':!d.rec,onclick:()=>setRec(id,'')},'Sem escolha')),t)})():null,
     h('div',{class:'dmid'},h('button',{class:'kk-chip','aria-pressed':pk==='both',onclick:()=>setPick(id,'both')},'As duas'),h('button',{class:'kk-chip','aria-pressed':pk==='none',onclick:()=>setPick(id,'none')},'Nenhuma das duas'),h('span',{class:'lbl'},'Teclas: A, B, D (as duas), N (nenhuma)')),
     h('div',{class:'dwhy'},
       chosen?[h('div',{class:'lbl'},'Por que a '+pk.toUpperCase()+'? Pode marcar mais de um.'),h('div',{class:'asp'},ASP.map(a=>h('button',{class:'ch'+((d.why||[]).includes(a)?' pos':''),onclick:()=>toggleWhy(id,a)},a)))]:h('div',{class:'lbl'},'Escolha A ou B para dizer por quê.'),
