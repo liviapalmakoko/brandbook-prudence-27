@@ -443,12 +443,10 @@ function go(delta){const q=queue();if(!q.length)return;let i=q.findIndex(x=>qkey
 function renderSess(){
   const all=queue();
   const nd=c=>duels().filter(d=>c==='all'||duelCat(d)===c).length,nr=c=>refs().filter(r=>c==='all'||r.cat===c).length;
-  $('#pills').replaceChildren(h('button',{class:'kk-chip','aria-pressed':!!sess.duelos,onclick:()=>{sess.duelos=true;sess.key=null;renderSess()}},'Duelos · '+nd('all')),
-    h('button',{class:'kk-chip','aria-pressed':!sess.duelos,onclick:()=>{sess.duelos=false;sess.key=null;renderSess()}},'Referências soltas · '+nr('all')),
-    h('span',{class:'lbl',style:'align-self:center'},'Categoria:'),
+  $('#pills').replaceChildren(    h('span',{class:'lbl',style:'align-self:center'},'Categoria:'),
     h('button',{class:'kk-chip','aria-pressed':sess.cat==='all',onclick:()=>{sess.cat='all';sess.key=null;renderSess()}},'Todas'),
-    ...CATS.map(c=>{const n=sess.duelos?nd(c.k):nr(c.k)+nd(c.k);return n?h('button',{class:'kk-chip','aria-pressed':sess.cat===c.k,onclick:()=>{sess.cat=c.k;sess.key=null;renderSess()}},c.t+' · '+n):null}).filter(Boolean));
-  if(!all.length){$('#prog').replaceChildren();$('#cur').replaceChildren(h('div',{class:'empty'},(sess.duelos?'Não há duelos nesta categoria. Crie na ':'Ainda não há referências. Suba imagens na '),h('a',{href:'#biblioteca',style:'color:inherit'},'Biblioteca'),'.'));$('#strip').replaceChildren();return}
+    ...CATS.map(c=>{const n=nd(c.k);return n?h('button',{class:'kk-chip','aria-pressed':sess.cat===c.k,onclick:()=>{sess.cat=c.k;sess.key=null;renderSess()}},c.t+' · '+n):null}).filter(Boolean));
+  if(!all.length){$('#prog').replaceChildren();$('#cur').replaceChildren(h('div',{class:'empty'},'Não há duelos nesta categoria. Crie na ',h('a',{href:'#biblioteca',style:'color:inherit'},'Biblioteca'),'.'));$('#strip').replaceChildren();return}
   let i=all.findIndex(x=>qkey(x)===sess.key);if(i<0){i=0;sess.key=qkey(all[0])}
   const it=all[i],rs=refs(),cnt=v=>rs.filter(r=>r.vote===v).length;
   const dAns=duels().filter(d=>d.pick).length;
