@@ -553,23 +553,22 @@ document.addEventListener('keydown',e=>{
 /* ---------- atributos da marca ---------- */
 let ATT={};
 const AXES=[
- {k:'obvio',l:'Direta e previsível',r:'Surpreendente, nada óbvia',pre:5,why:'Do briefing: "nada óbvia".'},
- {k:'ousadia',l:'Delicada e reservada',r:'Ousada',pre:4,why:'Do briefing: "ousada".'},
- {k:'humor',l:'Humor de piada',r:'Leveza sem piada',pre:4,why:'Do briefing: divertida, mas "não faz piada".'},
- {k:'publico',l:'Fala com um público específico',r:'Fala com todos os públicos',pre:5,why:'Do briefing: "permeia todos os públicos, fala com todos".'},
- {k:'inclusao',l:'Mostra um padrão de pessoa e de casal',r:'Mostra todo tipo de pessoa e de relação',pre:5,why:'Do briefing: "livre de preconceitos".'},
- {k:'estilo',l:'Clássica e tradicional',r:'Cool e contemporânea',pre:4,why:'Do briefing: "cool".'},
- {k:'mente',l:'Espontânea e solta',r:'Inteligente e esperta',pre:4,why:'Do briefing: "é inteligente".'},
- {k:'sensual',l:'Sugere, nas entrelinhas',r:'Mostra de forma direta',pre:2,why:'Do briefing: não ser "explícita demais".'},
- {k:'posicao',l:'Quer conquistar espaço',r:'Referência do mercado',pre:5,why:'Da conversa de 06/11: maior participação do mercado.'},
- {k:'tempo',l:'Do momento, segue a tendência',r:'Atemporal',pre:5,why:'Do kickoff: materiais que durem, mais atemporais.'},
- {k:'digital',l:'Mais tradicional',r:'Nativa digital',pre:5,why:'Da conversa de 06/11: o público é nativo digital.'},
- {k:'energia',l:'Calma e acolhedora',r:'Animada e provocadora',pre:0,why:'O briefing não define. Onde a marca fica?'},
- {k:'tom',l:'Acessível e popular',r:'Sofisticada e premium',pre:0,why:'O briefing não define. Onde a marca fica?'},
- {k:'rua',l:'Polida e limpa',r:'Com atitude de rua, old school',pre:0,why:'O briefing cita o grafite como referência de estilo. Entra na personalidade?'},
- {k:'prox',l:'Mais distante, de marca',r:'Próxima, de conversa',pre:0,why:'O briefing não define. Onde a marca fica?'}
+ {k:'obvio',l:'Previsível',r:'Surpreendente',pre:5,why:'Do briefing: "nada óbvia".'},
+ {k:'ousadia',l:'Delicada',r:'Ousada',pre:4,why:'Do briefing: "ousada".'},
+ {k:'humor',l:'Séria',r:'Divertida',pre:4,why:'Do briefing: "divertida".'},
+ {k:'publico',l:'Restrita',r:'Inclusiva',pre:5,why:'Do briefing: "fala com todos".'},
+ {k:'estilo',l:'Clássica',r:'Cool',pre:4,why:'Do briefing: "cool".'},
+ {k:'mente',l:'Espontânea',r:'Inteligente',pre:4,why:'Do briefing: "é inteligente".'},
+ {k:'sensual',l:'Discreta',r:'Explícita',pre:2,why:'Do briefing: não ser "explícita demais".'},
+ {k:'posicao',l:'Desafiante',r:'Líder',pre:5,why:'Da conversa de 06/11: maior do mercado.'},
+ {k:'tempo',l:'Passageira',r:'Atemporal',pre:5,why:'Do kickoff: materiais que durem.'},
+ {k:'digital',l:'Tradicional',r:'Digital',pre:5,why:'Da conversa de 06/11: público nativo digital.'},
+ {k:'energia',l:'Calma',r:'Animada',pre:0,why:'Sem sugestão: onde a marca fica?'},
+ {k:'tom',l:'Popular',r:'Premium',pre:0,why:'Sem sugestão: onde a marca fica?'},
+ {k:'rua',l:'Polida',r:'De rua',pre:0,why:'Sem sugestão: onde a marca fica?'},
+ {k:'prox',l:'Distante',r:'Próxima',pre:0,why:'Sem sugestão: onde a marca fica?'}
 ];
-const WORDS=[['Ousada',1],['Divertida',1],['Nada óbvia',1],['Inclusiva',1],['Livre de preconceitos',1],['Cool',1],['Inteligente',1],['Humor inteligente',1],['Que faz piada',-1],['Que fala de política',-1],['Que fala de religião',-1],['Explícita demais',-1],['Clichê de propaganda antiga',-1],['Sensual',0],['Acolhedora',0],['Provocadora',0],['Elegante',0],['Leve',0],['Corajosa',0],['Livre',0],['Próxima',0],['Confiante',0],['Direta',0],['Irreverente',0],['Misteriosa',0],['Popular',0],['Sofisticada',0],['Descolada',0],['Séria',0]];
+const WORDS=[['Ousada',1],['Divertida',1],['Surpreendente',1],['Inclusiva',1],['Livre',1],['Cool',1],['Inteligente',1],['Atemporal',1],['Piadista',-1],['Política',-1],['Religiosa',-1],['Explícita',-1],['Clichê',-1],['Sensual',0],['Acolhedora',0],['Provocadora',0],['Elegante',0],['Leve',0],['Corajosa',0],['Próxima',0],['Confiante',0],['Direta',0],['Irreverente',0],['Misteriosa',0],['Popular',0],['Sofisticada',0],['Descolada',0],['Séria',0]];
 const apos=a=>{const x=ATT['ax-'+a.k];return x&&x.pos?x.pos:a.pre};
 const astat=a=>{const x=ATT['ax-'+a.k];if(x&&x.pos)return a.pre&&x.pos===a.pre?'Combinado':a.pre?'Seu ajuste':'Sua resposta';return a.pre?'Sugestão Koko':'Para você escolher'};
 const astag=t=>({Combinado:'kk-etiqueta--ok','Seu ajuste':'kk-etiqueta--novo','Sua resposta':'kk-etiqueta--ok','Sugestão Koko':'kk-etiqueta--info','Para você escolher':'kk-etiqueta--ponto'})[t];
@@ -587,11 +586,11 @@ function renderMarca(){
   $('#marca-tela').replaceChildren(
     h('div',{class:'kk-cabeca'},(()=>{const e=h('span',{class:'kk-selo kk-selo--tinta kk-selo--g'});e.append(ic('alvo'));return e})(),
       h('div',{class:'kk-cabeca-textos'},h('h1',{class:'kk-h1'},'Atributos da ',h('mark',{class:'kk-marca-texto'},'marca')),
-        h('p',{class:'kk-apoio'},'Antes do moodboard, uma conversa rápida sobre como a Prudence é. A Koko separou o que o time contou no briefing e deixou como sugestão: o círculo tracejado mostra onde ela colocou. Veja se faz sentido e mova para onde achar melhor. Nas linhas sem sugestão, a escolha é toda sua.'))),
+        h('p',{class:'kk-apoio'},'Como a Prudence é? Em cada linha, escolha o ponto entre as duas palavras. O círculo tracejado é a sugestão da Koko, baseada no briefing: mexa onde quiser. Onde não há sugestão, a escolha é sua.'))),
     h('div',{class:'kk-barra'},h('span',{class:'lbl',style:'align-self:center'},nOk+' de '+nPre+' sugestões já olhadas'),h('button',{type:'button',class:'kk-botao kk-botao--2',onclick:async()=>{for(const a of AXES.filter(x=>x.pre&&!ATT['ax-'+x.k]))await setAx(a.k,a.pre)}},'Faz sentido para todas as sugestões')),
     h('div',{class:'kk-box'},...rows),
     h('div',{class:'sec'},h('div',{class:'sh'},h('h3',{},'Palavras que combinam')),
-      h('p',{class:'kk-texto'},'Toque numa palavra: uma vez, combina com a Prudence (verde); duas, não combina (rosa); três, volta ao neutro. As com o ponto vêm do briefing.'),
+      h('p',{class:'kk-texto'},'Toque numa palavra: uma vez, combina (verde); duas, não combina (rosa); três, volta ao neutro. As com o ponto vêm do briefing.'),
       h('div',{class:'asp'},WORDS.map(w=>{const v=wv(w);return h('button',{type:'button',class:'ch'+(v==='pos'?' pos':v==='neg'?' neg':''),onclick:()=>setWd(w[0],v===''?'pos':v==='pos'?'neg':v==='neg'?'':'pos')},(w[1]&&!(ATT['w-'+w[0]])?'• ':'')+w[0])}))),
     h('div',{class:'sec'},h('div',{class:'sh'},h('h3',{},'Em uma frase')),note),
     h('div',{class:'dnav',style:'position:static;margin:var(--esp-5) auto 0'},h('a',{class:'kk-botao',href:'#sessao',style:'text-align:center;text-decoration:none'},'Seguir para a Sessão')))}
