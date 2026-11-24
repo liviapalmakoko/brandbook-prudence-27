@@ -993,7 +993,12 @@
    "seed-duelo-25",
    "seed-duelo-27",
    "seed-duelo-29",
-   "seed-duelo-30"
+   "seed-duelo-30",
+   "seed-duelo-11",
+   "seed-duelo-31",
+   "seed-duelo-33",
+   "seed-duelo-34",
+   "seed-duelo-35"
   ]
  },
  "duels2": {
@@ -1062,17 +1067,6 @@
    "why": [],
    "note": "",
    "ts": 1700000900007
-  },
-  "seed-duelo-11": {
-   "a": "seed-nova-cores-04",
-   "b": "seed-nova-cores-05",
-   "q": "Qual acento sobre preto e branco?",
-   "la": "Fúcsia e cítrico",
-   "lb": "Violeta e lima",
-   "pick": "",
-   "why": [],
-   "note": "",
-   "ts": 1700000900011
   },
   "seed-duelo-13": {
    "a": "seed-nova-stickers-02",
@@ -1211,18 +1205,6 @@
    "note": "",
    "ts": 913.3
   },
-  "seed-duelo-31": {
-   "a": "seed-nova-cores-03",
-   "b": "seed-nova-cores-09",
-   "q": "No impresso, a base é bege ou branca?",
-   "la": "Bege com letras pretas",
-   "lb": "Branco, lilás e preto",
-   "ctx": "Define o fundo dos materiais impressos: tom quente ou neutro puro.",
-   "pick": "",
-   "why": [],
-   "note": "",
-   "ts": 918.1
-  },
   "seed-duelo-32": {
    "a": "seed-camisa-07",
    "b": "seed-camisa-ref-3",
@@ -1234,42 +1216,6 @@
    "why": [],
    "note": "",
    "ts": 918.2
-  },
-  "seed-duelo-33": {
-   "a": "seed-nova-aplicacoes-02",
-   "b": "seed-nova-aplicacoes-06",
-   "q": "Qual cor de destaque fica melhor sobre o preto e branco?",
-   "la": "Amarelo",
-   "lb": "Magenta",
-   "ctx": "Define a cor principal de destaque, sempre sobre a base preta e branca.",
-   "pick": "",
-   "why": [],
-   "note": "",
-   "ts": 919.1
-  },
-  "seed-duelo-34": {
-   "a": "seed-nova-aplicacoes-06",
-   "b": "seed-nova-aplicacoes-04",
-   "q": "Quanto a cor de destaque aparece?",
-   "la": "Um toque pequeno",
-   "lb": "Um bloco grande",
-   "ctx": "Define a dose da cor: detalhe discreto ou presença forte.",
-   "pick": "",
-   "why": [],
-   "note": "",
-   "ts": 919.2
-  },
-  "seed-duelo-35": {
-   "a": "seed-nova-aplicacoes-02",
-   "b": "seed-nova-cores-04",
-   "q": "Uma cor de destaque ou uma dupla?",
-   "la": "Uma só, bem definida",
-   "lb": "Uma dupla de cores",
-   "ctx": "Define se a paleta tem um único ponto de cor ou dois.",
-   "pick": "",
-   "why": [],
-   "note": "",
-   "ts": 919.3
   }
  }
 }
