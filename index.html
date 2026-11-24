@@ -197,7 +197,7 @@ textarea.note{border-radius:var(--r2);background:var(--opaca);border-color:var(-
 .dcard{display:flex;flex-direction:column;border:1px solid var(--borda);border-radius:var(--r3);background:var(--opaca);overflow:hidden;transition:opacity .2s}
 .dcard.win{border-color:var(--ok);outline:2px solid var(--ok);outline-offset:-1px}
 .dcard.lose{opacity:.5}
-.dpic{border:0;padding:0;background:var(--inv-fundo);display:flex;align-items:center;justify-content:center;height:min(52vh,540px);flex:none;overflow:hidden;cursor:pointer}
+.dpic{border:0;padding:0;background:var(--inv-fundo);display:flex;align-items:center;justify-content:center;height:min(46vh,500px);flex:none;overflow:hidden;cursor:pointer}
 .dpic img{width:100%;height:100%;object-fit:contain;display:block}
 .dfoot{flex:none;background:var(--opaca);display:flex;align-items:center;gap:var(--esp-2);padding:var(--esp-3) var(--esp-4)}
 .dletter{font-family:var(--titulo);font-size:30px;font-weight:700;line-height:1}
@@ -206,7 +206,8 @@ textarea.note{border-radius:var(--r2);background:var(--opaca);border-color:var(-
 .dfoot .sel,.dmid .sel{border-color:var(--ok);color:var(--ok-txt);background:var(--ok-fundo)}
 .dmid{display:flex;justify-content:center;align-items:center;gap:var(--esp-2);margin:var(--esp-4) 0;flex-wrap:wrap}
 .dwhy{display:flex;flex-direction:column;gap:var(--esp-2);max-width:900px;margin:0 auto}
-.dwhy .navrow{margin-top:var(--esp-3)}
+.dnav{position:sticky;bottom:max(12px,env(safe-area-inset-bottom,0px));z-index:30;display:flex;gap:var(--esp-2);padding:var(--esp-2);margin:var(--esp-4) auto 0;max-width:520px;background:var(--vidro-barra);backdrop-filter:var(--desfoque);-webkit-backdrop-filter:var(--desfoque);border:1px solid var(--borda-leve);border-radius:var(--rf)}
+.dnav .kk-botao{flex:1}
 @media (max-width:860px){.duel{grid-template-columns:1fr}.dpic{height:34vh}}
 kbd{font-family:var(--f-b);font-size:11px;border:1px solid var(--line);border-radius:var(--r1);padding:1px 5px;color:var(--mute)}
 @media (max-width:860px){
@@ -340,7 +341,7 @@ kbd{font-family:var(--f-b);font-size:11px;border:1px solid var(--line);border-ra
     fr.onload=()=>{const img=new Image();img.onerror=()=>res(fr.result);img.onload=()=>{const M=1800,k=Math.min(1,M/Math.max(img.width,img.height));
       if(k===1&&file.size<900000)return res(fr.result);const c=document.createElement('canvas');c.width=Math.round(img.width*k);c.height=Math.round(img.height*k);c.getContext('2d').drawImage(img,0,0,c.width,c.height);res(c.toDataURL('image/jpeg',.88))};img.src=fr.result};fr.readAsDataURL(file)});
   const assets={async upload(file){const url=await toDataUrl(file);return{id:'a'+rid(),url,sizeBytes:url.length,contentType:file.type}}};
-  window.claude={use:async n=>{if(n==='db'){await load();return db}if(n==='assets')return assets;return null}};
+  window.__shim=true;window.claude={use:async n=>{if(n==='db'){await load();return db}if(n==='assets')return assets;return null}};
   /* backup: baixar e carregar um .json com tudo */
   window.addEventListener('DOMContentLoaded',()=>{
     const bar=document.querySelector('.kk-topo-acoes');if(!bar)return;
@@ -378,9 +379,10 @@ let me='',mbWho='cliente';
 try{me=localStorage.getItem('mb-me')||''}catch(e){}
 const pname=id=>(PEOPLE.find(p=>p[0]===id)||[0,id])[1];
 const who=()=>(view==='moodboard'||$('#ov').classList.contains('on'))?mbWho:(me||'cliente');
-const proj=(d,p)=>{const x=(d.picks&&d.picks[p])||(p==='cliente'&&d.pick?{pick:d.pick,why:d.why,note:d.note}:null)||{};return{pick:x.pick||'',why:x.why||[],note:x.note||''}};
+let PK={},FVT={};
+const proj=(d,p)=>{const x=PK[d.id+'__'+p]||PK[(d.id||'')+'__'+p]||(p==='cliente'&&d.pick?{pick:d.pick,why:d.why,note:d.note}:null)||{};return{pick:x.pick||'',why:x.why||[],note:x.note||''}};
 const dv=d=>({...d,...proj(d,who())});
-const duels=()=>Object.entries(DU).map(([id,d])=>({id,...d,...proj(d,who())})).sort((a,b)=>(a.ts||0)-(b.ts||0));
+const duels=()=>Object.entries(DU).map(([id,d])=>({id,...d,...proj({...d,id},who())})).sort((a,b)=>(a.ts||0)-(b.ts||0));
 function needMe(){if(me)return true;$('#login').showModal();return false}
 const duelCat=d=>(R[d.a]||R[d.b]||{}).cat;
 
@@ -399,9 +401,10 @@ const setNote=(id,t)=>w(()=>rD(id).update({note:t}));
 const setCap=(id,t)=>w(()=>rD(id).update({cap:t}));
 async function delRef(id){const ds=duels().filter(d=>d.a===id||d.b===id);lib.sel=lib.sel.filter(x=>x!==id);await w(async()=>{for(const d of ds)await dD(d.id).delete();await rD(id).delete()},'Não foi possível remover')}
 const mkDuel=(a,b)=>w(()=>dD(db.collection('duels2').doc().id).set({a,b,pick:'',why:[],note:'',ts:Date.now()}));
-const setPick=(id,v)=>{if(!needMe())return;const raw=DU[id],cur={...(raw.picks||{})},pr=proj(raw,me);cur[me]={...pr,pick:pr.pick===v?'':v};return w(()=>dD(id).update({picks:cur}))};
-function toggleWhy(id,a){if(!needMe())return;const raw=DU[id],all={...(raw.picks||{})},pr=proj(raw,me),cur=new Set(pr.why);cur.has(a)?cur.delete(a):cur.add(a);all[me]={...pr,why:[...cur]};return w(()=>dD(id).update({picks:all}))}
-const setDNote=(id,t)=>{if(!needMe())return;const raw=DU[id],all={...(raw.picks||{})},pr=proj(raw,me);all[me]={...pr,note:t};return w(()=>dD(id).update({picks:all}))};
+const savePick=(id,patch)=>{const pr=proj({...DU[id],id},me);return w(()=>db.collection('picks2').doc(id+'__'+me).set({duel:id,person:me,pick:pr.pick,why:pr.why,note:pr.note,...patch}))};
+const setPick=(id,v)=>{if(!needMe())return;const pr=proj({...DU[id],id},me);return savePick(id,{pick:pr.pick===v?'':v})};
+function toggleWhy(id,a){if(!needMe())return;const pr=proj({...DU[id],id},me),cur=new Set(pr.why);cur.has(a)?cur.delete(a):cur.add(a);return savePick(id,{why:[...cur]})}
+const setDNote=(id,t)=>{if(!needMe())return;return savePick(id,{note:t})};
 const delDuel=id=>w(()=>dD(id).delete());
 
 function aaStrip(){
@@ -461,11 +464,11 @@ function renderSess(){
   const it=all[i],rs=refs(),cnt=v=>rs.filter(r=>r.vote===v).length;
   const dAns=duels().filter(d=>d.pick).length;
   $('#prog').replaceChildren(h('span',{},h('b',{},i+1),' de ',all.length,' · ',catT(it.cat)),sess.duelos?h('span',{},dAns+' de '+duels().length+' duelos respondidos  ',h('kbd',{},'←'),' ',h('kbd',{},'→'),' navegar'):h('span',{},h('span',{class:'t-yes'},ic('check'),' '+cnt('yes')),'   ',h('span',{class:'t-maybe'},ic('ajuda'),' '+cnt('maybe')),'   ',h('span',{class:'t-no'},ic('fechar'),' '+cnt('no')),'   ',h('kbd',{},'←'),' ',h('kbd',{},'→'),' navegar  ',h('kbd',{},'G'),' ',h('kbd',{},'T'),' ',h('kbd',{},'N'),' votar'));
-  $('#cur').replaceChildren(it.k==='r'?singleView(R[it.id],it.id,i,all):duelView(dv(DU[it.id]),it.id,i,all));
+  $('#cur').replaceChildren(it.k==='r'?singleView(R[it.id],it.id,i,all):duelView(dv({...DU[it.id],id:it.id}),it.id,i,all));
   $('#strip').replaceChildren(...all.map((x,j)=>{
     const cls='sm'+(j===i?' cur':'');
     if(x.k==='r'){const r=R[x.id];return h('button',{class:cls+(r.vote?' v-'+r.vote:''),'aria-label':'Ir para '+(j+1),onclick:()=>{sess.key=qkey(x);renderSess()}},h('img',{src:r.url,alt:''}))}
-    const d=dv(DU[x.id]);return h('button',{class:cls+' duelsm'+(d.pick?' v-pick':''),'aria-label':'Duelo '+(j+1),onclick:()=>{sess.key=qkey(x);renderSess()}},h('img',{src:(R[d.a]||{}).url,alt:''}),h('img',{src:(R[d.b]||{}).url,alt:''}))}));
+    const d=dv({...DU[x.id],id:x.id});return h('button',{class:cls+' duelsm'+(d.pick?' v-pick':''),'aria-label':'Duelo '+(j+1),onclick:()=>{sess.key=qkey(x);renderSess()}},h('img',{src:(R[d.a]||{}).url,alt:''}),h('img',{src:(R[d.b]||{}).url,alt:''}))}));
   const st=$('#strip'),cur=$('#strip .cur');if(cur)st.scrollLeft=cur.offsetLeft-st.clientWidth/2+cur.offsetWidth/2}
 function singleView(r,id,i,all){
   const note=h('textarea',{class:'note',placeholder:'Anotação da conversa (opcional)','aria-label':'Anotação'});note.value=r.note||'';note.addEventListener('change',()=>setNote(id,note.value));
@@ -491,12 +494,12 @@ function duelView(d,id,i,all){
     h('div',{class:'dmid'},h('button',{class:'kk-chip','aria-pressed':pk==='both',onclick:()=>setPick(id,'both')},'As duas'),h('button',{class:'kk-chip','aria-pressed':pk==='none',onclick:()=>setPick(id,'none')},'Nenhuma das duas'),h('span',{class:'lbl'},'Teclas: A, B, D (as duas), N (nenhuma)')),
     h('div',{class:'dwhy'},
       chosen?[h('div',{class:'lbl'},'Por que a '+pk.toUpperCase()+'? Pode marcar mais de um.'),h('div',{class:'asp'},ASP.map(a=>h('button',{class:'ch'+((d.why||[]).includes(a)?' pos':''),onclick:()=>toggleWhy(id,a)},a)))]:h('div',{class:'lbl'},'Escolha A ou B para dizer por quê.'),
-      note,
-      h('div',{class:'navrow'},h('button',{class:'kk-botao kk-botao--2',disabled:i===0,onclick:()=>go(-1)},'Anterior'),h('button',{class:'kk-botao',disabled:i===all.length-1,onclick:()=>go(1)},'Próxima'))))}
+      note),
+    h('div',{class:'dnav'},h('button',{class:'kk-botao kk-botao--2',disabled:i===0,onclick:()=>go(-1)},'Anterior'),h('button',{class:'kk-botao',disabled:i===all.length-1,onclick:()=>go(1)},'Próxima')))}
 document.addEventListener('keydown',e=>{
   if(view!=='sessao'||e.target.closest('input,textarea')||e.metaKey||e.ctrlKey)return;
   const q=queue(),it=q.find(x=>qkey(x)===sess.key);
-  if(e.key==='ArrowRight'){e.preventDefault();go(1)}else if(e.key==='ArrowLeft'){e.preventDefault();go(-1)}
+  if(e.key==='ArrowRight'||e.key==='Enter'){e.preventDefault();go(1)}else if(e.key==='ArrowLeft'){e.preventDefault();go(-1)}
   else if(it&&it.k==='r'){const k=e.key.toLowerCase();if(k==='g')setVote(it.id,'yes');else if(k==='t')setVote(it.id,'maybe');else if(k==='n')setVote(it.id,'no')}
   else if(it&&it.k==='d'){const k=e.key.toLowerCase();if(k==='a')setPick(it.id,'a');else if(k==='b')setPick(it.id,'b');else if(k==='d')setPick(it.id,'both');else if(k==='n')setPick(it.id,'none')}});
 
@@ -510,7 +513,7 @@ function duelSets(){const win=new Set(),lose=new Set();duels().forEach(d=>{if(d.
 function renderBoard(){
   const dl2=k=>{const m={};duels().forEach(d=>{const a=d.la,b=d.lb;if(!a||!b)return;if(d.pick==='a'){m[k==='w'?a:b]=1}else if(d.pick==='b'){m[k==='w'?b:a]=1}else if(d.pick==='both'&&k==='w'){m[a]=1;m[b]=1}});return m};
   const ds=duelSets(),rs=refs(),yes=rs.filter(r=>r.vote==='yes'||ds.win.has(r.id)),left=rs.filter(r=>ds.lose.has(r.id)&&!ds.win.has(r.id)&&r.vote!=='yes'),maybe=rs.filter(r=>r.vote==='maybe'),no=rs.filter(r=>r.vote==='no'),t=tally();
-  const nAns=pid=>Object.values(DU).filter(d=>proj(d,pid).pick).length;
+  const nAns=pid=>Object.entries(DU).filter(([k,d])=>proj({...d,id:k},pid).pick).length;
   const out=[h('div',{class:'kk-barra'},h('span',{class:'lbl',style:'align-self:center'},'Respostas de:'),h('div',{class:'kk-filtros'},PEOPLE.map(([id,n])=>h('button',{class:'kk-chip','aria-pressed':mbWho===id,onclick:()=>{mbWho=id;renderBoard()}},n+' · '+nAns(id)+'/'+Object.keys(DU).length)))),h('div',{class:'mb-top'},
     h('div',{},h('div',{class:'tag'},'Brand identity · sessão de moodboard'),h('div',{class:'mb-title'},'PRUDENCE'),h('p',{class:'mb-sub'},yes.length+' aprovadas · '+maybe.length+' em dúvida · '+(no.length+left.length)+' não escolhidas')),
     h('div',{},h('div',{class:'tag'},'O que '+(mbWho==='cliente'?'o cliente':pname(mbWho).split(',')[0])+' prefere'),bars({...t.p,...dl2('w')},'p')),
@@ -527,7 +530,7 @@ function renderBoard(){
   if(maybe.length)out.push(h('div',{class:'sec'},h('div',{class:'sh'},h('h3',{},'Em dúvida'),h('span',{class:'tag'},maybe.length)),h('div',{class:'row'},maybe.map(r=>h('img',{src:r.url,alt:r.cap||'',style:'width:96px;height:120px;object-fit:cover;border-radius:var(--r1);cursor:zoom-in',onclick:()=>zoom(r.url)})))));
   if(left.length)out.push(h('div',{class:'sec'},h('div',{class:'sh'},h('h3',{},'Não escolhidas nos duelos'),h('span',{class:'tag'},left.length)),h('div',{class:'row never'},left.map(r=>h('img',{src:r.url,alt:r.cap||'',style:'cursor:zoom-in',onclick:()=>zoom(r.url)})))));
   if(no.length)out.push(h('div',{class:'sec'},h('div',{class:'sh'},h('h3',{},'Lista de nunca'),h('span',{class:'tag'},no.length)),h('div',{class:'row never'},no.map(r=>h('img',{src:r.url,alt:r.cap||'',style:'cursor:zoom-in',onclick:()=>zoom(r.url)})))));
-  {const rows=duels(),pk=(d,p)=>{const x=proj(DU[d.id],p);return x.pick==='a'?d.la:x.pick==='b'?d.lb:x.pick==='both'?'As duas':x.pick==='none'?'Nenhuma':null};
+  {const rows=duels(),pk=(d,p)=>{const x=proj({...DU[d.id],id:d.id},p);return x.pick==='a'?d.la:x.pick==='b'?d.lb:x.pick==='both'?'As duas':x.pick==='none'?'Nenhuma':null};
    if(rows.length)out.push(h('div',{class:'sec'},h('div',{class:'sh'},h('h3',{},'Comparativo por pessoa')),h('div',{class:'kk-box kk-box--tabela'},h('table',{class:'kk-tabela kk-tabela--larga'},h('thead',{},h('tr',{},h('th',{},'Duelo'),...PEOPLE.map(p=>h('th',{},p[1])))),h('tbody',{},rows.map(d=>h('tr',{},h('td',{'data-rotulo':'Duelo'},h('strong',{},d.q||'Duelo')),...PEOPLE.map(p=>{const v=pk(d,p[0]);return h('td',{'data-rotulo':p[1]},v||h('span',{class:'kk-etiqueta kk-etiqueta--atencao'},'Sem resposta'))}))))))))}
   fontsBoard(out);
   const notes=[...rs.filter(r=>r.note).map(r=>(r.cap||catT(r.cat))+': '+r.note),...duels().filter(d=>d.note).map(d=>'Duelo: '+d.note)];
@@ -591,8 +594,8 @@ const FONTS=[
 (function(){const q=[...new Set(FONTS.filter(f=>f.s==='g').map(f=>'family='+f.q))].join('&');const l=document.createElement('link');l.rel='stylesheet';l.href='https://fonts.googleapis.com/css2?'+q+'&display=swap';document.head.append(l)})();
 const CORE=new Set(['league-gothic','big-shoulders','barlow-condensed','haettenschweiler','inter-tight','hanken-grotesk','bricolage','sora','outfit','archivo-125','instrument-serif','arial','georgia','calibri']);
 let FV={},fst={text:'Mais prazer para todos.',size:72,upper:false,filter:'all',todas:false},cmp=[];
-const fvv=id=>{const r=FV[id];if(!r)return'';const p=who();return(r.votes&&r.votes[p])||(p==='cliente'&&!r.votes&&r.vote)||''};
-const fvote=(id,v)=>{if(!needMe())return;const r=FV[id]||{},cur={...(r.votes||(r.vote?{cliente:r.vote}:{}))};cur[me]=fvv(id)===v?'':v;return w(()=>db.collection('fonts2').doc(id).set({votes:cur}))};
+const fvv=id=>{const p=who(),r=FVT[id+'__'+p];if(r)return r.vote||'';const l=FV[id];return(p==='cliente'&&l&&l.vote)||''};
+const fvote=(id,v)=>{if(!needMe())return;return w(()=>db.collection('fvotes2').doc(id+'__'+me).set({font:id,person:me,vote:fvv(id)===v?'':v}))};
 const fstyle=f=>'font-family:'+f.f+';font-weight:'+f.w+';font-stretch:'+(f.st||'100%')+';font-style:'+(f.it?'italic':'normal'); /* conferir: ignorar: amostra da fonte que está em teste */
 const FPRE=[['PRUDENCE','PRUDENCE'],['Slogan','Mais prazer para todos.'],['Texto corrido','Prazer é liberdade. Cuidar de si é parte da diversão, e a gente cuida de você em cada detalhe.'],['Letras e números','Aa Bb Cc Dd 0123456789']];
 const FFIL=[['all','Todas'],['cond','Condensadas'],['grot','Grotescas'],['geo','Geométricas'],['wide','Largas'],['ser','Serifadas e humanistas'],['sis','Já vem no computador'],['g','Só Google Fonts'],['fav','Minhas favoritas']];
@@ -655,7 +658,7 @@ function summaryText(){
   const fm=m=>Object.entries(m).filter(([,v])=>v>0).sort((a,b)=>b[1]-a[1]).map(([a,v])=>a+' ('+v+')').join(', ')||'nenhuma';
   L.push('O que o cliente prefere: '+fm(t.p),'O que ficou de fora: '+fm(t.n),'Motivos das preferências: '+fm(wt),'','Duelos:');
   duels().forEach(d=>{const a=d.la||(R[d.a]||{}).cap||'A',b=d.lb||(R[d.b]||{}).cap||'B';L.push('- '+(d.pick==='a'?a+' > '+b:d.pick==='b'?b+' > '+a:d.pick==='both'?a+' = '+b+' (as duas)':d.pick==='none'?a+' × '+b+' (nenhuma)':a+' vs '+b+' (sem escolha)')+((d.why||[]).length?' · por: '+d.why.join(', ').toLowerCase():'')+(d.note?' · '+d.note:''))});
-  L.push('','Respostas por pessoa:');Object.values(DU).length&&Object.entries(DU).sort((a,b)=>(a[1].ts||0)-(b[1].ts||0)).forEach(([id,d])=>{L.push('- '+(d.q||'Duelo')+': '+PEOPLE.map(([pid,n])=>{const x=proj(d,pid);return n+' '+(x.pick==='a'?d.la:x.pick==='b'?d.lb:x.pick==='both'?'as duas':x.pick==='none'?'nenhuma':'sem resposta')}).join('; '))});
+  L.push('','Respostas por pessoa:');Object.values(DU).length&&Object.entries(DU).sort((a,b)=>(a[1].ts||0)-(b[1].ts||0)).forEach(([id,d])=>{L.push('- '+(d.q||'Duelo')+': '+PEOPLE.map(([pid,n])=>{const x=proj({...d,id},pid);return n+' '+(x.pick==='a'?d.la:x.pick==='b'?d.lb:x.pick==='both'?'as duas':x.pick==='none'?'nenhuma':'sem resposta')}).join('; '))});
   {const fy=FONTS.filter(f=>fvv(f.id)==='yes'),fm2=FONTS.filter(f=>fvv(f.id)==='maybe'),fn=FONTS.filter(f=>fvv(f.id)==='no');
    if(fy.length||fm2.length||fn.length)L.push('','Fontes:','- Preferidas: '+(fy.map(f=>f.n).join(', ')||'nenhuma'),'- Em dúvida: '+(fm2.map(f=>f.n).join(', ')||'nenhuma'),'- Não gostou: '+(fn.map(f=>f.n).join(', ')||'nenhuma'))}
   const notes=rs.filter(r=>r.note);if(notes.length)L.push('','Anotações:',...notes.map(r=>'- '+(r.cap||catT(r.cat))+': '+r.note));
@@ -687,7 +690,18 @@ initFontes();window.addEventListener('hashchange',route);route();
   db.collection('refs2').onSnapshot(s=>{R={};s.docs.forEach(d=>{R[d.id]=d.data()});render()},()=>toast('Não foi possível carregar as referências'));
   db.collection('duels2').onSnapshot(s=>{DU={};s.docs.forEach(d=>{DU[d.id]=d.data()});render()},()=>{});
   db.collection('fonts2').onSnapshot(s=>{FV={};s.docs.forEach(d=>{FV[d.id]=d.data()});render()},()=>{});
+  db.collection('picks2').onSnapshot(s=>{PK={};s.docs.forEach(d=>{PK[d.id]=d.data()});render()},()=>{});
+  db.collection('fvotes2').onSnapshot(s=>{FVT={};s.docs.forEach(d=>{FVT[d.id]=d.data()});render()},()=>{});
+  detectMe();seedReal();
 })();
+/* na nuvem: quem abre é reconhecido pelo nome do perfil; a primeira pessoa com permissão de edição carrega as referências iniciais */
+async function detectMe(){try{if(me)return;const u=await claude.use('user');if(!u)return;const m=await u.me();const nm=(m.name||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().trim().split(/\s+/)[0];const hit=['livia','mari','isa'].find(k=>k===nm);if(hit)choose(hit)}catch(e){}}
+async function seedReal(){if(window.__shim)return;try{const u=await claude.use('user');if(!u||!(await u.canEdit()))return;
+  const seed=await (await fetch('seed.json',{cache:'no-cache'})).json(),meta=db.doc('meta/seeded'),cur=await meta.get(),done=new Set(cur.exists?(cur.data().ids||[]):[]);let n=0,changed=false;
+  for(const col in seed){if(col==='_remove')continue;for(const id in seed[col]){const key='seed:'+col+'/'+id;if(done.has(key))continue;
+    for(let t=0;t<4;t++){try{await db.collection(col).doc(id).set(seed[col][id]);break}catch(e){await new Promise(r=>setTimeout(r,600*(t+1)))}}
+    done.add(key);changed=true;if(++n%20===0)await meta.set({ids:[...done]})}}
+  if(changed)await meta.set({ids:[...done]})}catch(e){}}
 
 /* ---------- quem está respondendo ---------- */
 function paintWho(){const b=$('#who');b.textContent=me?'Respondendo: '+pname(me):'Escolher quem responde'}
