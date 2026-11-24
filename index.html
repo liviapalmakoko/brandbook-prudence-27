@@ -193,7 +193,7 @@ textarea.note{border-radius:var(--r2);background:var(--opaca);border-color:var(-
 .kk-barra .kk-botao{flex:none}
 .empty{border-color:var(--borda);border-radius:var(--r2)}
 /* duelo */
-.duel{display:grid;grid-template-columns:1fr 1fr;gap:var(--esp-4)}
+.duel{display:grid;grid-template-columns:repeat(2,minmax(0,min(35vh,440px)));justify-content:center;gap:var(--esp-4)}
 .dcard{display:flex;flex-direction:column;border:1px solid var(--borda);border-radius:var(--r3);background:var(--opaca);overflow:hidden;transition:opacity .2s}
 .dcard{position:relative}
 .kseal{background:var(--opaca);color:var(--rosa-txt);border:1px solid var(--rosa-txt);padding:var(--esp-2) var(--esp-3);position:absolute;top:var(--esp-3);right:var(--esp-3);z-index:2;display:inline-flex;align-items:center;gap:var(--esp-1)}
@@ -202,23 +202,24 @@ textarea.note{border-radius:var(--r2);background:var(--opaca);border-color:var(-
 .krec{margin:var(--esp-3) 0 0;text-align:center;color:var(--tinta-2)}
 .dcard.win{border-color:var(--ok);outline:2px solid var(--ok);outline-offset:-1px}
 .dcard.lose{opacity:.5}
-.dpic{position:relative;border:0;padding:0;background:var(--inv-fundo);display:block;height:min(40vh,420px);flex:none;overflow:hidden;cursor:pointer}
+.dpic{position:relative;border:0;padding:0;background:var(--inv-fundo);display:block;aspect-ratio:1/1;width:100%;flex:none;overflow:hidden;cursor:zoom-in}
 .dpic img{display:block}
-.dpic .dbg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:blur(26px);transform:scale(1.2);opacity:.5}
-.dpic .dfg{position:relative;width:100%;height:100%;object-fit:contain}
-.dbadge{position:absolute;top:var(--esp-3);left:var(--esp-3);z-index:2;min-width:36px;height:36px;display:inline-flex;align-items:center;justify-content:center;border-radius:var(--r1,8px);background:var(--inv-fundo);color:var(--inv-tinta);font-family:var(--titulo);font-size:20px;font-weight:700;border:1px solid var(--inv-tinta)}
-.dwhy input.note,.kdes input.note{width:100%;box-sizing:border-box;font:inherit;color:var(--tinta);background:var(--opaca);border:1px solid var(--borda);border-radius:var(--r2);padding:var(--esp-3) var(--esp-4)}
-.dhead{margin-bottom:var(--esp-4)}
+.dpic .dfg{width:100%;height:100%;object-fit:cover}
+.dnote{flex:1 1 220px;min-width:180px;width:auto}
+.dmid input.note{flex:1 1 240px;min-width:200px;box-sizing:border-box;font:inherit;color:var(--tinta);background:var(--opaca);border:1px solid var(--borda);border-radius:var(--rf);padding:var(--esp-2) var(--esp-4)}
+.kdes input.note{width:100%;box-sizing:border-box;font:inherit;color:var(--tinta);background:var(--opaca);border:1px solid var(--borda);border-radius:var(--r2);padding:var(--esp-3) var(--esp-4)}
+.dhead{margin-bottom:var(--esp-3);text-align:center}
+.dhead .dq{font-size:clamp(22px,2.6vw,32px)}
 .dq{font-size:clamp(24px,3vw,36px);margin:var(--esp-1) 0 var(--esp-1);text-wrap:balance}
 .dctx{margin:0;color:var(--tinta-3);font-size:14px}
 .dlabel{font-size:15px;font-weight:600;color:var(--tinta);margin-right:auto;min-width:0}
 .dfoot{flex:none;background:var(--opaca);display:flex;align-items:center;gap:var(--esp-2);padding:var(--esp-3) var(--esp-4)}
 .dfoot .sel,.dmid .sel{border-color:var(--ok);color:var(--ok-txt);background:var(--ok-fundo)}
-.dmid{display:flex;justify-content:center;align-items:center;gap:var(--esp-2);margin:var(--esp-4) 0;flex-wrap:wrap}
+.dmid{display:flex;justify-content:center;max-width:1100px;margin-left:auto;margin-right:auto;align-items:center;gap:var(--esp-2);margin-top:var(--esp-3);margin-bottom:var(--esp-3);flex-wrap:wrap}
 .dwhy{display:flex;flex-direction:column;gap:var(--esp-2);max-width:900px;margin:0 auto}
 .dnav{position:sticky;bottom:max(12px,env(safe-area-inset-bottom,0px));z-index:30;display:flex;gap:var(--esp-2);padding:var(--esp-2);margin:var(--esp-4) auto 0;max-width:520px;background:var(--vidro-barra);backdrop-filter:var(--desfoque);-webkit-backdrop-filter:var(--desfoque);border:1px solid var(--borda-leve);border-radius:var(--rf)}
 .dnav .kk-botao{flex:1}
-@media (max-width:860px){.duel{grid-template-columns:1fr}.dpic{height:34vh}}
+@media (max-width:860px){.duel{grid-template-columns:1fr}}
 kbd{font-family:var(--f-b);font-size:11px;border:1px solid var(--line);border-radius:var(--r1);padding:1px 5px;color:var(--mute)}
 @media (max-width:860px){
   .single{grid-template-columns:1fr}.viewer{min-height:50vh}
@@ -500,22 +501,20 @@ function duelView(d,id,i,all){
   const kr=kokoOf({...d,id}),pk=d.pick,chosen=pk==='a'||pk==='b';
   const card=(side,r)=>{const win=pk===side||pk==='both',lose=(pk==='a'||pk==='b')&&pk!==side||pk==='none',lab=d[side==='a'?'la':'lb'];
     return h('div',{class:'dcard'+(win?' win':'')+(lose?' lose':'')},
-      h('button',{class:'dpic',onclick:()=>setPick(id,side),'aria-label':'Prefiro '+side.toUpperCase()},
-        h('img',{class:'dbg',src:(r||{}).url,alt:'','aria-hidden':'true'}),h('img',{class:'dfg',src:(r||{}).url,alt:(r||{}).cap||''}),
-        h('span',{class:'dbadge'},side.toUpperCase()),
+      h('button',{class:'dpic',onclick:()=>zoom((r||{}).url),'aria-label':'Ampliar '+(lab||side.toUpperCase())},
+        h('img',{class:'dfg',src:(r||{}).url,alt:(r||{}).cap||''}),
         kr&&kr.pick===side?h('span',{class:'kk-etiqueta kk-etiqueta--novo kseal'},ic('alvo'),'Escolha Koko'):null),
       h('div',{class:'dfoot'},h('span',{class:'dlabel'},lab||''),
-        h('button',{class:'kk-botao kk-botao--2 kk-botao--p',onclick:()=>zoom((r||{}).url)},ic('expandir'),'Ampliar'),
         h('button',{class:'kk-botao kk-botao--2'+(pk===side?' sel':''),onclick:()=>setPick(id,side)},pk===side?[ic('check'),' Preferida']:'Prefiro esta')))};
-  const note=h('input',{class:'note',type:'text',placeholder:'Anotação da conversa (opcional)','aria-label':'Anotação'});note.value=d.note||'';note.addEventListener('change',()=>setDNote(id,note.value));
+  const note=h('input',{class:'note dnote',type:'text',placeholder:'Anotação (opcional)','aria-label':'Anotação'});note.value=d.note||'';note.addEventListener('change',()=>setDNote(id,note.value));
   return h('div',{},
     h('div',{class:'dhead'},h('div',{class:'tag'},'Duelo · '+catT(duelCat(d))),d.q?h('h2',{class:'dq'},d.q):null,d.ctx?h('p',{class:'dctx'},'Isso define '+d.ctx.replace(/^Define /,'')):null),
     h('div',{class:'duel'},card('a',R[d.a]),card('b',R[d.b])),
     kr?h('p',{class:'krec'},h('strong',{},'Escolha Koko: '+(kr.pick==='a'?d.la:d.lb)+(kr.why?'. ':'')),kr.why):null,
-    h('div',{class:'dmid'},h('button',{class:'kk-chip','aria-pressed':pk==='both',onclick:()=>setPick(id,'both')},'As duas'),h('button',{class:'kk-chip','aria-pressed':pk==='none',onclick:()=>setPick(id,'none')},'Nenhuma das duas'),h('span',{class:'lbl'},'Teclas: A, B, D (as duas), N (nenhuma)')),
+    h('div',{class:'dmid'},h('button',{class:'kk-chip','aria-pressed':pk==='both',onclick:()=>setPick(id,'both')},'As duas'),h('button',{class:'kk-chip','aria-pressed':pk==='none',onclick:()=>setPick(id,'none')},'Nenhuma das duas'),note),
     h('div',{class:'dwhy'},
       chosen?[h('div',{class:'lbl'},'Por que a '+pk.toUpperCase()+'? Pode marcar mais de um.'),h('div',{class:'asp'},ASP.map(a=>h('button',{class:'ch'+((d.why||[]).includes(a)?' pos':''),onclick:()=>toggleWhy(id,a)},a)))]:null,
-      note),
+      null),
     DSG?(()=>{const t=h('input',{class:'note',type:'text',placeholder:'Por que a Koko escolhe este lado? (aparece para o cliente)','aria-label':'Motivo da escolha Koko'});t.value=d.recWhy||'';t.addEventListener('change',()=>setRec(id,d.rec||'',t.value));
       return h('div',{class:'kdes'},h('div',{class:'lbl'},'Modo designer · sua escolha Koko'),h('div',{class:'dmid'},['a','b'].map(x=>h('button',{class:'kk-chip','aria-pressed':d.rec===x,onclick:()=>setRec(id,d.rec===x?'':x)},'Koko escolhe '+x.toUpperCase())),h('button',{class:'kk-chip','aria-pressed':!d.rec,onclick:()=>setRec(id,'')},'Sem escolha')),t)})():null,
     h('div',{class:'dnav'},h('button',{class:'kk-botao kk-botao--2',disabled:i===0,onclick:()=>go(-1)},'Anterior'),h('button',{class:'kk-botao',disabled:i===all.length-1,onclick:()=>go(1)},'Próxima')))}
