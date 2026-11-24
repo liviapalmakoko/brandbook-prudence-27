@@ -1234,6 +1234,42 @@
    "why": [],
    "note": "",
    "ts": 918.2
+  },
+  "seed-duelo-33": {
+   "a": "seed-nova-aplicacoes-02",
+   "b": "seed-nova-aplicacoes-06",
+   "q": "Qual cor de destaque fica melhor sobre o preto e branco?",
+   "la": "Amarelo",
+   "lb": "Magenta",
+   "ctx": "Define a cor principal de destaque, sempre sobre a base preta e branca.",
+   "pick": "",
+   "why": [],
+   "note": "",
+   "ts": 919.1
+  },
+  "seed-duelo-34": {
+   "a": "seed-nova-aplicacoes-06",
+   "b": "seed-nova-aplicacoes-04",
+   "q": "Quanto a cor de destaque aparece?",
+   "la": "Um toque pequeno",
+   "lb": "Um bloco grande",
+   "ctx": "Define a dose da cor: detalhe discreto ou presença forte.",
+   "pick": "",
+   "why": [],
+   "note": "",
+   "ts": 919.2
+  },
+  "seed-duelo-35": {
+   "a": "seed-nova-aplicacoes-02",
+   "b": "seed-nova-cores-04",
+   "q": "Uma cor de destaque ou uma dupla?",
+   "la": "Uma só, bem definida",
+   "lb": "Uma dupla de cores",
+   "ctx": "Define se a paleta tem um único ponto de cor ou dois.",
+   "pick": "",
+   "why": [],
+   "note": "",
+   "ts": 919.3
   }
  }
 }
