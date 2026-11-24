@@ -165,7 +165,7 @@
   "seed-fonte-haettenschweiler": {
    "url": "refs/novas/haettenschweiler.jpg",
    "cat": "tipo",
-   "cap": "Haettenschweiler (arquivo HATTEN.TTF) · opção do brandbook antigo, para confirmar · vem com Windows e Office (Monotype)",
+   "cap": "Haettenschweiler (arquivo HATTEN.TTF) · opção do brandbook antigo. Fora do Google Fonts e do Adobe Fonts: fica só para confirmar que o cliente não quer",
    "vote": "",
    "asp": {},
    "note": "",
@@ -179,7 +179,8 @@
    "vote": "",
    "asp": {},
    "note": "",
-   "ts": 1700000080001
+   "ts": 1700000080001,
+   "linkLabel": "Baixar no Google Fonts ↗"
   },
   "seed-fonte-02": {
    "url": "refs/fontes/fonte-02.jpg",
@@ -189,7 +190,8 @@
    "vote": "",
    "asp": {},
    "note": "",
-   "ts": 1700000080002
+   "ts": 1700000080002,
+   "linkLabel": "Baixar no Google Fonts ↗"
   },
   "seed-fonte-03": {
    "url": "refs/fontes/fonte-03.jpg",
@@ -199,7 +201,8 @@
    "vote": "",
    "asp": {},
    "note": "",
-   "ts": 1700000080003
+   "ts": 1700000080003,
+   "linkLabel": "Baixar no Google Fonts ↗"
   },
   "seed-fonte-04": {
    "url": "refs/fontes/fonte-04.jpg",
@@ -209,7 +212,8 @@
    "vote": "",
    "asp": {},
    "note": "",
-   "ts": 1700000080004
+   "ts": 1700000080004,
+   "linkLabel": "Baixar no Google Fonts ↗"
   },
   "seed-fonte-05": {
    "url": "refs/fontes/fonte-05.jpg",
@@ -219,7 +223,8 @@
    "vote": "",
    "asp": {},
    "note": "",
-   "ts": 1700000080005
+   "ts": 1700000080005,
+   "linkLabel": "Baixar no Google Fonts ↗"
   },
   "seed-fonte-06": {
    "url": "refs/fontes/fonte-06.jpg",
@@ -229,7 +234,8 @@
    "vote": "",
    "asp": {},
    "note": "",
-   "ts": 1700000080006
+   "ts": 1700000080006,
+   "linkLabel": "Baixar no Google Fonts ↗"
   },
   "seed-fonte-07": {
    "url": "refs/fontes/fonte-07.jpg",
@@ -239,7 +245,8 @@
    "vote": "",
    "asp": {},
    "note": "",
-   "ts": 1700000080007
+   "ts": 1700000080007,
+   "linkLabel": "Baixar no Google Fonts ↗"
   },
   "seed-fonte-08": {
    "url": "refs/fontes/fonte-08.jpg",
@@ -249,7 +256,8 @@
    "vote": "",
    "asp": {},
    "note": "",
-   "ts": 1700000080008
+   "ts": 1700000080008,
+   "linkLabel": "Baixar no Google Fonts ↗"
   },
   "seed-fonte-09": {
    "url": "refs/fontes/fonte-09.jpg",
@@ -259,7 +267,8 @@
    "vote": "",
    "asp": {},
    "note": "",
-   "ts": 1700000080009
+   "ts": 1700000080009,
+   "linkLabel": "Baixar no Google Fonts ↗"
   },
   "seed-fonte-10": {
    "url": "refs/fontes/fonte-10.jpg",
@@ -269,7 +278,8 @@
    "vote": "",
    "asp": {},
    "note": "",
-   "ts": 1700000080010
+   "ts": 1700000080010,
+   "linkLabel": "Baixar no Google Fonts ↗"
   },
   "seed-fonte-11": {
    "url": "refs/fontes/fonte-11.jpg",
@@ -279,7 +289,8 @@
    "vote": "",
    "asp": {},
    "note": "",
-   "ts": 1700000080011
+   "ts": 1700000080011,
+   "linkLabel": "Baixar no Google Fonts ↗"
   },
   "seed-fonte-12": {
    "url": "refs/fontes/fonte-12.jpg",
@@ -289,7 +300,8 @@
    "vote": "",
    "asp": {},
    "note": "",
-   "ts": 1700000080012
+   "ts": 1700000080012,
+   "linkLabel": "Baixar no Google Fonts ↗"
   },
   "seed-fonte-13": {
    "url": "refs/fontes/fonte-13.jpg",
@@ -299,7 +311,8 @@
    "vote": "",
    "asp": {},
    "note": "",
-   "ts": 1700000080013
+   "ts": 1700000080013,
+   "linkLabel": "Baixar no Google Fonts ↗"
   },
   "seed-fonte-14": {
    "url": "refs/fontes/fonte-14.jpg",
@@ -309,7 +322,8 @@
    "vote": "",
    "asp": {},
    "note": "",
-   "ts": 1700000080014
+   "ts": 1700000080014,
+   "linkLabel": "Baixar no Google Fonts ↗"
   },
   "seed-fonte-15": {
    "url": "refs/fontes/fonte-15.jpg",
@@ -319,7 +333,8 @@
    "vote": "",
    "asp": {},
    "note": "",
-   "ts": 1700000080015
+   "ts": 1700000080015,
+   "linkLabel": "Baixar no Google Fonts ↗"
   },
   "seed-fonte-16": {
    "url": "refs/fontes/fonte-16.jpg",
@@ -329,7 +344,8 @@
    "vote": "",
    "asp": {},
    "note": "",
-   "ts": 1700000080016
+   "ts": 1700000080016,
+   "linkLabel": "Baixar no Google Fonts ↗"
   },
   "seed-fonte-17": {
    "url": "refs/fontes/fonte-17.jpg",
@@ -339,7 +355,8 @@
    "vote": "",
    "asp": {},
    "note": "",
-   "ts": 1700000080017
+   "ts": 1700000080017,
+   "linkLabel": "Baixar no Google Fonts ↗"
   },
   "seed-fonte-18": {
    "url": "refs/fontes/fonte-18.jpg",
@@ -349,7 +366,8 @@
    "vote": "",
    "asp": {},
    "note": "",
-   "ts": 1700000080018
+   "ts": 1700000080018,
+   "linkLabel": "Baixar no Google Fonts ↗"
   },
   "seed-fonte-19": {
    "url": "refs/fontes/fonte-19.jpg",
@@ -359,7 +377,8 @@
    "vote": "",
    "asp": {},
    "note": "",
-   "ts": 1700000080019
+   "ts": 1700000080019,
+   "linkLabel": "Baixar no Google Fonts ↗"
   },
   "seed-fonte-20": {
    "url": "refs/fontes/fonte-20.jpg",
@@ -369,7 +388,8 @@
    "vote": "",
    "asp": {},
    "note": "",
-   "ts": 1700000080020
+   "ts": 1700000080020,
+   "linkLabel": "Baixar no Google Fonts ↗"
   },
   "seed-fonte-21": {
    "url": "refs/fontes/fonte-21.jpg",
@@ -379,7 +399,8 @@
    "vote": "",
    "asp": {},
    "note": "",
-   "ts": 1700000080021
+   "ts": 1700000080021,
+   "linkLabel": "Baixar no Google Fonts ↗"
   },
   "seed-fonte-22": {
    "url": "refs/fontes/fonte-22.jpg",
@@ -389,7 +410,8 @@
    "vote": "",
    "asp": {},
    "note": "",
-   "ts": 1700000080022
+   "ts": 1700000080022,
+   "linkLabel": "Baixar no Google Fonts ↗"
   },
   "seed-fonte-23": {
    "url": "refs/fontes/fonte-23.jpg",
@@ -399,7 +421,8 @@
    "vote": "",
    "asp": {},
    "note": "",
-   "ts": 1700000080023
+   "ts": 1700000080023,
+   "linkLabel": "Baixar no Google Fonts ↗"
   },
   "seed-fonte-24": {
    "url": "refs/fontes/fonte-24.jpg",
@@ -409,7 +432,8 @@
    "vote": "",
    "asp": {},
    "note": "",
-   "ts": 1700000080024
+   "ts": 1700000080024,
+   "linkLabel": "Baixar no Google Fonts ↗"
   },
   "seed-fonte-25": {
    "url": "refs/fontes/fonte-25.jpg",
@@ -419,7 +443,8 @@
    "vote": "",
    "asp": {},
    "note": "",
-   "ts": 1700000080025
+   "ts": 1700000080025,
+   "linkLabel": "Baixar no Google Fonts ↗"
   },
   "seed-fonte-26": {
    "url": "refs/fontes/fonte-26.jpg",
@@ -429,99 +454,1103 @@
    "vote": "",
    "asp": {},
    "note": "",
-   "ts": 1700000080026
+   "ts": 1700000080026,
+   "linkLabel": "Baixar no Google Fonts ↗"
   },
-  "seed-sistema-01": {
-   "url": "refs/sistema/sistema-01.jpg",
+  "seed-base-a01": {
+   "url": "refs/base/base-a01.jpg",
    "cat": "sys",
-   "cap": "Helvetica · Mac, já instalada. No Windows o Office usa Arial no lugar. Comprar para instalar no Windows: Monotype/Linotype.",
+   "cap": "Neue Haas Grotesk Display · a Helvetica original · Adobe Fonts",
+   "link": "https://fonts.adobe.com/fonts/neue-haas-grotesk-display",
+   "linkLabel": "Ver no Adobe Fonts ↗",
    "vote": "",
    "asp": {},
    "note": "",
-   "ts": 1700000090001,
-   "link": "https://www.myfonts.com/collections/helvetica-font-linotype"
+   "ts": 1700000200001
   },
-  "seed-sistema-02": {
-   "url": "refs/sistema/sistema-02.jpg",
+  "seed-base-a02": {
+   "url": "refs/base/base-a02.jpg",
    "cat": "sys",
-   "cap": "Helvetica Neue · Mac, já instalada. Versão mais refinada. No Windows o Office usa Arial no lugar.",
+   "cap": "Nimbus Sans · clone fiel da Helvetica · Adobe Fonts",
+   "link": "https://fonts.adobe.com/fonts/nimbus-sans",
+   "linkLabel": "Ver no Adobe Fonts ↗",
    "vote": "",
    "asp": {},
    "note": "",
-   "ts": 1700000090002
+   "ts": 1700000200002
   },
-  "seed-sistema-03": {
-   "url": "refs/sistema/sistema-03.jpg",
+  "seed-base-a03": {
+   "url": "refs/base/base-a03.jpg",
    "cat": "sys",
-   "cap": "Arial · Já vem no Windows, no macOS e no Office. É a substituta segura da Helvetica.",
+   "cap": "Aktiv Grotesk · neutra, no espírito da Helvetica · Adobe Fonts",
+   "link": "https://fonts.adobe.com/fonts/aktiv-grotesk",
+   "linkLabel": "Ver no Adobe Fonts ↗",
    "vote": "",
    "asp": {},
    "note": "",
-   "ts": 1700000090003
+   "ts": 1700000200003
   },
-  "seed-sistema-04": {
-   "url": "refs/sistema/sistema-04.jpg",
+  "seed-base-a04": {
+   "url": "refs/base/base-a04.jpg",
    "cat": "sys",
-   "cap": "Arial Narrow · Já vem com o Office (Windows e Mac). Versão condensada.",
+   "cap": "Acumin Pro · neutra e legível · Adobe Fonts",
+   "link": "https://fonts.adobe.com/fonts/acumin-pro",
+   "linkLabel": "Ver no Adobe Fonts ↗",
    "vote": "",
    "asp": {},
    "note": "",
-   "ts": 1700000090004
+   "ts": 1700000200004
   },
-  "seed-sistema-05": {
-   "url": "refs/sistema/sistema-05.jpg",
+  "seed-base-g01": {
+   "url": "refs/base/base-g01.jpg",
    "cat": "sys",
-   "cap": "Verdana · Já vem no Windows e no macOS. Larga e legível na tela.",
+   "cap": "Arimo · parecida com Arial e Helvetica · gratuita (Google Fonts)",
+   "link": "https://fonts.google.com/specimen/Arimo",
+   "linkLabel": "Baixar no Google Fonts ↗",
    "vote": "",
    "asp": {},
    "note": "",
-   "ts": 1700000090005
+   "ts": 1700000200005
   },
-  "seed-sistema-06": {
-   "url": "refs/sistema/sistema-06.jpg",
+  "seed-base-g02": {
+   "url": "refs/base/base-g02.jpg",
    "cat": "sys",
-   "cap": "Trebuchet MS · Já vem no Windows e no macOS. Humanista.",
+   "cap": "Inter · neutra, feita para telas · gratuita (Google Fonts)",
+   "link": "https://fonts.google.com/specimen/Inter",
+   "linkLabel": "Baixar no Google Fonts ↗",
    "vote": "",
    "asp": {},
    "note": "",
-   "ts": 1700000090006
+   "ts": 1700000200006
   },
-  "seed-sistema-07": {
-   "url": "refs/sistema/sistema-07.jpg",
+  "seed-base-g03": {
+   "url": "refs/base/base-g03.jpg",
    "cat": "sys",
-   "cap": "Georgia · Já vem no Windows e no macOS. Serifada, para textos longos.",
+   "cap": "Public Sans · neutra e institucional · gratuita (Google Fonts)",
+   "link": "https://fonts.google.com/specimen/Public+Sans",
+   "linkLabel": "Baixar no Google Fonts ↗",
    "vote": "",
    "asp": {},
    "note": "",
-   "ts": 1700000090007
+   "ts": 1700000200007
   },
-  "seed-sistema-08": {
-   "url": "refs/sistema/sistema-08.jpg",
+  "seed-base-g04": {
+   "url": "refs/base/base-g04.jpg",
    "cat": "sys",
-   "cap": "Futura · Já vem no macOS. No Windows precisa ser comprada (Monotype). Equivalente nativa do Office: Century Gothic.",
+   "cap": "Roboto · neutra e conhecida · gratuita (Google Fonts)",
+   "link": "https://fonts.google.com/specimen/Roboto",
+   "linkLabel": "Baixar no Google Fonts ↗",
    "vote": "",
    "asp": {},
    "note": "",
-   "ts": 1700000090008,
-   "link": "https://www.myfonts.com/collections/futura-font-linotype"
+   "ts": 1700000200008
   },
-  "seed-sistema-09": {
-   "url": "refs/sistema/sistema-09.jpg",
+  "seed-base-g05": {
+   "url": "refs/base/base-g05.jpg",
    "cat": "sys",
-   "cap": "Avenir Next · Já vem no macOS. No Windows precisa ser comprada (Monotype).",
+   "cap": "Albert Sans · grotesca limpa · gratuita (Google Fonts)",
+   "link": "https://fonts.google.com/specimen/Albert+Sans",
+   "linkLabel": "Baixar no Google Fonts ↗",
    "vote": "",
    "asp": {},
    "note": "",
-   "ts": 1700000090009
+   "ts": 1700000200009
   },
-  "seed-sistema-10": {
-   "url": "refs/sistema/sistema-10.jpg",
+  "seed-base-g06": {
+   "url": "refs/base/base-g06.jpg",
    "cat": "sys",
-   "cap": "Gill Sans · Já vem no macOS e no Office (Gill Sans MT). Humanista clássica.",
+   "cap": "Instrument Sans · grotesca contemporânea · gratuita (Google Fonts)",
+   "link": "https://fonts.google.com/specimen/Instrument+Sans",
+   "linkLabel": "Baixar no Google Fonts ↗",
    "vote": "",
    "asp": {},
    "note": "",
-   "ts": 1700000090010
+   "ts": 1700000200010
+  },
+  "seed-adobe-01": {
+   "url": "refs/fontes/adobe-01.jpg",
+   "cat": "tipo",
+   "cap": "Acumin Pro Extra Condensed · condensada, na linha de Godger e Djingo · Adobe Fonts",
+   "link": "https://fonts.adobe.com/fonts/acumin-pro-extra-condensed",
+   "linkLabel": "Ver no Adobe Fonts ↗",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000300001
+  },
+  "seed-adobe-02": {
+   "url": "refs/fontes/adobe-02.jpg",
+   "cat": "tipo",
+   "cap": "Trade Gothic Next Compressed · comprimida, na linha de Godger e BrandNew · Adobe Fonts",
+   "link": "https://fonts.adobe.com/fonts/trade-gothic-next-compressed",
+   "linkLabel": "Ver no Adobe Fonts ↗",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000300002
+  },
+  "seed-adobe-03": {
+   "url": "refs/fontes/adobe-03.jpg",
+   "cat": "tipo",
+   "cap": "Proxima Nova · geométrica, na linha de Sora e Urbanist · Adobe Fonts",
+   "link": "https://fonts.adobe.com/fonts/proxima-nova",
+   "linkLabel": "Ver no Adobe Fonts ↗",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000300003
+  },
+  "seed-adobe-04": {
+   "url": "refs/fontes/adobe-04.jpg",
+   "cat": "tipo",
+   "cap": "Futura PT · geométrica clássica, na linha de League Spartan e Fortius · Adobe Fonts",
+   "link": "https://fonts.adobe.com/fonts/futura-pt",
+   "linkLabel": "Ver no Adobe Fonts ↗",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000300004
+  },
+  "seed-adobe-05": {
+   "url": "refs/fontes/adobe-05.jpg",
+   "cat": "tipo",
+   "cap": "Gill Sans Nova · humanista clássica · Adobe Fonts",
+   "link": "https://fonts.adobe.com/fonts/gill-sans-nova",
+   "linkLabel": "Ver no Adobe Fonts ↗",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000300005
+  },
+  "seed-up-01": {
+   "url": "refs/fotos/foto-01.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400001,
+   "cap": "Unsplash · Alexander Krivitskiy",
+   "link": "https://unsplash.com/photos/2bGVK2GDRYM",
+   "linkLabel": "Ver no Unsplash ↗"
+  },
+  "seed-up-02": {
+   "url": "refs/fotos/foto-02.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400002,
+   "cap": "Unsplash · Alexandra Leru",
+   "link": "https://unsplash.com/photos/8Ly_sYkOcOw",
+   "linkLabel": "Ver no Unsplash ↗"
+  },
+  "seed-up-03": {
+   "url": "refs/fotos/foto-03.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400003,
+   "cap": "Unsplash · Alexandra Leru",
+   "link": "https://unsplash.com/photos/TQivHkg290M",
+   "linkLabel": "Ver no Unsplash ↗"
+  },
+  "seed-up-04": {
+   "url": "refs/fotos/foto-04.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400004,
+   "cap": "Unsplash · Andrew Davie",
+   "link": "https://unsplash.com/photos/M_cK_lRVdsc",
+   "linkLabel": "Ver no Unsplash ↗"
+  },
+  "seed-up-05": {
+   "url": "refs/fotos/foto-05.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400005,
+   "cap": "Unsplash · Anna Deli",
+   "link": "https://unsplash.com/photos/KDYdBHBKVEw",
+   "linkLabel": "Ver no Unsplash ↗"
+  },
+  "seed-up-06": {
+   "url": "refs/fotos/foto-06.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400006,
+   "cap": "Unsplash · Anna Tarazevich",
+   "link": "https://unsplash.com/photos/HX3MOurRLPE",
+   "linkLabel": "Ver no Unsplash ↗"
+  },
+  "seed-up-07": {
+   "url": "refs/fotos/foto-07.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400007,
+   "cap": "Unsplash · Caleb",
+   "link": "https://unsplash.com/photos/7Mai1mr_bmI",
+   "linkLabel": "Ver no Unsplash ↗"
+  },
+  "seed-up-08": {
+   "url": "refs/fotos/foto-08.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400008,
+   "cap": "Unsplash · Cheyenne Doig",
+   "link": "https://unsplash.com/photos/djME6Gy-KEs",
+   "linkLabel": "Ver no Unsplash ↗"
+  },
+  "seed-up-09": {
+   "url": "refs/fotos/foto-09.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400009,
+   "cap": "Unsplash · Cristian Palmer",
+   "link": "https://unsplash.com/photos/Q8NYuzH8BN8",
+   "linkLabel": "Ver no Unsplash ↗"
+  },
+  "seed-up-10": {
+   "url": "refs/fotos/foto-10.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400010,
+   "cap": "Unsplash · Dainis Graveris",
+   "link": "https://unsplash.com/photos/SPx5gUVMD6M",
+   "linkLabel": "Ver no Unsplash ↗"
+  },
+  "seed-up-11": {
+   "url": "refs/fotos/foto-11.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400011,
+   "cap": "Unsplash · Dylann Hendricks",
+   "link": "https://unsplash.com/photos/xg-SqslXGIE",
+   "linkLabel": "Ver no Unsplash ↗"
+  },
+  "seed-up-12": {
+   "url": "refs/fotos/foto-12.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400012,
+   "cap": "Unsplash · Fernando Stahelin",
+   "link": "https://unsplash.com/photos/Gq3wkXrphns",
+   "linkLabel": "Ver no Unsplash ↗"
+  },
+  "seed-up-13": {
+   "url": "refs/fotos/foto-13.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400013,
+   "cap": "Unsplash · Gian Cescon",
+   "link": "https://unsplash.com/photos/HEtcYT3Ih9g",
+   "linkLabel": "Ver no Unsplash ↗"
+  },
+  "seed-up-14": {
+   "url": "refs/fotos/foto-14.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400014,
+   "cap": "Unsplash · Hanna Postova",
+   "link": "https://unsplash.com/photos/oha7AANDiL8",
+   "linkLabel": "Ver no Unsplash ↗"
+  },
+  "seed-up-15": {
+   "url": "refs/fotos/foto-15.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400015,
+   "cap": "Unsplash · Huha Inc",
+   "link": "https://unsplash.com/photos/ZxP7B4CvuUc",
+   "linkLabel": "Ver no Unsplash ↗"
+  },
+  "seed-up-16": {
+   "url": "refs/fotos/foto-16.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400016,
+   "cap": "Unsplash · Jan Zhukov",
+   "link": "https://unsplash.com/photos/Uk5cY7w2MgM",
+   "linkLabel": "Ver no Unsplash ↗"
+  },
+  "seed-up-17": {
+   "url": "refs/fotos/foto-17.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400017,
+   "cap": "Unsplash · Jan Zhukov",
+   "link": "https://unsplash.com/photos/pQ4eMIHrlNQ",
+   "linkLabel": "Ver no Unsplash ↗"
+  },
+  "seed-up-18": {
+   "url": "refs/fotos/foto-18.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400018,
+   "cap": "Unsplash · Logan Weaver",
+   "link": "https://unsplash.com/photos/YWndBOcN0pY",
+   "linkLabel": "Ver no Unsplash ↗"
+  },
+  "seed-up-19": {
+   "url": "refs/fotos/foto-19.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400019,
+   "cap": "Unsplash · Luiz Rogerio Nunes",
+   "link": "https://unsplash.com/photos/HVqOijC9Ido",
+   "linkLabel": "Ver no Unsplash ↗"
+  },
+  "seed-up-20": {
+   "url": "refs/fotos/foto-20.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400020,
+   "cap": "Unsplash · Luiz Rogerio Nunes",
+   "link": "https://unsplash.com/photos/M6eCn8C1uI4",
+   "linkLabel": "Ver no Unsplash ↗"
+  },
+  "seed-up-21": {
+   "url": "refs/fotos/foto-21.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400021,
+   "cap": "Unsplash · Malik Skydsgaard",
+   "link": "https://unsplash.com/photos/iTkTt_LFZj8",
+   "linkLabel": "Ver no Unsplash ↗"
+  },
+  "seed-up-22": {
+   "url": "refs/fotos/foto-22.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400022,
+   "cap": "Unsplash · Malik Skydsgaard",
+   "link": "https://unsplash.com/photos/o4pprQgk2g0",
+   "linkLabel": "Ver no Unsplash ↗"
+  },
+  "seed-up-23": {
+   "url": "refs/fotos/foto-23.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400023,
+   "cap": "Unsplash · Maria Talks",
+   "link": "https://unsplash.com/photos/Mr2o3HdM0Ic",
+   "linkLabel": "Ver no Unsplash ↗"
+  },
+  "seed-up-24": {
+   "url": "refs/fotos/foto-24.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400024,
+   "cap": "Unsplash · Molnar Balint",
+   "link": "https://unsplash.com/photos/4sCi3DLWdzg",
+   "linkLabel": "Ver no Unsplash ↗"
+  },
+  "seed-up-25": {
+   "url": "refs/fotos/foto-25.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400025,
+   "cap": "Unsplash · Molnar Balint",
+   "link": "https://unsplash.com/photos/Lf9JpqXS--0",
+   "linkLabel": "Ver no Unsplash ↗"
+  },
+  "seed-up-26": {
+   "url": "refs/fotos/foto-26.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400026,
+   "cap": "Unsplash · Monika Kozub",
+   "link": "https://unsplash.com/photos/9Evqbiy9Lj8",
+   "linkLabel": "Ver no Unsplash ↗"
+  },
+  "seed-up-27": {
+   "url": "refs/fotos/foto-27.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400027,
+   "cap": "Unsplash · Monika Kozub",
+   "link": "https://unsplash.com/photos/Cdv4Oe6O_3w",
+   "linkLabel": "Ver no Unsplash ↗"
+  },
+  "seed-up-28": {
+   "url": "refs/fotos/foto-28.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400028,
+   "cap": "Unsplash · Monika Kozub",
+   "link": "https://unsplash.com/photos/QafmAPmmDfQ",
+   "linkLabel": "Ver no Unsplash ↗"
+  },
+  "seed-up-29": {
+   "url": "refs/fotos/foto-29.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400029,
+   "cap": "Unsplash · Natali Zorina",
+   "link": "https://unsplash.com/photos/0VuJrRkxJKY",
+   "linkLabel": "Ver no Unsplash ↗"
+  },
+  "seed-up-30": {
+   "url": "refs/fotos/foto-30.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400030,
+   "cap": "Unsplash · Natali Zorina",
+   "link": "https://unsplash.com/photos/AnggfxnyME0",
+   "linkLabel": "Ver no Unsplash ↗"
+  },
+  "seed-up-31": {
+   "url": "refs/fotos/foto-31.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400031,
+   "cap": "Unsplash · Nsey Benajah",
+   "link": "https://unsplash.com/photos/O6ehuntyYq4",
+   "linkLabel": "Ver no Unsplash ↗"
+  },
+  "seed-up-32": {
+   "url": "refs/fotos/foto-32.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400032,
+   "cap": "Pexels · autor não identificado",
+   "link": "https://www.pexels.com/photo/9056677/",
+   "linkLabel": "Ver no Pexels ↗"
+  },
+  "seed-up-33": {
+   "url": "refs/fotos/foto-33.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400033,
+   "cap": "Pexels · Alaxmatias",
+   "link": "https://www.pexels.com/photo/17042087/",
+   "linkLabel": "Ver no Pexels ↗"
+  },
+  "seed-up-34": {
+   "url": "refs/fotos/foto-34.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400034,
+   "cap": "Pexels · Alexander Grey",
+   "link": "https://www.pexels.com/photo/1548680/",
+   "linkLabel": "Ver no Pexels ↗"
+  },
+  "seed-up-35": {
+   "url": "refs/fotos/foto-35.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400035,
+   "cap": "Pexels · Amaria",
+   "link": "https://www.pexels.com/photo/10782049/",
+   "linkLabel": "Ver no Pexels ↗"
+  },
+  "seed-up-36": {
+   "url": "refs/fotos/foto-36.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400036,
+   "cap": "Pexels · Aryapandusedjati",
+   "link": "https://www.pexels.com/photo/34712215/",
+   "linkLabel": "Ver no Pexels ↗"
+  },
+  "seed-up-37": {
+   "url": "refs/fotos/foto-37.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400037,
+   "cap": "Pexels · Cottonbro",
+   "link": "https://www.pexels.com/photo/4761353/",
+   "linkLabel": "Ver no Pexels ↗"
+  },
+  "seed-up-38": {
+   "url": "refs/fotos/foto-38.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400038,
+   "cap": "Pexels · Cottonbro",
+   "link": "https://www.pexels.com/photo/4761778/",
+   "linkLabel": "Ver no Pexels ↗"
+  },
+  "seed-up-39": {
+   "url": "refs/fotos/foto-39.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400039,
+   "cap": "Pexels · Cottonbro",
+   "link": "https://www.pexels.com/photo/4761798/",
+   "linkLabel": "Ver no Pexels ↗"
+  },
+  "seed-up-40": {
+   "url": "refs/fotos/foto-40.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400040,
+   "cap": "Pexels · Cottonbro",
+   "link": "https://www.pexels.com/photo/9376108/",
+   "linkLabel": "Ver no Pexels ↗"
+  },
+  "seed-up-41": {
+   "url": "refs/fotos/foto-41.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400041,
+   "cap": "Pexels · Cottonbro Studio",
+   "link": "https://www.pexels.com/photo/5681339/",
+   "linkLabel": "Ver no Pexels ↗"
+  },
+  "seed-up-42": {
+   "url": "refs/fotos/foto-42.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400042,
+   "cap": "Pexels · Cottonbro Studio",
+   "link": "https://www.pexels.com/photo/5681346/",
+   "linkLabel": "Ver no Pexels ↗"
+  },
+  "seed-up-43": {
+   "url": "refs/fotos/foto-43.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400043,
+   "cap": "Pexels · Cottonbro Studio",
+   "link": "https://www.pexels.com/photo/5681347/",
+   "linkLabel": "Ver no Pexels ↗"
+  },
+  "seed-up-44": {
+   "url": "refs/fotos/foto-44.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400044,
+   "cap": "Pexels · Cottonbro Studio",
+   "link": "https://www.pexels.com/photo/9376115/",
+   "linkLabel": "Ver no Pexels ↗"
+  },
+  "seed-up-45": {
+   "url": "refs/fotos/foto-45.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400045,
+   "cap": "Pexels · Darya Greyowl",
+   "link": "https://www.pexels.com/photo/13444964/",
+   "linkLabel": "Ver no Pexels ↗"
+  },
+  "seed-up-46": {
+   "url": "refs/fotos/foto-46.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400046,
+   "cap": "Pexels · Duartefotografia",
+   "link": "https://www.pexels.com/photo/39327513/",
+   "linkLabel": "Ver no Pexels ↗"
+  },
+  "seed-up-47": {
+   "url": "refs/fotos/foto-47.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400047,
+   "cap": "Pexels · Eko Agalarov",
+   "link": "https://www.pexels.com/photo/8879726/",
+   "linkLabel": "Ver no Pexels ↗"
+  },
+  "seed-up-48": {
+   "url": "refs/fotos/foto-48.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400048,
+   "cap": "Pexels · Fernando Ortiz P",
+   "link": "https://www.pexels.com/photo/31982184/",
+   "linkLabel": "Ver no Pexels ↗"
+  },
+  "seed-up-49": {
+   "url": "refs/fotos/foto-49.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400049,
+   "cap": "Pexels · Gabriel Montenegro",
+   "link": "https://www.pexels.com/photo/11369679/",
+   "linkLabel": "Ver no Pexels ↗"
+  },
+  "seed-up-50": {
+   "url": "refs/fotos/foto-50.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400050,
+   "cap": "Pexels · Gustavo Fring",
+   "link": "https://www.pexels.com/photo/7156306/",
+   "linkLabel": "Ver no Pexels ↗"
+  },
+  "seed-up-51": {
+   "url": "refs/fotos/foto-51.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400051,
+   "cap": "Pexels · Henry Mejia",
+   "link": "https://www.pexels.com/photo/14364892/",
+   "linkLabel": "Ver no Pexels ↗"
+  },
+  "seed-up-52": {
+   "url": "refs/fotos/foto-52.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400052,
+   "cap": "Pexels · Iurii Laimin",
+   "link": "https://www.pexels.com/photo/14640921/",
+   "linkLabel": "Ver no Pexels ↗"
+  },
+  "seed-up-53": {
+   "url": "refs/fotos/foto-53.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400053,
+   "cap": "Pexels · Ivan",
+   "link": "https://www.pexels.com/photo/6062106/",
+   "linkLabel": "Ver no Pexels ↗"
+  },
+  "seed-up-54": {
+   "url": "refs/fotos/foto-54.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400054,
+   "cap": "Pexels · Jayson Hinrichsen",
+   "link": "https://www.pexels.com/photo/8975683/",
+   "linkLabel": "Ver no Pexels ↗"
+  },
+  "seed-up-55": {
+   "url": "refs/fotos/foto-55.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400055,
+   "cap": "Pexels · Julianemonarifotografia",
+   "link": "https://www.pexels.com/photo/20143888/",
+   "linkLabel": "Ver no Pexels ↗"
+  },
+  "seed-up-56": {
+   "url": "refs/fotos/foto-56.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400056,
+   "cap": "Pexels · Karolina Grabowska",
+   "link": "https://www.pexels.com/photo/8363933/",
+   "linkLabel": "Ver no Pexels ↗"
+  },
+  "seed-up-57": {
+   "url": "refs/fotos/foto-57.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400057,
+   "cap": "Pexels · Ketut Subiyanto",
+   "link": "https://www.pexels.com/photo/4669941/",
+   "linkLabel": "Ver no Pexels ↗"
+  },
+  "seed-up-58": {
+   "url": "refs/fotos/foto-58.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400058,
+   "cap": "Pexels · Ketut Subiyanto",
+   "link": "https://www.pexels.com/photo/4827111/",
+   "linkLabel": "Ver no Pexels ↗"
+  },
+  "seed-up-59": {
+   "url": "refs/fotos/foto-59.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400059,
+   "cap": "Pexels · Ketut Subiyanto",
+   "link": "https://www.pexels.com/photo/4833669/",
+   "linkLabel": "Ver no Pexels ↗"
+  },
+  "seed-up-60": {
+   "url": "refs/fotos/foto-60.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400060,
+   "cap": "Pexels · Kristina Shcherbina",
+   "link": "https://www.pexels.com/photo/8677823/",
+   "linkLabel": "Ver no Pexels ↗"
+  },
+  "seed-up-61": {
+   "url": "refs/fotos/foto-61.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400061,
+   "cap": "Pexels · Ksenia Chernaya",
+   "link": "https://www.pexels.com/photo/7304434/",
+   "linkLabel": "Ver no Pexels ↗"
+  },
+  "seed-up-62": {
+   "url": "refs/fotos/foto-62.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400062,
+   "cap": "Pexels · Kureng Workx",
+   "link": "https://www.pexels.com/photo/4404568/",
+   "linkLabel": "Ver no Pexels ↗"
+  },
+  "seed-up-63": {
+   "url": "refs/fotos/foto-63.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400063,
+   "cap": "Pexels · Luana Freitas",
+   "link": "https://www.pexels.com/photo/15509182/",
+   "linkLabel": "Ver no Pexels ↗"
+  },
+  "seed-up-64": {
+   "url": "refs/fotos/foto-64.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400064,
+   "cap": "Pexels · Maressa Andrioli",
+   "link": "https://www.pexels.com/photo/12442426/",
+   "linkLabel": "Ver no Pexels ↗"
+  },
+  "seed-up-65": {
+   "url": "refs/fotos/foto-65.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400065,
+   "cap": "Pexels · Mariela F F",
+   "link": "https://www.pexels.com/photo/27200452/",
+   "linkLabel": "Ver no Pexels ↗"
+  },
+  "seed-up-66": {
+   "url": "refs/fotos/foto-66.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400066,
+   "cap": "Pexels · Mike Jones",
+   "link": "https://www.pexels.com/photo/8874390/",
+   "linkLabel": "Ver no Pexels ↗"
+  },
+  "seed-up-67": {
+   "url": "refs/fotos/foto-67.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400067,
+   "cap": "Pexels · Mike Jones",
+   "link": "https://www.pexels.com/photo/8875074/",
+   "linkLabel": "Ver no Pexels ↗"
+  },
+  "seed-up-68": {
+   "url": "refs/fotos/foto-68.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400068,
+   "cap": "Pexels · Mizuno K",
+   "link": "https://www.pexels.com/photo/13771305/",
+   "linkLabel": "Ver no Pexels ↗"
+  },
+  "seed-up-69": {
+   "url": "refs/fotos/foto-69.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400069,
+   "cap": "Pexels · Nathan Martins",
+   "link": "https://www.pexels.com/photo/10986428/",
+   "linkLabel": "Ver no Pexels ↗"
+  },
+  "seed-up-70": {
+   "url": "refs/fotos/foto-70.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400070,
+   "cap": "Pexels · Soylulusacafotos",
+   "link": "https://www.pexels.com/photo/15588261/",
+   "linkLabel": "Ver no Pexels ↗"
+  },
+  "seed-up-71": {
+   "url": "refs/fotos/foto-71.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400071,
+   "cap": "Pexels · Tim Samuel",
+   "link": "https://www.pexels.com/photo/5838810/",
+   "linkLabel": "Ver no Pexels ↗"
+  },
+  "seed-up-72": {
+   "url": "refs/fotos/foto-72.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400072,
+   "cap": "Pexels · Tim Samuel",
+   "link": "https://www.pexels.com/photo/5838841/",
+   "linkLabel": "Ver no Pexels ↗"
+  },
+  "seed-up-73": {
+   "url": "refs/fotos/foto-73.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400073,
+   "cap": "Pexels · Tim Samuel",
+   "link": "https://www.pexels.com/photo/5838844/",
+   "linkLabel": "Ver no Pexels ↗"
+  },
+  "seed-up-74": {
+   "url": "refs/fotos/foto-74.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400074,
+   "cap": "Pexels · Tvoyasasha",
+   "link": "https://www.pexels.com/photo/11329648/",
+   "linkLabel": "Ver no Pexels ↗"
+  },
+  "seed-up-75": {
+   "url": "refs/fotos/foto-75.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400075,
+   "cap": "Pexels · Victoria Rudik",
+   "link": "https://www.pexels.com/photo/8868174/",
+   "linkLabel": "Ver no Pexels ↗"
+  },
+  "seed-up-76": {
+   "url": "refs/fotos/foto-76.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400076,
+   "cap": "Pexels · Вениамин Курочкин",
+   "link": "https://www.pexels.com/photo/11606832/",
+   "linkLabel": "Ver no Pexels ↗"
+  },
+  "seed-up-77": {
+   "url": "refs/fotos/foto-77.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400077,
+   "cap": "Pexels · Юлиана Маринина",
+   "link": "https://www.pexels.com/photo/9619662/",
+   "linkLabel": "Ver no Pexels ↗"
+  },
+  "seed-up-78": {
+   "url": "refs/fotos/foto-78.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400078,
+   "cap": "Unsplash · Rosa Rafael",
+   "link": "https://unsplash.com/photos/xFIuMTj8Tf8",
+   "linkLabel": "Ver no Unsplash ↗"
+  },
+  "seed-up-79": {
+   "url": "refs/fotos/foto-79.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400079,
+   "cap": "Foto de banco de imagem"
+  },
+  "seed-up-80": {
+   "url": "refs/fotos/foto-80.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400080,
+   "cap": "Foto de banco de imagem"
+  },
+  "seed-up-81": {
+   "url": "refs/fotos/foto-81.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400081,
+   "cap": "Foto de banco de imagem"
+  },
+  "seed-up-82": {
+   "url": "refs/fotos/foto-82.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400082,
+   "cap": "Foto de banco de imagem"
+  },
+  "seed-up-83": {
+   "url": "refs/fotos/foto-83.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400083,
+   "cap": "Foto de banco de imagem"
+  },
+  "seed-up-84": {
+   "url": "refs/fotos/foto-84.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400084,
+   "cap": "Foto de banco de imagem"
+  },
+  "seed-up-85": {
+   "url": "refs/fotos/foto-85.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400085,
+   "cap": "Foto de banco de imagem"
+  },
+  "seed-up-86": {
+   "url": "refs/fotos/foto-86.jpg",
+   "cat": "foto",
+   "vote": "",
+   "asp": {},
+   "note": "",
+   "ts": 1700000400086,
+   "cap": "Foto de banco de imagem"
   }
  },
  "_remove": {
@@ -566,7 +1595,17 @@
    "seed-foto-33",
    "seed-foto-34",
    "seed-foto-35",
-   "seed-foto-36"
+   "seed-foto-36",
+   "seed-sistema-01",
+   "seed-sistema-02",
+   "seed-sistema-03",
+   "seed-sistema-04",
+   "seed-sistema-05",
+   "seed-sistema-06",
+   "seed-sistema-07",
+   "seed-sistema-08",
+   "seed-sistema-09",
+   "seed-sistema-10"
   ]
  }
 }
