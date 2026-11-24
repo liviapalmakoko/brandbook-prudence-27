@@ -3,7 +3,48 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<style>html,body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<style>html,body{margin:0}img{max-width:100%}[hidden]{display:none!important}
+/* fontes */
+.fctl{position:sticky;top:57px;z-index:20;background:var(--bg);padding:10px 0 12px;border-bottom:1px solid var(--line);display:grid;gap:10px;margin-top:-6px}
+.fctl .ft{font:inherit;font-size:20px;padding:12px 20px;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;width:100%}
+.fctl .frow{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.fctl label{font-size:13px;color:var(--mute);display:flex;gap:8px;align-items:center}
+.fctl input[type=range]{width:160px;accent-color:var(--ink)}
+.fr{display:grid;grid-template-columns:230px minmax(0,1fr) 150px;gap:26px;align-items:center;padding:24px 0;border-bottom:1px solid var(--line)}
+.fr.v-no{opacity:.4}
+.fr.v-yes{box-shadow:inset 4px 0 0 var(--yes);padding-left:18px}
+.fm{min-width:0}
+.fm b{font-family:var(--f-d);font-size:21px;letter-spacing:-.02em;display:block;line-height:1.1}
+.ftags{display:flex;flex-wrap:wrap;gap:4px;margin:8px 0 6px}
+.ftag,.src{font-size:11px;font-weight:600;letter-spacing:.03em;border:1px solid var(--line);border-radius:999px;padding:2px 8px;color:var(--mute)}
+.src.g{color:var(--yes);border-color:currentColor}.src.a{color:#3B6BF0;border-color:currentColor}.src.m{color:var(--maybe);border-color:currentColor}
+.fm p{margin:4px 0 8px;font-size:13px;color:var(--mute);line-height:1.4}
+.fm a{font-size:13px;font-weight:600;color:var(--ink)}
+.fs{font-size:var(--fs,72px);line-height:1.08;overflow-wrap:anywhere;min-width:0;color:var(--ink)}
+.fs.adobe{font-family:var(--f-b);font-size:15px;color:var(--mute);display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding:30px 26px;border:1.5px dashed var(--line);border-radius:14px;line-height:1.4}
+.fs.adobe a{text-decoration:none;color:var(--ink)}
+.fimg{max-width:100%;max-height:300px;border-radius:6px;display:block}
+.fv{display:flex;flex-direction:column;gap:10px;align-items:flex-end}
+.fvb{display:flex;gap:6px}
+.fvb button{width:42px;height:42px;border-radius:50%;border:2px solid var(--line);background:var(--card);font-weight:800;font-size:18px;line-height:1}
+.fvb button:hover{border-color:var(--ink)}
+.fvb button[data-v=yes].on{background:var(--yes);border-color:var(--yes);color:#fff}
+.fvb button[data-v=maybe].on{background:var(--maybe);border-color:var(--maybe);color:#fff}
+.fvb button[data-v=no].on{background:var(--no);border-color:var(--no);color:#fff}
+.fcmp{font-size:13px;display:flex;gap:6px;align-items:center;cursor:pointer;color:var(--mute)}
+.cbar{position:fixed;left:50%;bottom:max(18px,env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:80;background:var(--ink);color:var(--bg);border-radius:999px;padding:8px 10px 8px 20px;display:none;gap:12px;align-items:center;box-shadow:0 8px 24px rgba(0,0,0,.3);font-size:14px;white-space:nowrap}
+.cbar.on{display:flex}
+.cbar .b{background:var(--bg);color:var(--ink);border-color:var(--bg)}
+.panel.wide{max-width:1240px}
+.cmpgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px;margin-top:20px}
+.cc{border-top:2px solid var(--ink);padding-top:14px;min-width:0;overflow-wrap:anywhere}
+.cc h3{margin:0}.cc a.b{display:inline-block;margin-top:14px;text-decoration:none;color:var(--ink)}
+.fb{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:22px}
+.fbi{border-top:1px solid var(--line);padding-top:12px;min-width:0}
+.fbi .big{font-size:56px;line-height:1.05;overflow-wrap:anywhere}
+.fbi small{display:block;color:var(--mute);font-size:12px;margin-top:6px}
+@media (max-width:860px){.fr{grid-template-columns:1fr;gap:12px}.fv{flex-direction:row;align-items:center;justify-content:space-between}.fctl{top:90px}}
+</style>
 <title>Moodboard Prudence</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,500..800&family=Inter:wght@400;500;600&display=swap">
 <style>
@@ -157,6 +198,7 @@ kbd{font-family:var(--f-b);font-size:11px;border:1px solid var(--line);border-ra
   <nav id="nav" aria-label="Telas">
     <a href="#biblioteca" data-k="biblioteca">Biblioteca</a>
     <a href="#sessao" data-k="sessao">Sessão</a>
+    <a href="#fontes" data-k="fontes">Fontes</a>
     <a href="#moodboard" data-k="moodboard">Moodboard</a>
   </nav>
   <button class="b dark" id="sum">Resumo</button>
@@ -178,6 +220,20 @@ kbd{font-family:var(--f-b);font-size:11px;border:1px solid var(--line);border-ra
   <div class="strip" id="strip"></div>
 </section>
 
+<section class="view" id="v-fontes">
+  <div class="head"><div><div class="tag">Tipografia · ao vivo</div><h2>Fontes</h2>
+    <p>Escreva um texto e veja todas as fontes ao mesmo tempo. Marque ✔ as que gostou, ✕ as que não, e use "Comparar" para ver até três lado a lado. Todas estão no Google Fonts ou no Adobe Fonts.</p></div></div>
+  <div class="fctl">
+    <input class="ft" id="f-text" type="text" aria-label="Texto de teste" placeholder="Escreva aqui para testar">
+    <div class="frow"><div class="row" id="f-presets"></div>
+      <label>Tamanho <input id="f-size" type="range" min="24" max="160" value="72"><span id="f-sizev">72</span></label>
+      <label><input id="f-up" type="checkbox"> CAIXA ALTA</label></div>
+    <div class="pills" id="f-filters" style="margin:0"></div>
+  </div>
+  <div class="prog" style="margin:12px 0 0"><span id="fcount"></span></div>
+  <div id="flist"></div>
+</section>
+
 <section class="view" id="v-moodboard">
   <div id="board"></div>
 </section>
@@ -186,6 +242,7 @@ kbd{font-family:var(--f-b);font-size:11px;border:1px solid var(--line);border-ra
 <div class="ov" id="ov"><div class="panel" id="panel"></div></div>
 <div class="lb" id="lb"><img alt=""></div>
 <div class="toast" id="toast" role="status"></div>
+<div class="cbar" id="cbar"></div>
 <input type="file" id="file" accept="image/*" multiple hidden>
 
 <script>
@@ -231,8 +288,7 @@ kbd{font-family:var(--f-b);font-size:11px;border:1px solid var(--line);border-ra
 <script>
 const CATS=[
  {k:'foto',t:'Fotografia',hint:'Pessoas e momentos sem estereótipo: casais diversos, amigos, sensualidade sugerida e nunca explícita. Longe da "cerveja dos anos 2000".'},
- {k:'tipo',t:'Tipografia e layout',hint:'Fontes de títulos e destaques. Só entram opções do Google Fonts ou do Adobe Fonts, parecidas com as referências.'},
- {k:'sys',t:'Fonte base para Word e PPT',hint:'Fonte neutra, parecida com a Helvetica, para documentos e apresentações. Todas estão no Google Fonts ou no Adobe Fonts. Quem abrir o arquivo precisa ter a fonte instalada ou ativada.'},
+ {k:'tipo',t:'Tipografia e layout',hint:'Referências visuais de letras e de layout. As fontes para escolher ficam na tela Fontes.'},
  {k:'cor',t:'Cores e paleta',hint:'Preto, branco e cinza como base, com acento pontual. Tem que durar anos.'},
  {k:'uni',t:'Uniforme e merch',hint:'Camisetas e moletons: logo discreto na frente, estampa criativa nas costas. Refs da Koko e de estampas de outras marcas.'},
  {k:'pdv',t:'PDV e trade',hint:'Clip strip, testeira de estande, display. Uma receita simples que o trade consiga repetir.'},
@@ -377,9 +433,114 @@ function renderBoard(){
         h('div',{},h('b',{},d.pick==='both'?'As duas':d.pick==='none'?'Nenhuma das duas':'Preferida: '+(win.cap||'sem legenda')),h('small',{},(d.why||[]).length?'por: '+d.why.join(', ').toLowerCase():'sem motivo marcado'),d.note?h('small',{},d.note):null))}))));
   if(maybe.length)out.push(h('div',{class:'sec'},h('div',{class:'sh'},h('h3',{},'Em dúvida'),h('span',{class:'tag'},maybe.length)),h('div',{class:'row'},maybe.map(r=>h('img',{src:r.url,alt:r.cap||'',style:'width:96px;height:120px;object-fit:cover;border-radius:3px;cursor:zoom-in',onclick:()=>zoom(r.url)})))));
   if(no.length)out.push(h('div',{class:'sec'},h('div',{class:'sh'},h('h3',{},'Lista de nunca'),h('span',{class:'tag'},no.length)),h('div',{class:'row never'},no.map(r=>h('img',{src:r.url,alt:r.cap||'',style:'cursor:zoom-in',onclick:()=>zoom(r.url)})))));
+  fontsBoard(out);
   const notes=[...rs.filter(r=>r.note).map(r=>(r.cap||catT(r.cat))+': '+r.note),...duels().filter(d=>d.note).map(d=>'Duelo: '+d.note)];
   if(notes.length)out.push(h('div',{class:'sec'},h('div',{class:'sh'},h('h3',{},'Anotações da conversa')),h('ul',{style:'margin:0;padding-left:18px'},notes.map(n=>h('li',{},n)))));
   $('#board').replaceChildren(...out)}
+
+/* ---------- fontes ---------- */
+const GF='https://fonts.google.com/specimen/',AF='https://fonts.adobe.com/fonts/';
+const FT={cond:'Condensada',grot:'Grotesca',geo:'Geométrica',wide:'Larga',ser:'Serifada ou humanista',base:'Word e PPT'};
+const FTF={cond:'Condensadas',grot:'Grotescas',geo:'Geométricas',wide:'Largas',ser:'Serifadas e humanistas',base:'Para Word e PPT'};
+const gf=(id,n,f,w,st,slug,q,t,d,it)=>({id,n,f,w,st,slug,q,t,d,it,s:'g'});
+const af=(id,n,slug,t,d)=>({id,n,slug,t,d,s:'a'});
+const FONTS=[
+ gf('league-gothic','League Gothic',"'League Gothic'",400,'100%','League+Gothic','League+Gothic',['cond'],'Condensada elegante, bem mais leve que a Haettenschweiler.'),
+ gf('barlow-condensed','Barlow Condensed',"'Barlow Condensed'",600,'100%','Barlow+Condensed','Barlow+Condensed:wght@600',['cond'],'Condensada limpa e legível.'),
+ gf('oswald','Oswald',"'Oswald'",500,'100%','Oswald','Oswald:wght@500',['cond'],'Condensada versátil, de uso geral.'),
+ gf('antonio','Antonio',"'Antonio'",700,'100%','Antonio','Antonio:wght@700',['cond'],'Condensada alta e elegante.'),
+ gf('sofia-sans-extra-condensed','Sofia Sans Extra Condensed',"'Sofia Sans Extra Condensed'",700,'100%','Sofia+Sans+Extra+Condensed','Sofia+Sans+Extra+Condensed:wght@700',['cond'],'Extra condensada, com traço humano.'),
+ gf('big-shoulders','Big Shoulders',"'Big Shoulders'",800,'100%','Big+Shoulders','Big+Shoulders:wght@800',['cond'],'Condensada de impacto, na linha de Godger e Djingo.'),
+ gf('bebas-neue','Bebas Neue',"'Bebas Neue'",400,'100%','Bebas+Neue','Bebas+Neue',['cond'],'Clássica de títulos, na linha de BrandNew.'),
+ gf('anton','Anton',"'Anton'",400,'100%','Anton','Anton',['cond'],'Condensada muito forte. Tem o peso da Haettenschweiler.'),
+ gf('fjalla-one','Fjalla One',"'Fjalla One'",400,'100%','Fjalla+One','Fjalla+One',['cond'],'Condensada de cartaz, forte e legível.'),
+ gf('archivo-62','Archivo, espremida',"'Archivo'",700,'62%','Archivo','Archivo:wdth,wght@62..125,700',['cond','grot'],'Grotesca com largura ajustável. Aqui, bem apertada.'),
+ gf('archivo-black','Archivo Black',"'Archivo Black'",400,'100%','Archivo+Black','Archivo+Black',['grot'],'Grotesca pesada, na linha de Greta.'),
+ gf('archivo-125','Archivo, expandida',"'Archivo'",700,'125%','Archivo','Archivo:wdth,wght@62..125,700',['wide','grot'],'A mesma Archivo, agora larga, na linha de Arketype.'),
+ gf('inter-tight','Inter Tight',"'Inter Tight'",700,'100%','Inter+Tight','Inter+Tight:wght@700',['grot'],'Grotesca apertada, parecida com a Helvetica.'),
+ gf('hanken-grotesk','Hanken Grotesk',"'Hanken Grotesk'",700,'100%','Hanken+Grotesk','Hanken+Grotesk:wght@700',['grot'],'Grotesca neutra, boa para texto corrido.'),
+ gf('bricolage','Bricolage Grotesque',"'Bricolage Grotesque'",700,'75%','Bricolage+Grotesque','Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,700',['grot','cond'],'Grotesca com personalidade e eixo de largura.'),
+ gf('familjen-grotesk','Familjen Grotesk',"'Familjen Grotesk'",700,'100%','Familjen+Grotesk','Familjen+Grotesk:wght@700',['grot'],'Grotesca com personalidade, na linha de Glyke.'),
+ gf('schibsted-grotesk','Schibsted Grotesk',"'Schibsted Grotesk'",700,'100%','Schibsted+Grotesk','Schibsted+Grotesk:wght@700',['grot'],'Grotesca editorial, na linha de Fortius.'),
+ gf('sora','Sora',"'Sora'",600,'100%','Sora','Sora:wght@600',['geo'],'Geométrica moderna. É a Sora da referência.'),
+ gf('urbanist','Urbanist',"'Urbanist'",700,'100%','Urbanist','Urbanist:wght@700',['geo'],'Geométrica arredondada. É a Urbanist da referência.'),
+ gf('league-spartan','League Spartan',"'League Spartan'",700,'100%','League+Spartan','League+Spartan:wght@700',['geo'],'Geométrica forte. É a League Spartan da referência.'),
+ gf('outfit','Outfit',"'Outfit'",700,'100%','Outfit','Outfit:wght@700',['geo'],'Geométrica limpa, na linha de Urbanist.'),
+ gf('plus-jakarta-sans','Plus Jakarta Sans',"'Plus Jakarta Sans'",700,'100%','Plus+Jakarta+Sans','Plus+Jakarta+Sans:wght@700',['geo'],'Geométrica suave, na linha de Givonic.'),
+ gf('red-hat-display','Red Hat Display',"'Red Hat Display'",800,'100%','Red+Hat+Display','Red+Hat+Display:wght@800',['geo'],'Geométrica de títulos, na linha de League Spartan.'),
+ gf('syne','Syne',"'Syne'",800,'100%','Syne','Syne:wght@800',['wide'],'Larga e ousada, na linha de Arketype.'),
+ gf('unbounded','Unbounded',"'Unbounded'",700,'100%','Unbounded','Unbounded:wght@700',['wide'],'Larga e arredondada, na linha de Arketype.'),
+ gf('instrument-serif','Instrument Serif Italic',"'Instrument Serif'",400,'100%','Instrument+Serif','Instrument+Serif:ital@1',['ser'],'Serifada itálica, na linha do logo da unearth.',true),
+ gf('arimo','Arimo',"'Arimo'",700,'100%','Arimo','Arimo:wght@700',['grot','base'],'Parecida com Arial e Helvetica. Boa para Word e PPT.'),
+ gf('inter','Inter',"'Inter'",700,'100%','Inter','Inter:wght@700',['grot','base'],'Neutra, feita para telas e documentos.'),
+ gf('public-sans','Public Sans',"'Public Sans'",700,'100%','Public+Sans','Public+Sans:wght@700',['grot','base'],'Neutra e institucional, no espírito da Helvetica.'),
+ gf('roboto','Roboto',"'Roboto'",700,'100%','Roboto','Roboto:wght@700',['grot','base'],'Neutra e conhecida por todos.'),
+ gf('albert-sans','Albert Sans',"'Albert Sans'",700,'100%','Albert+Sans','Albert+Sans:wght@700',['grot','base'],'Grotesca limpa, com leve toque geométrico.'),
+ gf('instrument-sans','Instrument Sans',"'Instrument Sans'",700,'100%','Instrument+Sans','Instrument+Sans:wght@700',['grot','base'],'Grotesca limpa e contemporânea.'),
+ af('neue-haas-grotesk-display','Neue Haas Grotesk Display','neue-haas-grotesk-display',['grot','base'],'A Helvetica original, no desenho de 1957. A mais fiel à ideia de Helvetica. Existe também a versão Text, para textos longos.'),
+ af('nimbus-sans','Nimbus Sans','nimbus-sans',['grot','base'],'Clone fiel da Helvetica, feito para dar o mesmo resultado em qualquer lugar.'),
+ af('aktiv-grotesk','Aktiv Grotesk','aktiv-grotesk',['grot','base'],'Grotesca neutra no espírito da Helvetica, com família grande de pesos e larguras.'),
+ af('acumin-pro','Acumin Pro','acumin-pro',['grot','base'],'Grotesca neutra e legível, boa para documentos e apresentações.'),
+ af('acumin-pro-extra-condensed','Acumin Pro Extra Condensed','acumin-pro-extra-condensed',['cond'],'Extra condensada, na linha de Godger e Djingo, sem o peso exagerado.'),
+ af('trade-gothic-next-compressed','Trade Gothic Next Compressed','trade-gothic-next-compressed',['cond'],'Comprimida e forte, na linha de Godger e BrandNew.'),
+ af('proxima-nova','Proxima Nova','proxima-nova',['geo'],'Geométrica e amigável, na linha de Sora, Urbanist e Givonic.'),
+ af('futura-pt','Futura PT','futura-pt',['geo'],'Geométrica clássica, na linha de League Spartan e Fortius.'),
+ af('gill-sans-nova','Gill Sans Nova','gill-sans-nova',['ser'],'Humanista clássica, com mais calor que a Helvetica.'),
+ {id:'haettenschweiler',n:'Haettenschweiler',t:['cond'],s:'m',img:'refs/novas/haettenschweiler.jpg',d:'Arquivo HATTEN.TTF do brandbook antigo. Não está no Google Fonts nem no Adobe Fonts. Fica aqui só para confirmar que o cliente não quer, por achar muito grossa.'}
+];
+(function(){const q=[...new Set(FONTS.filter(f=>f.s==='g').map(f=>'family='+f.q))].join('&');const l=document.createElement('link');l.rel='stylesheet';l.href='https://fonts.googleapis.com/css2?'+q+'&display=swap';document.head.append(l)})();
+let FV={},fst={text:'Mais prazer para todos.',size:72,upper:false,filter:'all'},cmp=[];
+const fvote=(id,v)=>w(()=>db.collection('fonts2').doc(id).set({vote:(FV[id]||{}).vote===v?'':v}));
+const fstyle=f=>'font-family:'+f.f+';font-weight:'+f.w+';font-stretch:'+(f.st||'100%')+';font-style:'+(f.it?'italic':'normal');
+const FPRE=[['PRUDENCE','PRUDENCE'],['Slogan','Mais prazer para todos.'],['Texto corrido','Prazer é liberdade. Cuidar de si é parte da diversão, e a gente cuida de você em cada detalhe.'],['Letras e números','Aa Bb Cc Dd 0123456789']];
+const FFIL=[['all','Todas'],['cond','Condensadas'],['grot','Grotescas'],['geo','Geométricas'],['wide','Largas'],['ser','Serifadas e humanistas'],['base','Para Word e PPT'],['g','Só Google Fonts'],['a','Só Adobe Fonts'],['fav','Minhas favoritas']];
+function fontSample(f,txt){
+  if(f.s==='g')return h('div',{class:'fs',style:fstyle(f)},txt);
+  if(f.s==='a')return h('div',{class:'fs adobe'},h('span',{},'A prévia desta fonte fica no Adobe Fonts.'),h('a',{class:'b',href:AF+f.slug,target:'_blank',rel:'noopener'},'Abrir a prévia ↗'));
+  return h('img',{class:'fimg',src:f.img,alt:f.n})}
+function fontRow(f){
+  const v=(FV[f.id]||{}).vote||'',txt=fst.upper?fst.text.toUpperCase():fst.text;
+  const link=f.s==='g'?h('a',{href:GF+f.slug,target:'_blank',rel:'noopener'},'Baixar no Google Fonts ↗'):f.s==='a'?h('a',{href:AF+f.slug,target:'_blank',rel:'noopener'},'Ver no Adobe Fonts ↗'):null;
+  const ck=h('input',{type:'checkbox','aria-label':'Comparar '+f.n});ck.checked=cmp.includes(f.id);ck.addEventListener('change',()=>{togCmp(f.id)});
+  return h('article',{class:'fr'+(v?' v-'+v:''),'data-id':f.id},
+    h('div',{class:'fm'},h('b',{},f.n),h('div',{class:'ftags'},f.t.map(t=>h('span',{class:'ftag'},FT[t])),h('span',{class:'src '+f.s},f.s==='g'?'Google Fonts':f.s==='a'?'Adobe Fonts':'Fora do Google e do Adobe')),h('p',{},f.d),link),
+    fontSample(f,txt),
+    h('div',{class:'fv'},h('div',{class:'fvb'},...[['yes','✔','Gostei'],['maybe','?','Talvez'],['no','✕','Não']].map(([k,g,t])=>h('button',{'data-v':k,class:v===k?'on':'','aria-label':t+': '+f.n,onclick:()=>fvote(f.id,k)},g))),
+      h('label',{class:'fcmp'},ck,'Comparar')))}
+function renderFontes(){
+  const l=FONTS.filter(f=>{const k=fst.filter;if(k==='all')return true;if(k==='g'||k==='a')return f.s===k;if(k==='fav')return (FV[f.id]||{}).vote==='yes';return f.t.includes(k)});
+  $('#fcount').textContent=l.length+(l.length===1?' fonte':' fontes');
+  $('#flist').style.setProperty('--fs',fst.size+'px');
+  $('#flist').replaceChildren(...(l.length?l.map(fontRow):[h('div',{class:'empty',style:'margin-top:20px'},fst.filter==='fav'?'Marque ✔ nas fontes que você gostar e elas aparecem aqui.':'Nenhuma fonte neste filtro.')]));
+  renderCbar()}
+function togCmp(id){const i=cmp.indexOf(id);if(i>=0)cmp.splice(i,1);else{cmp.push(id);if(cmp.length>3)cmp.shift()}renderFontes()}
+function renderCbar(){const b=$('#cbar');b.classList.toggle('on',view==='fontes'&&cmp.length>0);
+  b.replaceChildren(h('span',{},'Comparar ('+cmp.length+' de 3)'),h('button',{class:'b',disabled:cmp.length<2,onclick:openCmp},'Ver lado a lado'),h('button',{class:'b',onclick:()=>{cmp=[];renderFontes()}},'Limpar'))}
+function openCmp(){
+  const col=id=>{const f=FONTS.find(x=>x.id===id);
+    if(f.s!=='g')return h('div',{class:'cc'},h('h3',{},f.n),h('p',{class:'mb-sub'},f.d),f.s==='a'?h('a',{class:'b',href:AF+f.slug,target:'_blank',rel:'noopener'},'Abrir a prévia no Adobe Fonts ↗'):null);
+    const st=fstyle(f);
+    return h('div',{class:'cc'},h('h3',{},f.n),h('div',{class:'cprud',style:st+';font-size:96px;line-height:1;margin:16px 0 10px;white-space:nowrap'},'PRUDENCE'),h('div',{style:st+';font-size:34px;line-height:1.12'},'Mais prazer para todos.'),
+      h('p',{style:st+';font-size:18px;line-height:1.5;margin:14px 0'},'Prazer é liberdade. Cuidar de si é parte da diversão, e a gente cuida de você em cada detalhe.'),h('div',{style:st+';font-size:28px'},'Aa Bb Cc 0123456789'),
+      h('p',{class:'mb-sub',style:'margin-top:14px'},f.d),h('a',{href:GF+f.slug,target:'_blank',rel:'noopener',style:'font-size:13px;font-weight:600;color:inherit'},'Baixar no Google Fonts ↗'))};
+  $('#panel').classList.add('wide');
+  $('#panel').replaceChildren(h('h2',{},'Comparar fontes'),h('div',{class:'row',style:'margin-top:8px'},h('button',{class:'b dark',onclick:()=>$('#ov').classList.remove('on')},'Fechar')),h('div',{class:'cmpgrid'},cmp.map(col)));
+  $('#ov').classList.add('on');
+  document.querySelectorAll('#panel .cprud').forEach(e=>{let fs=96;while(e.scrollWidth>e.clientWidth&&fs>28){fs-=3;e.style.fontSize=fs+'px'}})}
+function initFontes(){
+  const ti=$('#f-text');ti.value=fst.text;ti.addEventListener('input',()=>{fst.text=ti.value||' ';renderFontes()});
+  $('#f-presets').replaceChildren(...FPRE.map(([l,t])=>h('button',{class:'pill',onclick:()=>{fst.text=t;ti.value=t;renderFontes()}},l)));
+  const sz=$('#f-size');sz.addEventListener('input',()=>{fst.size=+sz.value;$('#f-sizev').textContent=sz.value;$('#flist').style.setProperty('--fs',sz.value+'px')});
+  $('#f-up').addEventListener('change',e=>{fst.upper=e.target.checked;renderFontes()});
+  const fl=()=>{$('#f-filters').replaceChildren(...FFIL.map(([k,l])=>h('button',{class:'pill','aria-pressed':fst.filter===k,onclick:()=>{fst.filter=k;fl();renderFontes()}},l)))};fl()}
+function fontsBoard(out){
+  const by=v=>FONTS.filter(f=>(FV[f.id]||{}).vote===v),y=by('yes'),m=by('maybe'),n=by('no');
+  if(!y.length&&!m.length&&!n.length)return;
+  const nm=l=>l.map(f=>f.n).join(', ');
+  out.push(h('div',{class:'sec'},h('div',{class:'sh'},h('h3',{},'Fontes'),h('span',{class:'tag'},y.length+' preferidas')),
+    y.length?h('div',{class:'fb'},y.map(f=>h('div',{class:'fbi'},f.s==='g'?h('div',{class:'big',style:fstyle(f)},'PRUDENCE'):h('div',{class:'big',style:'font-family:var(--f-d)'},f.n),
+      h('b',{},f.n),h('small',{},f.s==='g'?'Google Fonts':f.s==='a'?'Adobe Fonts':'Fora do Google e do Adobe'),f.s!=='m'?h('a',{href:(f.s==='g'?GF:AF)+f.slug,target:'_blank',rel:'noopener',style:'font-size:13px;font-weight:600;color:inherit'},f.s==='g'?'Baixar no Google Fonts ↗':'Ver no Adobe Fonts ↗'):null))):h('p',{class:'mb-sub'},'Nenhuma fonte com ✔ ainda.'),
+    m.length?h('p',{class:'mb-sub',style:'margin-top:14px'},'Em dúvida: '+nm(m)):null,n.length?h('p',{class:'mb-sub'},'Não gostou: '+nm(n)):null))}
 
 /* ---------- resumo ---------- */
 function summaryText(){
@@ -389,33 +550,37 @@ function summaryText(){
   const fm=m=>Object.entries(m).filter(([,v])=>v>0).sort((a,b)=>b[1]-a[1]).map(([a,v])=>a+' ('+v+')').join(', ')||'—';
   L.push('O que o cliente gosta: '+fm(t.p),'O que o cliente não gosta: '+fm(t.n),'Motivos das preferências: '+fm(wt),'','Duelos:');
   duels().forEach(d=>{const a=(R[d.a]||{}).cap||'A',b=(R[d.b]||{}).cap||'B';L.push('- '+(d.pick==='a'?a+' > '+b:d.pick==='b'?b+' > '+a:d.pick==='both'?a+' = '+b+' (as duas)':d.pick==='none'?a+' × '+b+' (nenhuma)':a+' vs '+b+' (sem escolha)')+((d.why||[]).length?' · por: '+d.why.join(', ').toLowerCase():'')+(d.note?' · '+d.note:''))});
+  {const fy=FONTS.filter(f=>(FV[f.id]||{}).vote==='yes'),fm2=FONTS.filter(f=>(FV[f.id]||{}).vote==='maybe'),fn=FONTS.filter(f=>(FV[f.id]||{}).vote==='no');
+   if(fy.length||fm2.length||fn.length)L.push('','Fontes:','- Preferidas (✔): '+(fy.map(f=>f.n).join(', ')||'—'),'- Em dúvida (?): '+(fm2.map(f=>f.n).join(', ')||'—'),'- Não gostou (✕): '+(fn.map(f=>f.n).join(', ')||'—'))}
   const notes=rs.filter(r=>r.note);if(notes.length)L.push('','Anotações:',...notes.map(r=>'- '+(r.cap||catT(r.cat))+': '+r.note));
   return L.join('\n')}
-$('#sum').onclick=()=>{
+$('#sum').onclick=()=>{$('#panel').classList.remove('wide');
   const rs=refs(),t=tally(),wt=whyTally(),ul=a=>a.length?h('ul',{},a.map(x=>h('li',{},x))):h('p',{style:'color:var(--mute);margin:0'},'Nada ainda.');
   const fm=m=>Object.entries(m).filter(([,v])=>v>0).sort((a,b)=>b[1]-a[1]).map(([a,v])=>a+' ('+v+')');
   $('#panel').replaceChildren(h('h2',{},'Resumo da sessão'),h('p',{style:'color:var(--mute);margin:0 0 12px'},'O que o cliente decidiu até agora. Copie para o doc do brandbook.'),
     h('div',{class:'row'},h('button',{class:'b dark',onclick:copy},'Copiar resumo'),h('button',{class:'b',onclick:()=>$('#ov').classList.remove('on')},'Fechar')),
     h('h3',{},'Aprovadas'),ul(rs.filter(r=>r.vote==='yes').map(r=>catT(r.cat)+': '+(r.cap||'sem legenda'))),
     h('h3',{},'Lista de nunca'),ul(rs.filter(r=>r.vote==='no').map(r=>catT(r.cat)+': '+(r.cap||'sem legenda'))),
-    h('h3',{},'Gosta'),ul(fm(t.p)),h('h3',{},'Não gosta'),ul(fm(t.n)),h('h3',{},'Motivos das preferências'),ul(fm(wt)));
+    h('h3',{},'Gosta'),ul(fm(t.p)),h('h3',{},'Não gosta'),ul(fm(t.n)),h('h3',{},'Motivos das preferências'),ul(fm(wt)),
+    h('h3',{},'Fontes preferidas'),ul(FONTS.filter(f=>(FV[f.id]||{}).vote==='yes').map(f=>f.n)),h('h3',{},'Fontes que não gostou'),ul(FONTS.filter(f=>(FV[f.id]||{}).vote==='no').map(f=>f.n)));
   $('#ov').classList.add('on')};
 $('#ov').addEventListener('click',e=>{if(e.target.id==='ov')$('#ov').classList.remove('on')});
 async function copy(){const tx=summaryText();try{await navigator.clipboard.writeText(tx);toast('Resumo copiado')}catch(e){const ta=h('textarea',{style:'position:fixed;opacity:0'});ta.value=tx;document.body.append(ta);ta.select();try{document.execCommand('copy');toast('Resumo copiado')}catch(_){toast('Não foi possível copiar')}ta.remove()}}
 
 /* ---------- rotas e sync ---------- */
 function typing(){const a=document.activeElement;return a&&a.matches&&a.matches('main input,main textarea')}
-function render(){if(typing())return;({biblioteca:renderLib,sessao:renderSess,moodboard:renderBoard})[view]()}
-function route(){const k=['biblioteca','sessao','moodboard'].includes(location.hash.slice(1))?location.hash.slice(1):'sessao';view=k;
+function render(){if(typing())return;({biblioteca:renderLib,sessao:renderSess,fontes:renderFontes,moodboard:renderBoard})[view]()}
+function route(){const k=['biblioteca','sessao','fontes','moodboard'].includes(location.hash.slice(1))?location.hash.slice(1):'sessao';view=k;
   document.querySelectorAll('section.view').forEach(s=>s.classList.toggle('on',s.id==='v-'+k));
   document.querySelectorAll('#nav a').forEach(a=>{if(a.dataset.k===k)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
   window.scrollTo(0,0);render()}
-window.addEventListener('hashchange',route);route();
+initFontes();window.addEventListener('hashchange',route);route();
 (async()=>{
   db=await claude.use('db');assets=await claude.use('assets');
   if(!db){toast('Armazenamento indisponível: nada será salvo');return}
   db.collection('refs2').onSnapshot(s=>{R={};s.docs.forEach(d=>{R[d.id]=d.data()});render()},()=>toast('Não foi possível carregar as referências'));
   db.collection('duels2').onSnapshot(s=>{DU={};s.docs.forEach(d=>{DU[d.id]=d.data()});render()},()=>{});
+  db.collection('fonts2').onSnapshot(s=>{FV={};s.docs.forEach(d=>{FV[d.id]=d.data()});render()},()=>{});
 })();
 </script>
 
