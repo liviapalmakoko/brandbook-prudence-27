@@ -362,7 +362,7 @@ kbd{font-family:var(--f-b);font-size:11px;border:1px solid var(--line);border-ra
   <div id="board"></div>
 </section>
 </main>
-<footer class="kk-rodape"><p>Agência Koko · uso interno</p><button class="kk-botao kk-botao--texto" id="reset-btn" type="button">Zerar respostas</button></footer>
+<footer class="kk-rodape"><p>Agência Koko · uso interno</p><a class="kk-botao kk-botao--texto" href="versao-anterior.html">Usar versão anterior</a><button class="kk-botao kk-botao--texto" id="reset-btn" type="button">Zerar respostas</button></footer>
 
 <div class="ov" id="ov"><div class="panel" id="panel"></div></div>
 <div class="lb" id="lb"><img alt=""></div>
@@ -431,11 +431,10 @@ $('#lb').onclick=()=>$('#lb').classList.remove('on');
 
 let db=null,assets=null,R={},DU={},view='biblioteca',sess={cat:'all',key:null,duelos:true},lib={sel:[],active:'foto'},pendingCat=null;
 const refs=()=>Object.entries(R).map(([id,d])=>({id,...d})).sort((a,b)=>catI(a.cat)-catI(b.cat)||(a.ts||0)-(b.ts||0));
-const PEOPLE=[['cliente','Cliente'],['livia','Lívia, designer'],['mari','Mari, gestora'],['isa','Isa, head']];
-let me='cliente',mbWho='cliente';
-try{me=localStorage.getItem('mb-me')||'cliente'}catch(e){}
-const pname=id=>(PEOPLE.find(p=>p[0]===id)||[0,id])[1];
-const who=()=>(view==='moodboard'||$('#ov').classList.contains('on'))?mbWho:(me||'cliente');
+// Uma reunião, uma resposta do cliente. Dados antigos de outras pessoas ficam preservados no backup.
+const me='cliente';
+const who=()=>'cliente';
+const pname=()=> 'Cliente';
 let PK={},FVT={};
 const proj=(d,p)=>{const x=PK[d.id+'__'+p]||PK[(d.id||'')+'__'+p]||(p==='cliente'&&d.pick?{pick:d.pick,why:d.why,note:d.note}:null)||{};return{pick:x.pick||'',why:x.why||[],note:x.note||''}};
 const COPY={'seed-duelo-01':{q:"Como a Prudence mostra o corpo?",la:"Detalhe de pele, sem rosto",lb:"Pessoas em conexão",ctx:"Define se as fotos tratam o corpo como textura ou colocam as pessoas como protagonistas."},'seed-duelo-02':{q:"Qual luz combina mais com a marca?",la:"Escura e dramática",lb:"Clara e natural",ctx:"Define a iluminação padrão das fotos da campanha."},'seed-duelo-03':{q:"As fotos da marca vêm em cor ou em preto e branco?",la:"Preto e branco",lb:"Cor",ctx:"Define se a fotografia usa cor como regra ou o preto e branco como assinatura."},'seed-duelo-04':{q:"Quem aparece nas fotos?",la:"Uma pessoa sozinha",lb:"Um casal",ctx:"Define se a marca fala com a pessoa (prazer próprio) ou com a relação."},'seed-duelo-05':{q:"Que tipo de desejo a marca mostra?",la:"Afeto e beijo",lb:"Provocação",ctx:"Define o grau de ousadia do tom visual."},'seed-duelo-06':{q:"Qual cenário tem mais a cara da Prudence?",la:"Chuveiro e água",lb:"Quarto e cama",ctx:"Define o cenário mais usado nas fotos e nos cartazes."},'seed-duelo-07':{q:"Onde essa intimidade acontece?",la:"Ao ar livre",lb:"Em ambiente fechado",ctx:"Define se a marca é aberta e leve ou fechada e íntima."},'seed-duelo-11':{q:"Quais cores de apoio acompanham o preto e o branco?",la:"Fúcsia e cítrico",lb:"Violeta e lima",ctx:"Define as cores de apoio da paleta."},'seed-duelo-12':{q:"A cor aparece chapada ou em degradê?",la:"Chapada e forte",lb:"Degradê com grão",ctx:"Define se a marca usa cor sólida ou degradê com textura."},'seed-duelo-13':{q:"Que estilo têm os adesivos e símbolos da marca?",la:"Símbolos geométricos",lb:"Texto e personagem",ctx:"Define os elementos gráficos soltos: ícones ou adesivos com frase."},'seed-duelo-14':{q:"Qual textura reforça a marca?",la:"Retícula de pontos",lb:"Grão suave",ctx:"Define a textura de apoio usada nas peças."},'seed-duelo-15':{q:"A textura é colorida ou em preto e branco?",la:"Colorida, em rosa",lb:"Preto e branco",ctx:"Define o uso de cor nas texturas."},'seed-duelo-16':{q:"A foto aparece natural ou com tratamento gráfico?",la:"Foto natural",lb:"Com retícula e forma",ctx:"Define se as fotos entram puras ou trabalhadas pela marca."},'seed-duelo-17':{q:"Como letra e imagem se encontram nos cartazes?",la:"Só letras",lb:"Foto com letras",ctx:"Define o formato dos cartazes: tipografia pura ou foto com letra."},'seed-duelo-u1':{q:"Na frente da camiseta, a peça é clara ou escura?",la:"Clara",lb:"Escura",ctx:"Define a cor-base da camiseta e do uniforme."},'seed-duelo-u2':{q:"Na frente, quanto a marca aparece?",la:"Assinatura minúscula",lb:"Nome em destaque",ctx:"Define a presença da marca no peito."},'seed-duelo-u3':{q:"Na frente, o texto é discreto ou vira lettering?",la:"Texto discreto",lb:"Lettering grande",ctx:"Define o peso da tipografia na estampa."},'seed-duelo-u4':{q:"Nas costas, qual composição?",la:"Vários elementos em grade",lb:"Uma imagem só",ctx:"Define a composição da estampa nas costas."},'seed-duelo-u5':{q:"Nas costas, ilustração ou só tipografia?",la:"Personagem ilustrado",lb:"Só tipografia",ctx:"Define se a marca terá um personagem ou será só tipográfica."}};
@@ -559,7 +558,7 @@ function duelView(d,id,i,all){
         kr&&kr.pick===side?h('span',{class:'kk-etiqueta kk-etiqueta--novo kseal'},ic('alvo'),'Escolha Koko'):null),
       h('div',{class:'dfoot'},h('span',{class:'dlabel'},lab||''),
         h('button',{class:'kk-botao kk-botao--2'+(pk===side?' sel':''),onclick:()=>setPick(id,side)},pk===side?[ic('check'),' Preferida']:'Prefiro esta')))};
-  const note=h('input',{class:'note dnote',type:'text',placeholder:'Anotação (opcional)','aria-label':'Anotação'});note.value=d.note||'';note.addEventListener('change',()=>setDNote(id,note.value));
+  const note=h('input',{class:'note dnote',type:'text',placeholder:'Anotação (opcional)','aria-label':'Anotação'});note.value=d.note||'';note.addEventListener('input',()=>setDNote(id,note.value));
   return h('div',{},
     h('div',{class:'dhead'},h('div',{class:'tag'},'Duelo · '+catT(duelCat(d))),d.q?h('h2',{class:'dq'},d.q):null,d.ctx?h('p',{class:'dctx'},'Isso define '+d.ctx.replace(/^Define /,'')):null),
     h('div',{class:'duel'},card('a',R[d.a]),card('b',R[d.b])),
@@ -572,7 +571,7 @@ function duelView(d,id,i,all){
       return h('div',{class:'kdes'},h('div',{class:'lbl'},'Modo designer · sua escolha Koko'),h('div',{class:'dmid'},['a','b'].map(x=>h('button',{class:'kk-chip','aria-pressed':d.rec===x,onclick:()=>setRec(id,d.rec===x?'':x)},'Koko escolhe '+x.toUpperCase())),h('button',{class:'kk-chip','aria-pressed':!d.rec,onclick:()=>setRec(id,'')},'Sem escolha')),t)})():null,
     h('div',{class:'dnav'},h('button',{class:'kk-botao kk-botao--2',disabled:i===0,onclick:()=>go(-1)},'Anterior'),h('button',{class:'kk-botao',disabled:i===all.length-1,onclick:()=>go(1)},'Próxima')))}
 document.addEventListener('keydown',e=>{
-  if(view!=='sessao'||e.target.closest('input,textarea')||e.metaKey||e.ctrlKey)return;
+  if(view!=='sessao'||$('#ov').classList.contains('on')||e.target.closest('input,textarea')||e.metaKey||e.ctrlKey)return;
   const q=queue(),it=q.find(x=>qkey(x)===sess.key);
   if(e.key==='ArrowRight'||e.key==='Enter'){e.preventDefault();go(1)}else if(e.key==='ArrowLeft'){e.preventDefault();go(-1)}
   else if(it&&it.k==='r'){const k=e.key.toLowerCase();if(k==='g')setVote(it.id,'yes');else if(k==='t')setVote(it.id,'maybe');else if(k==='n')setVote(it.id,'no')}
@@ -704,7 +703,7 @@ function renderCores(){
     h('div',{class:'dnav',style:'position:static;margin:var(--esp-4) auto 0'},h('button',{type:'button',class:'kk-botao kk-botao--2',onclick:()=>go('no')},ic('fechar'),'Não gostei'),h('button',{type:'button',class:'kk-botao',onclick:()=>go('yes')},ic('check'),'Gostei')),
     h('div',{style:'display:flex;justify-content:center;gap:var(--esp-4);margin-top:var(--esp-2)'},h('button',{type:'button',class:'kk-botao kk-botao--texto',disabled:pi===0,onclick:()=>{pi=Math.max(0,pi-1);renderCores()}},'Voltar'),h('button',{type:'button',class:'kk-botao kk-botao--texto',onclick:()=>{pi=Math.min(n,pi+1);renderCores()}},'Pular')));
   window.__palGo=go}
-document.addEventListener('keydown',e=>{if(view!=='cores'||e.target.closest('input,textarea')||e.metaKey||e.ctrlKey||!window.__palGo)return;
+document.addEventListener('keydown',e=>{if(view!=='cores'||$('#ov').classList.contains('on')||e.target.closest('input,textarea')||e.metaKey||e.ctrlKey||!window.__palGo)return;
   if(e.key==='ArrowRight'){e.preventDefault();window.__palGo('yes')}else if(e.key==='ArrowLeft'){e.preventDefault();window.__palGo('no')}});
 function palBoard(){if(!PALS.some(P=>pv(P.id)))return null;const{r,el}=palBuilt();
   return h('div',{class:'sec'},h('div',{class:'sh'},h('h3',{},'Paleta de cores'),h('span',{class:'tag'},PALS.filter(P=>pv(P.id)).length+' de '+PALS.length+' respondidas')),
@@ -721,13 +720,11 @@ function duelSets(){const win=new Set(),lose=new Set();duels().forEach(d=>{if(d.
 function renderBoard(){
   const dl2=k=>{const m={};duels().forEach(d=>{const a=d.la,b=d.lb;if(!a||!b)return;if(d.pick==='a'){m[k==='w'?a:b]=1}else if(d.pick==='b'){m[k==='w'?b:a]=1}else if(d.pick==='both'&&k==='w'){m[a]=1;m[b]=1}});return m};
   const ds=duelSets(),rs=refs(),yes=rs.filter(r=>r.vote==='yes'||ds.win.has(r.id)),left=rs.filter(r=>ds.lose.has(r.id)&&!ds.win.has(r.id)&&r.vote!=='yes'),maybe=rs.filter(r=>r.vote==='maybe'),no=rs.filter(r=>r.vote==='no'),t=tally();
-  const nAns=pid=>Object.entries(DU).filter(([k,d])=>proj({...d,id:k},pid).pick).length;
-  const ACT=PEOPLE.filter(([id])=>id==='cliente'||nAns(id)>0);
-  const out=[h('div',{class:'kk-barra'},h('span',{class:'lbl',style:'align-self:center'},'Respostas de:'),h('div',{class:'kk-filtros'},ACT.map(([id,n])=>h('button',{class:'kk-chip','aria-pressed':mbWho===id,onclick:()=>{mbWho=id;renderBoard()}},n+' · '+nAns(id)+'/'+Object.keys(DU).length)))),h('div',{class:'mb-top'},
-    h('div',{},h('div',{class:'tag'},'Brand identity · sessão de moodboard'),h('div',{class:'mb-title'},'PRUDENCE'),h('p',{class:'mb-sub'},yes.length+' aprovadas · '+maybe.length+' em dúvida · '+(no.length+left.length)+' não escolhidas')),
-    h('div',{},h('div',{class:'tag'},'O que '+(mbWho==='cliente'?'o cliente':pname(mbWho).split(',')[0])+' prefere'),bars({...t.p,...dl2('w')},'p')),
+  const out=[h('div',{class:'mb-top'},
+    h('div',{},h('div',{class:'tag'},'Moodboard · respostas do cliente'),h('div',{class:'mb-title'},'PRUDENCE'),h('p',{class:'mb-sub'},yes.length+' referências preferidas · '+maybe.length+' em dúvida · '+(no.length+left.length)+' não escolhidas')),
+    h('div',{},h('div',{class:'tag'},'O que o cliente prefere'),bars({...t.p,...dl2('w')},'p')),
     h('div',{},h('div',{class:'tag'},'O que ficou de fora'),bars({...t.n,...dl2('l')},'n')))];
-  if(ACT.length<=1)out.shift();
+  out.push(h('details',{class:'kk-box',style:'margin:24px 0'},h('summary',{},'Síntese da sessão · direção, usos e pendências'),synthesisView()));
   {const ab=attrBoard();if(ab)out.push(ab);const pb=palBoard();if(pb)out.push(pb)}
   const byCat=CATS.map(c=>({c,l:yes.filter(r=>r.cat===c.k)})).filter(x=>x.l.length);
   if(!byCat.length)out.push(h('div',{class:'empty'},'O moodboard se monta sozinho: a imagem escolhida em cada duelo da Sessão aparece aqui, agrupada por categoria.'));
@@ -740,9 +737,14 @@ function renderBoard(){
         h('div',{},d.q?h('small',{},d.q):null,h('b',{},d.pick==='both'?'As duas':d.pick==='none'?'Nenhuma das duas':(d.pick==='a'?d.la:d.lb)||('Preferida: '+(win.cap||'sem legenda'))),h('small',{},(d.why||[]).length?'por: '+d.why.join(', ').toLowerCase():'sem motivo marcado'),(k=>k&&(d.pick==='a'||d.pick==='b')?h('span',{class:'kk-etiqueta '+(k.pick===d.pick?'kk-etiqueta--ok':'kk-etiqueta--atencao')},k.pick===d.pick?'Igual à escolha Koko':'Diferente da escolha Koko'):null)(kokoOf(d)),d.note?h('small',{},d.note):null))}))));
   if(maybe.length)out.push(h('div',{class:'sec'},h('div',{class:'sh'},h('h3',{},'Em dúvida'),h('span',{class:'tag'},maybe.length)),h('div',{class:'row'},maybe.map(r=>h('img',{src:r.url,alt:r.cap||'',style:'width:96px;height:120px;object-fit:cover;border-radius:var(--r1);cursor:zoom-in',onclick:()=>zoom(r.url)})))));
   if(left.length)out.push(h('div',{class:'sec'},h('div',{class:'sh'},h('h3',{},'Não escolhidas nos duelos'),h('span',{class:'tag'},left.length)),h('div',{class:'row never'},left.map(r=>h('img',{src:r.url,alt:r.cap||'',style:'cursor:zoom-in',onclick:()=>zoom(r.url)})))));
-  if(no.length)out.push(h('div',{class:'sec'},h('div',{class:'sh'},h('h3',{},'Lista de nunca'),h('span',{class:'tag'},no.length)),h('div',{class:'row never'},no.map(r=>h('img',{src:r.url,alt:r.cap||'',style:'cursor:zoom-in',onclick:()=>zoom(r.url)})))));
-  {const rows=duels().filter(d=>PEOPLE.some(p=>proj({...DU[d.id],id:d.id},p[0]).pick)),pk=(d,p)=>{const x=proj({...DU[d.id],id:d.id},p);return x.pick==='a'?d.la:x.pick==='b'?d.lb:x.pick==='both'?'As duas':x.pick==='none'?'Nenhuma':null};
-   if(rows.length&&(ACT.length>1||rows.some(d=>kokoOf(d))))out.push(h('div',{class:'sec'},h('div',{class:'sh'},h('h3',{},'Comparativo por pessoa')),h('div',{class:'kk-box kk-box--tabela'},h('table',{class:'kk-tabela kk-tabela--larga'},h('thead',{},h('tr',{},h('th',{},'Duelo'),h('th',{},'Escolha Koko'),...ACT.map(p=>h('th',{},p[1])))),h('tbody',{},rows.map(d=>h('tr',{},h('td',{'data-rotulo':'Duelo'},h('strong',{},d.q||'Duelo')),h('td',{'data-rotulo':'Escolha Koko'},(k=>k?h('span',{class:'kk-etiqueta kk-etiqueta--novo'},k.pick==='a'?d.la:d.lb):'-')(kokoOf(d))),...ACT.map(p=>{const v=pk(d,p[0]);return h('td',{'data-rotulo':p[1]},v||h('span',{class:'kk-etiqueta kk-etiqueta--atencao'},'Sem resposta'))}))))))))}
+  if(no.length)out.push(h('div',{class:'sec'},h('div',{class:'sh'},h('h3',{},'Referências rejeitadas'),h('span',{class:'tag'},no.length)),h('div',{class:'row never'},no.map(r=>h('img',{src:r.url,alt:r.cap||'',style:'cursor:zoom-in',onclick:()=>zoom(r.url)})))));
+  {const rows=duels().filter(d=>d.pick||kokoOf(d));
+   if(rows.length)out.push(h('div',{class:'sec'},h('div',{class:'sh'},h('h3',{},'Sugestões Koko × respostas do cliente')),
+     h('div',{class:'kk-box kk-box--tabela'},h('table',{class:'kk-tabela kk-tabela--larga'},
+       h('thead',{},h('tr',{},...['Duelo','Sugestão Koko','Resposta do cliente'].map(t=>h('th',{},t)))),
+       h('tbody',{},rows.map(d=>{const k=kokoOf(d);return h('tr',{},h('td',{'data-rotulo':'Duelo'},d.q||'Duelo'),
+         h('td',{'data-rotulo':'Sugestão Koko'},k?(k.pick==='a'?d.la:d.lb)+(k.why?' · '+k.why:''):'Sem sugestão'),
+         h('td',{'data-rotulo':'Resposta do cliente'},d.pick==='a'?d.la:d.pick==='b'?d.lb:d.pick==='both'?'As duas':d.pick==='none'?'Nenhuma das duas':'Sem resposta'))}))))))}
   fontsBoard(out);
   const notes=[...rs.filter(r=>r.note).map(r=>(r.cap||catT(r.cat))+': '+r.note),...duels().filter(d=>d.note).map(d=>'Duelo: '+d.note)];
   if(notes.length)out.push(h('div',{class:'sec'},h('div',{class:'sh'},h('h3',{},'Anotações da conversa')),h('ul',{style:'margin:0;padding-left:18px'},notes.map(n=>h('li',{},n)))));
@@ -861,40 +863,120 @@ function fontsBoard(out){
       h('b',{},f.n),h('small',{},f.s==='g'?'Google Fonts':f.s==='a'?'Adobe Fonts':f.s==='s'?'Já vem no computador':'Fora do Google e do Adobe'),(f.s==='g'||f.s==='a')?h('a',{href:(f.s==='g'?GF:AF)+f.slug,target:'_blank',rel:'noopener',style:'font-size:13px;font-weight:600;color:inherit'},f.s==='g'?'Baixar no Google Fonts':'Ver no Adobe Fonts'):null))):h('p',{class:'mb-sub'},'Nenhuma fonte com ✔ ainda.'),
     m.length?h('p',{class:'mb-sub',style:'margin-top:14px'},'Em dúvida: '+nm(m)):null,n.length?h('p',{class:'mb-sub'},'Não gostou: '+nm(n)):null))}
 
+/* ---------- síntese da sessão: somente respostas registradas ---------- */
+function synthesisData(){
+  const direction=[],use=[],avoid=[],pending=[],suggestions=[];
+  const ds=duels(),rs=refs(),label=d=>d.q||'Duelo sem pergunta';
+  for(const d of ds){
+    const rec=kokoOf(d);if(rec)suggestions.push(label(d)+': '+(rec.pick==='a'?d.la:d.lb)+(rec.why?' — '+rec.why:''));
+    if(d.pick==='a'||d.pick==='b'){
+      const chosen=d.pick==='a'?d.la:d.lb;
+      direction.push(label(d)+': preferência por '+(chosen||'opção '+d.pick.toUpperCase())+'.');
+      if((d.why||[]).length)use.push((chosen||label(d))+': aspectos marcados — '+d.why.join(', ')+'.');
+    }else if(d.pick==='both')direction.push(label(d)+': as duas referências podem ser exploradas.');
+    else if(d.pick==='none')pending.push(label(d)+': nenhuma das duas; buscar outro caminho.');
+
+    if((d.note||'').trim())use.push('Anotação do cliente · '+label(d)+': '+d.note.trim());
+  }
+  const unanswered=ds.filter(d=>!d.pick);
+  if(unanswered.length)pending.push(unanswered.length+' duelos sem resposta: '+[...new Set(unanswered.map(d=>catT(duelCat(d))))].join(', ')+'.');
+  for(const r of rs){
+    const name=r.cap||'Referência sem legenda';
+    if(r.vote==='yes')use.push(catT(r.cat)+' · '+name+': referência curtida.');
+    if(r.vote==='maybe')pending.push(catT(r.cat)+' · '+name+': em dúvida.');
+    if(r.vote==='no')avoid.push(catT(r.cat)+' · '+name+': referência rejeitada; isso não proíbe automaticamente todo o estilo.');
+    for(const [aspect,v] of Object.entries(r.asp||{})){
+      if(v==='+')use.push(name+': aproveitar '+aspect.toLowerCase()+'.');
+      if(v==='-')avoid.push(name+': evitar '+aspect.toLowerCase()+'.');
+    }
+    if((r.note||'').trim())use.push('Anotação do cliente · '+name+': '+r.note.trim());
+  }
+  for(const a of AXES){const answer=ATT['ax-'+a.k];
+    if(answer&&answer.pos)direction.push('Marca · '+a.l+' ↔ '+a.r+': '+answer.pos+' de 5.');
+
+  }
+  const missingAxes=AXES.filter(a=>!(ATT['ax-'+a.k]||{}).pos);
+  if(missingAxes.length)pending.push('Marca: '+missingAxes.length+' atributos ainda sem confirmação do cliente.');
+  for(const word of WORDS){const answer=wvS(word);
+    if(answer==='pos')direction.push('Marca: '+word[0]+' combina.');
+    if(answer==='neg')avoid.push('Marca: '+word[0]+' não combina.');
+  }
+  if((ATT.note||{}).t)use.push('Persona · anotação do cliente: '+ATT.note.t);
+  const liked=PALS.filter(p=>pv(p.id)==='yes'),disliked=PALS.filter(p=>pv(p.id)==='no');
+  if(liked.length)direction.push('Combinações de cores preferidas: '+liked.map(p=>p.t).join('; ')+'.');
+  if(disliked.length)avoid.push('Combinações de cores rejeitadas: '+disliked.map(p=>p.t).join('; ')+'. A rejeição é da combinação apresentada.');
+  if(liked.length)pending.push('Validar a paleta final e onde usar cada cor; o cálculo automático é uma sugestão.');
+  else pending.push('Paleta de cores: nenhuma combinação preferida registrada.');
+  const fy=FONTS.filter(f=>fvv(f.id)==='yes'),fm=FONTS.filter(f=>fvv(f.id)==='maybe'),fn=FONTS.filter(f=>fvv(f.id)==='no');
+  if(fy.length){direction.push('Fontes preferidas: '+fy.map(f=>f.n).join(', ')+'.');pending.push('Definir a função das fontes preferidas: títulos, slogan e texto corrido.');}
+  else pending.push('Tipografia: nenhuma fonte preferida registrada.');
+  if(fm.length)pending.push('Fontes em dúvida: '+fm.map(f=>f.n).join(', ')+'.');
+  if(fn.length)avoid.push('Fontes rejeitadas: '+fn.map(f=>f.n).join(', ')+'.');
+  const sections=[
+    {title:'Direção escolhida',items:direction,empty:'Ainda não há preferências registradas.'},
+    {title:'O que aproveitar',items:use,empty:'Sem aspectos ou anotações registrados. As imagens preferidas continuam no moodboard.'},
+    {title:'O que evitar',items:avoid,empty:'Nenhuma rejeição explícita registrada.'},
+    {title:'Pendências',items:pending,empty:'Nenhuma pendência identificada nas respostas.'}
+  ];
+  return {sections,suggestions,answered:ds.filter(d=>d.pick).length,total:ds.length};
+}
+function synthesisText(){
+  const data=synthesisData(),lines=['SÍNTESE DA SESSÃO · PRUDENCE','Respostas do cliente · '+data.answered+' de '+data.total+' duelos respondidos',
+    'Preferências registradas para orientar a criação; não representam aprovação final do brandbook.'];
+  for(const section of data.sections)lines.push('',section.title.toUpperCase(),...(section.items.length?section.items.map(t=>'- '+t):[section.empty]));
+  if(data.suggestions.length)lines.push('','SUGESTÕES KOKO · não são respostas do cliente',...data.suggestions.map(t=>'- '+t));
+  return lines.join('\n');
+}
+function synthesisView(){
+  const data=synthesisData();
+  return h('section',{class:'sec synthesis','aria-label':'Síntese da sessão'},
+    h('div',{class:'sh'},h('h3',{},'Da conversa para a criação'),h('span',{class:'tag'},data.answered+' de '+data.total+' duelos respondidos')),
+    h('p',{class:'kk-apoio'},'Uma referência preferida indica um caminho para explorar. Só as rejeições explícitas entram em “O que evitar”.'),
+    ...data.sections.map(section=>h('div',{class:'kk-box',style:'margin-top:16px'},h('h4',{class:'kk-h3'},section.title),
+      section.items.length?h('ul',{style:'padding-left:20px;line-height:1.65'},...section.items.map(t=>h('li',{},t))):h('p',{class:'kk-texto'},section.empty))),
+    data.suggestions.length?h('details',{style:'margin-top:16px'},h('summary',{},'Sugestões Koko · separadas das respostas'),h('ul',{style:'padding-left:20px;line-height:1.65'},...data.suggestions.map(t=>h('li',{},t)))):null);
+}
+
 /* ---------- resumo ---------- */
-function summaryText(){
+function legacySummaryText(){
   const rs=refs(),L=['MOODBOARD PRUDENCE · sessão de 26/11','Respostas de: '+pname(who()),''],t=tally(),wt=whyTally();
   const ds=duelSets();const lst=(v,title)=>{const l=rs.filter(r=>v==='yes'?(r.vote==='yes'||ds.win.has(r.id)):v==='left'?(ds.lose.has(r.id)&&!ds.win.has(r.id)&&r.vote!=='yes'):r.vote===v);if(!l.length)return;L.push(title+' ('+l.length+'):');CATS.forEach(c=>{const x=l.filter(r=>r.cat===c.k);if(x.length)L.push('- '+c.t+': '+x.map(r=>r.cap||'sem legenda').join('; '))});L.push('')};
-  lst('yes','Aprovadas');lst('left','Não escolhidas nos duelos');lst('maybe','Em dúvida');lst('no','Lista de nunca');
+  lst('yes','Referências preferidas');lst('left','Não escolhidas nos duelos');lst('maybe','Em dúvida');lst('no','Referências rejeitadas');
   const fm=m=>Object.entries(m).filter(([,v])=>v>0).sort((a,b)=>b[1]-a[1]).map(([a,v])=>a+' ('+v+')').join(', ')||'nenhuma';
   {const x=[['O que o cliente prefere',fm(t.p)],['O que ficou de fora',fm(t.n)],['Motivos das preferências',fm(wt)]].filter(y=>y[1]!=='nenhuma');if(x.length)L.push(...x.map(y=>y[0]+': '+y[1]),'')}
   const dr=duels().filter(d=>d.pick);if(dr.length)L.push('Duelos:');
   dr.forEach(d=>{const a=d.la||(R[d.a]||{}).cap||'A',b=d.lb||(R[d.b]||{}).cap||'B';L.push('- '+(d.pick==='a'?a+' > '+b:d.pick==='b'?b+' > '+a:d.pick==='both'?a+' = '+b+' (as duas)':d.pick==='none'?a+' × '+b+' (nenhuma)':a+' vs '+b+' (sem escolha)')+((d.why||[]).length?' · por: '+d.why.join(', ').toLowerCase():'')+(d.note?' · '+d.note:''))});
   {const ds=duels().filter(d=>kokoOf(d)&&(d.pick==='a'||d.pick==='b')),ig=ds.filter(d=>kokoOf(d).pick===d.pick);if(ds.length)L.push('','Alinhamento com a escolha Koko: '+ig.length+' de '+ds.length+' duelos iguais.',...ds.filter(d=>kokoOf(d).pick!==d.pick).map(d=>'- Diferente: '+(d.q||'Duelo')+' (Koko: '+(kokoOf(d).pick==='a'?d.la:d.lb)+'; escolhido: '+(d.pick==='a'?d.la:d.lb)+')'))}
   L.push(...attrText());L.push(...palSummary());
-  {const quem=PEOPLE.filter(([pid])=>Object.entries(DU).some(([id,d])=>proj({...d,id},pid).pick));
-   if(quem.length>1){L.push('','Respostas por pessoa:');Object.entries(DU).sort((a,b)=>(a[1].ts||0)-(b[1].ts||0)).forEach(([id,d])=>{if(!quem.some(([pid])=>proj({...d,id},pid).pick))return;L.push('- '+(d.q||'Duelo')+': '+quem.map(([pid,n])=>{const x=proj({...d,id},pid);return n+' '+(x.pick==='a'?d.la:x.pick==='b'?d.lb:x.pick==='both'?'as duas':x.pick==='none'?'nenhuma':'sem resposta')}).join('; '))})}}
   {const fy=FONTS.filter(f=>fvv(f.id)==='yes'),fm2=FONTS.filter(f=>fvv(f.id)==='maybe'),fn=FONTS.filter(f=>fvv(f.id)==='no');
    if(fy.length||fm2.length||fn.length)L.push('','Fontes:','- Preferidas: '+(fy.map(f=>f.n).join(', ')||'nenhuma'),'- Em dúvida: '+(fm2.map(f=>f.n).join(', ')||'nenhuma'),'- Não gostou: '+(fn.map(f=>f.n).join(', ')||'nenhuma'))}
   const notes=rs.filter(r=>r.note);if(notes.length)L.push('','Anotações:',...notes.map(r=>'- '+(r.cap||catT(r.cat))+': '+r.note));
   if(L.length<=3)L.push('Nada respondido ainda.');
   return L.join('\n')}
-$('#sum').onclick=()=>{$('#panel').classList.remove('wide');
-  const rs=refs(),t=tally(),wt=whyTally(),ul=a=>a.length?h('ul',{},a.map(x=>h('li',{},x))):h('p',{style:'color:var(--mute);margin:0'},'Nada ainda.');
-  const fm=m=>Object.entries(m).filter(([,v])=>v>0).sort((a,b)=>b[1]-a[1]).map(([a,v])=>a+' ('+v+')');
-  $('#panel').replaceChildren(h('h2',{},'Resumo da sessão'),h('p',{style:'color:var(--mute);margin:0 0 12px'},'O que o cliente decidiu até agora. Copie para o doc do brandbook.'),
-    h('div',{class:'row'},h('button',{class:'kk-botao',onclick:copy},'Copiar resumo'),h('button',{class:'kk-botao kk-botao--2',onclick:()=>$('#ov').classList.remove('on')},'Fechar')),
-    h('h3',{},'Aprovadas'),ul(rs.filter(r=>r.vote==='yes'||duelSets().win.has(r.id)).map(r=>catT(r.cat)+': '+(r.cap||'sem legenda'))),
-    h('h3',{},'Lista de nunca'),ul(rs.filter(r=>r.vote==='no').map(r=>catT(r.cat)+': '+(r.cap||'sem legenda'))),
-    h('h3',{},'Gosta'),ul(fm(t.p)),h('h3',{},'Não gosta'),ul(fm(t.n)),h('h3',{},'Motivos das preferências'),ul(fm(wt)),
-    h('h3',{},'Fontes preferidas'),ul(FONTS.filter(f=>fvv(f.id)==='yes').map(f=>f.n)),h('h3',{},'Fontes que não gostou'),ul(FONTS.filter(f=>fvv(f.id)==='no').map(f=>f.n)));
-  $('#ov').classList.add('on')};
-$('#ov').addEventListener('click',e=>{if(e.target.id==='ov')$('#ov').classList.remove('on')});
+let summaryOpen=false,summaryMode='sintese';
+try{summaryMode=localStorage.getItem('mb-summary-mode')==='anterior'?'anterior':'sintese'}catch(e){}
+function setSummaryMode(mode){summaryMode=mode;try{localStorage.setItem('mb-summary-mode',mode)}catch(e){}openSummary();if(view==='moodboard')renderBoard()}
+function summaryText(){return summaryMode==='anterior'?legacySummaryText():synthesisText()}
+function closeSummary(){summaryOpen=false;$('#ov').classList.remove('on')}
+function openSummary(){
+  summaryOpen=true;
+  $('#panel').classList.remove('wide');
+  $('#panel').replaceChildren(h('h2',{},summaryMode==='anterior'?'Resumo anterior':'Síntese da sessão'),
+    h('p',{class:'kk-apoio'},'Preferências e anotações para orientar o brandbook.'),
+    h('div',{class:'row',style:'margin:16px 0'},
+      h('button',{class:'kk-botao',onclick:copy},'Copiar '+(summaryMode==='anterior'?'resumo':'síntese')),
+      h('button',{class:'kk-botao kk-botao--2',onclick:()=>setSummaryMode(summaryMode==='anterior'?'sintese':'anterior')},summaryMode==='anterior'?'Voltar à síntese':'Ver resumo anterior'),
+      h('button',{class:'kk-botao kk-botao--2',onclick:closeSummary},'Fechar')),
+    summaryMode==='anterior'?h('pre',{style:'white-space:pre-wrap;font:inherit;line-height:1.6'},legacySummaryText()):synthesisView());
+  $('#ov').classList.add('on');
+}
+$('#sum').onclick=openSummary;
+$('#ov').addEventListener('click',e=>{if(e.target.id==='ov')closeSummary()});
 async function copy(){const tx=summaryText();try{await navigator.clipboard.writeText(tx);toast('Resumo copiado')}catch(e){const ta=h('textarea',{style:'position:fixed;opacity:0'});ta.value=tx;document.body.append(ta);ta.select();try{document.execCommand('copy');toast('Resumo copiado')}catch(_){toast('Não foi possível copiar')}ta.remove()}}
 
 /* ---------- rotas e sync ---------- */
 function typing(){const a=document.activeElement;return a&&a.matches&&a.matches('main input,main textarea')}
-function render(){if(typing())return;({cores:renderCores,marca:renderMarca,biblioteca:renderLib,sessao:renderSess,fontes:renderFontes,moodboard:renderBoard})[view]()}
+function render(){if(summaryOpen)openSummary();if(typing())return;({cores:renderCores,marca:renderMarca,biblioteca:renderLib,sessao:renderSess,fontes:renderFontes,moodboard:renderBoard})[view]()}
 function route(){const k=['marca','biblioteca','sessao','cores','fontes','moodboard'].includes(location.hash.slice(1))?location.hash.slice(1):'marca';view=k;
   document.querySelectorAll('section.view').forEach(s=>s.classList.toggle('on',s.id==='v-'+k));
   document.querySelectorAll('#nav a').forEach(a=>{if(a.dataset.k===k){a.setAttribute('aria-current','page');a.classList.add('ativo')}else{a.removeAttribute('aria-current');a.classList.remove('ativo')}});
@@ -910,10 +992,8 @@ initFontes();window.addEventListener('hashchange',route);route();
   db.collection('pal2').onSnapshot(s=>{PAL={};s.docs.forEach(d=>{PAL[d.id]=d.data()});render()},()=>{});
   db.collection('attrs2').onSnapshot(s=>{ATT={};s.docs.forEach(d=>{ATT[d.id]=d.data()});render()},()=>{});
   db.collection('fvotes2').onSnapshot(s=>{FVT={};s.docs.forEach(d=>{FVT[d.id]=d.data()});render()},()=>{});
-  detectMe();seedReal();
+  seedReal();
 })();
-/* na nuvem: quem abre é reconhecido pelo nome do perfil; a primeira pessoa com permissão de edição carrega as referências iniciais */
-async function detectMe(){try{if(me)return;const u=await claude.use('user');if(!u)return;const m=await u.me();const nm=(m.name||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().trim().split(/\s+/)[0];const hit=['livia','mari','isa'].find(k=>nm.startsWith(k));if(hit)choose(hit)}catch(e){}}
 async function seedReal(){if(window.__shim)return;try{const u=await claude.use('user');if(!u||!(await u.canEdit()))return;
   const seed=await (await fetch('seed.json',{cache:'no-cache'})).json(),meta=db.doc('meta/seeded'),cur=await meta.get(),done=new Set(cur.exists?(cur.data().ids||[]):[]);let n=0,changed=false;
   for(const col in seed){if(col==='_remove')continue;for(const id in seed[col]){const key='seed:'+col+'/'+id;if(done.has(key))continue;

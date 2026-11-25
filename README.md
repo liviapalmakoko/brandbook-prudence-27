@@ -23,7 +23,7 @@ Seis telas, nesta ordem:
 
 Tudo fica **apenas no navegador de quem está usando** (IndexedDB). Nada é enviado a servidor.
 
-- Outra pessoa que abrir o link começa com a biblioteca vazia.
+- Outra pessoa que abrir o link recebe as referências iniciais, mas não as respostas salvas neste navegador.
 - Para levar o trabalho a outro computador ou navegador, use **Baixar backup** e depois **Carregar backup** lá.
 - Limpar os dados do site no navegador apaga a biblioteca. Baixe um backup antes da sessão.
 
@@ -41,3 +41,20 @@ O endereço fica `https://liviapalmakoko.github.io/brandbook-prudence-27/`.
 ## Visual
 
 O visual segue o Design System interno da Koko (https://design-system-interno.sites.koko.ag/). A pasta `kit/` vem do kit oficial (koko.css, koko.js e a marca) e não se edita aqui. O app só usa as variáveis do kit.
+
+## Síntese da sessão
+
+A reunião registra uma única resposta do cliente. As sugestões da Koko continuam nos duelos e no comparativo final. Registros antigos de outros participantes são preservados no armazenamento, mas não entram no resultado atual.
+
+O botão **Resumo** reúne **Direção escolhida**, **O que aproveitar**, **O que evitar** e **Pendências**, usando somente votos, motivos e anotações existentes. Não há perguntas adicionais. Preferir uma referência não aprova o brandbook; perder um duelo não equivale a rejeição explícita. As sugestões Koko ficam separadas das respostas do cliente. A síntese também pode ser expandida na tela Moodboard.
+
+As notas dos duelos são salvas enquanto você escreve. A paleta calculada continua como sugestão; a síntese lembra de validar sua aplicação e as funções das fontes.
+
+## Voltar à versão anterior
+
+- No **Resumo**, **Ver resumo anterior** alterna para o resumo em lista. **Voltar à síntese** reativa o novo formato. Essa preferência fica neste navegador.
+- No rodapé, **Usar versão anterior** abre `versao-anterior.html`, com a interface anterior e um link para voltar à atual. Na versão independente, as duas páginas usam o mesmo IndexedDB e compartilham as respostas do cliente. Trocar de versão não apaga respostas.
+- **Zerar respostas** continua sendo uma ação separada, com confirmação. Não é necessário zerar nada para desfazer a mudança visual.
+- A versão original do código foi preservada na branch `backup/antes-da-sintese`. Para desfazer permanentemente esta atualização no repositório, reverta o commit da síntese com `git revert`, preservando o histórico.
+
+Validação: sintaxe dos scripts, casos de síntese (preferência, rejeição, ambos, nenhum, sugestões, notas e pendências), sessão no navegador e alternância entre as versões preservando votos e notas.
