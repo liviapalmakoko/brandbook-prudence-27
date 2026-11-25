@@ -23,8 +23,8 @@ Cinco telas no menu, nesta ordem (o cliente se concentra nos duelos da Sessão; 
 Tudo fica **apenas no navegador de quem está usando** (IndexedDB). Nada é enviado a servidor.
 
 - Outra pessoa que abrir o link recebe as referências iniciais, mas não as respostas salvas neste navegador.
-- Para levar o trabalho a outro computador ou navegador, use **Baixar backup** e depois **Carregar backup** lá.
-- Limpar os dados do site no navegador apaga a biblioteca. Baixe um backup antes da sessão.
+- As respostas ficam só neste navegador. Para o cliente ver o resultado sem poder alterar nada, use **Link de leitura** (no topo, ao lado de Resumo): ele copia um link com as respostas dentro, que abre só o Moodboard em modo de leitura.
+- Limpar os dados do site no navegador apaga as respostas e a biblioteca. Gere o link de leitura ao fim da sessão para guardar uma cópia.
 
 ## Referências iniciais
 
