@@ -58,3 +58,11 @@ As notas dos duelos são salvas enquanto você escreve. A paleta calculada conti
 - A versão original do código foi preservada na branch `backup/antes-da-sintese`. Para desfazer permanentemente esta atualização no repositório, reverta o commit da síntese com `git revert`, preservando o histórico.
 
 Validação: sintaxe dos scripts, casos de síntese (preferência, rejeição, ambos, nenhum, sugestões, notas e pendências), sessão no navegador e alternância entre as versões preservando votos e notas.
+
+## Revisão visual dos duelos
+
+Os 19 pares foram conferidos visualmente em 25/11/2026. Pergunta, legendas e contexto são mantidos em `session-review.js`, aplicado também a bibliotecas já carregadas. `seed.json` inclui os mesmos metadados para novos acessos.
+
+Foram corrigidos os contrastes de enquadramento do casal, rosto visível, iluminação, presença de uma ou duas pessoas, gestos de sensualidade e composição das camisetas. Os contextos orientam a criação, sem converter uma preferência em uma regra definitiva.
+
+Quando muda a imagem ou o sentido da pergunta, `answerRevision` separa as novas respostas das anteriores. Votos e sugestões Koko antigos permanecem armazenados e no backup, mas não são reaproveitados automaticamente no novo par. Não é preciso zerar as respostas para receber as referências revisadas.
