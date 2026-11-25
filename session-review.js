@@ -127,5 +127,239 @@ const SESSION_REVIEW={
     "la": "Colagem em blocos",
     "lb": "Tipografia com traço de spray",
     "ctx": "Orienta o acabamento gráfico da estampa, além da organização das imagens."
+  },
+  "seed-duelo-c1": {
+    "a": "seed-nova-cores-01",
+    "b": "seed-nova-cores-03",
+    "q": "Como o acento aparece sobre o preto e branco?",
+    "la": "Vivo sobre o preto",
+    "lb": "Suave sobre a base clara",
+    "ctx": "Orienta o tom do acento no digital. Preto, cinza e branco seguem como base; a cor entra só como detalhe.",
+    "answerRevision": "cor-v2",
+    "pal": {
+      "a": {
+        "c": [
+          "#000002",
+          "#bcfa71",
+          "#726ba0"
+        ]
+      },
+      "b": {
+        "c": [
+          "#ebede0",
+          "#5c5a5c",
+          "#010101"
+        ]
+      }
+    }
+  },
+  "seed-duelo-c2": {
+    "a": "seed-nova-cores-04",
+    "b": "seed-nova-cores-05",
+    "q": "Qual dupla de acento explorar?",
+    "la": "Fúcsia e cítrico",
+    "lb": "Violeta e lima",
+    "ctx": "Orienta a dupla de acento para o digital. A cor aparece só como detalhe: compare as cores de destaque, não o layout.",
+    "answerRevision": "cor-v2",
+    "pal": {
+      "a": {
+        "c": [
+          "#000000",
+          "#ffffff",
+          "#f037a5",
+          "#cdf564"
+        ]
+      },
+      "b": {
+        "c": [
+          "#000000",
+          "#ffffff",
+          "#7d39eb",
+          "#c6ff33"
+        ]
+      }
+    }
+  },
+  "seed-duelo-c3": {
+    "a": "seed-nova-cores-09",
+    "b": "seed-nova-cores-06",
+    "q": "Que intensidade o acento deve ter?",
+    "la": "Tons suaves",
+    "lb": "Cores fortes",
+    "ctx": "Orienta a força do acento quando ele aparece: pastéis discretos ou cores de alto impacto.",
+    "answerRevision": "cor-v2",
+    "pal": {
+      "a": {
+        "c": [
+          "#101010",
+          "#f3f3f3",
+          "#7d7d81",
+          "#c9c4cf"
+        ]
+      },
+      "b": {
+        "c": [
+          "#f54400",
+          "#28251c",
+          "#3b63e0",
+          "#c0a1cf"
+        ]
+      }
+    }
+  },
+  "seed-duelo-c4": {
+    "a": "seed-nova4-cores-60",
+    "b": "seed-nova4-cores-57",
+    "q": "Qual paleta completa explorar?",
+    "la": "Preto, cinza e branco, com lima",
+    "lb": "Carvão e creme, com amarelo",
+    "ctx": "Orienta a base e o acento juntos: preto, cinza e branco puros com lima, ou carvão e creme mais quentes com amarelo.",
+    "answerRevision": "rev-2",
+    "pal": {
+      "a": {
+        "c": [
+          "#000000",
+          "#575757",
+          "#f5f5f5",
+          "#d6f502"
+        ]
+      },
+      "b": {
+        "c": [
+          "#1c1c1c",
+          "#f5b700",
+          "#fff8e6"
+        ]
+      }
+    }
+  },
+  "seed-duelo-c5": {
+    "q": "O acento é quente ou frio?",
+    "la": "Quente: tangerina e berinjela",
+    "lb": "Frio: ciano e violeta",
+    "ctx": "Orienta a temperatura do acento no digital. Preto, cinza e branco seguem como base; compare só a temperatura das cores.",
+    "a": "seed-nova4-cores-46",
+    "b": "seed-nova4-cores-53",
+    "pal": {
+      "a": {
+        "c": [
+          "#fe7002",
+          "#562882"
+        ]
+      },
+      "b": {
+        "c": [
+          "#01ffff",
+          "#7e35e4"
+        ]
+      }
+    }
+  },
+  "seed-duelo-c6": {
+    "q": "O acento é chapado ou em degradê?",
+    "la": "Chapado, sem transição",
+    "lb": "Degradê de uma cor para outra",
+    "ctx": "Orienta o acabamento do acento: cor lisa ou degradê limpo, sem granulado.",
+    "a": "seed-nova4-cores-22",
+    "b": "seed-nova4-cores-30",
+    "pal": {
+      "a": {
+        "c": [
+          "#1d1d1d",
+          "#fa047f",
+          "#7e0c48"
+        ]
+      },
+      "b": {
+        "c": [
+          "#0a0a0a",
+          "#f304ef",
+          "#fff60b"
+        ],
+        "g": 1
+      }
+    }
+  },
+  "seed-duelo-c7": {
+    "q": "Um acento só ou vários?",
+    "la": "Um único acento",
+    "lb": "Vários acentos",
+    "ctx": "Orienta o tamanho da paleta de destaque. Preto, cinza e branco continuam sendo a base nas duas.",
+    "a": "seed-nova4-cores-60",
+    "b": "seed-nova4-cores-55",
+    "pal": {
+      "a": {
+        "c": [
+          "#000000",
+          "#575757",
+          "#f5f5f5",
+          "#d6f502"
+        ]
+      },
+      "b": {
+        "c": [
+          "#0b0a0f",
+          "#8037ef",
+          "#2250fc",
+          "#c5ee07",
+          "#c2ccc5"
+        ]
+      }
+    }
+  },
+  "seed-duelo-c8": {
+    "q": "Qual cor, se for um acento só?",
+    "la": "Magenta, perto do rosa da marca",
+    "lb": "Lima",
+    "ctx": "Orienta a cor única de destaque. O magenta dialoga com o rosa usado nos produtos femininos da Prudence; o lima é uma cor nova.",
+    "a": "seed-nova4-cores-22",
+    "b": "seed-nova4-cores-60",
+    "pal": {
+      "a": {
+        "c": [
+          "#1d1d1d",
+          "#fa047f",
+          "#7e0c48"
+        ]
+      },
+      "b": {
+        "c": [
+          "#000000",
+          "#575757",
+          "#f5f5f5",
+          "#d6f502"
+        ]
+      }
+    }
+  },
+  "seed-duelo-c9": {
+    "q": "A cor entra na letra ou no fundo?",
+    "la": "Na letra, sobre o preto",
+    "lb": "No fundo, com letra escura",
+    "ctx": "Orienta onde a cor aparece em peças com texto: só nas letras, sobre o preto, ou no fundo, com letras escuras. Compare onde a cor está, não o desenho.",
+    "a": "seed-nova4-cores-28",
+    "b": "seed-nova4-cores-40",
+    "pal": {
+      "a": {
+        "txt": 1,
+        "bg": "#0b0b0b",
+        "fg": "#f037a5"
+      },
+      "b": {
+        "txt": 1,
+        "bg": "#c6ff33",
+        "fg": "#2a2bd6"
+      }
+    },
+    "answerRevision": "rev-2"
+  },
+  "seed-duelo-f3": {
+    "q": "Que luz explorar nas fotos?",
+    "la": "Luz natural, com sombras na pele",
+    "lb": "Luz colorida sobre o preto",
+    "ctx": "Orienta a iluminação das fotografias: luz e sombra naturais, com a pele como protagonista, ou luz de cor (vermelha) sobre fundo preto.",
+    "a": "seed-nova3-foto-04",
+    "b": "seed-nova3-cores-17",
+    "answerRevision": "rev-2"
   }
 };

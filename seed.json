@@ -752,7 +752,7 @@
     },
     "seed-nova-aplicacoes-01": {
       "url": "refs/novas2/aplicacoes-01.jpg",
-      "cat": "clima",
+      "cat": "graf",
       "cap": "Rosto com letras grandes sobre a foto",
       "vote": "",
       "asp": {},
@@ -761,7 +761,7 @@
     },
     "seed-nova-aplicacoes-02": {
       "url": "refs/novas2/aplicacoes-02.jpg",
-      "cat": "clima",
+      "cat": "graf",
       "cap": "Foto em preto e branco com forma amarela",
       "vote": "",
       "asp": {},
@@ -770,7 +770,7 @@
     },
     "seed-nova-aplicacoes-03": {
       "url": "refs/novas2/aplicacoes-03.jpg",
-      "cat": "clima",
+      "cat": "graf",
       "cap": "Rosto com estrela rosa",
       "vote": "",
       "asp": {},
@@ -779,7 +779,7 @@
     },
     "seed-nova-aplicacoes-04": {
       "url": "refs/novas2/aplicacoes-04.jpg",
-      "cat": "clima",
+      "cat": "graf",
       "cap": "Cartaz só de tipografia em amarelo",
       "vote": "",
       "asp": {},
@@ -788,7 +788,7 @@
     },
     "seed-nova-aplicacoes-05": {
       "url": "refs/novas2/aplicacoes-05.jpg",
-      "cat": "clima",
+      "cat": "graf",
       "cap": "Olhos em retícula rosa e vermelha",
       "vote": "",
       "asp": {},
@@ -797,7 +797,7 @@
     },
     "seed-nova-aplicacoes-06": {
       "url": "refs/novas2/aplicacoes-06.jpg",
-      "cat": "clima",
+      "cat": "graf",
       "cap": "Foto em retícula com estrela",
       "vote": "",
       "asp": {},
@@ -841,6 +841,750 @@
       "asp": {},
       "note": "",
       "ts": 1700000600090
+    },
+    "seed-nova3-cores-11": {
+      "url": "refs/novas3/cores-11.jpg",
+      "cat": "cor",
+      "cap": "Toranja sobre azul klein, com calda",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000600001
+    },
+    "seed-nova3-cores-12": {
+      "url": "refs/novas3/cores-12.jpg",
+      "cat": "cor",
+      "cap": "Anúncio rosa e preto com sutiã de listras",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000600002
+    },
+    "seed-nova3-cores-13": {
+      "url": "refs/novas3/cores-13.jpg",
+      "cat": "cor",
+      "cap": "Morango em close, vermelho saturado",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000600003
+    },
+    "seed-nova3-cores-14": {
+      "url": "refs/novas3/cores-14.jpg",
+      "cat": "cor",
+      "cap": "Romã em textura vermelha com luz",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000600004
+    },
+    "seed-nova3-cores-15": {
+      "url": "refs/novas3/cores-15.jpg",
+      "cat": "cor",
+      "cap": "Frutas vermelhas escuras e brilhantes",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000600005
+    },
+    "seed-nova3-cores-16": {
+      "url": "refs/novas3/cores-16.jpg",
+      "cat": "cor",
+      "cap": "Rosto em sombra com luz vermelha",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000600006
+    },
+    "seed-nova3-cores-17": {
+      "url": "refs/novas3/cores-17.jpg",
+      "cat": "cor",
+      "cap": "Costas em luz vermelha sobre preto",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000600007
+    },
+    "seed-nova3-cores-18": {
+      "url": "refs/novas3/cores-18.jpg",
+      "cat": "cor",
+      "cap": "Degradê vermelho em movimento",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000600008
+    },
+    "seed-nova3-cores-19": {
+      "url": "refs/novas3/cores-19.jpg",
+      "cat": "cor",
+      "cap": "Degradê laranja que cai no preto",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000600009
+    },
+    "seed-nova3-cores-20": {
+      "url": "refs/novas3/cores-20.jpg",
+      "cat": "cor",
+      "cap": "Colher com sementes de romã",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000600010
+    },
+    "seed-nova3-cores-21": {
+      "url": "refs/novas3/cores-21.jpg",
+      "cat": "cor",
+      "cap": "Calda vermelha com frutas sobre branco",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000600011
+    },
+    "seed-nova3-foto-01": {
+      "url": "refs/novas3/foto-ref-01.jpg",
+      "cat": "foto",
+      "cap": "Mãos com espuma de sabão",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000600101
+    },
+    "seed-nova3-foto-02": {
+      "url": "refs/novas3/foto-ref-02.jpg",
+      "cat": "foto",
+      "cap": "Costas e braço sobre fundo claro",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000600102
+    },
+    "seed-nova3-foto-03": {
+      "url": "refs/novas3/foto-ref-03.jpg",
+      "cat": "foto",
+      "cap": "Pescoço e ombro com pele brilhante",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000600103
+    },
+    "seed-nova3-foto-04": {
+      "url": "refs/novas3/foto-ref-04.jpg",
+      "cat": "foto",
+      "cap": "Corpo com sombras de luz na pele",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000600104
+    },
+    "seed-nova3-foto-05": {
+      "url": "refs/novas3/foto-ref-05.jpg",
+      "cat": "foto",
+      "cap": "Rosto com a mão cobrindo o olho e gotas de água",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000600105
+    },
+    "seed-nova3-foto-06": {
+      "url": "refs/novas3/foto-ref-06.jpg",
+      "cat": "foto",
+      "cap": "Costas com espuma no banho",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000600106
+    },
+    "seed-nova3-foto-07": {
+      "url": "refs/novas3/foto-ref-07.jpg",
+      "cat": "foto",
+      "cap": "Costas sob o chuveiro em preto e branco",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000600107
+    },
+    "seed-nova4-cores-22": {
+      "url": "refs/novas4/cores-22.jpg",
+      "cat": "cor",
+      "cap": "Magenta e carvão em cartões",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000700001
+    },
+    "seed-nova4-cores-23": {
+      "url": "refs/novas4/cores-23.jpg",
+      "cat": "cor",
+      "cap": "Paleta noite, rosa e limão",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000700002
+    },
+    "seed-nova4-cores-24": {
+      "url": "refs/novas4/cores-24.jpg",
+      "cat": "cor",
+      "cap": "Fúcsia, índigo, lima e preto",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000700003
+    },
+    "seed-nova4-cores-25": {
+      "url": "refs/novas4/cores-25.jpg",
+      "cat": "cor",
+      "cap": "Faixas verticais em azul klein, cítrico, fúcsia e preto",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000700004
+    },
+    "seed-nova4-cores-26": {
+      "url": "refs/novas4/cores-26.jpg",
+      "cat": "cor",
+      "cap": "Cartões laranja, lima, azul, lilás e preto",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000700005
+    },
+    "seed-nova4-cores-27": {
+      "url": "refs/novas4/cores-27.jpg",
+      "cat": "cor",
+      "cap": "Letras empilhadas em lima, azul e laranja",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000700006
+    },
+    "seed-nova4-cores-28": {
+      "url": "refs/novas4/cores-28.jpg",
+      "cat": "cor",
+      "cap": "Tipografia distorcida em rosa e preto",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000700007
+    },
+    "seed-nova4-cores-29": {
+      "url": "refs/novas4/cores-29.jpg",
+      "cat": "cor",
+      "cap": "Degradê dourado, laranja e vinho",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000700008
+    },
+    "seed-nova4-cores-30": {
+      "url": "refs/novas4/cores-30.jpg",
+      "cat": "cor",
+      "cap": "Degradê magenta e amarelo sobre preto",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000700009
+    },
+    "seed-nova4-cores-31": {
+      "url": "refs/novas4/cores-31.jpg",
+      "cat": "cor",
+      "cap": "Degradê violeta e verde-água",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000700010
+    },
+    "seed-nova4-cores-32": {
+      "url": "refs/novas4/cores-32.jpg",
+      "cat": "cor",
+      "cap": "Degradê rosa e laranja sobre violeta",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000700011
+    },
+    "seed-nova4-cores-33": {
+      "url": "refs/novas4/cores-33.jpg",
+      "cat": "cor",
+      "cap": "Forma rosa e azul com brilho",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000700012
+    },
+    "seed-nova4-cores-34": {
+      "url": "refs/novas4/cores-34.jpg",
+      "cat": "cor",
+      "cap": "Degradê em raios azuis e laranja",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000700013
+    },
+    "seed-nova4-cores-35": {
+      "url": "refs/novas4/cores-35.jpg",
+      "cat": "cor",
+      "cap": "Paleta laranja, preto, vinho e cinza",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000700014
+    },
+    "seed-nova4-cores-36": {
+      "url": "refs/novas4/cores-36.jpg",
+      "cat": "cor",
+      "cap": "Faixas de degradê em laranja, vermelho e azul",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000700015
+    },
+    "seed-nova4-cores-37": {
+      "url": "refs/novas4/cores-37.jpg",
+      "cat": "cor",
+      "cap": "Degradê ouro, vinho e laranja",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000700016
+    },
+    "seed-nova4-cores-38": {
+      "url": "refs/novas4/cores-38.jpg",
+      "cat": "cor",
+      "cap": "Verde-limão e vermelho vibrante",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000700017
+    },
+    "seed-nova4-cores-39": {
+      "url": "refs/novas4/cores-39.jpg",
+      "cat": "cor",
+      "cap": "Letras vermelhas sobre azul puro",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000700018
+    },
+    "seed-nova4-cores-40": {
+      "url": "refs/novas4/cores-40.jpg",
+      "cat": "cor",
+      "cap": "Letras azuis sobre lima",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000700019
+    },
+    "seed-nova4-cores-41": {
+      "url": "refs/novas4/cores-41.jpg",
+      "cat": "cor",
+      "cap": "Letras magenta sobre amarelo",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000700020
+    },
+    "seed-nova4-cores-42": {
+      "url": "refs/novas4/cores-42.jpg",
+      "cat": "cor",
+      "cap": "Letras laranja sobre magenta",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000700021
+    },
+    "seed-nova4-cores-43": {
+      "url": "refs/novas4/cores-43.jpg",
+      "cat": "cor",
+      "cap": "Letras lima sobre magenta",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000700022
+    },
+    "seed-nova4-cores-44": {
+      "url": "refs/novas4/cores-44.jpg",
+      "cat": "cor",
+      "cap": "Cartão vermelho escuro com degradê",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000700023
+    },
+    "seed-nova4-cores-45": {
+      "url": "refs/novas4/cores-45.jpg",
+      "cat": "cor",
+      "cap": "Azul-gelo e vermelho berry",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000700024
+    },
+    "seed-nova4-cores-46": {
+      "url": "refs/novas4/cores-46.jpg",
+      "cat": "cor",
+      "cap": "Tangerina e berinjela",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000700025
+    },
+    "seed-nova4-cores-47": {
+      "url": "refs/novas4/cores-47.jpg",
+      "cat": "cor",
+      "cap": "Rosa plástico e azul-gelo",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000700026
+    },
+    "seed-nova4-cores-48": {
+      "url": "refs/novas4/cores-48.jpg",
+      "cat": "cor",
+      "cap": "Lima e violeta em letras condensadas",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000700027
+    },
+    "seed-nova4-cores-49": {
+      "url": "refs/novas4/cores-49.jpg",
+      "cat": "cor",
+      "cap": "Letras lima sobre azul cobalto",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000700028
+    },
+    "seed-nova4-cores-50": {
+      "url": "refs/novas4/cores-50.jpg",
+      "cat": "cor",
+      "cap": "Lava, lima e verde sobre fundo verde",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000700029
+    },
+    "seed-nova4-cores-51": {
+      "url": "refs/novas4/cores-51.jpg",
+      "cat": "cor",
+      "cap": "Letras repetidas em rosa, lima e preto",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000700030
+    },
+    "seed-nova4-cores-52": {
+      "url": "refs/novas4/cores-52.jpg",
+      "cat": "cor",
+      "cap": "Grade de círculos em cores primárias",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000700031
+    },
+    "seed-nova4-cores-53": {
+      "url": "refs/novas4/cores-53.jpg",
+      "cat": "cor",
+      "cap": "Ciano e violeta em letras condensadas",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000700032
+    },
+    "seed-nova4-cores-54": {
+      "url": "refs/novas4/cores-54.jpg",
+      "cat": "cor",
+      "cap": "Cartaz vermelho com tipografia e fotos",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000700033
+    },
+    "seed-nova4-cores-55": {
+      "url": "refs/novas4/cores-55.jpg",
+      "cat": "cor",
+      "cap": "Azul cobalto, rosa, lima, violeta e cinza",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000700034
+    },
+    "seed-nova4-cores-56": {
+      "url": "refs/novas4/cores-56.jpg",
+      "cat": "cor",
+      "cap": "Vermelho, preto e bege em cartões",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000700035
+    },
+    "seed-nova4-cores-57": {
+      "url": "refs/novas4/cores-57.jpg",
+      "cat": "cor",
+      "cap": "Carvão, amarelo e creme",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000700036
+    },
+    "seed-nova4-cores-58": {
+      "url": "refs/novas4/cores-58.jpg",
+      "cat": "cor",
+      "cap": "Barras de luz em tons quentes",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000700037
+    },
+    "seed-nova4-cores-59": {
+      "url": "refs/novas4/cores-59.jpg",
+      "cat": "cor",
+      "cap": "Barras de luz em rosa e azul",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000700038
+    },
+    "seed-nova4-cores-60": {
+      "url": "refs/novas4/cores-60.jpg",
+      "cat": "cor",
+      "cap": "Preto, lima, cinza e branco",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000700039
+    },
+    "seed-nova4-cores-61": {
+      "url": "refs/novas4/cores-61.jpg",
+      "cat": "cor",
+      "cap": "Paleta rosa, preto, lima e bege",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000700040
+    },
+    "seed-nova4-cores-62": {
+      "url": "refs/novas4/cores-62.jpg",
+      "cat": "cor",
+      "cap": "Pontos de cor sobre fundo preto",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000700041
+    },
+    "seed-nova5-foto-01": {
+      "url": "refs/novas5/foto-leveza-01.jpg",
+      "cat": "foto",
+      "cap": "Pexels · Casal de homens rindo na cama",
+      "link": "https://www.pexels.com/photo/13334627/",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000800001
+    },
+    "seed-nova5-foto-02": {
+      "url": "refs/novas5/foto-leveza-02.jpg",
+      "cat": "foto",
+      "cap": "Pexels · Duas mulheres brincando na cama",
+      "link": "https://www.pexels.com/photo/4759936/",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000800002
+    },
+    "seed-nova5-foto-03": {
+      "url": "refs/novas5/foto-leveza-03.jpg",
+      "cat": "foto",
+      "cap": "Pexels · Duas amigas rindo, selfie na cama",
+      "link": "https://www.pexels.com/photo/6706984/",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000800003
+    },
+    "seed-nova5-foto-04": {
+      "url": "refs/novas5/foto-leveza-04.jpg",
+      "cat": "foto",
+      "cap": "Pexels · Amigos deitados na grama, rindo",
+      "link": "https://www.pexels.com/photo/8380089/",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000800004
+    },
+    "seed-nova5-foto-05": {
+      "url": "refs/novas5/foto-leveza-05.jpg",
+      "cat": "foto",
+      "cap": "Pexels · Pessoa rindo sentada na cama",
+      "link": "https://www.pexels.com/photo/4759927/",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000800005
+    },
+    "seed-nova5-foto-06": {
+      "url": "refs/novas5/foto-leveza-06.jpg",
+      "cat": "foto",
+      "cap": "Pexels · Amigas rindo com o celular",
+      "link": "https://www.pexels.com/photo/3764496/",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000800006
+    },
+    "seed-letra-godger": {
+      "url": "refs/letras/godger.jpg",
+      "cat": "tipo",
+      "cap": "Estilo de letra · Condensada, alta e estreita",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000850000
+    },
+    "seed-letra-greta": {
+      "url": "refs/letras/greta.jpg",
+      "cat": "tipo",
+      "cap": "Estilo de letra · Larga, pesada e redonda",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000850001
+    },
+    "seed-letra-helvetica": {
+      "url": "refs/letras/helvetica.jpg",
+      "cat": "tipo",
+      "cap": "Estilo de letra · Grotesca neutra, tipo Helvetica Bold",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000850002
+    },
+    "seed-letra-leaguespartan": {
+      "url": "refs/letras/leaguespartan.jpg",
+      "cat": "tipo",
+      "cap": "Estilo de letra · Geométrica, com formas redondas",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000850003
+    },
+    "seed-letra-urbanist": {
+      "url": "refs/letras/urbanist.jpg",
+      "cat": "tipo",
+      "cap": "Estilo de letra · Leve e arejada, minúsculas",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000850004
+    },
+    "seed-letra-brandnew": {
+      "url": "refs/letras/brandnew.jpg",
+      "cat": "tipo",
+      "cap": "Estilo de letra · Pesada e compacta, entrelinha justa",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000850005
+    },
+    "seed-letra-lesssleep": {
+      "url": "refs/letras/lesssleep.jpg",
+      "cat": "tipo",
+      "cap": "Estilo de letra · Caixa alta, condensada e densa",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000850006
+    },
+    "seed-letra-glyke": {
+      "url": "refs/letras/glyke.jpg",
+      "cat": "tipo",
+      "cap": "Estilo de letra · Caixa baixa e alta, formas arredondadas",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000850007
+    },
+    "seed-letra-django": {
+      "url": "refs/letras/django.jpg",
+      "cat": "tipo",
+      "cap": "Estilo de letra · Retrô, ilustrada, com personalidade",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000850008
+    },
+    "seed-letra-givonic": {
+      "url": "refs/letras/givonic.jpg",
+      "cat": "tipo",
+      "cap": "Estilo de letra · Limpa e minimalista",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000850009
+    },
+    "seed-letra-djingo": {
+      "url": "refs/letras/djingo.jpg",
+      "cat": "tipo",
+      "cap": "Estilo de letra · Extra condensada em caixa alta",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000850010
+    },
+    "seed-letra-earlsans": {
+      "url": "refs/letras/earlsans.jpg",
+      "cat": "tipo",
+      "cap": "Estilo de letra · Família com muitos pesos",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000850011
+    },
+    "seed-letra-unearth": {
+      "url": "refs/letras/unearth.jpg",
+      "cat": "tipo",
+      "cap": "Estilo de letra · Minúsculas de traço manual",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000850012
+    },
+    "seed-letra-arketype": {
+      "url": "refs/letras/arketype.jpg",
+      "cat": "tipo",
+      "cap": "Estilo de letra · Grotesca larga editorial",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000850013
+    },
+    "seed-letra-sora": {
+      "url": "refs/letras/sora.jpg",
+      "cat": "tipo",
+      "cap": "Estilo de letra · Geométrica suave",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000850014
+    },
+    "seed-letra-fortius": {
+      "url": "refs/letras/fortius.jpg",
+      "cat": "tipo",
+      "cap": "Estilo de letra · Geométrica ampla e legível",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000850015
+    },
+    "seed-letra-haett": {
+      "url": "refs/novas/haettenschweiler.jpg",
+      "cat": "tipo",
+      "cap": "Estilo de letra · Condensada muito pesada",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000850100
     }
   },
   "_remove": {
@@ -1013,7 +1757,19 @@
       "seed-tipo-14",
       "seed-tipo-15",
       "seed-tipo-16",
-      "seed-tipo-17"
+      "seed-tipo-17",
+      "seed-estilo-t1a",
+      "seed-estilo-t1b",
+      "seed-estilo-t2a",
+      "seed-estilo-t2b",
+      "seed-estilo-t3a",
+      "seed-estilo-t3b",
+      "seed-estilo-t4a",
+      "seed-estilo-t4b",
+      "seed-estilo-t5a",
+      "seed-estilo-t5b",
+      "seed-estilo-t6a",
+      "seed-estilo-t6b"
     ],
     "duels2": [
       "seed-duelo-08",
@@ -1036,7 +1792,13 @@
       "seed-duelo-31",
       "seed-duelo-33",
       "seed-duelo-34",
-      "seed-duelo-35"
+      "seed-duelo-35",
+      "seed-duelo-t1",
+      "seed-duelo-t2",
+      "seed-duelo-t3",
+      "seed-duelo-t4",
+      "seed-duelo-t5",
+      "seed-duelo-t6"
     ]
   },
   "duels2": {
@@ -1274,6 +2036,342 @@
       "why": [],
       "note": "",
       "ts": 918.2
+    },
+    "seed-duelo-c1": {
+      "a": "seed-nova-cores-01",
+      "b": "seed-nova-cores-03",
+      "q": "Como o acento aparece sobre o preto e branco?",
+      "la": "Vivo sobre o preto",
+      "lb": "Suave sobre a base clara",
+      "pick": "",
+      "why": [],
+      "note": "",
+      "ts": 1700000900100,
+      "ctx": "Orienta o tom do acento no digital. Preto, cinza e branco seguem como base; a cor entra só como detalhe."
+    },
+    "seed-duelo-c2": {
+      "a": "seed-nova-cores-04",
+      "b": "seed-nova-cores-05",
+      "q": "Qual dupla de acento explorar?",
+      "la": "Fúcsia e cítrico",
+      "lb": "Violeta e lima",
+      "pick": "",
+      "why": [],
+      "note": "",
+      "ts": 1700000900101,
+      "ctx": "Orienta a dupla de acento para o digital. A cor aparece só como detalhe: compare as cores de destaque, não o layout."
+    },
+    "seed-duelo-c3": {
+      "a": "seed-nova-cores-09",
+      "b": "seed-nova-cores-06",
+      "q": "Que intensidade o acento deve ter?",
+      "la": "Tons suaves",
+      "lb": "Cores fortes",
+      "pick": "",
+      "why": [],
+      "note": "",
+      "ts": 1700000900102,
+      "ctx": "Orienta a força do acento quando ele aparece: pastéis discretos ou cores de alto impacto."
+    },
+    "seed-duelo-c4": {
+      "a": "seed-nova4-cores-60",
+      "b": "seed-nova4-cores-57",
+      "q": "Qual paleta completa explorar?",
+      "la": "Preto, cinza e branco, com lima",
+      "lb": "Carvão e creme, com amarelo",
+      "pick": "",
+      "why": [],
+      "note": "",
+      "ts": 1700000900103,
+      "ctx": "Orienta a base e o acento juntos: preto, cinza e branco puros com lima, ou carvão e creme mais quentes com amarelo."
+    },
+    "seed-duelo-c5": {
+      "a": "seed-nova4-cores-46",
+      "b": "seed-nova4-cores-53",
+      "q": "O acento é quente ou frio?",
+      "la": "Quente: tangerina e berinjela",
+      "lb": "Frio: ciano e violeta",
+      "pick": "",
+      "why": [],
+      "note": "",
+      "ts": 1700000900104,
+      "ctx": "Orienta a temperatura do acento no digital. Preto, cinza e branco seguem como base; compare só a temperatura das cores."
+    },
+    "seed-duelo-c6": {
+      "a": "seed-nova4-cores-22",
+      "b": "seed-nova4-cores-30",
+      "q": "O acento é chapado ou em degradê?",
+      "la": "Chapado, sem transição",
+      "lb": "Degradê de uma cor para outra",
+      "pick": "",
+      "why": [],
+      "note": "",
+      "ts": 1700000900105,
+      "ctx": "Orienta o acabamento do acento: cor lisa ou degradê limpo, sem granulado."
+    },
+    "seed-duelo-c7": {
+      "a": "seed-nova4-cores-60",
+      "b": "seed-nova4-cores-55",
+      "q": "Um acento só ou vários?",
+      "la": "Um único acento",
+      "lb": "Vários acentos",
+      "pick": "",
+      "why": [],
+      "note": "",
+      "ts": 1700000900106,
+      "ctx": "Orienta o tamanho da paleta de destaque. Preto, cinza e branco continuam sendo a base nas duas."
+    },
+    "seed-duelo-c8": {
+      "a": "seed-nova4-cores-22",
+      "b": "seed-nova4-cores-60",
+      "q": "Qual cor, se for um acento só?",
+      "la": "Magenta, perto do rosa da marca",
+      "lb": "Lima",
+      "pick": "",
+      "why": [],
+      "note": "",
+      "ts": 1700000900107,
+      "ctx": "Orienta a cor única de destaque. O magenta dialoga com o rosa usado nos produtos femininos da Prudence; o lima é uma cor nova."
+    },
+    "seed-duelo-c9": {
+      "a": "seed-nova4-cores-28",
+      "b": "seed-nova4-cores-40",
+      "q": "A cor entra na letra ou no fundo?",
+      "la": "Na letra, sobre o preto",
+      "lb": "No fundo, com letra escura",
+      "pick": "",
+      "why": [],
+      "note": "",
+      "ts": 1700000900108,
+      "ctx": "Orienta onde a cor aparece em peças com texto: só nas letras, sobre o preto, ou no fundo, com letras escuras. Compare onde a cor está, não o desenho."
+    },
+    "seed-duelo-f1": {
+      "a": "seed-nova3-foto-07",
+      "b": "seed-nova3-foto-03",
+      "q": "Foto em preto e branco ou em cor?",
+      "la": "Preto e branco",
+      "lb": "Cor, com tom quente na pele",
+      "pick": "",
+      "why": [],
+      "note": "",
+      "ts": 1700000900109,
+      "ctx": "Orienta o tratamento da fotografia. A marca fala em preto, cinza e branco; aqui o cliente vê o que a cor acrescenta ou não à imagem."
+    },
+    "seed-duelo-f2": {
+      "a": "seed-nova3-foto-02",
+      "b": "seed-nova3-foto-06",
+      "q": "O corpo aparece seco ou molhado?",
+      "la": "Pele seca, fundo claro",
+      "lb": "Pele molhada, com espuma",
+      "pick": "",
+      "why": [],
+      "note": "",
+      "ts": 1700000900110,
+      "ctx": "Orienta a presença de água e espuma nas fotos de pele. As duas sugerem intimidade sem mostrar nada explícito."
+    },
+    "seed-duelo-f3": {
+      "a": "seed-nova3-foto-04",
+      "b": "seed-nova3-cores-17",
+      "q": "Que luz explorar nas fotos?",
+      "la": "Luz natural, com sombras na pele",
+      "lb": "Luz colorida sobre o preto",
+      "pick": "",
+      "why": [],
+      "note": "",
+      "ts": 1700000900111,
+      "ctx": "Orienta a iluminação das fotografias: luz e sombra naturais, com a pele como protagonista, ou luz de cor (vermelha) sobre fundo preto."
+    },
+    "seed-duelo-g1": {
+      "a": "seed-nova-texturas-01",
+      "b": "seed-nova-texturas-02",
+      "q": "A textura é fluida ou geométrica?",
+      "la": "Meio-tom fluido",
+      "lb": "Círculos geométricos",
+      "pick": "",
+      "why": [],
+      "note": "",
+      "ts": 1700000900200,
+      "ctx": "Orienta a linguagem das texturas em preto e branco: formas orgânicas de meio-tom ou círculos regulares. As duas sem granulado."
+    },
+    "seed-duelo-g2": {
+      "a": "seed-nova-texturas-06",
+      "b": "seed-nova-texturas-08",
+      "q": "A textura é suave ou de impacto?",
+      "la": "Manchas suaves de meio-tom",
+      "lb": "Explosão de alto contraste",
+      "pick": "",
+      "why": [],
+      "note": "",
+      "ts": 1700000900201,
+      "ctx": "Orienta a energia das texturas: discreta, como pano de fundo, ou forte, como protagonista."
+    },
+    "seed-duelo-g3": {
+      "a": "seed-nova-stickers-08",
+      "b": "seed-nova-stickers-09",
+      "q": "O adesivo tem cara de rua ou de delicadeza?",
+      "la": "Cromado e escuro, de rua",
+      "lb": "Suave e colorido, delicado",
+      "pick": "",
+      "why": [],
+      "note": "",
+      "ts": 1700000900202,
+      "ctx": "Orienta o tom dos adesivos: mais bruto, de rua e metal, ou mais leve. Compare o clima, não as cores."
+    },
+    "seed-duelo-k1": {
+      "a": "seed-nova-aplicacoes-01",
+      "b": "seed-nova-aplicacoes-03",
+      "q": "A foto de atitude é em cor ou em preto e branco com um acento?",
+      "la": "Em cor, com letra grande por cima",
+      "lb": "Preto e branco, com um acento de cor",
+      "pick": "",
+      "why": [],
+      "note": "",
+      "ts": 1700000900203,
+      "ctx": "Orienta o tratamento de imagens de atitude: foto colorida inteira, ou preto e branco com uma só cor de destaque."
+    },
+    "seed-duelo-k2": {
+      "a": "seed-nova-aplicacoes-05",
+      "b": "seed-nova-aplicacoes-06",
+      "q": "A retícula aparece em cor ou em preto e branco?",
+      "la": "Retícula em rosa e vermelho",
+      "lb": "Preto e branco, com um detalhe de cor",
+      "pick": "",
+      "why": [],
+      "note": "",
+      "ts": 1700000900204,
+      "ctx": "Orienta o uso da retícula (meio-tom) sobre imagens: toda colorida ou em preto e branco com um toque de cor."
+    },
+    "seed-duelo-f4": {
+      "a": "seed-up-86",
+      "b": "seed-up-64",
+      "q": "O detalhe é a boca ou a pele?",
+      "la": "Boca em close",
+      "lb": "Pele e ombro em close",
+      "pick": "",
+      "why": [],
+      "note": "",
+      "ts": 1700000900205,
+      "ctx": "Orienta o recorte em detalhe: a expressão da boca ou a textura da pele, em linha com o zoom de pele do briefing."
+    },
+    "seed-duelo-f5": {
+      "a": "seed-up-70",
+      "b": "seed-up-01",
+      "q": "A lingerie aparece ou só a pele?",
+      "la": "Lingerie em destaque",
+      "lb": "Só a pele, em preto e branco",
+      "pick": "",
+      "why": [],
+      "note": "",
+      "ts": 1700000900206,
+      "ctx": "Orienta se a roupa íntima faz parte da imagem ou se a pele é a única protagonista."
+    },
+    "seed-duelo-f6": {
+      "a": "seed-up-21",
+      "b": "seed-up-58",
+      "q": "Corpo inteiro ou recorte fechado?",
+      "la": "Corpo inteiro, de costas",
+      "lb": "Recorte fechado no ombro",
+      "pick": "",
+      "why": [],
+      "note": "",
+      "ts": 1700000900207,
+      "ctx": "Orienta o enquadramento: mostrar a figura inteira ou chegar perto, em zoom, como pede o briefing."
+    },
+    "seed-duelo-f7": {
+      "a": "seed-nova5-foto-03",
+      "b": "seed-nova3-foto-05",
+      "q": "A intimidade aparece com riso ou em silêncio?",
+      "la": "Com riso e brincadeira",
+      "lb": "Em silêncio, intensa",
+      "pick": "",
+      "why": [],
+      "note": "",
+      "ts": 1700000900300,
+      "ctx": "Orienta o clima da intimidade nas fotos: leve e bem-humorada, ou mais séria e concentrada."
+    },
+    "seed-duelo-f8": {
+      "a": "seed-nova5-foto-04",
+      "b": "seed-up-73",
+      "q": "A cena é de amizade ou de casal?",
+      "la": "Amigos, juntos e à vontade",
+      "lb": "Casal, em contato próximo",
+      "pick": "",
+      "why": [],
+      "note": "",
+      "ts": 1700000900301,
+      "ctx": "Orienta quem aparece nas fotos: relações de amizade e leveza, ou apenas casais. Ajuda a decidir o quanto a marca fala com todos os públicos."
+    },
+    "seed-duelo-e1": {
+      "a": "seed-letra-godger",
+      "b": "seed-letra-greta",
+      "q": "As letras são condensadas ou largas?",
+      "la": "Condensadas, altas e estreitas",
+      "lb": "Largas, pesadas e redondas",
+      "pick": "",
+      "why": [],
+      "note": "",
+      "ts": 1700000900400,
+      "ctx": "Orienta a proporção das letras. A escolha é de estilo, não de fonte: as fontes saem depois, a partir da direção preferida."
+    },
+    "seed-duelo-e2": {
+      "a": "seed-letra-helvetica",
+      "b": "seed-letra-leaguespartan",
+      "q": "O desenho é neutro ou geométrico?",
+      "la": "Neutro, de grotesca clássica",
+      "lb": "Geométrico, com formas redondas",
+      "pick": "",
+      "why": [],
+      "note": "",
+      "ts": 1700000900401,
+      "ctx": "Orienta o desenho: sóbrio e discreto, como uma Helvetica, ou com formas redondas mais marcantes. Compare o estilo, não a cor nem o layout."
+    },
+    "seed-duelo-e3": {
+      "a": "seed-letra-urbanist",
+      "b": "seed-letra-brandnew",
+      "q": "As letras são leves ou pesadas?",
+      "la": "Leves e arejadas",
+      "lb": "Pesadas e compactas",
+      "pick": "",
+      "why": [],
+      "note": "",
+      "ts": 1700000900402,
+      "ctx": "Orienta o peso dos títulos: fino e com ar, ou grosso e apertado."
+    },
+    "seed-duelo-e4": {
+      "a": "seed-letra-lesssleep",
+      "b": "seed-letra-glyke",
+      "q": "Os títulos vão em caixa alta ou como numa frase?",
+      "la": "Caixa alta",
+      "lb": "Caixa baixa e alta, como numa frase",
+      "pick": "",
+      "why": [],
+      "note": "",
+      "ts": 1700000900403,
+      "ctx": "Orienta a caixa dos títulos: tudo em maiúsculas, ou escrita mais conversada."
+    },
+    "seed-duelo-e5": {
+      "a": "seed-letra-django",
+      "b": "seed-letra-givonic",
+      "q": "A tipografia é retrô e cheia de personalidade, ou limpa?",
+      "la": "Retrô, ilustrada e cheia de personalidade",
+      "lb": "Limpa e minimalista",
+      "pick": "",
+      "why": [],
+      "note": "",
+      "ts": 1700000900404,
+      "ctx": "Orienta o quanto a letra carrega personalidade: um caminho mais de rua e old school, ou mais limpo e atemporal."
+    },
+    "seed-duelo-e6": {
+      "a": "seed-letra-haett",
+      "b": "seed-letra-godger",
+      "q": "Condensada: muito pesada ou mais refinada?",
+      "la": "Muito pesada e compacta",
+      "lb": "Condensada mais refinada",
+      "pick": "",
+      "why": [],
+      "note": "",
+      "ts": 1700000900405,
+      "ctx": "Orienta o limite do peso nas letras condensadas. O cliente achou a mais pesada grossa demais; aqui ele compara com uma condensada mais fina."
     }
   }
 }

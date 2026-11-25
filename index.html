@@ -156,7 +156,7 @@ textarea.note{width:100%;min-height:74px;resize:vertical;border:1px solid var(--
 .panel{max-width:820px;margin:0 auto;background:var(--card);border-radius:var(--r2);padding:24px 26px}
 .panel h2{font-size:30px;margin-bottom:4px}.panel h3{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);margin:20px 0 8px;font-family:var(--f-b);font-weight:600}
 .panel ul{margin:0;padding-left:18px}
-.lb{position:fixed;inset:0;background:color-mix(in srgb,var(--inv-fundo) 92%,transparent);z-index:300;display:none;place-items:center;padding:24px;cursor:zoom-out}.lb.on{display:grid}.lb img{max-width:100%;max-height:100%;border-radius:var(--r1)}
+.lb{position:fixed;inset:0;background:color-mix(in srgb,var(--inv-fundo) 92%,transparent);z-index:300;display:none;place-items:center;padding:24px;cursor:zoom-out}.lb.on{display:grid}.lb.peq img{max-width:min(52vw,480px);max-height:60vh}.lb img{max-width:100%;max-height:100%;border-radius:var(--r1)}
 .toast{position:fixed;left:50%;bottom:max(20px,env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:9px 16px;border-radius:999px;font-size:14px;z-index:400;display:none}.toast.on{display:block}
 
 /* Visual do Design System interno da Koko: só variáveis do kit. */
@@ -193,6 +193,41 @@ textarea.note{border-radius:var(--r2);background:var(--opaca);border-color:var(-
 .kk-barra .kk-botao{flex:none}
 .empty{border-color:var(--borda);border-radius:var(--r2)}
 /* cores */
+.cgov{margin:var(--esp-4) 0 var(--esp-5)}
+.cgov .kk-texto{margin:var(--esp-2) 0 0;text-wrap:pretty}
+.gen{margin-bottom:var(--esp-5)}
+.ghexw{display:inline-flex;gap:var(--esp-2);align-items:center}
+.ghex{width:122px;font:600 14px var(--mono);letter-spacing:.04em;text-transform:uppercase;padding:11px 14px;border:1px solid var(--borda);border-radius:var(--rf);background:var(--opaca);color:inherit}
+.gpres{margin-top:var(--esp-5);display:flex;flex-direction:column;gap:var(--esp-3)}
+.gprel{display:flex;flex-wrap:wrap;gap:var(--esp-4);align-items:flex-start}
+.gpre{background:none;border:0;padding:0;cursor:pointer;text-align:left;width:140px;color:inherit}
+.gps{display:flex;height:40px;border-radius:var(--r2);overflow:hidden;border:1px solid var(--borda);transition:transform .15s}
+.gpre:hover .gps{transform:translateY(-2px)}
+.gps i{flex:1;display:block}
+.gpre small{display:block;margin-top:6px;font-size:12px;color:var(--tinta-2)}
+.gstrips{display:flex;height:min(70vh,640px);min-height:360px;border-radius:var(--r3);overflow:hidden;border:1px solid var(--borda)}
+.gs{flex:var(--w,1);min-width:0;position:relative;display:flex;flex-direction:column;justify-content:space-between;padding:var(--esp-4) var(--esp-3);color:var(--ct,#fff);transition:flex .2s,background .25s}
+.gs:hover{flex:calc(var(--w,1) * 1.2)}
+.gtools{display:flex;flex-direction:column;gap:var(--esp-2);align-items:center;opacity:0;transition:opacity .15s}
+.gs:hover .gtools,.gs:focus-within .gtools,.gs.lk .gtools{opacity:1}
+@media (hover:none){.gtools{opacity:1}}
+.gb{font:600 12px var(--sans,inherit);color:inherit;background:color-mix(in srgb,var(--ct,#fff) 14%,transparent);border:1px solid color-mix(in srgb,var(--ct,#fff) 35%,transparent);border-radius:var(--rf);padding:6px 12px;cursor:pointer;position:relative;overflow:hidden}
+.gb[aria-pressed="true"]{background:var(--ct,#fff);color:var(--ci,#000);border-color:var(--ct,#fff)}
+.gi{width:40px;height:40px;padding:0;display:grid;place-items:center;background:none;border:0;border-radius:var(--rf)}
+.gi:hover{background:color-mix(in srgb,var(--ct,#fff) 16%,transparent)}
+.gi .ic,.gi .kk-ic{width:22px;height:22px;display:block}
+.gi[aria-pressed="true"]{background:none;color:inherit;border:0}
+.gs.lk .gtools{opacity:1}
+.gb input{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
+.gname{display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center}
+.gx{font:600 clamp(14px,1.8vw,20px)/1 var(--mono);letter-spacing:.06em;color:inherit;background:none;border:0;cursor:copy;padding:2px}
+.gname small{font-size:12px;opacity:.85}
+@media (max-width:640px){.gstrips{flex-direction:column;height:auto}.gs{min-height:84px;flex-direction:row;align-items:center}.gs:hover{flex:var(--w,1)}.gtools{flex-direction:row}.gname{align-items:flex-end}}
+.cstrips{display:flex;height:min(56vh,440px);border-radius:var(--r3);overflow:hidden;border:1px solid var(--borda)}
+.cstrips>div{flex:1;display:flex;flex-direction:column;justify-content:flex-end;gap:2px;padding:var(--esp-4) var(--esp-3);color:var(--ct,#fff);min-width:0}
+.cstrips b{font:600 15px/1 var(--mono);letter-spacing:.06em}
+.cstrips small{font-size:12px;opacity:.8;overflow-wrap:anywhere}
+.pcard.sim .cstrips{outline:3px solid var(--ok);outline-offset:-3px}.pcard.nao .cstrips{opacity:.5}
 .pcard{width:min(100%,400px);margin:0 auto;display:flex;flex-direction:column;gap:var(--esp-3);transition:transform .2s,opacity .2s}
 .pcard.sai-d{transform:translateX(60px) rotate(4deg);opacity:0}.pcard.sai-e{transform:translateX(-60px) rotate(-4deg);opacity:0}
 .pcard.sim .pmock{outline:3px solid var(--ok);outline-offset:-3px}.pcard.nao .pmock{opacity:.5}
@@ -218,15 +253,31 @@ textarea.note{border-radius:var(--r2);background:var(--opaca);border-color:var(-
 .axs{font-size:12px;color:var(--tinta-3);text-align:right}
 .axleg{display:inline-flex;align-items:center;gap:var(--esp-2);font-size:13px;color:var(--tinta-2)}
 .axleg .adot{width:16px;height:16px;cursor:default;font-size:0}
-.axbase{display:grid;grid-template-columns:1fr 1fr;gap:var(--esp-5);margin-bottom:var(--esp-4)}
+.axman{display:grid;grid-template-columns:max-content minmax(0,1fr);column-gap:var(--esp-7);row-gap:var(--esp-4);align-items:start;margin-bottom:var(--esp-4)}
+.axman-t{grid-column:1/-1}
+.axman .axtit{grid-column:1;display:flex;flex-direction:column;font-size:clamp(30px,4.2vw,54px);line-height:1.03;margin:0}
+.axman-r{grid-column:2;grid-row:2;display:flex;flex-direction:column;gap:var(--esp-4)}
+.axman-r .kk-texto{margin:0;text-wrap:pretty;max-width:72ch}
+@media (max-width:860px){.axman{grid-template-columns:1fr}.axman .axtit,.axman-r{grid-column:1;grid-row:auto}}
+.axbase{margin-bottom:var(--esp-4)}
+.asugs{display:flex;flex-direction:column;gap:var(--esp-2);margin-bottom:var(--esp-3)}
+.asug{display:flex;gap:var(--esp-3);align-items:flex-start;width:100%;text-align:left;padding:12px 14px;border:1px dashed var(--borda);border-radius:var(--r2);background:transparent;color:inherit;font:inherit;line-height:1.4;cursor:pointer}
+.asug-l{flex:none;width:26px;height:26px;display:grid;place-items:center;border-radius:var(--rf);background:var(--tinta);color:var(--inv-tinta,#fff);font:700 13px/1 var(--titulo)}
+.asug.on{border-style:solid;border-color:var(--tinta);background:var(--rebaixo)}
+.asug:hover{border-color:var(--tinta-3);background:var(--rebaixo)}
+.axdim{font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--mute);margin-bottom:2px}
+.axbase summary{cursor:pointer;font-weight:600}
+.axbase-g{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--esp-5);margin-top:var(--esp-4)}
+.axintro .kk-texto{margin:var(--esp-2) 0 0}
 .axbase .kk-texto{margin:var(--esp-2) 0 0}
-@media (max-width:760px){.axbase{grid-template-columns:1fr}}
+@media (max-width:900px){.axbase-g{grid-template-columns:1fr}}
 .adots{display:flex;gap:var(--esp-3)}
 .adot{width:28px;height:28px;font-weight:600;font-size:12px;line-height:1;font-family:inherit;color:var(--tinta-3);border-radius:var(--rf);border:1px solid var(--borda);background:var(--opaca);cursor:pointer;padding:0;transition:background .15s,border-color .15s}
 .adot:hover:not(:disabled){border-color:var(--tinta-3)}
 .adot[aria-pressed="true"]{background:var(--tinta-2);border-color:var(--tinta-2);color:var(--inv-tinta)}
 .adot.koko{outline:2px dashed var(--amarelo);outline-offset:2px}
-.adot.koko.on{background:var(--amarelo);border-color:var(--amarelo);color:var(--tinta)}
+.adot.koko.inf{outline:2px dotted var(--tinta-3);outline-offset:2px}
+.adot.koko.on{background:transparent;color:var(--tinta-3)}
 .adot:disabled{cursor:default}
 @media (max-width:760px){.axrow{grid-template-columns:1fr 1fr;row-gap:var(--esp-2)}.axl{text-align:left}.adots{grid-column:1/-1;order:3;justify-content:center}.axr{text-align:right}.axs{grid-column:1/-1;order:4;text-align:center}}
 /* duelo */
@@ -242,6 +293,15 @@ textarea.note{border-radius:var(--r2);background:var(--opaca);border-color:var(-
 .dpic{position:relative;border:0;padding:0;background:var(--inv-fundo);display:block;aspect-ratio:1/1;width:100%;flex:none;overflow:hidden;cursor:zoom-in}
 .dpic img{display:block}
 .dpic .dfg{width:100%;height:100%;object-fit:cover}
+.dcor.dpalc .dpic{aspect-ratio:4/5;padding:0;display:block;flex:none;background:none}
+.dpal{position:absolute;inset:0;display:flex}
+.dpal.tx{flex-direction:column;align-items:center;justify-content:center;gap:var(--esp-3)}
+.dtx{font:700 clamp(72px,10vw,130px)/1 var(--titulo);letter-spacing:.01em}
+.dtxl{font:600 11px var(--mono);letter-spacing:.05em;position:absolute;bottom:12px}
+.dpal i{flex:1;display:flex;align-items:flex-end;justify-content:center;padding:var(--esp-3) 0;font:600 11px/1 var(--mono);letter-spacing:.05em;font-style:normal;color:var(--ct,#fff)}
+.dref{position:absolute;top:10px;right:10px;font:600 11px var(--sans,inherit);background:rgba(255,255,255,.88);color:#0a0907;border-radius:999px;padding:5px 10px}
+.dcor .dpic{background:var(--opaca);aspect-ratio:auto;flex:1;display:flex;align-items:center;justify-content:center;padding:var(--esp-3)}
+.dcor .dpic .dfg{width:auto;height:auto;max-width:100%;max-height:min(46vh,480px);object-fit:contain;border-radius:var(--r2)}
 .dnote{flex:1 1 220px;min-width:180px;width:auto}
 .dmid input.note{flex:1 1 240px;min-width:200px;box-sizing:border-box;font:inherit;color:var(--tinta);background:var(--opaca);border:1px solid var(--borda);border-radius:var(--rf);padding:var(--esp-2) var(--esp-4)}
 .kdes input.note{width:100%;box-sizing:border-box;font:inherit;color:var(--tinta);background:var(--opaca);border:1px solid var(--borda);border-radius:var(--r2);padding:var(--esp-3) var(--esp-4)}
@@ -297,10 +357,14 @@ kbd{font-family:var(--f-b);font-size:11px;border:1px solid var(--line);border-ra
 <body>
 <div class="kk-fundo" aria-hidden="true"></div>
 <dialog class="kk-janela" id="reset" aria-labelledby="reset-t"><div class="kk-janela-caixa"><div class="kk-janela-cab"><h3 class="kk-h3" id="reset-t">Zerar todas as respostas?</h3></div><p class="kk-texto">Apaga as respostas de Marca, duelos, cores, fontes e referências votadas. As referências, os duelos e as escolhas da Koko continuam. Não dá para desfazer; se quiser guardar, baixe um backup antes.</p><div class="kk-pilha"><button class="kk-botao kk-botao--2" type="button" id="reset-no">Cancelar</button><button class="kk-botao kk-botao--perigo" type="button" id="reset-yes">Zerar respostas</button></div></div></dialog>
+<dialog class="kk-janela" id="reset-attr" aria-labelledby="reset-attr-t"><div class="kk-janela-caixa"><div class="kk-janela-cab"><h3 class="kk-h3" id="reset-attr-t">Limpar os atributos da marca?</h3></div><p class="kk-texto">Apaga só o que foi marcado nesta tela: posições nas escalas, palavras e a frase da persona. As sugestões da Koko voltam a aparecer. Duelos, cores e fontes não mudam.</p><div class="kk-pilha"><button class="kk-botao kk-botao--2" type="button" id="reset-attr-no">Cancelar</button><button class="kk-botao kk-botao--perigo" type="button" id="reset-attr-yes">Limpar atributos</button></div></div></dialog>
 <svg class="kk-icones" aria-hidden="true">
   <symbol id="i-busca" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></symbol>
   <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
   <symbol id="i-fechar" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="i-cadeado" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9.5" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3M12 14.8v2.4"/></symbol>
+  <symbol id="i-cadeado-aberto" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9.5" rx="2"/><path d="M8 11V8a4 4 0 0 1 7.7-1.6M12 14.8v2.4"/></symbol>
+  <symbol id="i-pincel" viewBox="0 0 24 24"><path d="M18.4 3.6a1.9 1.9 0 0 1 2.7 2.7L13 14.4 10.3 11.7Z"/><path d="M10.3 11.7c-2 0-3.6 1.6-3.6 3.6 0 1.6-1 2.6-2.7 3 1.2 1.2 3 1.8 4.6 1.8 2.9 0 5-2.3 4.4-5.7"/></symbol>
   <symbol id="i-ajuda" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.4 9.3a2.7 2.7 0 0 1 5.2.9c0 1.9-2.6 2.3-2.6 4.1"/><path d="M12 17.3h.01"/></symbol>
   <symbol id="i-lua" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></symbol>
   <symbol id="i-sol" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
@@ -322,7 +386,7 @@ kbd{font-family:var(--f-b);font-size:11px;border:1px solid var(--line);border-ra
 
 <header class="kk-topo kk-topo--nav">
   <div class="kk-topo-linha">
-    <a class="kk-marca" href="#biblioteca" aria-label="Moodboard da Prudence: voltar ao início">
+    <a class="kk-marca" href="#marca" aria-label="Moodboard da Prudence: voltar ao início">
       <img class="kk-marca-logo kk-so-claro" src="kit/marca/koko-com-registro-preto-justa.svg" alt="Koko">
       <img class="kk-marca-logo kk-so-escuro" src="kit/marca/koko-com-registro-branco-justa.svg" alt="Koko">
       <span class="kk-marca-fio" aria-hidden="true"></span>
@@ -338,11 +402,10 @@ kbd{font-family:var(--f-b);font-size:11px;border:1px solid var(--line);border-ra
   </div>
   <nav class="kk-nav" id="nav" aria-label="Telas">
     <a class="kk-nav-item" href="#marca" data-k="marca"><svg class="kk-ic"><use href="#i-alvo"></use></svg>Marca</a>
-    <a class="kk-nav-item" href="#biblioteca" data-k="biblioteca"><svg class="kk-ic"><use href="#i-biblioteca"></use></svg>Biblioteca</a>
     <a class="kk-nav-item" href="#sessao" data-k="sessao"><svg class="kk-ic"><use href="#i-play"></use></svg>Sessão</a>
     <a class="kk-nav-item" href="#cores" data-k="cores"><svg class="kk-ic"><use href="#i-olho"></use></svg>Cores</a>
-    <a class="kk-nav-item" href="#fontes" data-k="fontes"><svg class="kk-ic"><use href="#i-texto"></use></svg>Fontes</a>
     <a class="kk-nav-item" href="#moodboard" data-k="moodboard"><svg class="kk-ic"><use href="#i-grade"></use></svg>Moodboard</a>
+    <a class="kk-nav-item" href="#biblioteca" data-k="biblioteca"><svg class="kk-ic"><use href="#i-biblioteca"></use></svg>Biblioteca</a>
   </nav>
 </header>
 
@@ -442,23 +505,21 @@ kbd{font-family:var(--f-b);font-size:11px;border:1px solid var(--line);border-ra
 <script>
 const CATS=[
  {k:'foto',t:'Fotografia',hint:'Pessoas e momentos sem estereótipo: casais diversos, amigos, sensualidade sugerida e nunca explícita. Longe da "cerveja dos anos 2000".'},
- {k:'tipo',t:'Tipografia e layout',hint:'Referências visuais de letras e de layout. As fontes para escolher ficam na tela Fontes.'},
+ {k:'tipo',t:'Estilo de letra',hint:'Direção de estilo, sem escolher a fonte: condensada ou larga, neutra ou geométrica, peso e caixa. As fontes saem depois, a partir do estilo preferido.'},
  {k:'cor',t:'Cores e paleta',hint:'Preto, branco e cinza como base, com acento pontual. Tem que durar anos.'},
  {k:'uni',t:'Uniforme e merch',hint:'Camisetas e moletons: logo discreto na frente, estampa criativa nas costas. Refs da Koko e de estampas de outras marcas.'},
  {k:'pdv',t:'PDV e trade',hint:'Clip strip, testeira de estande, display. Uma receita simples que o trade consiga repetir.'},
- {k:'graf',t:'Grafismo e textura',hint:'Adesivos, recortes, texturas. Pode partir da borda redonda do logo.'},
- {k:'clima',t:'Clima geral da marca',hint:'Imagens que resumem a atitude: ousada, divertida, inteligente, livre de preconceito.'},
- {k:'nao',t:'Contraexemplos',hint:'O que a marca não deve parecer. Alimenta a lista de "o que não fazer", inclusive para uso de IA.'}];
+ {k:'graf',t:'Grafismo, textura e clima',hint:'Adesivos, recortes, texturas e imagens que resumem a atitude da marca: ousada, divertida, inteligente, livre de preconceito. Pode partir da borda redonda do logo.'}];
 const ASP=['Cor','Tipografia','Fotografia','Composição','Clima','Humor','Textura','Ideia'];
 const catT=k=>(CATS.find(c=>c.k===k)||{t:k}).t,catI=k=>Math.max(0,CATS.findIndex(c=>c.k===k));
 const $=s=>document.querySelector(s);
 function h(tag,props,...kids){const e=document.createElement(tag);for(const k in props||{}){const v=props[k];if(k==='class')e.className=v;else if(k==='style')e.style.cssText=v;else if(k.startsWith('on'))e.addEventListener(k.slice(2),v);else if(k.startsWith('aria-')&&typeof v==='boolean')e.setAttribute(k,String(v));else if(v===true)e.setAttribute(k,'');else if(v!==false&&v!=null)e.setAttribute(k,v)}for(const c of kids.flat())if(c!=null&&c!==false)e.append(c.nodeType?c:document.createTextNode(c));return e}
 const ic=n=>{const e=document.createElement('span');e.className='ic';e.innerHTML='<svg class="kk-ic"><use href="#i-'+n+'"></use></svg>';return e};
 function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('on');clearTimeout(toast.t);toast.t=setTimeout(()=>t.classList.remove('on'),2400)}
-function zoom(u){$('#lb img').src=u;$('#lb').classList.add('on')}
+function zoom(u,pequeno){$('#lb img').src=u;$('#lb').classList.toggle('peq',!!pequeno);$('#lb').classList.add('on')}
 $('#lb').onclick=()=>$('#lb').classList.remove('on');
 
-let db=null,assets=null,R={},DU={},view='biblioteca',sess={cat:'all',key:null,duelos:true},lib={sel:[],active:'foto'},pendingCat=null;
+let db=null,assets=null,R={},DU={},view='marca',sess={cat:'all',key:null,duelos:true},lib={sel:[],active:'foto'},pendingCat=null;
 const refs=()=>Object.entries(R).map(([id,d])=>({id,...d})).sort((a,b)=>catI(a.cat)-catI(b.cat)||(a.ts||0)-(b.ts||0));
 // Uma reunião, uma resposta do cliente. Dados antigos de outras pessoas ficam preservados no backup.
 const me='cliente';
@@ -510,9 +571,8 @@ function renderLib(){
   $('#cats').replaceChildren(...CATS.map(c=>{
     const list=refs().filter(r=>r.cat===c.k);
     const sec=h('div',{class:'cat'+(libDet.has(c.k)?' det':''),'data-cat':c.k},
-      h('div',{class:'chd'},h('h3',{},c.t),h('div',{class:'row'},h('span',{class:'tag',style:'align-self:center'},c.k==='tipo'?FONTS.length+' fontes':list.length+(list.length===1?' imagem':' imagens')),h('button',{class:'kk-botao kk-botao--2',onclick:()=>{libDet.has(c.k)?libDet.delete(c.k):libDet.add(c.k);renderLib()}},libDet.has(c.k)?'Miniaturas':'Legendas e links'),h('button',{class:'kk-botao kk-botao--2',onclick:()=>{pendingCat=c.k;$('#file').value='';$('#file').click()}},'Subir imagens'))),
+      h('div',{class:'chd'},h('h3',{},c.t),h('div',{class:'row'},h('span',{class:'tag',style:'align-self:center'},list.length+(list.length===1?' imagem':' imagens')),h('button',{class:'kk-botao kk-botao--2',onclick:()=>{libDet.has(c.k)?libDet.delete(c.k):libDet.add(c.k);renderLib()}},libDet.has(c.k)?'Miniaturas':'Legendas e links'),h('button',{class:'kk-botao kk-botao--2',onclick:()=>{pendingCat=c.k;$('#file').value='';$('#file').click()}},'Subir imagens'))),
       h('p',{class:'hint'},c.hint),
-      c.k==='tipo'?aaStrip():null,
       h('div',{class:'grid'},list.map(r=>{
         const th=h('div',{class:'th'+(lib.sel.includes(r.id)?' sel':'')},
           h('img',{class:'im',src:r.url,alt:r.cap||'',loading:'lazy',onclick:()=>zoom(r.url)}),
@@ -574,12 +634,18 @@ let DSG=false;
 try{const q=new URLSearchParams(location.search).get('designer');if(q==='1')localStorage.setItem('mb-dsg','1');else if(q==='0')localStorage.removeItem('mb-dsg');DSG=localStorage.getItem('mb-dsg')==='1'}catch(e){}
 const setRec=(id,v,why)=>{const cur=DU[id]||{};return w(()=>dD(id).update({rec:v,recRevision:CP(id).answerRevision||'',recWhy:why===undefined?(cur.recWhy||''):why}))};
 const kokoOf=d=>{const revision=CP(d.id).answerRevision;if(revision&&d.recRevision!==revision)return null;return KOKO[d.id]||((d.rec==='a'||d.rec==='b')?{pick:d.rec,why:d.recWhy||''}:null)};
+function palBlock(pl){const el=h('div',{class:'dpal'+(pl.txt?' tx':'')});
+  if(pl.txt){el.style.background=pl.bg;el.append(h('b',{class:'dtx',style:'color:'+pl.fg},'Aa'),h('small',{class:'dtxl',style:'color:'+pl.fg},pl.fg.slice(1).toUpperCase()+' sobre '+pl.bg.slice(1).toUpperCase()));return el}
+  if(pl.g){el.style.background='linear-gradient(180deg,'+pl.c.join(',')+')';el.append(h('i',{}))}
+  else pl.c.forEach(hx=>{const e=h('i',{},hx.slice(1).toUpperCase());e.style.background=hx;e.style.setProperty('--ct',genLum(hx)<.6?'#ffffff':'#0a0907');el.append(e)});
+  return el}
 function duelView(d,id,i,all){
   const kr=kokoOf({...d,id}),pk=d.pick,chosen=pk==='a'||pk==='b';
-  const card=(side,r)=>{const win=pk===side||pk==='both',lose=(pk==='a'||pk==='b')&&pk!==side||pk==='none',lab=d[side==='a'?'la':'lb'];
-    return h('div',{class:'dcard'+(win?' win':'')+(lose?' lose':'')},
-      h('button',{class:'dpic',onclick:()=>zoom((r||{}).url),'aria-label':'Ampliar '+(lab||side.toUpperCase())},
-        h('img',{class:'dfg',src:(r||{}).url,alt:(r||{}).cap||''}),
+  const card=(side,r)=>{const pal=(d.pal||{})[side],win=pk===side||pk==='both',lose=(pk==='a'||pk==='b')&&pk!==side||pk==='none',lab=d[side==='a'?'la':'lb'];
+    return h('div',{class:'dcard'+(win?' win':'')+(lose?' lose':'')+(['cor','tipo'].includes(duelCat(d))?' dcor':'')+(pal?' dpalc':'')},
+      h('button',{class:'dpic',onclick:()=>zoom((r||{}).url,!!pal),'aria-label':'Ampliar '+(lab||side.toUpperCase())},
+        pal?palBlock(pal):h('img',{class:'dfg',src:(r||{}).url,alt:(r||{}).cap||''}),
+        pal?h('span',{class:'dref'},'Ver referência'):null,
         kr&&kr.pick===side?h('span',{class:'kk-etiqueta kk-etiqueta--novo kseal'},ic('alvo'),'Escolha Koko'):null),
       h('div',{class:'dfoot'},h('span',{class:'dlabel'},lab||''),
         h('button',{class:'kk-botao kk-botao--2'+(pk===side?' sel':''),onclick:()=>setPick(id,side)},pk===side?[ic('check'),' Preferida']:'Prefiro esta')))};
@@ -610,20 +676,20 @@ const AXES=[
  {g:'Emoção',k:'obvio',l:'Previsível',r:'Surpreendente',pre:5,why:'Do briefing: "nada óbvia".'},
  {g:'Emoção',k:'ousadia',l:'Delicada',r:'Ousada',pre:4,why:'Do briefing: "ousada".'},
  {g:'Emoção',k:'estilo',l:'Clássica',r:'Cool',pre:4,why:'Do briefing: "cool".'},
- {g:'Emoção',k:'digital',l:'Tradicional',r:'Digital',pre:5,why:'Da conversa de 06/11: público nativo digital.'},
- {g:'Emoção',k:'energia',l:'Calma',r:'Animada',pre:0,why:'Sem sugestão: onde a marca fica?'},
+ {g:'Emoção',k:'digital',l:'Tradicional',r:'Digital',pre:5,why:'Da reunião de Kick-off: público nativo digital.'},
+ {g:'Emoção',k:'energia',l:'Calma',r:'Animada',pre:4,inf:1,why:'Conhecimento Koko, a partir do briefing: "ousada" e "divertida".'},
  {g:'Competência',k:'mente',l:'Espontânea',r:'Inteligente',pre:4,why:'Do briefing: "é inteligente".'},
- {g:'Competência',k:'posicao',l:'Desafiante',r:'Líder',pre:5,why:'Da conversa de 06/11: maior do mercado.'},
+ {g:'Competência',k:'posicao',l:'Seguidora',r:'Líder',pre:5,why:'Da reunião de Kick-off: maior do mercado.'},
  {g:'Competência',k:'tempo',l:'Passageira',r:'Atemporal',pre:5,why:'Do kickoff: materiais que durem.'},
  {g:'Sinceridade',k:'publico',l:'Restrita',r:'Inclusiva',pre:5,why:'Do briefing: "fala com todos".'},
- {g:'Sinceridade',k:'prox',l:'Distante',r:'Próxima',pre:0,why:'Sem sugestão: onde a marca fica?'},
- {g:'Sofisticação',k:'tom',l:'Popular',r:'Premium',pre:0,why:'Sem sugestão: onde a marca fica?'},
- {g:'Robustez',k:'rua',l:'Polida',r:'De rua',pre:0,why:'Sem sugestão: onde a marca fica?'},
+ {g:'Sinceridade',k:'prox',l:'Distante',r:'Próxima',pre:4,inf:1,why:'Conhecimento Koko, a partir do briefing: "fala com todos" e "livre de preconceitos".'},
+ {g:'Sofisticação',k:'tom',l:'Popular',r:'Premium',pre:3,inf:1,why:'Conhecimento Koko: "para todos" puxa para popular; "cool" e "atemporal" puxam para premium.'},
+ {g:'Robustez',k:'rua',l:'Polida',r:'De rua',pre:4,inf:1,why:'Conhecimento Koko: referência Pornografite (grafite, rua), só como estilo geral.'},
  {g:'Tom de voz',k:'humor',l:'Séria',r:'Divertida',pre:4,why:'Do briefing: "divertida".'},
  {g:'Tom de voz',k:'sensual',l:'Discreta',r:'Explícita',pre:2,why:'Do briefing: não ser "explícita demais".'},
- {g:'Tom de voz',k:'formal',l:'Formal',r:'Casual',pre:0,why:'Sem sugestão: onde a marca fica?'},
- {g:'Tom de voz',k:'irrev',l:'Respeitosa',r:'Irreverente',pre:0,why:'Sem sugestão: onde a marca fica?'},
- {g:'Tom de voz',k:'entus',l:'Objetiva',r:'Entusiasmada',pre:0,why:'Sem sugestão: onde a marca fica?'}
+ {g:'Tom de voz',k:'formal',l:'Formal',r:'Casual',pre:4,inf:1,why:'Conhecimento Koko, a partir do briefing: "divertida" e "cool".'},
+ {g:'Tom de voz',k:'irrev',l:'Respeitosa',r:'Irreverente',pre:3,inf:1,why:'Conhecimento Koko: "ousada" e "nada óbvia", mas sem piada, política ou religião.'},
+ {g:'Tom de voz',k:'entus',l:'Objetiva',r:'Entusiasmada',pre:4,inf:1,why:'Conhecimento Koko, a partir do briefing: "divertida" e "ousada".'}
 ];
 const WORDS=[['Ousada',1],['Divertida',1],['Surpreendente',1],['Inclusiva',1],['Livre',1],['Cool',1],['Inteligente',1],['Atemporal',1],['Piadista',-1],['Política',-1],['Religiosa',-1],['Explícita',-1],['Clichê',-1],['Sensual',0],['Acolhedora',0],['Provocadora',0],['Elegante',0],['Leve',0],['Corajosa',0],['Próxima',0],['Confiante',0],['Direta',0],['Irreverente',0],['Misteriosa',0],['Popular',0],['Sofisticada',0],['Descolada',0],['Séria',0]];
 const apos=a=>{const x=ATT['ax-'+a.k];return x&&x.pos?x.pos:a.pre};
@@ -634,28 +700,77 @@ const wv=w=>{const x=ATT['w-'+w[0]];return x&&'v' in x?x.v:(w[1]>0?'pos':w[1]<0?
 const setAx=(k,pos)=>w(()=>db.collection('attrs2').doc('ax-'+k).set({pos}));
 const setWd=(n,v)=>w(()=>db.collection('attrs2').doc('w-'+n).set({v}));
 const setAttNote=t=>w(()=>db.collection('attrs2').doc('note').set({t}));
-function dots(a,on){const t=!!(ATT['ax-'+a.k]&&ATT['ax-'+a.k].pos);return h('div',{class:'adots',role:'group','aria-label':a.l+' ou '+a.r},[1,2,3,4,5].map(n=>h('button',{type:'button',class:'adot'+(a.pre===n?' koko'+(t?'':' on'):''),'aria-pressed':t&&apos(a)===n,'aria-label':'Posição '+n+' de 5'+(a.pre===n?', sugestão da Koko':''),disabled:on===false,onclick:()=>setAx(a.k,n)},String(n))))}
+function dots(a,on){const t=!!(ATT['ax-'+a.k]&&ATT['ax-'+a.k].pos);return h('div',{class:'adots',role:'group','aria-label':a.l+' ou '+a.r},[1,2,3,4,5].map(n=>h('button',{type:'button',class:'adot'+(a.pre===n?' koko'+(a.inf?' inf':'')+(t?'':' on'):''),'aria-pressed':t&&apos(a)===n,'aria-label':'Posição '+n+' de 5'+(a.pre===n?', sugestão da Koko':''),disabled:on===false,onclick:()=>setAx(a.k,n)},String(n))))}
 const GDESC={'Emoção':'Excitement · Aaker','Competência':'Competence · Aaker','Sinceridade':'Sincerity · Aaker','Sofisticação':'Sophistication · Aaker','Robustez':'Ruggedness · Aaker','Tom de voz':'Nielsen Norman Group'};
-const srcOf=a=>!a.pre?'':/briefing/i.test(a.why)?'Briefing':/kickoff/i.test(a.why)?'Kickoff':'Reunião 06/11';
-function axRow(a,ro){return h('div',{class:'axrow',title:a.pre?a.why:''},h('div',{class:'axl'},a.l),dots(a,ro?false:undefined),h('div',{class:'axr'},a.r),h('div',{class:'axs'},ro?h('span',{class:'kk-etiqueta '+astag(astat(a))},astat(a)):srcOf(a)))}
+const srcOf=a=>!a.pre?'':a.inf?'Conhecimento Koko':/briefing/i.test(a.why)?'Briefing':/kickoff/i.test(a.why)?'Kick-off':'Kick-off';
+function axRow(a,ro,dim){return h('div',{class:'axrow',title:a.pre?a.why:''},h('div',{class:'axl'},a.l),dots(a,ro?false:undefined),h('div',{class:'axr'},a.r),h('div',{class:'axs'},ro?h('span',{class:'kk-etiqueta '+astag(astat(a))},astat(a)):[dim?h('div',{class:'axdim'},a.g):null,srcOf(a)]))}
+let _axman=null;
+function axManifesto(){if(!_axman){_axman=h('div',{class:'kk-box axman'},
+      h('div',{class:'tag axman-t'},'Por que começamos por aqui'),
+      h('h2',{class:'kk-h2 axtit'},h('span',{},'Personalidade'),h('span',{},'combinada'),h('span',{},h('mark',{class:'kk-marca-texto'},'vira critério'),'.')),
+      h('div',{class:'axman-r'},
+        h('p',{class:'kk-texto'},'Antes de olhar uma foto, uma cor ou uma fonte, precisamos combinar ',h('strong',{},'quem a Prudence é'),'. Gosto visual é pessoal e muda de uma reunião para outra; personalidade, quando está dita e registrada, vira ',h('strong',{},'critério'),'. É ela que nos permite responder "por que esta imagem e não aquela?" sem recorrer a "eu gostei mais".'),
+        h('p',{class:'kk-texto'},'Por isso esta etapa vem primeiro: cada duelo, paleta e fonte que aparece depois é lido ',h('strong',{},'contra estes atributos'),'. Descrever a personalidade em palavras antes de desenhar mantém o material ',h('strong',{},'coerente entre equipes, fornecedores e formatos'),', do ponto de venda ao digital.'),
+        h('p',{class:'kk-texto'},'E o resultado não termina nesta tela. As mesmas palavras alimentam os capítulos de ',h('strong',{},'tom de voz'),' e de ',h('strong',{},'imagem'),' do brandbook e as ',h('strong',{},'instruções para IA'),', para que qualquer pessoa ou ferramenta que produza peças da Prudence fale a mesma língua.')))}return _axman}
+const FRASE={
+ 'surpreendente':'nunca é a resposta que você esperava','ousada':'chega primeiro e não pede licença','cool':'não se esforça para parecer, simplesmente é','digital':'já nasceu na tela e fala a língua dela',
+ 'animada':'entra na sala e muda a energia dela','inteligente':'sabe o que diz e não precisa gritar','líder':'abre caminho para quem vem depois','atemporal':'não tem data de validade',
+ 'inclusiva':'tem lugar à mesa para todo mundo','próxima':'fala de perto, sem cerimônia','premium':'cuida do detalhe como quem cuida de alguém','de rua':'tem a rua no corpo e a conversa na ponta da língua',
+ 'divertida':'leva a vida a sério o bastante para rir dela','discreta':'sugere mais do que mostra','casual':'conversa em vez de discursar','irreverente':'brinca com as regras sem desrespeitar ninguém',
+ 'entusiasmada':'se empolga e deixa isso aparecer','delicada':'chega com o toque leve','clássica':'espera a moda passar e continua de pé','tradicional':'respeita o caminho que a trouxe até aqui',
+ 'calma':'não tem pressa de provar nada','espontânea':'improvisa e acerta','popular':'é de todo mundo, sem ser de ninguém só','polida':'tem acabamento em tudo que toca',
+ 'séria':'sabe a hora de falar baixo','formal':'veste a palavra certa na hora certa','respeitosa':'respeita cada pessoa e cada limite','objetiva':'vai direto ao ponto, sem rodeio',
+ 'previsível':'se deixa conhecer de longe','restrita':'escolhe com quem conversa','distante':'observa antes de chegar','passageira':'vive o momento e segue','seguidora':'aprende com quem veio antes',
+ 'livre':'não pede desculpa por ser livre','sensual':'seduz sem precisar levantar a voz','acolhedora':'faz da conversa um lugar para ficar','provocadora':'faz a pergunta que ninguém ousou fazer',
+ 'elegante':'sabe o que tirar para ficar bonita','leve':'carrega qualquer assunto sem peso','corajosa':'fala do que os outros evitam','confiante':'se basta, e por isso convida',
+ 'direta':'diz o que pensa com gentileza','misteriosa':'deixa uma pergunta no ar','sofisticada':'tem repertório e não faz questão de mostrar','descolada':'está à vontade em qualquer lugar'};
+const NUNCA={
+ 'explícita':'precisa mostrar tudo para ser notada','piadista':'faz piada com quem não está na brincadeira','política':'se mete em disputa de partido','religiosa':'fala em nome de uma crença',
+ 'clichê':'repete o que todo mundo já disse','previsível':'se deixa prever','delicada':'se desculpa por ocupar espaço','clássica':'vive de saudade','tradicional':'fica presa ao que sempre foi',
+ 'calma':'deixa a conversa esfriar','espontânea':'perde o fio por improviso','séria':'fala como bula','formal':'fala como contrato','respeitosa':'esquece que há alguém do outro lado',
+ 'objetiva':'vira manual de instruções','seguidora':'copia quem veio antes','passageira':'vira moda de uma estação','restrita':'fecha a porta para alguém','distante':'fala de cima','popular':'perde o cuidado','polida':'perde o brilho nos detalhes','discreta':'passa despercebida'};
+function attrSug(){
+  const ans=AXES.filter(a=>ATT['ax-'+a.k]&&ATT['ax-'+a.k].pos);
+  const low=t=>t.charAt(0).toLowerCase()+t.slice(1);
+  const pw=WORDS.filter(w=>wvS(w)==='pos').map(w=>low(w[0])),nw=WORDS.filter(w=>wvS(w)==='neg').map(w=>low(w[0]));
+  const poles=ans.map(a=>{const p=ATT['ax-'+a.k].pos;return p>=4?{a,t:a.r,o:a.l,s:p===5?2:1}:p<=2?{a,t:a.l,o:a.r,s:p===1?2:1}:null}).filter(Boolean).sort((x,y)=>y.s-x.s);
+  const fr=t=>FRASE[low(t)]||('é '+low(t));
+  const traits=[...new Set([...poles.map(x=>low(x.t)),...pw])];
+  if(traits.length<3)return[];
+  const list=(arr,c)=>arr.length<2?arr.join(''):arr.slice(0,-1).join(', ')+' '+(c||'e')+' '+arr[arr.length-1];
+  const t3=traits.slice(0,3).map(fr),out=['A Prudence é a marca que '+t3.slice(0,-1).join('; ')+'; e '+t3[t3.length-1]+'.'];
+  const nev=[...new Set([...nw,...poles.slice(0,4).map(x=>low(x.o))])].map(t=>NUNCA[t]||('é '+t)).slice(0,2);
+  const pessoa=traits.length>=5?traits.slice(3,5):traits.slice(0,2);
+  if(nev.length)out.push('Se a Prudence fosse uma pessoa, seria aquela que '+list(pessoa.map(fr))+'. Ela nunca '+nev[0]+(nev[1]?' e nunca '+nev[1]:'')+'.');
+  const voz=poles.filter(x=>x.a.g==='Tom de voz').map(x=>fr(x.t));
+  if(voz.length>=2)out.push('Quando fala, '+voz.slice(0,3).join('; ')+'.');
+  return out}
 function renderMarca(){
-  const nOk=AXES.filter(a=>a.pre&&ATT['ax-'+a.k]).length,nPre=AXES.filter(a=>a.pre).length;
+  const nOk=AXES.filter(a=>a.pre&&ATT['ax-'+a.k]).length,nPre=AXES.filter(a=>a.pre).length,nInf=AXES.filter(a=>a.inf).length,nStated=nPre-nInf;
   const groups=[...new Set(AXES.map(a=>a.g))];
-  const cards=groups.map(g=>h('div',{class:'kk-box'},h('div',{class:'axh'},h('h3',{class:'kk-h3'},g),h('span',{class:'lbl'},GDESC[g]||'')),...AXES.filter(a=>a.g===g).map(a=>axRow(a))));
-  const note=h('textarea',{class:'note',placeholder:'Se a Prudence fosse uma pessoa, quem seria? O que ela nunca diria?','aria-label':'Persona da marca'});note.value=(ATT.note||{}).t||'';note.addEventListener('change',()=>setAttNote(note.value));
+  const cards=[
+    h('div',{class:'kk-box'},h('div',{class:'axh'},h('h3',{class:'kk-h3'},'Personalidade'),h('span',{class:'lbl'},'Aaker (1997)')),...AXES.filter(a=>a.g!=='Tom de voz').map(a=>axRow(a,false,true))),
+    h('div',{class:'kk-box'},h('div',{class:'axh'},h('h3',{class:'kk-h3'},'Tom de voz'),h('span',{class:'lbl'},'Nielsen Norman Group')),...AXES.filter(a=>a.g==='Tom de voz').map(a=>axRow(a)))];
+  const note=h('textarea',{class:'note',placeholder:'Escolha uma sugestão acima ou escreva do seu jeito','aria-label':'Persona da marca'});note.value=(ATT.note||{}).t||'';note.addEventListener('change',()=>setAttNote(note.value));
   $('#marca-tela').replaceChildren(
     h('div',{class:'kk-cabeca'},(()=>{const e=h('span',{class:'kk-selo kk-selo--tinta kk-selo--g'});e.append(ic('alvo'));return e})(),
       h('div',{class:'kk-cabeca-textos'},h('h1',{class:'kk-h1'},'Atributos da ',h('mark',{class:'kk-marca-texto'},'marca')),
         h('p',{class:'kk-apoio'},'Como a Prudence é? Escolha o ponto entre as duas palavras.'))),
-    h('div',{class:'kk-box axbase'},
-      h('div',{},h('div',{class:'tag'},'Base de pesquisa'),h('p',{class:'kk-texto'},h('strong',{},'Jennifer Aaker (1997). '),'Dimensions of Brand Personality. ',h('em',{},'Journal of Marketing Research'),'. As cinco dimensões da personalidade de marca: sinceridade, emoção, competência, sofisticação e robustez. ',h('a',{href:'https://gsb.stanford.edu/faculty-research/publications/dimensions-brand-personality',target:'_blank',rel:'noopener'},'Ver estudo'))),
-      h('div',{},h('div',{class:'tag'},'Base de pesquisa'),h('p',{class:'kk-texto'},h('strong',{},'Nielsen Norman Group. '),'As quatro dimensões do tom de voz: humor, formalidade, respeito e entusiasmo. ',h('a',{href:'https://www.nngroup.com/articles/tone-of-voice-dimensions/',target:'_blank',rel:'noopener'},'Ver estudo')))),
-    h('div',{class:'kk-barra'},h('span',{class:'axleg'},h('i',{class:'adot koko on'}),' Sugestão da Koko'),h('span',{class:'lbl'},nOk+' de '+nPre+' olhadas'),
-      h('button',{type:'button',class:'kk-botao kk-botao--2',onclick:async()=>{for(const a of AXES.filter(x=>x.pre&&!ATT['ax-'+x.k]))await setAx(a.k,a.pre)}},'Concordo com as sugestões')),
+    axManifesto(),
+    h('details',{class:'kk-box axbase'},h('summary',{},'Base de pesquisa: por que estas duas fontes'),
+      h('div',{class:'axbase-g'},
+        h('div',{},h('div',{class:'tag'},'Personalidade'),h('p',{class:'kk-texto'},h('strong',{},'Jennifer Aaker (1997). '),'Dimensions of Brand Personality. ',h('em',{},'Journal of Marketing Research'),'. ',h('strong',{},'Por que esta: '),'é um dos modelos mais usados para descrever marca como se fosse pessoa, e dá a agência e cliente ',h('strong',{},'um vocabulário comum'),', sem jargão de design. O estudo reuniu 42 traços em ',h('strong',{},'5 dimensões'),': sinceridade, emoção, competência, sofisticação e robustez. ',h('strong',{},'Limite: '),'foi construído nos EUA, e estudos posteriores no Japão e na Espanha encontraram dimensões diferentes. Por isso usamos como ',h('strong',{},'roteiro de conversa, não como teste que dá nota'),'. ',h('a',{href:'https://gsb.stanford.edu/faculty-research/publications/dimensions-brand-personality',target:'_blank',rel:'noopener'},'Ver estudo ↗')),),
+        h('div',{},h('div',{class:'tag'},'Tom de voz'),h('p',{class:'kk-texto'},h('strong',{},'Nielsen Norman Group. '),'As quatro dimensões do tom de voz. ',h('strong',{},'Por que esta: '),'transforma "tom" em ',h('strong',{},'quatro escalas simples'),' (séria ou divertida, formal ou casual, respeitosa ou irreverente, objetiva ou entusiasmada), que se decidem em minutos e orientam quem escreve, inclusive as instruções para IA que o brandbook vai entregar. ',h('a',{href:'https://www.nngroup.com/articles/tone-of-voice-dimensions/',target:'_blank',rel:'noopener'},'Ver estudo ↗')),),
+        h('div',{},h('div',{class:'tag'},'O que é da Koko'),h('p',{class:'kk-texto'},'Os modelos organizam as perguntas; ',h('strong',{},'o conteúdo vem do cliente'),'. Escalas como previsível ou surpreendente, clássica ou cool, tradicional ou digital, desafiante ou líder, passageira ou atemporal e discreta ou explícita são ',h('strong',{},'adaptações nossas a partir do briefing'),', não itens dos estudos.')))),
+    h('div',{class:'kk-barra'},h('span',{class:'axleg'},h('i',{class:'adot koko on'}),' Sugestão Koko pelo briefing e Kick-off'),h('span',{class:'axleg'},h('i',{class:'adot koko inf on'}),' Sugestão Koko pelo conhecimento prévio da marca'),h('span',{class:'lbl'},nOk+' de '+nPre+' olhadas'),
+      h('button',{type:'button',class:'kk-botao kk-botao--2',onclick:async()=>{for(const a of AXES.filter(x=>x.pre&&!ATT['ax-'+x.k]))await setAx(a.k,a.pre)}},'Concordo com as sugestões'),
+      h('button',{type:'button',class:'kk-botao kk-botao--2',disabled:!Object.keys(ATT).length,onclick:()=>$('#reset-attr').showModal()},'Limpar atributos')),
     h('div',{class:'axstack'},...cards,
       h('div',{class:'kk-box'},h('div',{class:'axh'},h('h3',{class:'kk-h3'},'Palavras'),h('span',{class:'lbl'},'Toque: 1 vez combina, 2 vezes não combina')),
         h('div',{class:'asp'},WORDS.map(w=>{const v=wv(w);return h('button',{type:'button',class:'ch'+(v==='pos'?' pos':v==='neg'?' neg':''),onclick:()=>setWd(w[0],v===''?'pos':v==='pos'?'neg':v==='neg'?'':'pos')},w[0])}))),
-      h('div',{class:'kk-box'},h('div',{class:'axh'},h('h3',{class:'kk-h3'},'Em uma frase'),h('span',{class:'lbl'},'Opcional')),note)),
+      h('div',{class:'kk-box'},h('div',{class:'axh'},h('h3',{class:'kk-h3'},'Em uma frase'),h('span',{class:'lbl'},'Opcional')),
+        (()=>{const sg=attrSug();return sg.length?h('div',{class:'asugs'},h('div',{class:'lbl'},'A partir das suas respostas: escolha A, B ou C, ou escreva do seu jeito.'),...sg.map((t,k)=>h('button',{type:'button',class:'asug'+(note.value===t?' on':''),'aria-pressed':note.value===t,onclick:()=>{note.value=t;setAttNote(t)}},h('b',{class:'asug-l'},'ABC'[k]),h('span',{},t)))):h('p',{class:'hint',style:'margin:0 0 var(--esp-3)'},'Responda algumas escalas e palavras acima para sugerirmos uma frase.')})(),
+        note)),
     h('div',{class:'dnav',style:'position:static;margin:var(--esp-5) auto 0'},h('a',{class:'kk-botao',href:'#sessao',style:'text-align:center;text-decoration:none'},'Seguir para a Sessão')))}
 function attrBoard(){
   const ans=AXES.filter(a=>ATT['ax-'+a.k]);const pw=WORDS.filter(w=>wvS(w)==='pos').map(w=>w[0]),nw=WORDS.filter(w=>wvS(w)==='neg').map(w=>w[0]);
@@ -689,6 +804,9 @@ const PALS=[
 /* conferir: ignorar-fim */
 const pv=id=>(PAL[id]||{}).v||'';
 const setPal=(id,v)=>w(()=>db.collection('pal2').doc(id).set({v}));
+function coolors(P){
+  const lum=hx=>{const n=parseInt(hx.slice(1),16),r=n>>16&255,g=n>>8&255,b=n&255;return(0.299*r+0.587*g+0.114*b)/255};
+  return h('div',{class:'cstrips',role:'img','aria-label':P.t},[...P.b,...P.a].map(c=>{const e=h('div',{},h('b',{},c[1].slice(1).toUpperCase()),h('small',{},c[0]));e.style.background=c[1];e.style.setProperty('--ct',lum(c[1])>0.6?'#0a0907':'#ffffff');return e}))}
 function palMock(P){
   const e=h('div',{class:'pmock'},h('i',{class:'pc'}),h('i',{class:'pb'}),h('b',{class:'pl'},'(PRUDENCE)'),h('b',{class:'pt'},'Mais prazer para todos.'));
   const f=P.b[0][1],t=(P.b[0][0]==='Branco'||P.b[0][0]==='Bege')?PRETO[1]:BRANCO[1],a1=(P.a[0]||CINZA)[1],a2=(P.a[1]||P.a[0]||CINZA)[1];
@@ -703,37 +821,91 @@ function palBuilt(){const r=palResult();
   const parts=[sw(PRETO,'38%'),sw(BRANCO,'30%'),sw(CINZA,'14%')];if(r.bege)parts.splice(2,0,sw(BEGE,'8%'));
   if(r.main)parts.push(sw(r.main,'12%'));if(r.sup)parts.push(sw(r.sup,'6%'));
   return{r,el:h('div',{class:'pbar'},parts)}}
-function palSummary(){if(!PALS.some(P=>pv(P.id)))return[];const r=palResult(),L=['','Paleta (a partir das cores curtidas):'];
-  const liked=PALS.filter(P=>pv(P.id)==='yes').map(P=>P.t),dis=PALS.filter(P=>pv(P.id)==='no').map(P=>P.t);
-  L.push('- Base: preto, branco e cinza'+(r.bege?', com bege':''));
-  L.push('- Cor de destaque: '+(r.main?r.main[0]:(r.neutra?'nenhuma, a base neutra bastou':'ainda não definida')));if(r.sup)L.push('- Cor de apoio: '+r.sup[0]);
-  L.push('- Gostou: '+(liked.join('; ')||'nenhuma'),'- Não gostou: '+(dis.join('; ')||'nenhuma'));return L}
+function palSummary(){const c=genColors();if(!c)return[];return['','Paleta de cores:','- '+c.map(x=>x.toUpperCase()).join(', ')]}
+/* ---------- gerador de paleta (estilo Coolors) ---------- */
+let GEN=null;
+const hex2=n=>Math.round(n).toString(16).padStart(2,'0');
+function hsl2hex(h,s,l){h=((h%360)+360)%360;const a=s*Math.min(l,1-l),f=n=>{const k=(n+h/30)%12;return l-a*Math.max(-1,Math.min(k-3,9-k,1))};return '#'+hex2(f(0)*255)+hex2(f(8)*255)+hex2(f(4)*255)}
+function hex2hsl(hx){const n=parseInt(hx.slice(1),16),r=(n>>16&255)/255,g=(n>>8&255)/255,b=(n&255)/255,mx=Math.max(r,g,b),mn=Math.min(r,g,b),l=(mx+mn)/2,d=mx-mn;let hh=0,ss=0;if(d){ss=d/(1-Math.abs(2*l-1));hh=mx===r?((g-b)/d)%6:mx===g?(b-r)/d+2:(r-g)/d+4;hh*=60;if(hh<0)hh+=360}return[hh,ss,l]}
+function genNome(hx){const[hh,ss,l]=hex2hsl(hx);if(l<.12)return'Preto';if(l>.93)return'Branco';if(ss<.12)return l<.4?'Cinza escuro':l>.7?'Cinza claro':'Cinza';
+  const t=[[15,'Vermelho'],[40,'Laranja'],[65,'Amarelo'],[95,'Lima'],[160,'Verde'],[195,'Verde-água'],[250,'Azul'],[285,'Violeta'],[330,'Magenta'],[346,'Rosa'],[361,'Vermelho']];
+  return (l>.78?'Tom claro de ':l<.28?'Tom escuro de ':'')+t.find(x=>hh<x[0])[1].toLowerCase().replace(/^./,c=>(l>.78||l<.28)?c:c.toUpperCase())}
+function genLum(hx){const n=parseInt(hx.slice(1),16);return(0.299*(n>>16&255)+0.587*(n>>8&255)+0.114*(n&255))/255}
+function genFresh(){const h0=Math.random()*360,h1=h0+[30,150,180,210][Math.floor(Math.random()*4)];return[hsl2hex(h0,.78+Math.random()*.15,.52+Math.random()*.1),hsl2hex(h1,.7+Math.random()*.2,.55+Math.random()*.1)]}
+const colorPick=id=>{const d=duels().find(x=>x.id===id);return d&&(d.pick==='a'||d.pick==='b')?d.pick:''};
+function genAnswered(){return['seed-duelo-c1','seed-duelo-c2','seed-duelo-c3','seed-duelo-c4'].some(colorPick)}
+function genStart(){
+  const c1=colorPick('seed-duelo-c1'),c2=colorPick('seed-duelo-c2'),c3=colorPick('seed-duelo-c3'),c4=colorPick('seed-duelo-c4');
+  const N=c4==='b'?['#1f140f','#8f8987','#f2ecdf']:['#1f140f','#8f8987','#ffffff'];
+  const dark=c1==='b'?N[2]:N[0],light=c1==='b'?N[0]:N[2];
+  let acc=c2==='a'?['#f037a5','#cdf564']:c2==='b'?['#7d39eb','#c6ff33']:['#e50695','#c6f135'];
+  const hs=acc.map(x=>hex2hsl(x)[0]);
+  const ex=[hsl2hex(hs[0]+180,.8,.55),hsl2hex(hs[1]+180,.75,.58),hsl2hex(hs[0]+60,.8,.56)];
+  acc=[...acc,...ex];
+  if(c3==='a')acc=acc.map(x=>{const[hh,ss]=hex2hsl(x);return hsl2hex(hh,ss*.55,.8)});
+  else if(c3==='b')acc=acc.map(x=>{const[hh,,l]=hex2hsl(x);return hsl2hex(hh,.95,Math.min(.56,Math.max(.44,l)))});
+  return{c:[dark,light,N[1],...acc],l:[true,true,false,false,false,false,false,false]}}
+function genNeutro(hx){return hex2hsl(hx)[1]<.12}
+function genState(){const g=PAL.gen;if(g&&Array.isArray(g.c)&&g.c.length>=2&&g.c.length<=8)return{c:g.c,l:Array.from({length:g.c.length},(_,k)=>!!(g.l&&g.l[k]))};return GEN||(GEN=genStart())}
+function setGen(st){GEN=st;w(()=>db.collection('pal2').doc('gen').set({c:st.c,l:st.l}))}
+function genNew(){const st=genState(),free=st.c.map((_,k)=>k).filter(k=>!st.l[k]);if(!free.length){toast('Todas as cores estão travadas');return}
+  const h0=Math.random()*360,off=[0,30,150,180,210,300,60,240];let a=0;const c=[...st.c];
+  free.forEach(k=>{if(genNeutro(c[k])){const L=hex2hsl(c[k])[2];c[k]=hsl2hex(20,L<.15||L>.9?.1:.04,Math.min(.97,Math.max(.05,L+(Math.random()-.5)*.18)))}
+    else c[k]=hsl2hex(h0+off[a++%8],.62+Math.random()*.3,.46+Math.random()*.14)});
+  setGen({c,l:st.l})}
+function genAdd(){const st=genState();if(st.c.length>=8){toast('No máximo 8 cores');return}setGen({c:[...st.c,genFresh()[0]],l:[...st.l,false]})}
+function genRemove(i){const st=genState();if(st.c.length<=2)return;setGen({c:st.c.filter((_,k)=>k!==i),l:st.l.filter((_,k)=>k!==i)})}
+const GENPRE=[
+ ['Cores das redes',['#1f140f','#ffffff','#8f8987','#4a0cf0','#dff76a','#fc3c24','#f03ca8']],
+ ['Rosa da marca',['#1f140f','#ffffff','#8f8987','#e50695','#f6a6c9','#7e0c48']],
+ ['Fúcsia e cítrico',['#1f140f','#ffffff','#8f8987','#f037a5','#cdf564']],
+ ['Violeta e lima',['#1f140f','#ffffff','#8f8987','#7d39eb','#c6ff33']],
+ ['Tangerina e berinjela',['#1f140f','#ffffff','#8f8987','#fe7002','#562882']],
+ ['Ciano e violeta',['#1f140f','#ffffff','#8f8987','#01ffff','#7e35e4']],
+ ['Só o lima',['#1f140f','#ffffff','#8f8987','#d6f502']],
+ ['Carvão, creme e amarelo',['#1c1c1c','#fff8e6','#8f8987','#f5b700']],
+ ['Tons suaves',['#1f140f','#ffffff','#8f8987','#f6a6c9','#ffd7a8','#cfe8ff','#d9f5c9']]];
+function genHex(v){v=(v||'').trim().replace(/^#/,'');if(/^[0-9a-f]{3}$/i.test(v))v=v.split('').map(x=>x+x).join('');return /^[0-9a-f]{6}$/i.test(v)?'#'+v.toLowerCase():null}
+function genAddHex(v){const hx=genHex(v);if(!hx){toast('Código inválido. Exemplo: #E50695');return false}
+  const st=genState();if(st.c.length<8){setGen({c:[...st.c,hx],l:[...st.l,true]});return true}
+  const k=st.l.lastIndexOf(false);if(k<0){toast('No máximo 8 cores. Remova uma para adicionar');return false}
+  const c=[...st.c],l=[...st.l];c[k]=hx;l[k]=true;setGen({c,l});return true}
+function genEl(){const st=genState();
+  const stripes=st.c.map((hx,i)=>{const lock=st.l[i],dark=genLum(hx)<.6;
+    const inp=h('input',{type:'color',value:hx,'aria-label':'Trocar a cor '+(i+1)});inp.addEventListener('change',()=>{const c=[...st.c],l=[...st.l];c[i]=inp.value;l[i]=true;setGen({c,l})});
+    const copy=async()=>{try{await navigator.clipboard.writeText(hx.toUpperCase());toast(hx.toUpperCase()+' copiado')}catch(e){toast(hx.toUpperCase())}};
+    const el=h('div',{class:'gs'+(lock?' lk':'')},
+      h('div',{class:'gtools'},
+        st.c.length>2?h('button',{type:'button',class:'gb gi',title:'Remover a cor','aria-label':'Remover a cor',onclick:()=>genRemove(i)},ic('fechar')):null,
+        h('button',{type:'button',class:'gb gi','aria-pressed':lock,title:lock?'Destravar':'Travar','aria-label':lock?'Destravar a cor':'Travar a cor',onclick:()=>{const l=[...st.l];l[i]=!l[i];setGen({c:st.c,l})}},ic(lock?'cadeado':'cadeado-aberto')),
+        h('button',{type:'button',class:'gb gi',title:'Copiar o código','aria-label':'Copiar o código',onclick:copy},ic('copiar')),
+        h('label',{class:'gb gi',title:'Trocar a cor'},ic('pincel'),inp)),
+      h('div',{class:'gname'},h('button',{type:'button',class:'gx',title:'Copiar o código',onclick:copy},hx.slice(1).toUpperCase()),h('small',{},genNome(hx))));
+    el.style.background=hx;el.style.setProperty('--w',genNeutro(hx)?((hex2hsl(hx)[2]<.25||hex2hsl(hx)[2]>.8)?'2.6':'1.5'):'1');el.style.setProperty('--ct',dark?'#ffffff':'#0a0907');el.style.setProperty('--ci',dark?'#0a0907':'#ffffff');return el});
+  return h('div',{class:'kk-box gen'},
+    h('div',{class:'axh'},h('h3',{class:'kk-h3'},'Monte a paleta'),h('span',{class:'lbl'},'Espaço gera uma nova')),
+    h('div',{class:'gstrips'},stripes),
+    h('div',{class:'kk-barra',style:'margin-top:var(--esp-4)'},h('button',{type:'button',class:'kk-botao',onclick:genNew},'Gerar'),
+      h('button',{type:'button',class:'kk-botao kk-botao--2',disabled:st.c.length>=8,onclick:genAdd},ic('mais'),'Cor'),
+      h('button',{type:'button',class:'kk-botao kk-botao--2',onclick:()=>setGen(genStart())},'Recomeçar'),
+      (()=>{const inp=h('input',{class:'ghex',type:'text',placeholder:'#E50695','aria-label':'Adicionar uma cor pelo código',maxlength:9,spellcheck:false});
+        const go=()=>{if(genAddHex(inp.value))inp.value=''};inp.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();go()}});
+        return h('span',{class:'ghexw'},inp,h('button',{type:'button',class:'kk-botao kk-botao--2',onclick:go},'Adicionar'))})()),
+    h('div',{class:'gpres'},h('div',{class:'lbl'},'Sugestões'),h('div',{class:'gprel'},GENPRE.map(([n,cs])=>h('button',{type:'button',class:'gpre',title:n,onclick:()=>setGen({c:cs.slice(0,8),l:cs.slice(0,8).map((_,k)=>k<2)})},
+      (()=>{const d=h('div',{class:'gps'});cs.forEach(x=>{const i=h('i',{});i.style.background=x;d.append(i)});return d})(),h('small',{},n))))))}
 function renderCores(){
-  const n=PALS.length,done=PALS.filter(P=>pv(P.id)).length;
-  if(pi>=n&&done<n)pi=PALS.findIndex(P=>!pv(P.id));
   const head=h('div',{class:'kk-cabeca'},(()=>{const e=h('span',{class:'kk-selo kk-selo--tinta kk-selo--g'});e.append(ic('olho'));return e})(),
     h('div',{class:'kk-cabeca-textos'},h('h1',{class:'kk-h1'},'Paleta de ',h('mark',{class:'kk-marca-texto'},'cores')),
-      h('p',{class:'kk-apoio'},'A base é preto e branco. Veja as combinações e diga o que gostou: no final, montamos a paleta.')));
-  if(pi>=n){const{r,el}=palBuilt();
-    $('#cores-tela').replaceChildren(head,
-      h('div',{class:'kk-box'},h('div',{class:'axh'},h('h3',{class:'kk-h3'},'Sua paleta'),h('span',{class:'lbl'},'Montada com as cores que você curtiu')),el,
-        h('p',{class:'kk-texto'},r.main?['Cor de destaque: ',h('strong',{},r.main[0]),...(r.sup?[' · apoio: ',h('strong',{},r.sup[0])]:[]),'. A base fica em preto, branco e cinza'+(r.bege?', com bege':'')+'.']:(r.neutra?'Você preferiu a base neutra, sem cor de destaque.':'Marque alguns "gostei" para a paleta aparecer.'))),
-      h('div',{class:'row'},h('div',{},h('div',{class:'tag'},'Gostei'),h('div',{class:'asp'},PALS.filter(P=>pv(P.id)==='yes').map(P=>h('button',{type:'button',class:'ch pos',onclick:()=>setPal(P.id,'no')},P.t)))),
-        h('div',{},h('div',{class:'tag'},'Não gostei'),h('div',{class:'asp'},PALS.filter(P=>pv(P.id)==='no').map(P=>h('button',{type:'button',class:'ch neg',onclick:()=>setPal(P.id,'yes')},P.t))))),
-      h('div',{class:'dnav',style:'position:static;margin:var(--esp-5) auto 0'},h('button',{type:'button',class:'kk-botao kk-botao--2',onclick:()=>{pi=0;renderCores()}},'Rever uma a uma'),h('a',{class:'kk-botao',href:'#fontes',style:'text-align:center;text-decoration:none'},'Seguir para as Fontes')));return}
-  const P=PALS[pi],cur=pv(P.id);
-  const card=h('div',{class:'pcard'+(cur==='yes'?' sim':cur==='no'?' nao':'')},palMock(P),h('h2',{class:'pt2'},P.t),h('p',{class:'lbl',style:'text-align:center;margin:0'},P.n),swatches(P));
-  const go=v=>{card.classList.add(v==='yes'?'sai-d':'sai-e');setTimeout(()=>{setPal(P.id,v);pi=Math.min(n,pi+1);renderCores()},200)};
-  $('#cores-tela').replaceChildren(head,
-    h('div',{class:'prog'},h('span',{},h('b',{},pi+1),' de ',n),h('span',{},done+' respondidas  ',h('kbd',{},'←'),' não gostei ',h('kbd',{},'→'),' gostei')),card,
-    h('div',{class:'dnav',style:'position:static;margin:var(--esp-4) auto 0'},h('button',{type:'button',class:'kk-botao kk-botao--2',onclick:()=>go('no')},ic('fechar'),'Não gostei'),h('button',{type:'button',class:'kk-botao',onclick:()=>go('yes')},ic('check'),'Gostei')),
-    h('div',{style:'display:flex;justify-content:center;gap:var(--esp-4);margin-top:var(--esp-2)'},h('button',{type:'button',class:'kk-botao kk-botao--texto',disabled:pi===0,onclick:()=>{pi=Math.max(0,pi-1);renderCores()}},'Voltar'),h('button',{type:'button',class:'kk-botao kk-botao--texto',onclick:()=>{pi=Math.min(n,pi+1);renderCores()}},'Pular')));
-  window.__palGo=go}
-document.addEventListener('keydown',e=>{if(view!=='cores'||$('#ov').classList.contains('on')||e.target.closest('input,textarea')||e.metaKey||e.ctrlKey||!window.__palGo)return;
-  if(e.key==='ArrowRight'){e.preventDefault();window.__palGo('yes')}else if(e.key==='ArrowLeft'){e.preventDefault();window.__palGo('no')}});
-function palBoard(){if(!PALS.some(P=>pv(P.id)))return null;const{r,el}=palBuilt();
-  return h('div',{class:'sec'},h('div',{class:'sh'},h('h3',{},'Paleta de cores'),h('span',{class:'tag'},PALS.filter(P=>pv(P.id)).length+' de '+PALS.length+' respondidas')),
-    h('div',{class:'kk-box'},el,h('p',{class:'kk-texto'},r.main?['Cor de destaque: ',h('strong',{},r.main[0]),...(r.sup?[' · apoio: ',h('strong',{},r.sup[0])]:[])]:(r.neutra?'Base neutra, sem cor de destaque.':'Sem cor de destaque ainda.'))))}
+      h('p',{class:'kk-apoio'},genAnswered()||PAL.gen?'Parte das suas escolhas na Sessão.':'Responda os duelos de cor na Sessão para começar.')));
+  $('#cores-tela').replaceChildren(head,genEl(),
+    h('div',{class:'kk-box cgov'},h('div',{class:'tag'},'Obs · por que definir as cores'),
+      h('p',{class:'kk-texto'},'Sem uma paleta, as pessoas não deixam de usar cor: ',h('strong',{},'elas inventam'),'. Cada produto e cada segmento cria a sua, e a marca vira bagunça. ',h('strong',{},'Preto e branco são a base'),'; as poucas cores de acento, definidas aqui, dão a todos o mesmo caminho. ',h('strong',{},'Use o mínimo possível.'))))}
+document.addEventListener('keydown',e=>{if(view==='cores'&&e.code==='Space'&&!e.target.closest('input,textarea,button,select')&&!e.metaKey&&!e.ctrlKey&&!$('#ov').classList.contains('on')){e.preventDefault();genNew();return}
+});
+function genColors(){return PAL.gen&&Array.isArray(PAL.gen.c)||genAnswered()?genState().c:null}
+function palBoard(){const c=genColors();if(!c)return null;
+  return h('div',{class:'sec'},h('div',{class:'sh'},h('h3',{},'Paleta de cores')),
+    h('div',{class:'kk-box'},h('div',{class:'cstrips',style:'height:140px'},c.map(x=>{const e=h('div',{},h('b',{},x.slice(1).toUpperCase()),h('small',{},genNome(x)));e.style.background=x;e.style.setProperty('--ct',genLum(x)<.6?'#fff':'#0a0907');return e}))))}
 
 
 /* ---------- moodboard ---------- */
@@ -796,10 +968,9 @@ function renderBoard(){
   const collage=h('div',{class:'board-collage','data-count':mixed.length},mixed.map(r=>
     h('button',{class:'collage-piece','data-cat':r.cat,onclick:()=>zoom(r.url),'aria-label':(r.cap||'Referência')+' · '+catT(r.cat)},
       h('img',{src:r.url,alt:r.cap||catT(r.cat),loading:'lazy'}),h('span',{class:'collage-caption'},catT(r.cat)+' · '+(r.cap||'Referência')))));
-  const fonts=FONTS.filter(f=>fvv(f.id)==='yes'),colors=palResult();
-  const palette=PALS.some(p=>pv(p.id)==='yes')?h('div',{class:'board-palette'},
-    h('span',{class:'tag'},'Paleta sugerida'),...[[...PRETO],[...BRANCO],[...CINZA],...(colors.bege?[[...BEGE]]:[]),...(colors.main?[colors.main]:[]),...(colors.sup?[colors.sup]:[])].map(c=>
-      h('span',{class:'board-color',style:'--swatch:'+c[1],title:c[0]+' · '+c[1],'aria-label':c[0]+' '+c[1]}))):null;
+  const fonts=FONTS.filter(f=>fvv(f.id)==='yes');
+  const gc=genColors(),palette=gc?h('div',{class:'board-palette'},
+    h('span',{class:'tag'},'Paleta'),...gc.map(x=>h('span',{class:'board-color',style:'--swatch:'+x,title:genNome(x)+' · '+x,'aria-label':genNome(x)+' '+x}))):null;
   const content=[boardLayoutBar(),h('header',{class:'board-heading'},
     h('div',{},h('p',{class:'tag'},'Prudence · direção visual'),h('h1',{class:'board-name'},'Prudence'),
       h('p',{class:'board-intro'},mixed.length?mixed.length+' referências escolhidas na conversa.':'As escolhas da sessão vão compor esta prancha.')),
@@ -964,13 +1135,14 @@ function synthesisData(){
   }
   if((ATT.note||{}).t)use.push('Persona · anotação do cliente: '+ATT.note.t);
   const liked=PALS.filter(p=>pv(p.id)==='yes'),disliked=PALS.filter(p=>pv(p.id)==='no');
+  const gcs=genColors();if(gcs)direction.push('Paleta montada: '+gcs.map(x=>x.toUpperCase()).join(', ')+'.');
   if(liked.length)direction.push('Combinações de cores preferidas: '+liked.map(p=>p.t).join('; ')+'.');
   if(disliked.length)avoid.push('Combinações de cores rejeitadas: '+disliked.map(p=>p.t).join('; ')+'. A rejeição é da combinação apresentada.');
-  if(liked.length)pending.push('Validar a paleta final e onde usar cada cor; o cálculo automático é uma sugestão.');
-  else pending.push('Paleta de cores: nenhuma combinação preferida registrada.');
+  if(gcs)pending.push('Validar a paleta e onde usar cada cor.');
+  else pending.push('Paleta de cores: ainda não montada.');
   const fy=FONTS.filter(f=>fvv(f.id)==='yes'),fm=FONTS.filter(f=>fvv(f.id)==='maybe'),fn=FONTS.filter(f=>fvv(f.id)==='no');
   if(fy.length){direction.push('Fontes preferidas: '+fy.map(f=>f.n).join(', ')+'.');pending.push('Definir a função das fontes preferidas: títulos, slogan e texto corrido.');}
-  else pending.push('Tipografia: nenhuma fonte preferida registrada.');
+  else pending.push('Tipografia: as fontes não foram escolhidas; saem depois, a partir do estilo de letra preferido nos duelos.');
   if(fm.length)pending.push('Fontes em dúvida: '+fm.map(f=>f.n).join(', ')+'.');
   if(fn.length)avoid.push('Fontes rejeitadas: '+fn.map(f=>f.n).join(', ')+'.');
   const sections=[
@@ -1038,7 +1210,7 @@ async function copy(){const tx=summaryText();try{await navigator.clipboard.write
 /* ---------- rotas e sync ---------- */
 function typing(){const a=document.activeElement;return a&&a.matches&&a.matches('main input,main textarea')}
 function render(){if(summaryOpen)openSummary();if(typing())return;({cores:renderCores,marca:renderMarca,biblioteca:renderLib,sessao:renderSess,fontes:renderFontes,moodboard:renderBoard})[view]()}
-function route(){const k=['marca','biblioteca','sessao','cores','fontes','moodboard'].includes(location.hash.slice(1))?location.hash.slice(1):'marca';view=k;
+function route(){const k=['marca','sessao','cores','fontes','moodboard','biblioteca'].includes(location.hash.slice(1))?location.hash.slice(1):'marca';view=k;
   document.querySelectorAll('section.view').forEach(s=>s.classList.toggle('on',s.id==='v-'+k));
   document.querySelectorAll('#nav a').forEach(a=>{if(a.dataset.k===k){a.setAttribute('aria-current','page');a.classList.add('ativo')}else{a.removeAttribute('aria-current');a.classList.remove('ativo')}});
   window.scrollTo(0,0);render()}
@@ -1046,7 +1218,7 @@ initFontes();window.addEventListener('hashchange',route);route();
 (async()=>{
   db=await claude.use('db');assets=await claude.use('assets');
   if(!db){toast('Armazenamento indisponível: nada será salvo');return}
-  db.collection('refs2').onSnapshot(s=>{R={};s.docs.forEach(d=>{R[d.id]=d.data()});render()},()=>toast('Não foi possível carregar as referências'));
+  db.collection('refs2').onSnapshot(s=>{R={};s.docs.forEach(d=>{const x=d.data();R[d.id]=x.cat==='clima'?{...x,cat:'graf'}:x});render()},()=>toast('Não foi possível carregar as referências'));
   db.collection('duels2').onSnapshot(s=>{DU={};s.docs.forEach(d=>{DU[d.id]=d.data()});render()},()=>{});
   db.collection('fonts2').onSnapshot(s=>{FV={};s.docs.forEach(d=>{FV[d.id]=d.data()});render()},()=>{});
   db.collection('picks2').onSnapshot(s=>{PK={};s.docs.forEach(d=>{PK[d.id]=d.data()});render()},()=>{});
@@ -1070,8 +1242,10 @@ async function resetAll(){
   Object.entries(DU).forEach(([id,d])=>{if(d.pick||(d.why||[]).length||d.note||d.picks)jobs.push(()=>dD(id).update({pick:'',why:[],note:'',picks:{}}))});
   [['fonts2',FV],['picks2',PK],['fvotes2',FVT],['attrs2',ATT],['pal2',PAL]].forEach(([c,m])=>Object.keys(m).forEach(id=>jobs.push(()=>db.collection(c).doc(id).delete())));
   for(let i=0;i<jobs.length;i+=8)await Promise.all(jobs.slice(i,i+8).map(j=>j().catch(()=>{})));
-  cmp=[];sess.key=null;pi=0;render();toast('Respostas zeradas')}
+  GEN=null;cmp=[];sess.key=null;pi=0;render();toast('Respostas zeradas')}
 $('#reset-btn').onclick=()=>$('#reset').showModal();
+$('#reset-attr-no').onclick=()=>$('#reset-attr').close();
+$('#reset-attr-yes').onclick=async()=>{$('#reset-attr').close();await Promise.all(Object.keys(ATT).map(id=>db.collection('attrs2').doc(id).delete().catch(()=>{})));toast('Atributos limpos')};
 $('#reset-no').onclick=()=>$('#reset').close();
 $('#reset-yes').onclick=async()=>{$('#reset').close();await resetAll()};
 
