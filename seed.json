@@ -1373,66 +1373,6 @@
       "note": "",
       "ts": 1700000700041
     },
-    "seed-nova5-foto-01": {
-      "url": "refs/novas5/foto-leveza-01.jpg",
-      "cat": "foto",
-      "cap": "Pexels · Casal de homens rindo na cama",
-      "link": "https://www.pexels.com/photo/13334627/",
-      "vote": "",
-      "asp": {},
-      "note": "",
-      "ts": 1700000800001
-    },
-    "seed-nova5-foto-02": {
-      "url": "refs/novas5/foto-leveza-02.jpg",
-      "cat": "foto",
-      "cap": "Pexels · Duas mulheres brincando na cama",
-      "link": "https://www.pexels.com/photo/4759936/",
-      "vote": "",
-      "asp": {},
-      "note": "",
-      "ts": 1700000800002
-    },
-    "seed-nova5-foto-03": {
-      "url": "refs/novas5/foto-leveza-03.jpg",
-      "cat": "foto",
-      "cap": "Pexels · Duas amigas rindo, selfie na cama",
-      "link": "https://www.pexels.com/photo/6706984/",
-      "vote": "",
-      "asp": {},
-      "note": "",
-      "ts": 1700000800003
-    },
-    "seed-nova5-foto-04": {
-      "url": "refs/novas5/foto-leveza-04.jpg",
-      "cat": "foto",
-      "cap": "Pexels · Amigos deitados na grama, rindo",
-      "link": "https://www.pexels.com/photo/8380089/",
-      "vote": "",
-      "asp": {},
-      "note": "",
-      "ts": 1700000800004
-    },
-    "seed-nova5-foto-05": {
-      "url": "refs/novas5/foto-leveza-05.jpg",
-      "cat": "foto",
-      "cap": "Pexels · Pessoa rindo sentada na cama",
-      "link": "https://www.pexels.com/photo/4759927/",
-      "vote": "",
-      "asp": {},
-      "note": "",
-      "ts": 1700000800005
-    },
-    "seed-nova5-foto-06": {
-      "url": "refs/novas5/foto-leveza-06.jpg",
-      "cat": "foto",
-      "cap": "Pexels · Amigas rindo com o celular",
-      "link": "https://www.pexels.com/photo/3764496/",
-      "vote": "",
-      "asp": {},
-      "note": "",
-      "ts": 1700000800006
-    },
     "seed-letra-godger": {
       "url": "refs/letras/godger.jpg",
       "cat": "tipo",
@@ -1585,6 +1525,186 @@
       "asp": {},
       "note": "",
       "ts": 1700000850100
+    },
+    "seed-apl-ap1a": {
+      "url": "refs/aplicacoes/ap1a.jpg",
+      "cat": "apl",
+      "cap": "Aplicação · Cartão com logo cortado pequeno no canto",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000860000
+    },
+    "seed-apl-ap1b": {
+      "url": "refs/aplicacoes/ap1b.jpg",
+      "cat": "apl",
+      "cap": "Aplicação · Cartão com símbolo redondo grande no centro",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000860001
+    },
+    "seed-apl-ap2a": {
+      "url": "refs/aplicacoes/ap2a.jpg",
+      "cat": "apl",
+      "cap": "Aplicação · Timbrado com logo no topo",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000860002
+    },
+    "seed-apl-ap2b": {
+      "url": "refs/aplicacoes/ap2b.jpg",
+      "cat": "apl",
+      "cap": "Aplicação · Timbrado com logo no rodapé",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000860003
+    },
+    "seed-apl-ap3a": {
+      "url": "refs/aplicacoes/ap3a.jpg",
+      "cat": "apl",
+      "cap": "Aplicação · Camiseta com logo pequeno no peito",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000860004
+    },
+    "seed-apl-ap3b": {
+      "url": "refs/aplicacoes/ap3b.jpg",
+      "cat": "apl",
+      "cap": "Aplicação · Camiseta só com o nome, grande, nas costas",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000860005
+    },
+    "seed-apl-ap4a": {
+      "url": "refs/aplicacoes/ap4a.jpg",
+      "cat": "apl",
+      "cap": "Aplicação · Slide preto, título à esquerda",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000860006
+    },
+    "seed-apl-ap4b": {
+      "url": "refs/aplicacoes/ap4b.jpg",
+      "cat": "apl",
+      "cap": "Aplicação · Slide branco, tudo centralizado",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000860007
+    },
+    "seed-apl-ap6a": {
+      "url": "refs/aplicacoes/ap6a.jpg",
+      "cat": "apl",
+      "cap": "Aplicação · Assinatura de e-mail com logo",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000860010
+    },
+    "seed-apl-ap6b": {
+      "url": "refs/aplicacoes/ap6b.jpg",
+      "cat": "apl",
+      "cap": "Aplicação · Assinatura de e-mail só com o nome",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000860011
+    },
+    "seed-letra2-e7a": {
+      "url": "refs/letras2/e7a.jpg",
+      "cat": "tipo",
+      "cap": "Estilo de letra · Alinhado à esquerda",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000851000
+    },
+    "seed-letra2-e7b": {
+      "url": "refs/letras2/e7b.jpg",
+      "cat": "tipo",
+      "cap": "Estilo de letra · Centralizado",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000851001
+    },
+    "seed-letra2-e8a": {
+      "url": "refs/letras2/e8a.jpg",
+      "cat": "tipo",
+      "cap": "Estilo de letra · Entrelinha apertada",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000851002
+    },
+    "seed-letra2-e8b": {
+      "url": "refs/letras2/e8b.jpg",
+      "cat": "tipo",
+      "cap": "Estilo de letra · Entrelinha aberta",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000851003
+    },
+    "seed-letra2-e9a": {
+      "url": "refs/letras2/e9a.jpg",
+      "cat": "tipo",
+      "cap": "Estilo de letra · Letras com espaço normal",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000851004
+    },
+    "seed-letra2-e9b": {
+      "url": "refs/letras2/e9b.jpg",
+      "cat": "tipo",
+      "cap": "Estilo de letra · Letras bem espaçadas",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000851005
+    },
+    "seed-letra2-e10a": {
+      "url": "refs/letras2/e10a.jpg",
+      "cat": "tipo",
+      "cap": "Estilo de letra · Um título gigante e texto pequeno",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000851006
+    },
+    "seed-letra2-e10b": {
+      "url": "refs/letras2/e10b.jpg",
+      "cat": "tipo",
+      "cap": "Estilo de letra · Título e texto em tamanhos próximos",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000851007
+    },
+    "seed-letra2-e11a": {
+      "url": "refs/letras2/e11a.jpg",
+      "cat": "tipo",
+      "cap": "Estilo de letra · Duas famílias: condensada e neutra",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000851008
+    },
+    "seed-letra2-e11b": {
+      "url": "refs/letras2/e11b.jpg",
+      "cat": "tipo",
+      "cap": "Estilo de letra · Uma família só",
+      "vote": "",
+      "asp": {},
+      "note": "",
+      "ts": 1700000851009
     }
   },
   "_remove": {
@@ -1769,7 +1889,15 @@
       "seed-estilo-t5a",
       "seed-estilo-t5b",
       "seed-estilo-t6a",
-      "seed-estilo-t6b"
+      "seed-estilo-t6b",
+      "seed-apl-ap5a",
+      "seed-apl-ap5b",
+      "seed-nova5-foto-01",
+      "seed-nova5-foto-02",
+      "seed-nova5-foto-03",
+      "seed-nova5-foto-04",
+      "seed-nova5-foto-05",
+      "seed-nova5-foto-06"
     ],
     "duels2": [
       "seed-duelo-08",
@@ -1798,7 +1926,19 @@
       "seed-duelo-t3",
       "seed-duelo-t4",
       "seed-duelo-t5",
-      "seed-duelo-t6"
+      "seed-duelo-t6",
+      "seed-duelo-19",
+      "seed-duelo-21",
+      "seed-duelo-22",
+      "seed-duelo-04",
+      "seed-duelo-05",
+      "seed-duelo-06",
+      "seed-duelo-07",
+      "seed-duelo-f2",
+      "seed-duelo-f3",
+      "seed-duelo-f4",
+      "seed-duelo-ap5",
+      "seed-duelo-f8"
     ]
   },
   "duels2": {
@@ -1826,56 +1966,6 @@
       "ts": 1700000900002,
       "ctx": "Orienta o contraste da iluminação. Compare a luz sobre a pele, além da cor da lingerie.",
       "answerRevision": "luz-v2"
-    },
-    "seed-duelo-04": {
-      "a": "seed-review-solo",
-      "b": "seed-up-42",
-      "q": "As fotos mostram uma pessoa ou duas?",
-      "la": "Uma pessoa na cama",
-      "lb": "Duas pessoas na cama",
-      "pick": "",
-      "why": [],
-      "note": "",
-      "ts": 1700000900004,
-      "ctx": "Orienta a presença de uma pessoa ou de um casal em cenas de intimidade.",
-      "answerRevision": "pessoas-v2"
-    },
-    "seed-duelo-05": {
-      "a": "seed-review-beijo",
-      "b": "seed-up-33",
-      "q": "Como sugerir sensualidade nas fotos?",
-      "la": "Beijo entre duas pessoas",
-      "lb": "Gesto sugestivo individual",
-      "pick": "",
-      "why": [],
-      "note": "",
-      "ts": 1700000900005,
-      "ctx": "Orienta os gestos que podem sugerir sensualidade. A escolha vale para estas referências.",
-      "answerRevision": "gestos-v2"
-    },
-    "seed-duelo-06": {
-      "a": "seed-up-80",
-      "b": "seed-up-54",
-      "q": "Qual cenário explorar na fotografia?",
-      "la": "Água e vidro",
-      "lb": "Cama e lençóis",
-      "pick": "",
-      "why": [],
-      "note": "",
-      "ts": 1700000900006,
-      "ctx": "Orienta os cenários a explorar nas próximas imagens, sem limitar a marca a um único ambiente."
-    },
-    "seed-duelo-07": {
-      "a": "seed-up-30",
-      "b": "seed-up-25",
-      "q": "Em que ambiente fotografar a intimidade?",
-      "la": "Ao ar livre, na praia",
-      "lb": "Dentro do quarto",
-      "pick": "",
-      "why": [],
-      "note": "",
-      "ts": 1700000900007,
-      "ctx": "Orienta a presença de ambientes externos ou internos nas fotografias."
     },
     "seed-duelo-13": {
       "a": "seed-nova-stickers-02",
@@ -1963,44 +2053,6 @@
       "ts": 1700000900012,
       "ctx": "Orienta o conteúdo visual da estampa das costas."
     },
-    "seed-duelo-19": {
-      "a": "seed-up-73",
-      "b": "seed-up-42",
-      "q": "Como enquadrar a intimidade do casal?",
-      "la": "Close nos rostos e no beijo",
-      "lb": "Plano aberto, com corpos e ambiente",
-      "ctx": "Orienta a distância do enquadramento: aproximar o gesto ou mostrar mais da cena.",
-      "pick": "",
-      "why": [],
-      "note": "",
-      "ts": 907.2,
-      "answerRevision": "enquadramento-v2"
-    },
-    "seed-duelo-21": {
-      "a": "seed-review-rosto",
-      "b": "seed-up-83",
-      "q": "Retrato com rosto ou detalhe anônimo do corpo?",
-      "la": "Retrato com rosto nítido",
-      "lb": "Detalhe do corpo, sem rosto",
-      "ctx": "Orienta se a imagem mostra um rosto reconhecível ou concentra a atenção em um detalhe do corpo.",
-      "pick": "",
-      "why": [],
-      "note": "",
-      "ts": 907.4,
-      "answerRevision": "rosto-v2"
-    },
-    "seed-duelo-22": {
-      "a": "seed-up-39",
-      "b": "seed-up-67",
-      "q": "Como mostrar o corpo masculino?",
-      "la": "Durante uma atividade",
-      "lb": "Em um retrato de estúdio",
-      "ctx": "Orienta o uso de gestos ligados a uma atividade ou poses de retrato.",
-      "pick": "",
-      "why": [],
-      "note": "",
-      "ts": 907.5
-    },
     "seed-duelo-26": {
       "a": "seed-nova-stickers-04",
       "b": "seed-nova-stickers-11",
@@ -2040,14 +2092,14 @@
     "seed-duelo-c1": {
       "a": "seed-nova-cores-01",
       "b": "seed-nova-cores-03",
-      "q": "Como o acento aparece sobre o preto e branco?",
-      "la": "Vivo sobre o preto",
-      "lb": "Suave sobre a base clara",
+      "q": "O acento aparece sobre fundo preto ou sobre fundo claro?",
+      "la": "Sobre o preto",
+      "lb": "Sobre o claro",
       "pick": "",
       "why": [],
       "note": "",
       "ts": 1700000900100,
-      "ctx": "Orienta o tom do acento no digital. Preto, cinza e branco seguem como base; a cor entra só como detalhe."
+      "ctx": "Orienta o fundo em que o acento de cor aparece: escuro ou claro. A intensidade da cor é perguntada à parte."
     },
     "seed-duelo-c2": {
       "a": "seed-nova-cores-04",
@@ -2157,30 +2209,6 @@
       "ts": 1700000900109,
       "ctx": "Orienta o tratamento da fotografia. A marca fala em preto, cinza e branco; aqui o cliente vê o que a cor acrescenta ou não à imagem."
     },
-    "seed-duelo-f2": {
-      "a": "seed-nova3-foto-02",
-      "b": "seed-nova3-foto-06",
-      "q": "O corpo aparece seco ou molhado?",
-      "la": "Pele seca, fundo claro",
-      "lb": "Pele molhada, com espuma",
-      "pick": "",
-      "why": [],
-      "note": "",
-      "ts": 1700000900110,
-      "ctx": "Orienta a presença de água e espuma nas fotos de pele. As duas sugerem intimidade sem mostrar nada explícito."
-    },
-    "seed-duelo-f3": {
-      "a": "seed-nova3-foto-04",
-      "b": "seed-nova3-cores-17",
-      "q": "Que luz explorar nas fotos?",
-      "la": "Luz natural, com sombras na pele",
-      "lb": "Luz colorida sobre o preto",
-      "pick": "",
-      "why": [],
-      "note": "",
-      "ts": 1700000900111,
-      "ctx": "Orienta a iluminação das fotografias: luz e sombra naturais, com a pele como protagonista, ou luz de cor (vermelha) sobre fundo preto."
-    },
     "seed-duelo-g1": {
       "a": "seed-nova-texturas-01",
       "b": "seed-nova-texturas-02",
@@ -2241,18 +2269,6 @@
       "ts": 1700000900204,
       "ctx": "Orienta o uso da retícula (meio-tom) sobre imagens: toda colorida ou em preto e branco com um toque de cor."
     },
-    "seed-duelo-f4": {
-      "a": "seed-up-86",
-      "b": "seed-up-64",
-      "q": "O detalhe é a boca ou a pele?",
-      "la": "Boca em close",
-      "lb": "Pele e ombro em close",
-      "pick": "",
-      "why": [],
-      "note": "",
-      "ts": 1700000900205,
-      "ctx": "Orienta o recorte em detalhe: a expressão da boca ou a textura da pele, em linha com o zoom de pele do briefing."
-    },
     "seed-duelo-f5": {
       "a": "seed-up-70",
       "b": "seed-up-01",
@@ -2278,28 +2294,16 @@
       "ctx": "Orienta o enquadramento: mostrar a figura inteira ou chegar perto, em zoom, como pede o briefing."
     },
     "seed-duelo-f7": {
-      "a": "seed-nova5-foto-03",
+      "a": "seed-up-42",
       "b": "seed-nova3-foto-05",
-      "q": "A intimidade aparece com riso ou em silêncio?",
-      "la": "Com riso e brincadeira",
-      "lb": "Em silêncio, intensa",
+      "q": "A intimidade aparece leve ou concentrada?",
+      "la": "Leve e solta, sem pose",
+      "lb": "Concentrada e intensa",
       "pick": "",
       "why": [],
       "note": "",
       "ts": 1700000900300,
-      "ctx": "Orienta o clima da intimidade nas fotos: leve e bem-humorada, ou mais séria e concentrada."
-    },
-    "seed-duelo-f8": {
-      "a": "seed-nova5-foto-04",
-      "b": "seed-up-73",
-      "q": "A cena é de amizade ou de casal?",
-      "la": "Amigos, juntos e à vontade",
-      "lb": "Casal, em contato próximo",
-      "pick": "",
-      "why": [],
-      "note": "",
-      "ts": 1700000900301,
-      "ctx": "Orienta quem aparece nas fotos: relações de amizade e leveza, ou apenas casais. Ajuda a decidir o quanto a marca fala com todos os públicos."
+      "ctx": "Orienta o clima da intimidade nas fotos: mais solta e espontânea, ou mais séria e concentrada. A marca é divertida, não engraçada."
     },
     "seed-duelo-e1": {
       "a": "seed-letra-godger",
@@ -2372,6 +2376,288 @@
       "note": "",
       "ts": 1700000900405,
       "ctx": "Orienta o limite do peso nas letras condensadas. O cliente achou a mais pesada grossa demais; aqui ele compara com uma condensada mais fina."
+    },
+    "seed-duelo-c10": {
+      "a": "seed-nova4-cores-23",
+      "b": "seed-nova4-cores-35",
+      "q": "O acento é neon ou profundo?",
+      "la": "Neon, elétrico e vibrante",
+      "lb": "Profundo, quente e escuro",
+      "pick": "",
+      "why": [],
+      "note": "",
+      "ts": 1700000900500,
+      "ctx": "Orienta o caráter do acento: elétrico, como um neon, ou profundo e quente, como vinho e laranja queimado.",
+      "pal": {
+        "a": {
+          "c": [
+            "#0d0f0a",
+            "#ea3e70",
+            "#fcff58"
+          ]
+        },
+        "b": {
+          "c": [
+            "#110e09",
+            "#9b182a",
+            "#ca4018"
+          ]
+        }
+      }
+    },
+    "seed-duelo-c11": {
+      "a": "seed-nova4-cores-29",
+      "b": "seed-nova4-cores-31",
+      "q": "O degradê é quente ou frio?",
+      "la": "Quente: vinho, laranja e dourado",
+      "lb": "Frio: violeta, azul e verde-água",
+      "pick": "",
+      "why": [],
+      "note": "",
+      "ts": 1700000900501,
+      "ctx": "Orienta a temperatura dos degradês, se a marca usar degradê no digital.",
+      "pal": {
+        "a": {
+          "c": [
+            "#810220",
+            "#ff4700",
+            "#fed102"
+          ],
+          "g": 1
+        },
+        "b": {
+          "c": [
+            "#1c1972",
+            "#8a0ecc",
+            "#85bdd2",
+            "#81fed5"
+          ],
+          "g": 1
+        }
+      }
+    },
+    "seed-duelo-c12": {
+      "a": "seed-nova-cores-01",
+      "b": "seed-nova4-cores-38",
+      "q": "A cor tem brilho ou é chapada e limpa?",
+      "la": "Com brilho, como uma luz",
+      "lb": "Chapada e limpa",
+      "pick": "",
+      "why": [],
+      "note": "",
+      "ts": 1700000900502,
+      "ctx": "Orienta o acabamento da cor. Efeitos de brilho e sombra no logo são rejeitados; aqui o cliente diz se também prefere a cor lisa nos grafismos.",
+      "pal": {
+        "a": {
+          "shape": 1,
+          "bg": "#000002",
+          "fg": "#bcfa71",
+          "glow": "#6a3df0"
+        },
+        "b": {
+          "shape": 1,
+          "bg": "#000002",
+          "fg": "#bcfa71"
+        }
+      }
+    },
+    "seed-duelo-c13": {
+      "a": "seed-nova4-cores-24",
+      "b": "seed-nova4-cores-32",
+      "q": "Os acentos são contrastantes ou vizinhos?",
+      "la": "Contrastantes, bem diferentes entre si",
+      "lb": "Vizinhos, da mesma família",
+      "pick": "",
+      "why": [],
+      "note": "",
+      "ts": 1700000900503,
+      "ctx": "Orienta a relação entre as cores de destaque: opostas no círculo de cor, ou tons próximos, como rosa, violeta e laranja.",
+      "pal": {
+        "a": {
+          "c": [
+            "#1c1c1c",
+            "#ff2e9b",
+            "#5d00ff",
+            "#ceff06"
+          ]
+        },
+        "b": {
+          "c": [
+            "#4b0081",
+            "#960c8a",
+            "#ec1392",
+            "#fd7957"
+          ]
+        }
+      }
+    },
+    "seed-duelo-ap1": {
+      "a": "seed-apl-ap1a",
+      "b": "seed-apl-ap1b",
+      "q": "O cartão tem logo discreto ou protagonista?",
+      "la": "Logo cortado, pequeno, no canto",
+      "lb": "Símbolo redondo, grande, no centro",
+      "pick": "",
+      "why": [],
+      "note": "",
+      "ts": 1700000900600,
+      "ctx": "Orienta o peso do logo nas peças pequenas: uma assinatura discreta ou o símbolo como protagonista."
+    },
+    "seed-duelo-ap2": {
+      "a": "seed-apl-ap2a",
+      "b": "seed-apl-ap2b",
+      "q": "Onde o logo fica no papel timbrado?",
+      "la": "No topo, à esquerda",
+      "lb": "No rodapé, discreto",
+      "pick": "",
+      "why": [],
+      "note": "",
+      "ts": 1700000900601,
+      "ctx": "Orienta a posição do logo em documentos: logo de cabeçalho ou assinatura no rodapé."
+    },
+    "seed-duelo-ap3": {
+      "a": "seed-apl-ap3a",
+      "b": "seed-apl-ap3b",
+      "q": "Na camiseta, logo ou só o nome?",
+      "la": "Logo pequeno no peito",
+      "lb": "Só o nome, grande, nas costas",
+      "pick": "",
+      "why": [],
+      "note": "",
+      "ts": 1700000900602,
+      "ctx": "Orienta se as peças de vestir carregam o logo ou apenas o nome da marca. O briefing cita o exagero na escala do logo em uniformes."
+    },
+    "seed-duelo-ap4": {
+      "a": "seed-apl-ap4a",
+      "b": "seed-apl-ap4b",
+      "q": "Como é a apresentação?",
+      "la": "Fundo preto, título à esquerda",
+      "lb": "Fundo branco, tudo centralizado",
+      "pick": "",
+      "why": [],
+      "note": "",
+      "ts": 1700000900603,
+      "ctx": "Orienta o modelo de slide: escuro e editorial ou claro e centralizado. A fonte de documentos continua sendo a Helvetica."
+    },
+    "seed-duelo-ap6": {
+      "a": "seed-apl-ap6a",
+      "b": "seed-apl-ap6b",
+      "q": "A assinatura de e-mail leva o logo?",
+      "la": "Com o logo ao lado do nome",
+      "lb": "Só o nome da marca, em texto",
+      "pick": "",
+      "why": [],
+      "note": "",
+      "ts": 1700000900605,
+      "ctx": "Orienta a assinatura de e-mail: logo em imagem ou só o nome escrito, que também funciona em e-mails sem imagens."
+    },
+    "seed-duelo-e7": {
+      "a": "seed-letra2-e7a",
+      "b": "seed-letra2-e7b",
+      "q": "O texto é alinhado à esquerda ou centralizado?",
+      "la": "Alinhado à esquerda",
+      "lb": "Centralizado",
+      "pick": "",
+      "why": [],
+      "note": "",
+      "ts": 1700000900700,
+      "ctx": "Orienta o alinhamento dos títulos e textos: mais editorial, na esquerda, ou simétrico, no centro."
+    },
+    "seed-duelo-e8": {
+      "a": "seed-letra2-e8a",
+      "b": "seed-letra2-e8b",
+      "q": "A entrelinha é apertada ou aberta?",
+      "la": "Apertada, compacta",
+      "lb": "Aberta, com ar",
+      "pick": "",
+      "why": [],
+      "note": "",
+      "ts": 1700000900701,
+      "ctx": "Orienta o espaço entre as linhas do texto: denso e compacto ou arejado e fácil de ler."
+    },
+    "seed-duelo-e9": {
+      "a": "seed-letra2-e9a",
+      "b": "seed-letra2-e9b",
+      "q": "As letras têm espaço normal ou bem espaçadas?",
+      "la": "Espaço normal",
+      "lb": "Bem espaçadas, em caixa alta",
+      "pick": "",
+      "why": [],
+      "note": "",
+      "ts": 1700000900702,
+      "ctx": "Orienta o espaçamento entre as letras nos títulos curtos e rótulos: apertado e firme ou aberto e elegante."
+    },
+    "seed-duelo-e10": {
+      "a": "seed-letra2-e10a",
+      "b": "seed-letra2-e10b",
+      "q": "A hierarquia é de um título gigante ou de tamanhos próximos?",
+      "la": "Um título gigante e texto pequeno",
+      "lb": "Título e texto em tamanhos próximos",
+      "pick": "",
+      "why": [],
+      "note": "",
+      "ts": 1700000900703,
+      "ctx": "Orienta o contraste de tamanhos nas peças: um destaque enorme ou uma leitura mais uniforme."
+    },
+    "seed-duelo-e11": {
+      "a": "seed-letra2-e11a",
+      "b": "seed-letra2-e11b",
+      "q": "Uma família de letras só, ou duas combinadas?",
+      "la": "Duas: condensada nos títulos e neutra no texto",
+      "lb": "Uma só, em vários pesos",
+      "pick": "",
+      "why": [],
+      "note": "",
+      "ts": 1700000900704,
+      "ctx": "Orienta se a marca combina uma fonte de título com uma de texto ou usa uma única família. Também decide o que funciona em Word e PPT."
+    },
+    "seed-duelo-c14": {
+      "a": "seed-nova4-cores-27",
+      "b": "seed-nova4-cores-28",
+      "q": "O destaque no texto é uma tarja ou só a cor da letra?",
+      "la": "Tarja de cor atrás da palavra",
+      "lb": "Só a letra na cor do acento",
+      "pick": "",
+      "why": [],
+      "note": "",
+      "ts": 1700000900800,
+      "ctx": "Orienta como o acento destaca uma palavra: com uma tarja de fundo, como um marca-texto, ou apenas na cor da letra.",
+      "pal": {
+        "a": {
+          "hl": "bar",
+          "bg": "#0b0b0b",
+          "c": "#c6ff33"
+        },
+        "b": {
+          "hl": "text",
+          "bg": "#0b0b0b",
+          "c": "#c6ff33"
+        }
+      }
+    },
+    "seed-duelo-c15": {
+      "a": "seed-nova4-cores-60",
+      "b": "seed-nova4-cores-50",
+      "q": "O acento aparece como detalhe ou como faixa?",
+      "la": "Detalhe: uma etiqueta ou um botão",
+      "lb": "Faixa: um bloco largo de cor",
+      "pick": "",
+      "why": [],
+      "note": "",
+      "ts": 1700000900801,
+      "ctx": "Orienta o tamanho da área colorida numa peça: um ponto pequeno de destaque ou uma faixa de cor.",
+      "pal": {
+        "a": {
+          "lay": "dot",
+          "bg": "#fffdf8",
+          "c": "#c6ff33"
+        },
+        "b": {
+          "lay": "band",
+          "bg": "#fffdf8",
+          "c": "#c6ff33"
+        }
+      }
     }
   }
 }

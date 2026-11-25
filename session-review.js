@@ -131,11 +131,11 @@ const SESSION_REVIEW={
   "seed-duelo-c1": {
     "a": "seed-nova-cores-01",
     "b": "seed-nova-cores-03",
-    "q": "Como o acento aparece sobre o preto e branco?",
-    "la": "Vivo sobre o preto",
-    "lb": "Suave sobre a base clara",
-    "ctx": "Orienta o tom do acento no digital. Preto, cinza e branco seguem como base; a cor entra só como detalhe.",
-    "answerRevision": "cor-v2",
+    "q": "O acento aparece sobre fundo preto ou sobre fundo claro?",
+    "la": "Sobre o preto",
+    "lb": "Sobre o claro",
+    "ctx": "Orienta o fundo em que o acento de cor aparece: escuro ou claro. A intensidade da cor é perguntada à parte.",
+    "answerRevision": "rev-3",
     "pal": {
       "a": {
         "c": [
@@ -361,5 +361,152 @@ const SESSION_REVIEW={
     "a": "seed-nova3-foto-04",
     "b": "seed-nova3-cores-17",
     "answerRevision": "rev-2"
+  },
+  "seed-duelo-f7": {
+    "q": "A intimidade aparece leve ou concentrada?",
+    "la": "Leve e solta, sem pose",
+    "lb": "Concentrada e intensa",
+    "ctx": "Orienta o clima da intimidade nas fotos: mais solta e espontânea, ou mais séria e concentrada. A marca é divertida, não engraçada.",
+    "a": "seed-up-42",
+    "b": "seed-nova3-foto-05",
+    "answerRevision": "rev-3"
+  },
+  "seed-duelo-c10": {
+    "q": "O acento é neon ou profundo?",
+    "la": "Neon, elétrico e vibrante",
+    "lb": "Profundo, quente e escuro",
+    "ctx": "Orienta o caráter do acento: elétrico, como um neon, ou profundo e quente, como vinho e laranja queimado.",
+    "a": "seed-nova4-cores-23",
+    "b": "seed-nova4-cores-35",
+    "pal": {
+      "a": {
+        "c": [
+          "#0d0f0a",
+          "#ea3e70",
+          "#fcff58"
+        ]
+      },
+      "b": {
+        "c": [
+          "#110e09",
+          "#9b182a",
+          "#ca4018"
+        ]
+      }
+    }
+  },
+  "seed-duelo-c11": {
+    "q": "O degradê é quente ou frio?",
+    "la": "Quente: vinho, laranja e dourado",
+    "lb": "Frio: violeta, azul e verde-água",
+    "ctx": "Orienta a temperatura dos degradês, se a marca usar degradê no digital.",
+    "a": "seed-nova4-cores-29",
+    "b": "seed-nova4-cores-31",
+    "pal": {
+      "a": {
+        "c": [
+          "#810220",
+          "#ff4700",
+          "#fed102"
+        ],
+        "g": 1
+      },
+      "b": {
+        "c": [
+          "#1c1972",
+          "#8a0ecc",
+          "#85bdd2",
+          "#81fed5"
+        ],
+        "g": 1
+      }
+    }
+  },
+  "seed-duelo-c12": {
+    "q": "A cor tem brilho ou é chapada e limpa?",
+    "la": "Com brilho, como uma luz",
+    "lb": "Chapada e limpa",
+    "ctx": "Orienta o acabamento da cor. Efeitos de brilho e sombra no logo são rejeitados; aqui o cliente diz se também prefere a cor lisa nos grafismos.",
+    "a": "seed-nova-cores-01",
+    "b": "seed-nova4-cores-38",
+    "pal": {
+      "a": {
+        "shape": 1,
+        "bg": "#000002",
+        "fg": "#bcfa71",
+        "glow": "#6a3df0"
+      },
+      "b": {
+        "shape": 1,
+        "bg": "#000002",
+        "fg": "#bcfa71"
+      }
+    }
+  },
+  "seed-duelo-c13": {
+    "q": "Os acentos são contrastantes ou vizinhos?",
+    "la": "Contrastantes, bem diferentes entre si",
+    "lb": "Vizinhos, da mesma família",
+    "ctx": "Orienta a relação entre as cores de destaque: opostas no círculo de cor, ou tons próximos, como rosa, violeta e laranja.",
+    "a": "seed-nova4-cores-24",
+    "b": "seed-nova4-cores-32",
+    "pal": {
+      "a": {
+        "c": [
+          "#1c1c1c",
+          "#ff2e9b",
+          "#5d00ff",
+          "#ceff06"
+        ]
+      },
+      "b": {
+        "c": [
+          "#4b0081",
+          "#960c8a",
+          "#ec1392",
+          "#fd7957"
+        ]
+      }
+    }
+  },
+  "seed-duelo-c14": {
+    "q": "O destaque no texto é uma tarja ou só a cor da letra?",
+    "la": "Tarja de cor atrás da palavra",
+    "lb": "Só a letra na cor do acento",
+    "ctx": "Orienta como o acento destaca uma palavra: com uma tarja de fundo, como um marca-texto, ou apenas na cor da letra.",
+    "a": "seed-nova4-cores-27",
+    "b": "seed-nova4-cores-28",
+    "pal": {
+      "a": {
+        "hl": "bar",
+        "bg": "#0b0b0b",
+        "c": "#c6ff33"
+      },
+      "b": {
+        "hl": "text",
+        "bg": "#0b0b0b",
+        "c": "#c6ff33"
+      }
+    }
+  },
+  "seed-duelo-c15": {
+    "q": "O acento aparece como detalhe ou como faixa?",
+    "la": "Detalhe: uma etiqueta ou um botão",
+    "lb": "Faixa: um bloco largo de cor",
+    "ctx": "Orienta o tamanho da área colorida numa peça: um ponto pequeno de destaque ou uma faixa de cor.",
+    "a": "seed-nova4-cores-60",
+    "b": "seed-nova4-cores-50",
+    "pal": {
+      "a": {
+        "lay": "dot",
+        "bg": "#fffdf8",
+        "c": "#c6ff33"
+      },
+      "b": {
+        "lay": "band",
+        "bg": "#fffdf8",
+        "c": "#c6ff33"
+      }
+    }
   }
 };

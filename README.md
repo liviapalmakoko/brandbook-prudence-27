@@ -9,7 +9,7 @@ O time mostra referências, o cliente reage a cada uma, e o moodboard se monta s
 Cinco telas no menu, nesta ordem (o cliente se concentra nos duelos da Sessão; a Biblioteca fica por último, só se ele quiser ver):
 
 1. **Marca**: antes do moodboard, o cliente escolhe onde a Prudence fica em cada escala de duas palavras (1 a 5) e marca palavras que combinam ou não. A bolinha amarela com pontilhado é a sugestão da Koko, vinda do briefing. Base de pesquisa: Aaker (1997), *Dimensions of Brand Personality*, e as dimensões de tom de voz do Nielsen Norman Group.
-2. **Sessão**: só duelos. Cada duelo tem uma pergunta, o que ela define, e duas imagens. Clicar na imagem amplia; "Prefiro esta" escolhe. Atalhos: `A` `B` `D` (as duas) `N` (nenhuma), `←` `→` navegam.
+2. **Duelos**: só duelos. Cada duelo tem uma pergunta, o que ela define, e duas imagens. Clicar na imagem amplia; "Prefiro esta" escolhe. Atalhos: `A` `B` `D` (as duas) `N` (nenhuma), `←` `→` navegam.
 3. **Cores**: gerador de paleta no estilo Coolors (5 faixas, travar, trocar, gerar com a barra de espaço). Começa a partir das respostas dos 4 duelos de cor da Sessão; a paleta entra no Moodboard e no Resumo.
 5. **Moodboard** e **Resumo**: montados só com o que foi respondido; o que não foi respondido é desconsiderado.
 6. **Biblioteca**: é opcional para o cliente e fica por último: a equipe sobe as referências por categoria (arraste, cole com Cmd+V ou use o botão). Para criar um duelo, selecione 2 imagens da mesma categoria.
@@ -80,8 +80,14 @@ Mais cinco duelos de cor e três de imagem completam a sequência, cada um isola
 
 Oito duelos novos usam referências que ainda não tinham par: texturas (fluida ou geométrica; suave ou de impacto), adesivos (rua ou delicado), imagens de atitude (cor ou preto e branco com um acento; retícula em cor ou em preto e branco) e fotografia (boca ou pele em close; lingerie ou só pele; corpo inteiro ou recorte fechado). Cada um muda uma única variável.
 
-Fotos do Pexels (licença livre, com link para a página de cada uma) em `refs/novas5/`: seis imagens de riso, amizade e intimidade leve, para dar mais diversidade à categoria Fotografia. Dois duelos novos (riso ou silêncio; amizade ou casal).
+As seis fotos do Pexels (riso e amizade) foram retiradas por serem claras e coloridas demais para a Prudence.
 
 ## Estilo de letra
 
 O moodboard não escolhe fonte. Seis duelos na Sessão (categoria **Estilo de letra**) usam as referências de tipografia e layout enviadas pela equipe: condensada ou larga, neutra ou geométrica, leve ou pesada, caixa alta ou como numa frase, retrô com personalidade ou limpa, e condensada muito pesada ou mais refinada. A aba Fontes saiu do menu; a fonte é decidida depois, a partir da direção preferida. O código da aba continua no `index.html`, acessível por `#fontes`.
+
+## Perguntas de uso
+
+Tela separada dos Duelos, para o que não é uma escolha entre duas imagens: onde o logo é aplicado de forma inconsistente e o que ele nunca pode sofrer, qual versão (símbolo redondo ou logo cortado) usar em cada lugar, como serão os retratos de equipe e quais lâminas são prioridade. São 18 perguntas de múltipla escolha, com observação opcional; as respostas entram no Resumo. A aba antes chamada Sessão passou a se chamar Duelos.
+
+Os duelos de fotografia foram reduzidos a 7 (pele, iluminação, preto e branco ou cor, lingerie ou só pele, corpo inteiro ou recorte, riso ou intensidade, amizade ou casal), porque a fotografia pesa menos no brandbook que o logo, as cores e a tipografia. Na Sessão, a ordem das categorias agora é Cores, Estilo de letra, Grafismo, Uniforme e, por último, Fotografia.
