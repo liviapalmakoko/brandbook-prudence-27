@@ -66,3 +66,9 @@ Os 19 pares foram conferidos visualmente em 25/11/2026. Pergunta, legendas e con
 Foram corrigidos os contrastes de enquadramento do casal, rosto visível, iluminação, presença de uma ou duas pessoas, gestos de sensualidade e composição das camisetas. Os contextos orientam a criação, sem converter uma preferência em uma regra definitiva.
 
 Quando muda a imagem ou o sentido da pergunta, `answerRevision` separa as novas respostas das anteriores. Votos e sugestões Koko antigos permanecem armazenados e no backup, mas não são reaproveitados automaticamente no novo par. Não é preciso zerar as respostas para receber as referências revisadas.
+
+## Composição do moodboard
+
+**Prancha livre** reúne as referências preferidas em uma composição com proporções originais, tamanhos variados e pequenos deslocamentos, sem recortar as imagens em cartões iguais. A paleta sugerida e as fontes escolhidas aparecem junto da prancha. Os relatórios ficam em **Decisões, pendências e anotações da sessão**.
+
+**Por categoria** permite voltar à organização anterior instantaneamente. A alternância muda apenas a apresentação, sem alterar votos. A interface anterior também continua disponível no rodapé e usa `seed-anterior.json` como base histórica.

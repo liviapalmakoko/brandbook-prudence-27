@@ -265,6 +265,34 @@ kbd{font-family:var(--f-b);font-size:11px;border:1px solid var(--line);border-ra
 }
 </style>
 
+<style>
+/* Resultado em composição editorial; o modo por categoria continua disponível. */
+.board-tools{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin:8px 0 38px}
+.board-heading{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;padding:0 0 48px;border:0}
+.board-name{font-family:var(--titulo);font-size:clamp(64px,9vw,118px);line-height:.88;letter-spacing:-.025em;text-transform:uppercase;font-weight:600;margin:18px 0}
+.board-intro{font-size:15px;color:var(--mute);margin:20px 0 0}
+.board-palette{display:flex;align-items:center;gap:9px;flex-wrap:wrap;max-width:270px;padding-bottom:8px}
+.board-palette>.tag{width:100%;margin-bottom:8px}
+.board-color{width:44px;height:44px;border-radius:50%;background:var(--swatch);border:1px solid var(--line);display:block}
+.board-color:nth-of-type(2n){width:36px;height:36px}
+.board-fonts{display:flex;gap:32px;flex-wrap:wrap;border-top:1px solid var(--line);padding:24px 0 40px;margin-bottom:10px}
+.board-font{flex:1 1 280px;min-width:0}.board-font p{font-size:clamp(26px,3vw,48px);line-height:1.1;overflow-wrap:anywhere;margin:0 0 12px}
+.board-collage{column-count:3;column-gap:36px;padding:12px 16px 50px;max-width:1240px;margin:0 auto}
+.collage-piece{display:inline-block;width:100%;margin:0 0 36px;break-inside:avoid;position:relative;background:none;border:0;border-radius:0;padding:0;cursor:zoom-in;vertical-align:top;text-align:left;transition:transform .2s}
+.collage-piece img{display:block;width:100%;height:auto;max-width:100%;border-radius:0;box-shadow:0 7px 18px color-mix(in srgb,var(--ink) 8%,transparent)}
+.collage-piece:nth-child(3n+2){width:88%;margin-left:8%;transform:rotate(1deg)}
+.collage-piece:nth-child(5n+3){width:92%;margin-left:2%;transform:rotate(-1.2deg)}
+.collage-piece[data-cat="graf"]{padding:12px}.collage-piece[data-cat="uni"]{margin-top:22px}
+.collage-piece:hover,.collage-piece:focus-visible{transform:rotate(0) scale(1.02);z-index:1}
+.collage-caption{display:block;font:10px var(--mono);line-height:1.5;color:var(--mute);padding-top:9px;opacity:0;transition:opacity .2s}
+.collage-piece:hover .collage-caption,.collage-piece:focus-visible .collage-caption{opacity:1}
+.board-collage[data-count="1"]{column-count:1;max-width:620px}
+.board-collage[data-count="2"]{column-count:2;max-width:1000px}
+.board-records{border-top:1px solid var(--line);padding-top:22px;margin-top:24px}.board-records>summary{font-size:15px;cursor:pointer;margin-bottom:24px}
+@media(max-width:800px){.board-collage{column-count:2;column-gap:22px;padding:8px 8px 30px}.board-heading{align-items:flex-start;flex-direction:column;gap:24px}.board-name{font-size:clamp(58px,12vw,100px)}.board-tools{margin-bottom:28px}}
+@media(max-width:480px){.board-collage,.board-collage[data-count="2"]{column-count:1;max-width:380px}.collage-piece{margin-bottom:28px}.board-fonts{gap:24px}.board-tools .kk-botao{padding-left:0}.board-name{font-size:58px}}
+@media(prefers-reduced-motion:reduce){.collage-piece{transition:none}}
+</style>
 </head>
 <body>
 <div class="kk-fundo" aria-hidden="true"></div>
@@ -715,7 +743,7 @@ function whyTally(){const t={};duels().forEach(d=>{if(d.pick==='a'||d.pick==='b'
 function bars(map,cls){const mx=Math.max(1,...Object.values(map));const ents=Object.entries(map).filter(([,v])=>v>0).sort((a,b)=>b[1]-a[1]);
   return ents.length?h('div',{class:'tal'},ents.map(([a,v])=>h('div',{class:'tr '+cls},h('span',{},a),h('div',{class:'bar2'},h('i',{style:'width:'+(v/mx*100)+'%'})),h('span',{},v)))):h('p',{class:'mb-sub',style:'margin-top:12px'},'Nada marcado ainda.')}
 function duelSets(){const win=new Set(),lose=new Set();duels().forEach(d=>{if(d.pick==='a'){win.add(d.a);lose.add(d.b)}else if(d.pick==='b'){win.add(d.b);lose.add(d.a)}else if(d.pick==='both'){win.add(d.a);win.add(d.b)}});return{win,lose}}
-function renderBoard(){
+function renderBoardByCategory(){
   const dl2=k=>{const m={};duels().forEach(d=>{const a=d.la,b=d.lb;if(!a||!b)return;if(d.pick==='a'){m[k==='w'?a:b]=1}else if(d.pick==='b'){m[k==='w'?b:a]=1}else if(d.pick==='both'&&k==='w'){m[a]=1;m[b]=1}});return m};
   const ds=duelSets(),rs=refs(),yes=rs.filter(r=>r.vote==='yes'||ds.win.has(r.id)),left=rs.filter(r=>ds.lose.has(r.id)&&!ds.win.has(r.id)&&r.vote!=='yes'),maybe=rs.filter(r=>r.vote==='maybe'),no=rs.filter(r=>r.vote==='no'),t=tally();
   const out=[h('div',{class:'mb-top'},
@@ -747,6 +775,41 @@ function renderBoard(){
   const notes=[...rs.filter(r=>r.note).map(r=>(r.cap||catT(r.cat))+': '+r.note),...duels().filter(d=>d.note).map(d=>'Duelo: '+d.note)];
   if(notes.length)out.push(h('div',{class:'sec'},h('div',{class:'sh'},h('h3',{},'Anotações da conversa')),h('ul',{style:'margin:0;padding-left:18px'},notes.map(n=>h('li',{},n)))));
   $('#board').replaceChildren(...out)}
+
+/* Prancha livre: referências inteiras, misturadas por linguagem, sem cartões. */
+let boardLayout='livre';
+try{if(localStorage.getItem('mb-board-layout')==='categorias')boardLayout='categorias'}catch(e){}
+function setBoardLayout(value){boardLayout=value;try{localStorage.setItem('mb-board-layout',value)}catch(e){}renderBoard()}
+function boardLayoutBar(){return h('div',{class:'board-tools'},h('div',{class:'kk-filtros'},
+  h('button',{class:'kk-chip','aria-pressed':boardLayout==='livre',onclick:()=>setBoardLayout('livre')},'Prancha livre'),
+  h('button',{class:'kk-chip','aria-pressed':boardLayout==='categorias',onclick:()=>setBoardLayout('categorias')},'Por categoria')),
+  h('button',{class:'kk-botao kk-botao--texto',onclick:openSummary},'Ver síntese da sessão'))}
+function renderBoard(){
+  renderBoardByCategory();
+  const board=$('#board');
+  if(boardLayout==='categorias'){board.prepend(boardLayoutBar());return}
+  const records=[...board.children].filter(el=>!el.querySelector('.mos')&&!el.classList.contains('empty'));
+  const winners=duelSets().win,selected=refs().filter(r=>r.vote==='yes'||winners.has(r.id));
+  // Intercala fotografia, grafismos e aplicações para que as referências conversem na mesma prancha.
+  const groups=CATS.map(c=>selected.filter(r=>r.cat===c.k)),mixed=[];
+  while(groups.some(g=>g.length))for(const g of groups)if(g.length)mixed.push(g.shift());
+  const collage=h('div',{class:'board-collage','data-count':mixed.length},mixed.map(r=>
+    h('button',{class:'collage-piece','data-cat':r.cat,onclick:()=>zoom(r.url),'aria-label':(r.cap||'Referência')+' · '+catT(r.cat)},
+      h('img',{src:r.url,alt:r.cap||catT(r.cat),loading:'lazy'}),h('span',{class:'collage-caption'},catT(r.cat)+' · '+(r.cap||'Referência')))));
+  const fonts=FONTS.filter(f=>fvv(f.id)==='yes'),colors=palResult();
+  const palette=PALS.some(p=>pv(p.id)==='yes')?h('div',{class:'board-palette'},
+    h('span',{class:'tag'},'Paleta sugerida'),...[[...PRETO],[...BRANCO],[...CINZA],...(colors.bege?[[...BEGE]]:[]),...(colors.main?[colors.main]:[]),...(colors.sup?[colors.sup]:[])].map(c=>
+      h('span',{class:'board-color',style:'--swatch:'+c[1],title:c[0]+' · '+c[1],'aria-label':c[0]+' '+c[1]}))):null;
+  const content=[boardLayoutBar(),h('header',{class:'board-heading'},
+    h('div',{},h('p',{class:'tag'},'Prudence · direção visual'),h('h1',{class:'board-name'},'Prudence'),
+      h('p',{class:'board-intro'},mixed.length?mixed.length+' referências escolhidas na conversa.':'As escolhas da sessão vão compor esta prancha.')),
+    palette),
+    fonts.length?h('div',{class:'board-fonts'},fonts.map(f=>h('div',{class:'board-font'},
+      live(f)?h('p',{style:fstyle(f)},'Mais prazer para todos.'):h('p',{},f.n),h('span',{class:'tag'},f.n)))):null,
+    mixed.length?collage:h('div',{class:'empty'},'Escolha referências na Sessão para ver a composição ganhar forma.'),
+    h('details',{class:'board-records'},h('summary',{},'Decisões, pendências e anotações da sessão'),...records)];
+  board.replaceChildren(...content.filter(Boolean));
+}
 
 /* ---------- fontes ---------- */
 const GF='https://fonts.google.com/specimen/',AF='https://fonts.adobe.com/fonts/';
