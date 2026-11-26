@@ -91,3 +91,7 @@ O moodboard não escolhe fonte. Seis duelos na Sessão (categoria **Estilo de le
 Tela separada dos Duelos, para o que não é uma escolha entre duas imagens: onde o logo é aplicado de forma inconsistente e o que ele nunca pode sofrer, qual versão (símbolo redondo ou logo cortado) usar em cada lugar, como serão os retratos de equipe e quais lâminas são prioridade. São 18 perguntas de múltipla escolha, com observação opcional; as respostas entram no Resumo. A aba antes chamada Sessão passou a se chamar Duelos.
 
 Os duelos de fotografia foram reduzidos a 7 (pele, iluminação, preto e branco ou cor, lingerie ou só pele, corpo inteiro ou recorte, riso ou intensidade, amizade ou casal), porque a fotografia pesa menos no brandbook que o logo, as cores e a tipografia. Na Sessão, a ordem das categorias agora é Cores, Estilo de letra, Grafismo, Uniforme e, por último, Fotografia.
+
+## PDFs do moodboard
+
+Com o Link de leitura aberto (`?cliente=1`), acrescente `&pdf=` e o formato para gerar uma versão própria para impressão: `poster`, `editorial`, `slides`, `colagem`, `livre`, `categorias` ou `respostas` (documento A4 com todas as respostas). Para salvar, use Imprimir > Salvar como PDF com a janela em 1280 px de largura. O `cliente.json` com respostas de um cliente não deve ser publicado neste repositório.
